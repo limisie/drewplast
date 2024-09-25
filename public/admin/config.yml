@@ -1,0 +1,1030 @@
+local_backend: true
+backend:
+  name: git-gateway
+  squash_merges: true
+
+publish_mode: editorial_workflow
+media_folder: src/assets/images
+public_folder: src/assets/images
+
+i18n:
+  structure: single_file
+  locales: [pl, en]
+  default_locale: pl
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+
+default_fields:
+  - &TITLE
+    label: Nagłówek
+    name: title
+    widget: string
+    hint: Nagłówek sekcji / strony (np. Dokumenty, Kanalizacja wewnętrzna PP, Produkty, Sieć dystrybucji)
+    i18n: true
+  - &EYEBROW
+    label: Nagłówek brwiowy
+    name: eyebrow
+    widget: string
+    hint: Mały, zwięzły, informacyjny napis umieszczony nad nagłówkiem lub tytułem w celu poszerzenia kontekstu (np. Przydatne zasoby i dokumentacja - do nagłówka Dokumenty, Skontaktuj się z nami - do nagłówka Kontakt)
+    i18n: true
+    required: false
+  - &DESCRIPTION
+    label: Krótki opis
+    name: description
+    widget: text
+    hint: Krótki opis sekcji, widoczny obok tytułu (ok. 200 znaków)
+    i18n: true
+    required: false
+  - &IMAGE
+    label: Zdjęcie
+    name: image
+    hint: Wybierz zdjęcie z katalogu obrazów
+    widget: relation
+    collection: images
+    value_field: "{{slug}}"
+    search_fields: [title, caption]
+    display_fields: [title]
+    i18n: duplicate
+  - &PAGE_RELATION
+    label: Podstrona
+    name: page
+    widget: relation
+    collection: pages
+    value_field: "{{slug}}"
+    display_fields: [title]
+    search_fields: [seo.slug, title]
+    multiple: false
+  - &FEATURES
+    label: Lista właściwości
+    label_singular: Właściwość
+    name: featuresList
+    widget: list
+    hint: Lista najważniejszych właściwości (np. Materiał, Barwa, Budowa rury, Zakres średnic, Grubości ścianek, Sztywność, Maksymalna temperatura ścieków, Odporność na uderzenia w ujemnych temperaturach, Uszczelka, Szczelność połączeń, Odporność chemiczna, Klasa odporności ogniowej, Gęstość, Udarność, Normy, Dokumenty)
+    i18n: true
+    fields:
+      - <<: *TITLE
+        hint: Nagłówek właściwości
+      - <<: *DESCRIPTION
+        widget: string
+        hint: Krótki opis właściwości
+  - &LINK
+    label: link
+    summary: "{{fields.text}}"
+    name: link
+    widget: object
+    i18n: true
+    fields:
+      - label: Tekst
+        name: text
+        widget: string
+        hint: Tekst linku
+        i18n: true
+      - name: url
+        widget: string
+        i18n: true
+        hint: Ścieżka strony
+  - &PAGE_LINK
+    label: Link do podstrony
+    name: pageLink
+    widget: object
+    i18n: true
+    fields:
+      - label: Tekst
+        name: text
+        widget: string
+        hint: Tekst linku
+        i18n: true
+      - <<: *PAGE_RELATION
+        i18n: duplicate
+
+seo: &SEO
+  label: SEO
+  summary: "{{fields.metaTitle}}"
+  name: seo
+  widget: object
+  hint: Meta tagi dla SEO
+  collapsed: true
+  i18n: true
+  fields:
+    - label: Slug
+      name: slug
+      widget: string
+      hint: Element adresu URL, unikalny ciąg znaków, który identyfikuje daną stronę internetową (np. kanalizacja-wewnetrzna-pp)
+      i18n: true
+      pattern:
+        [
+          "^[ ]?[a-z0-9/]*(?:-[a-z0-9]+)*$",
+          "Musi składać się z małych liter bez znaków diakrytycznych, numerów i myślników (np. produkt-1)",
+        ]
+    - label: Tytuł SEO
+      name: metaTitle
+      widget: string
+      hint: Tytuł strony na zakładce w przeglądarce, w wyszukiwarce lub udostępnionym linku (max. 60 znaków, unikalny, zawiera frazę kluczową, w jednym zdaniu określa czego dotyczy strona)
+      i18n: true
+    - label: Opis SEO
+      name: metaDescription
+      widget: text
+      hint: Opis wyświetlany w wynikach wyszukiwania, ma zachęcić użytkownika do kliknięcia w link (120 - 155 znaków, unikalny, zawiera słowa kluczowe i najważniejsze cechy produktu/strony, rozszeża tytuł)
+      i18n: true
+    - <<: *IMAGE
+      name: metaImage
+      required: false
+    - label: Nie indeksuj strony
+      name: preventIndexing
+      widget: boolean
+      default: false
+      required: false
+      hint: Nie indeksuj stron, które nie są istotne w wyszukiwaniach Google (np. Polityka prywatności)
+      i18n: duplicate
+
+section: &SECTION
+  label: Sekcja
+  summary: "{{fields.title}}"
+  name: section
+  widget: object
+  hint: Sekcja strony
+  collapsed: true
+  i18n: true
+  fields:
+    - *TITLE
+    - *DESCRIPTION
+    - *IMAGE
+
+address: &ADDRESS
+  label: Adres
+  summary: "{{fields.street}}, {{fields.city}} {{fields.postalCode}}, {{fields.region}}"
+  name: address
+  widget: object
+  i18n: true
+  fields:
+    - label: Ulica i numer
+      name: street
+      widget: string
+      hint: Ulica i numer (np. ul. Jaracza 33/7)
+      i18n: duplicate
+    - label: Miasto
+      name: city
+      widget: string
+      i18n: duplicate
+    - label: Kod pocztowy
+      name: postalCode
+      widget: string
+      pattern: ["^[0-9]{2}-[0-9]{3}$", "Musi mieć format XX-XXX"]
+      i18n: duplicate
+    - label: Województwo
+      name: region
+      widget: relation
+      collection: regions
+      value_field: "{{slug}}"
+      search_fields: [title]
+      display_fields: [title]
+      multiple: false
+      i18n: duplicate
+
+contact: &CONTACT
+  label: Dane kontaktowe
+  summary: " "
+  name: contact
+  widget: object
+  i18n: true
+  fields:
+    - label: Numer telefonu
+      name: phone
+      widget: string
+      required: false
+      i18n: duplicate
+      pattern:
+        [
+          "^(?:[+]?[0-9]{1,3})?([ ]?(?[0-9]{2,3})?)?([ ]?[0-9]{2,3}){3}$",
+          "Akceptowane formaty: +00 000 000 000, +00 00 000 00 00, 000 000 000, 00 000 00 00",
+        ]
+    - label: Adres e-mail
+      name: email
+      widget: string
+      required: false
+      i18n: duplicate
+      pattern:
+        [
+          "^[a-zA-Z0-9._!#-]+@[a-zA-Z0-9.-]+.[a-z]{2,4}$",
+          "Niepoprawny adres e-mail",
+        ]
+    - label: Witryna internetowa
+      name: url
+      widget: string
+      required: false
+      i18n: duplicate
+      pattern:
+        [
+          "^(?:(https?):\/\/)?[^\\s/$.?#].[^\\s]*$",
+          "Niepoprawny adres strony www",
+        ]
+
+collections:
+  - name: images
+    label: Obrazy
+    label_singular: Obraz
+    description: Katalog obrazów z metadanymi (metadane są potrzebne wyszukiwarkom internetowym do pozycjonowania stron)
+    folder: src/content/images
+    create: true
+    i18n: true
+    extension: json
+    format: json
+    fields:
+      - label: Nazwa obrazu
+        name: title
+        hint: Nazwa obrazu, po której będzie go można wyszukać podczas wprowadzania danych
+        widget: string
+        i18n: duplicate
+      - label: Alt
+        name: alt
+        hint: Tekst alternatywny (krótki opis obrazu wykorzystywany przez czytniki ekranowe; zawarcie słów kluczowych może pomóc w pozycjonowaniu strony w wynikach wyszukiwania)
+        widget: string
+        i18n: true
+      - label: Podpis
+        name: caption
+        hint: Krótki podpis pod obrazkiem, który może być wyświetlony na stronie
+        widget: string
+        required: false
+        i18n: true
+      - label: Adres obrazu
+        name: url
+        widget: image
+        allow_multiple: false
+        choose_url: true
+        i18n: duplicate
+
+  - name: pages
+    label: Strony
+    label_singular: Strona
+    description: Teksty i zdjęcia widoczne na każdej z podstron
+    i18n:
+      structure: single_file
+      locales: [pl, en]
+    files:
+      - label: Strona główna
+        name: strona-glowna
+        file: src/content/pages/strona-glowna.json
+        i18n: true
+        extension: json
+        format: json
+        fields:
+          - label: Nazwa strony
+            name: title
+            hint: Nazwa widoczna na linkach (np. w pasku nawigacyjnym)
+            widget: string
+            i18n: true
+          - <<: *SEO
+            label: Strona główna - SEO
+          - <<: *SECTION
+            label: Strona główna - Sekcja - Hero
+            name: sectionHero
+            hint: Hero to górna część głównej strony internetowej, pierwszy obszar, z którym styka się użytkownik. Celem Sekcji Hero jest przyciągnięcie uwagi użytkownika i skłonienie go do dalszego interakcji z stroną.
+            fields:
+              - <<: *TITLE
+                hint: Duży, wyrazisty nagłówek, który jasno komunikuje główną wartość lub przesłanie firmy
+              - <<: *DESCRIPTION
+                label: Podtytuł
+                hint: Dodatkowy podtytuł może być naturalnym rozwinięciem głównego nagłówka, wzmacniać przekaz, dawać odbiorcy dodatkowe informacje itd.
+              - <<: *IMAGE
+                hint: Wideo w tle sekcji Hero
+              - <<: *LINK
+                name: phoneButton
+              - <<: *LINK
+                name: emailButton
+              - <<: *LINK
+                name: videoButton
+          - <<: *SECTION
+            label: Strona główna - Sekcja - Opis
+            name: sectionDescription
+            hint: Sekcja strony zawierająca opis
+            fields:
+              - *TITLE
+              - <<: *DESCRIPTION
+                hint: Krótki opis firmy w dwóch blokach tekstu (w sumie ok. 300 znaków)
+              - *FEATURES
+          - <<: *SECTION
+            label: Strona główna - Sekcja - Produkty
+            name: sectionProducts
+            hint: Sekcja z listą produktów z linkami do podstron produktów (lista produktów automatycznie wypełniona produktami z kolekcji Produkty)
+            fields:
+              - *TITLE
+              - *DESCRIPTION
+              - *PAGE_LINK
+          - <<: *SECTION
+            label: Strona główna - Sekcja - Zrównoważony rozwój
+            name: sectionSustainable
+            hint: Sekcja o zrównoważonym rozwóju
+            fields:
+              - *TITLE
+              - *DESCRIPTION
+              - *IMAGE
+          - <<: *SECTION
+            label: Sekcja - Sieć dystrybucji
+            name: sectionDistributors
+            hint: Sekcja CTA z linkiem do strony Kontakt
+            fields:
+              - *TITLE
+              - <<: *DESCRIPTION
+                hint: Krótki opis w dwóch blokach tekstu (w sumie ok. 300 znaków)
+              - *PAGE_LINK
+          - <<: *IMAGE
+            label: Zdjęcie na dole strony
+
+      - label: Produkty - lista
+        name: produkty
+        file: src/content/pages/produkty.json
+        i18n: true
+        extension: json
+        format: json
+        fields:
+          - label: Nazwa strony
+            name: title
+            hint: Nazwa widoczna na linkach (np. w pasku nawigacyjnym)
+            widget: string
+            i18n: true
+          - <<: *SEO
+            label: Produkty - SEO
+          - <<: *SECTION
+            label: Produkty - Sekcja - Nagłówek
+            name: sectionHeader
+            hint: Sekcja nagłówka u góry strony Produkty
+            fields:
+              - *TITLE
+              - *EYEBROW
+              - *DESCRIPTION
+
+      - label: Dokumenty - lista
+        name: dokumenty
+        file: src/content/pages/dokumenty.json
+        i18n: true
+        extension: json
+        format: json
+        fields:
+          - label: Nazwa strony
+            name: title
+            hint: Nazwa widoczna na linkach (np. w pasku nawigacyjnym)
+            widget: string
+            i18n: true
+          - <<: *SEO
+            label: Dokumenty - SEO
+          - <<: *SECTION
+            label: Dokumenty - Sekcja - Nagłówek
+            name: sectionHeader
+            hint: Sekcja nagłówka u góry strony Dokumenty
+            fields:
+              - *TITLE
+              - *EYEBROW
+              - *DESCRIPTION
+          - label: Zakładki dokumentów
+            name: categoriesList
+            widget: relation
+            hint: Każda wybrana kategoria tworzy zakładkę na stronie Dokumenty
+            collection: documentCategories
+            value_field: "{{slug}}"
+            search_fields: [title, caption]
+            display_fields: [title]
+            multiple: true
+            max: 6
+            i18n: duplicate
+
+      - label: Kontakt
+        name: kontakt
+        file: src/content/pages/kontakt.json
+        i18n: true
+        extension: json
+        format: json
+        fields:
+          - label: Nazwa strony
+            name: title
+            hint: Nazwa widoczna na linkach (np. w pasku nawigacyjnym)
+            widget: string
+            i18n: true
+          - <<: *SEO
+            label: Kontakt - SEO
+          - <<: *SECTION
+            label: Kontakt - Sekcja - Nagłówek
+            name: sectionHeader
+            hint: Sekcja nagłówka u góry strony Kontakt
+            fields:
+              - *TITLE
+              - *EYEBROW
+              - *DESCRIPTION
+          - *IMAGE
+          - <<: *SECTION
+            label: Kontakt - Sekcja - Sieć dystrybucji
+            name: sectionDistributors
+            hint: Sekcja strony Kontakt z dystrybutorami
+            fields:
+              - *TITLE
+              - *DESCRIPTION
+
+      - label: O firmie
+        name: o-firmie
+        file: src/content/pages/o-firmie.json
+        i18n: true
+        extension: json
+        format: json
+        fields:
+          - label: Nazwa strony
+            name: title
+            hint: Nazwa widoczna na linkach (np. w pasku nawigacyjnym)
+            widget: string
+            i18n: true
+          - <<: *SEO
+            label: O firmie - SEO
+          - <<: *SECTION
+            label: O firmie - Sekcja - Nagłówek
+            name: sectionHeader
+            hint: Sekcja nagłówka u góry strony O firmie
+            fields:
+              - *TITLE
+              - *EYEBROW
+              - *DESCRIPTION
+              - *IMAGE
+          - <<: *SECTION
+            label: O firmie - Sekcja - Opis
+            name: sectionDescription
+            hint: Sekcja strony zawierająca dłuższy opis
+            fields:
+              - <<: *TITLE
+                hint: (ok. 100 znaków)
+              - <<: *DESCRIPTION
+                hint: (2 akapity, w sumie ok. 250 znaków)
+          - <<: *SECTION
+            label: O firmie - Sekcja - Pracownicy
+            name: sectionEmployees
+            hint: Sekcja strony O firmie ze zdjęciami pracowników
+            fields:
+              - *TITLE
+              - label: Lista pracowników
+                name: employeesList
+                widget: relation
+                hint: Lista pracowników, których zdjęcia mają zostać wyświetlone na stronie O firmie
+                collection: employees
+                value_field: "{{slug}}"
+                search_fields: [name, position]
+                display_fields: [name]
+                multiple: true
+                min: 1
+                i18n: duplicate
+          - <<: *SECTION
+            label: O firmie - Sekcja - Historia firmy
+            name: sectionHistory
+            hint: Sekcja strony O firmie z kamieniami milowymi w historii firmy
+            fields:
+              - *TITLE
+              - label: Lista kamieni milowych
+                name: milestonesList
+                widget: relation
+                hint: Kamienie milowe można dodać w katalogu Kamieni milowych (na głównej stronie admin)
+                collection: milestones
+                value_field: "{{slug}}"
+                search_fields: [title, year]
+                display_fields: [title]
+                multiple: true
+                max: 6
+                i18n: duplicate
+                require: false
+          - <<: *SECTION
+            label: O firmie - Sekcja - Zrównoważony rozwój
+            name: sectionSustainable
+            hint: Sekcja strony O firmie o zrównoważonym rozwoju
+            fields:
+              - *TITLE
+              - *IMAGE
+              - *FEATURES
+
+      - label: Polityka prywatności
+        name: polityka-prywatnosci
+        file: src/content/pages/polityka-prywatnosci.json
+        i18n: true
+        extension: json
+        format: json
+        fields:
+          - label: Nazwa strony
+            name: title
+            hint: Nazwa widoczna na linkach (np. w pasku nawigacyjnym)
+            widget: string
+            i18n: true
+          - <<: *SEO
+            label: Polityka prywatności - SEO
+          - <<: *SECTION
+            label: Polityka prywatności - Sekcja - Nagłówek
+            name: sectionHeader
+            hint: Sekcja nagłówka u góry strony Polityka prywatności
+            fields:
+              - *TITLE
+              - *EYEBROW
+          - label: Treść polityki prywatności
+            name: content
+            widget: markdown
+            buttons: [bold, italic, link, numbered-list]
+            editor_components: []
+            modes: [rich_text]
+            i18n: true
+
+  - name: products
+    label: Produkty
+    label_singular: Produkt
+    description: Katalog produktów - każdy produkt tworzy nową podstronę
+    folder: src/content/products
+    create: true
+    i18n: true
+    extension: json
+    format: json
+    fields:
+      - label: Nazwa
+        name: title
+        widget: string
+        hint: Nazwa produktu widoczna w katalogu produktów (np. Kanalizacja wewnętrzna PP)
+        i18n: true
+      - <<: *IMAGE
+      - label: Tekst przycisku na liście produktów
+        name: buttonText
+        widget: string
+        default: Dowiedz się więcej
+        i18n: true
+      - <<: *SEO
+        label: Produkt - SEO
+      - <<: *SECTION
+        label: Sekcja - Nagłówek
+        name: sectionHeader
+        hint: Nagłówek u góry strony
+        fields:
+          - *TITLE
+          - *EYEBROW
+          - *DESCRIPTION
+          - *IMAGE
+          - *FEATURES
+      - <<: *SECTION
+        label: Sekcja - Opis
+        name: sectionDescription
+        hint: Sekcja opis na stronach Produktów
+        fields:
+          - <<: *TITLE
+            default: Zastosowanie
+          - <<: *DESCRIPTION
+            hint: Opis możliwych zastosowań produktu
+          - label: Lista zalet systemu
+            name: advantages
+            widget: text
+            hint: Wypisz zalety w kolejnych linijkach tekstu
+            i18n: true
+      - <<: *SECTION
+        label: Sekcja - Elementy systemu
+        name: sectionElements
+        hint: Sekcja z elementami systemu na stronach Produktów 
+        fields:
+          - <<: *TITLE
+            default: Elementy systemu
+          - label: Lista rodzajów rur
+            name: pipesList
+            hint: Lista rodzajów rur danego produtu
+            widget: list
+            label_singular: Typ rury
+            i18n: true
+            fields:
+            - label: Typ rury
+              name: pipe
+              widget: relation
+              collection: productElements
+              value_field: "{{slug}}"
+              search_fields: [title]
+              display_fields: [title]
+              multiple: false
+              filters:
+                - field: category
+                  values: [Rury, Pipes]
+            - label: Tekst linku do sekcji z kształtkami
+              widget: string
+              name: link
+              hint: Link do tabeli z wymiarami dostępnych elementów
+              default: Zobacz dostępne warianty
+          - label: Lista kształtek
+            name: fittingsList
+            hint: Lista kształtek danego produtu
+            widget: object
+            collapsed: true
+            i18n: true
+            fields:
+            - label: Tytuł
+              name: title
+              hint: Tytuł sekcji kształtek widoczny na stronie produktu
+              widget: string
+              default: Kształtki
+              i18n: true
+            - label: Lista kształtek
+              name: list
+              hint: Lista kształtek dla danego systemu
+              widget: relation
+              collection: productElements
+              value_field: "{{slug}}"
+              search_fields: [title]
+              display_fields: [title]
+              multiple: true
+              i18n: duplicate
+              required: false
+              filters:
+                - field: category
+                  values: [Kształtki, Fittings]
+            - label: Tekst linku do sekcji z kształtkami
+              widget: string
+              name: link
+              default: Zobacz dostępne warianty
+              hint: Link do tabeli z wymiarami dostępnych elementów
+              i18n: true
+      - <<: *SECTION
+        label: Sekcja - Galeria
+        name: sectionGallery
+        hint: Sekcja ze zdjęciami produktu
+        fields:
+          - <<: *TITLE
+            default: Galeria
+          - <<: *IMAGE
+            label: Lista zdjęć
+            name: imagesList
+            multiple: true
+            required: false
+      - <<: *SECTION
+        label: Sekcja - Dokumenty
+        name: sectionDocuments
+        hint: Sekcja z dokumentami dotyczącymi produktu
+        fields:
+          - <<: *TITLE
+            default: Dokumenty
+          - label: Lista dokumentów
+            name: documentsList
+            widget: relation
+            collection: documents
+            value_field: "{{slug}}"
+            search_fields: [title]
+            display_fields: [title]
+            multiple: true
+            i18n: duplicate
+            required: false
+
+  - name: productElements
+    label: Elementy systemów
+    label_singular: Element
+    folder: src/content/product-elements
+    create: true
+    i18n: true
+    extension: json
+    format: json
+    fields:
+      - label: Kategoria elementu
+        name: category
+        widget: select
+        options: [Rury, Kształtki, Pipes, Fittings]
+        i18n: true
+      - label: Typ elementu
+        name: type
+        widget: string
+        hint: Podaj w przypadku kształtki (np. Czwórnik, Czwórnik dwupłaszczyznowy, Korek, Kolano, Kominek wywiewny, Mufa, Mufa przesuwna, Napowietrzacz, Redukcja, Rewizja, Trójnik, Wywiewka, Połączenie żeliwo-PCW, Double branch, Double corner branch, Plug, Bend, Ventilation pipe, Muff, Sliding muff, Aerator, Reducer, Access pipe, Branch, Ventilation, Connector to cast iron pipes)
+        i18n: true
+        required: false
+      - <<: *TITLE
+        label: Pełna nazwa
+        hint: Nazwa produktu widoczna w katalogu produktów (np. Kolano kanalizacji wewnętrznej PP, Rury drenarskie w otulinie typu typar (DuPont®))
+      - <<: *DESCRIPTION
+        hint: Krótki opis produktu
+      - <<: *IMAGE
+        label: Zdjęcie elementu
+        required: false
+      - <<: *IMAGE
+        label: Rysunek techniczny
+        name: section
+        required: false
+      - label: Tabela wymiarów
+        name: table
+        widget: text
+        hint: W pierwszej linijce zamieść nagłówki rozdzielone przecinkiem (np. Kod produktu, Kolor, DN, L, s1, karton). W drugiej linijce zamieść ewentualne jednostki (np. ,,(mm),(mm),(mm),(szt.)). Uwzlędnij pola, dla których nie występują jednostki - jeśli zadna z kolumn nie wymaga podania jednostki, zostaw drugą liniję pustą. W kolejnych liniach zamieść kolejne rzędy tabeli (np. RK-032-018-0250, biały, 32, 250, 1.8, 40)
+        i18n: true
+
+  - name: documentCategories
+    label: Kategorie dokumentów
+    label_singular: Kategoria dokumentu
+    description: Katalog dostępnych kategorii dokumentów - każda kategoria może stworzyć zakładkę dokumentów na stronie Dokumenty
+    folder: src/content/document-categories
+    create: true
+    i18n: true
+    extension: json
+    format: json
+    fields:
+      - label: Nazwa kategorii
+        name: title
+        widget: string
+        hint: np. Produkty (dokument dotyczący produktów), Cenniki, KDWU, Normy
+        i18n: true
+
+  - name: documents
+    label: Dokumenty
+    label_singular: Dokument
+    description: Katalog dokumentów widocznych na stronie Dokumenty i na podstronach produktów
+    folder: src/content/documents
+    create: true
+    i18n: true
+    extension: json
+    format: json
+    view_filters:
+      - label: "Produkty"
+        field: category
+        pattern: "Produkty"
+      - label: "KDWU"
+        field: category
+        pattern: "KDWU"
+    fields:
+      - label: Tytuł dokumentu
+        name: title
+        widget: string
+        hint: (np. KDZ 05/2017 Rura PCW SN-2 do kanalizacji bezciśnieniowej z rdzeniem spienionym)
+        i18n: true
+      - label: Data wydania
+        name: date
+        widget: datetime
+        hint: Data wydania dokumentu
+        i18n: duplicate
+        date_format: DD.MM.YYYY
+        required: false
+      - label: Plik
+        name: url
+        widget: file
+        media_folder: /src/assets/documents
+        i18n: duplicate
+      - label: Tekst przycisku pobierania dokumentu
+        name: buttonText
+        widget: string
+        i18n: true
+        default: Pobierz
+      - label: Kategoria
+        name: category
+        widget: relation
+        collection: documentCategories
+        value_field: "{{slug}}"
+        search_fields: [title]
+        display_fields: [title]
+        multiple: true
+        i18n: duplicate
+        required: false
+        hint: Lista kategorii, do których przypisany jest dany dokument
+
+  - name: distributors
+    label: Dystrybutorzy
+    label_singular: Dystrybutor
+    description: Katalog dystrybutorów widocznych na stronie Kontakt
+    identifier_field: name
+    folder: src/content/distributors
+    create: true
+    i18n: false
+    extension: json
+    format: json
+    view_filters:
+      - { label: Dolnośląskie, field: address.region, pattern: Dolnośląskie }
+      - {
+          label: Kujawsko-pomorskie,
+          field: address.region,
+          pattern: Kujawsko-pomorskie,
+        }
+      - { label: Lubelskie, field: address.region, pattern: Lubelskie }
+      - { label: Lubuskie, field: address.region, pattern: Lubuskie }
+      - { label: Łódzkie, field: address.region, pattern: Łódzkie }
+      - { label: Małopolskie, field: address.region, pattern: Małopolskie }
+      - { label: Mazowieckie, field: address.region, pattern: Mazowieckie }
+      - { label: Opolskie, field: address.region, pattern: Opolskie }
+      - { label: Podkarpackie, field: address.region, pattern: Podkarpackie }
+      - { label: Podlaskie, field: address.region, pattern: Podlaskie }
+      - { label: Pomorskie, field: address.region, pattern: Pomorskie }
+      - { label: Śląskie, field: address.region, pattern: Śląskie }
+      - {
+          label: Świętokrzyskie,
+          field: address.region,
+          pattern: Świętokrzyskie,
+        }
+      - {
+          label: Warmińsko-mazurskie,
+          field: address.region,
+          pattern: Warmińsko-mazurskie,
+        }
+      - { label: Wielkopolskie, field: address.region, pattern: Wielkopolskie }
+      - {
+          label: Zachodniopomorskie,
+          field: address.region,
+          pattern: Zachodniopomorskie,
+        }
+    fields:
+      - label: Nazwa
+        name: name
+        widget: string
+        hint: Nazwa dystrybutora (nazwa firmy)
+      - *ADDRESS
+      - *CONTACT
+
+  - name: employees
+    label: Pracownicy
+    label_singular: Pracownik
+    description: Katalog pracowników widocznych na stronach O firmie i Kontakt
+    identifier_field: name
+    folder: src/content/employees
+    create: true
+    i18n: true
+    extension: json
+    format: json
+    fields:
+      - label: Imię i nazwisko
+        name: name
+        widget: string
+        i18n: duplicate
+      - label: Stanowisko
+        name: position
+        widget: string
+        hint: Stanowisko pracownika wyświetlone pod zdjęciem
+        i18n: true
+      - <<: *IMAGE
+        label: Zdjęcie pracownika
+        required: false
+      - *CONTACT
+
+  - name: departaments
+    label: Działy pracownicze
+    label_singular: Dział
+    description: Działy pracownicze do wyświetlania na stronie Kontakt
+    folder: src/content/departaments
+    create: true
+    i18n: true
+    extension: json
+    format: json
+    fields:
+      - label: Nazwa działu
+        name: title
+        widget: string
+        hint: (np. Dział handlowy, Księgowość, Zaopatrzenie)
+        i18n: true
+      - label: Lista pracowników
+        name: employeesList
+        widget: relation
+        hint: Lista pracowników, którzy mają zostać wyświetleni na stronie Kontakt
+        collection: employees
+        value_field: "{{slug}}"
+        search_fields: [name, position]
+        display_fields: [name]
+        multiple: true
+        i18n: duplicate
+        required: false
+
+  - name: milestones
+    label: Kamienie milowe
+    label_singular: Kamień milowy
+    description: Katalog kamieni milowych do wyświetlenia na stronie O firmie w sekcji Historia firmy
+    folder: src/content/milestones
+    create: true
+    i18n: true
+    extension: json
+    format: json
+    sortable_fields: [year, title]
+    fields:
+      - label: Tytuł kamienia milowego
+        name: title
+        widget: string
+        hint: Ważne wydarzenie w historii firmy
+        i18n: true
+      - label: Rok
+        name: year
+        widget: number
+        value_type: int
+        min: 1990
+        max: 2030
+        hint: Rok wydarzenia
+        i18n: duplicate
+      - label: Opis
+        name: description
+        widget: text
+        hint: Krótki opis wydarzenia
+        i18n: true
+
+  - name: regions
+    label: Województwa
+    label_singular: Województwo
+    folder: src/content/regions
+    create: true
+    extension: json
+    format: json
+    i18n: true
+    fields:
+      - label: Nazwa województwa
+        name: title
+        widget: string
+        i18n: true
+
+  - name: data
+    label: Dane dodatkowe
+    description: Dodatkowe dane wykorzystywane na stronie
+    files:
+      - label: Drewplast - dane kontaktowe
+        name: drewplast
+        file: src/content/data/drewplast.json
+        extension: json
+        format: json
+        fields:
+          - label: Nazwa firmy
+            name: name
+            widget: string
+          - label: Pełna nazwa firmy
+            name: fullName
+            widget: string
+          - <<: *ADDRESS
+          - <<: *CONTACT
+          - label: NIP
+            name: nip
+            widget: string
+            pattern:
+              [
+                "^[0-9]{10}$",
+                "NIP powinien zawierać 10 cyfr w formacie XXXXXXXXXX",
+              ]
+          - label: KRS
+            name: krs
+            widget: string
+            pattern:
+              [
+                "^[0-9]{10}$",
+                "KRS powinien zawierać 10 cyfr w formacie XXXXXXXXXX",
+              ]
+          - label: REGON
+            name: regon
+            widget: string
+            pattern:
+              [
+                "^[0-9]{9}$",
+                "REGON powinien zawierać 9 cyfr w formacie XXXXXXXXX",
+              ]
+      - label: Linki
+        name: links
+        file: src/content/data/links.json
+        extension: json
+        format: json
+        fields:
+          - <<: *PAGE_RELATION
+            label: Linki menu nawigacyjnego
+            hint: Lista linków widocznych w górnym menu nawigacyjnym strony. Kolejność wyświetlanych linków jest zgodna z kolejnością dodania linków do listy.
+            name: navbar
+            multiple: true
+          - <<: *PAGE_RELATION
+            label: Linki w stopce
+            hint: Lista linków widocznych w stopce strony. Kolejność wyświetlanych linków jest zgodna z kolejnością dodania linków do listy.
+            name: footer
+            multiple: true
+
+  - name: translations
+    label: Tłumaczenia
+    i18n:
+      structure: single_file
+      locales: [pl, en]
+    description: Dodatkowe dane wykorzystywane na stronach
+    files:
+      - label: Elementy UI
+        name: ui
+        file: src/content/translations/ui.json
+        extension: json
+        format: json
+        i18n: true
+        fields:
+          - label: Krótki opis firmy
+            name: aboutCompany
+            widget: text
+            i18n: true
+          - label: Nagłówek tabeli z dokumentami
+            name: documentsTableHeadings
+            widget: string
+            hint: Wprowadź nagłówki kolejnych kolumn rozdzielone przecinkami (np. Nazwa,Opis,Data)
+            i18n: true
+          - label: Nagłówki danych kontaktowych
+            hint: Nagłówki danych kontaktowych widoczne na stronie "O firmie"
+            name: contactHeadings
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - label: Adres
+                name: address
+                widget: string
+                i18n: true
+              - label: Numer telefonu
+                name: phone
+                widget: string
+                i18n: true
+              - label: Adres e-mail
+                name: email
+                widget: string
+                i18n: true
+          - label: Komunikat braku dystrybutorów
+            hint: Komunikat, jaki ma zostać wyświetlony jeśli w wybranym regionie nie ma dostępnych dystrybutorów
+            name: distributorsError
+            widget: string
+            i18n: true
+          - label: Komunikat braku dokumentów
+            hint: Komunikat, jaki ma zostać wyświetlony jeśli nie ma dostępnych dokumentów z danej kategorii
+            name: documentsError
+            widget: string
+            i18n: true
