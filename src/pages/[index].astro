@@ -1,0 +1,24 @@
+---
+import { defaultLocale, locales } from "@i18n/ui";
+import { getPageData } from "@lib/data";
+
+import MainLayout from "@layouts/MainLayout.astro";
+import Homepage from "@layouts/Homepage.astro";
+
+export async function getStaticPaths() {
+  const data = await getPageData("strona-glowna");
+
+  return locales
+    .filter((locale) => locale !== defaultLocale)
+    .map((lang) => ({
+      params: { index: lang },
+      props: { data: data[lang] },
+    }));
+}
+
+const { data } = Astro.props;
+---
+
+<MainLayout seo={data.seo}>
+  <Homepage data={data} />
+</MainLayout>

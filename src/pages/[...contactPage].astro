@@ -1,0 +1,27 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { getPageData } from "@lib/data";
+import { locales } from "@i18n/ui";
+
+import MainLayout from "@layouts/MainLayout.astro";
+
+export async function getStaticPaths() {
+  const data = await getPageData("kontakt");
+
+  return locales.map((locale) => ({
+    params: {
+      contactPage: getRelativeLocaleUrl(locale, data[locale].seo.slug),
+    },
+    props: {
+      seo: data[locale].seo,
+      sectionHeader: data[locale].sectionHeader,
+      image: data[locale].image,
+      sectionDistributors: data[locale].sectionDistributors,
+    },
+  }));
+}
+
+const { seo, sectionHeader, image, sectionDistributors } = Astro.props;
+---
+
+<MainLayout seo={seo} />

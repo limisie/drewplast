@@ -1,3 +1,12 @@
 ---
+import { getPageData } from "@lib/data";
 
+import MainLayout from "@layouts/MainLayout.astro";
+import Homepage from "@layouts/Homepage.astro";
+
+const { pl: data } = await getPageData("strona-glowna");
 ---
+
+<MainLayout seo={data.seo}>
+  <Homepage data={data} />
+</MainLayout>

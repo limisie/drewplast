@@ -1,0 +1,50 @@
+---
+import { getEntry } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { getLocalizedDataByEntry, getLocalizedLinks } from "@lib/data";
+import { defaultLocale } from "@i18n/ui";
+
+const { data: drewplastData } = await getEntry("data", "drewplast");
+const locale = Astro.currentLocale || defaultLocale;
+
+const links = await getLocalizedLinks("footer", locale);
+const privacyPageData = await getLocalizedDataByEntry(
+  { collection: "pages", id: "polityka-prywatnosci" },
+  locale
+);
+const { aboutCompany } = await getLocalizedDataByEntry(
+  { id: "ui", collection: "translations" },
+  locale
+);
+---
+
+<footer>
+  <div>
+    <p>//TODO LOGO</p>
+    <p>{aboutCompany}</p>
+  </div>
+  <ul>
+    {
+      links.map((link) => (
+        <li>
+          <a href={getRelativeLocaleUrl(locale, link.url.trim())}>
+            {link.text}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <div>
+    <p>{drewplastData.name}</p>
+    <p>{drewplastData.address.street}</p>
+    <p>{drewplastData.address.postalCode} {drewplastData.address.city}</p>
+    <p>//TODO ICON {drewplastData.contact.phone}</p>
+    <p>//TODO ICON {drewplastData.contact.email}</p>
+  </div>
+</footer>
+<div>
+  <p>© Copyright 2024 Drewplast Sp. z o.o.</p>
+  <a href={getRelativeLocaleUrl(locale, privacyPageData.seo.slug)}
+    >{privacyPageData.title}</a
+  >
+</div>

@@ -1,0 +1,39 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { locales } from "@i18n/ui";
+import { getPagesData } from "@lib/data";
+
+import MainLayout from "@layouts/MainLayout.astro";
+
+export async function getStaticPaths() {
+  const data = await getPagesData("products");
+
+  return data.flatMap((product) =>
+    locales.map((locale) => ({
+      params: {
+        product: getRelativeLocaleUrl(locale, product[locale].seo.slug),
+      },
+      props: {
+        seo: product[locale].seo,
+        title: product[locale].title,
+        sectionHeader: product[locale].sectionHeader,
+        sectionElements: product[locale].sectionElements,
+        sectionDocuments: product[locale].sectionDocuments,
+        sectionDescription: product[locale].sectionDescription,
+        sectionGallery: product[locale].sectionGallery,
+      },
+    }))
+  );
+}
+
+const {
+  seo,
+  sectionHeader,
+  sectionDescription,
+  sectionElements,
+  sectionGallery,
+  sectionDocuments,
+} = Astro.props;
+---
+
+<MainLayout seo={seo} />

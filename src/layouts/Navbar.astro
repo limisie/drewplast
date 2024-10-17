@@ -1,0 +1,21 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { getLocalizedLinks } from "@lib/data";
+import { defaultLocale } from "@i18n/ui";
+
+const lang = Astro.currentLocale || defaultLocale;
+const links = await getLocalizedLinks("navbar", lang);
+---
+
+<div>
+  <div>//TODO LOGO</div>
+  <ul>
+    {
+      links.map((link) => (
+        <li>
+          <a href={getRelativeLocaleUrl(lang, link.url)}>{link.text}</a>
+        </li>
+      ))
+    }
+  </ul>
+</div>

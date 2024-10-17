@@ -1,0 +1,26 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { getPageData } from "@lib/data";
+import { locales } from "@i18n/ui";
+
+import MainLayout from "@layouts/MainLayout.astro";
+
+export async function getStaticPaths() {
+  const data = await getPageData("polityka-prywatnosci");
+
+  return locales.map((locale) => ({
+    params: {
+      privacyPolicyPage: getRelativeLocaleUrl(locale, data[locale].seo.slug),
+    },
+    props: {
+      seo: data[locale].seo,
+      sectionHeader: data[locale].sectionHeader,
+      content: data[locale].content,
+    },
+  }));
+}
+
+const { seo, sectionHeader, content } = Astro.props;
+---
+
+<MainLayout seo={seo} />

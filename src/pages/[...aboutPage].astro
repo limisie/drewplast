@@ -1,0 +1,36 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { locales } from "@i18n/ui";
+import { getPageData } from "@lib/data";
+
+import MainLayout from "@layouts/MainLayout.astro";
+
+export async function getStaticPaths() {
+  const data = await getPageData("o-firmie");
+
+  return locales.map((locale) => ({
+    params: {
+      aboutPage: getRelativeLocaleUrl(locale, data[locale].seo.slug),
+    },
+    props: {
+      seo: data[locale].seo,
+      sectionHeader: data[locale].sectionHeader,
+      sectionDescription: data[locale].sectionDescription,
+      sectionEmployees: data[locale].sectionEmployees,
+      sectionHistory: data[locale].sectionHistory,
+      sectionSustainable: data[locale].sectionSustainable,
+    },
+  }));
+}
+
+const {
+  seo,
+  sectionHeader,
+  sectionDescription,
+  sectionEmployees,
+  sectionHistory,
+  sectionSustainable,
+} = Astro.props;
+---
+
+<MainLayout seo={seo} />
