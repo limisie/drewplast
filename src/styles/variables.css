@@ -1,0 +1,52 @@
+:root {
+  --spacer: 1rem;
+  --container-width: 65rem;
+  --section-padding: 0;
+  --nav-height: 3rem;
+  --background-surface-height: 90vw;
+
+  --ff-dm-sans: "DM Sans", sans-serif;
+  --ff-poppins: "Poppins", sans-serif;
+
+  --fs-xxl: 3rem;
+  --fs-xl: 2.5rem;
+  --fs-l: 1.5rem;
+  --fs-m: 1.125rem;
+  --fs-s: 1rem;
+  --fs-xs: 0.875rem;
+
+  --fw-lextra-light: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  --blue: hsl(224, 100, 52);
+  --dark-blue: hsl(213, 68, 16);
+  --orange: hsl(19, 75, 43);
+  --yellow: hsl(45, 89, 49);
+  --white: hsl(0, 0, 99);
+  --light-grey: hsl(210, 7, 95);
+  --grey: hsl(0, 0, 85);
+  --dark-grey: hsl(0, 0, 52);
+  --black: hsl(0, 0, 12);
+
+  color-scheme: light;
+  --clr-background: var(--white);
+  --clr-background-light: var(--dark-blue);
+  --clr-background-dark: var(--light-grey);
+  --clr-text: var(--black);
+  --clr-primary: var(--blue);
+  --clr-variation: -5%;
+
+  --box-shadow: 0 0.1rem 0.25rem hsla(var(--black), 0.05);
+}
+
+@media (min-width: 40rem) {
+  :root {
+    --spacer: 2rem;
+    --section-padding: 5rem;
+
+    --fs-xxl: 4.5rem;
+  }
+}

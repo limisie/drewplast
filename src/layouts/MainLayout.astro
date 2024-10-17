@@ -1,18 +1,13 @@
 ---
-import Footer from "@layouts/Footer.astro";
+import Head from "@layouts/Head.astro";
 import Navbar from "@layouts/Navbar.astro";
+import Footer from "@layouts/Footer.astro";
 
 const { seo } = Astro.props;
 ---
 
 <html lang={Astro.currentLocale}>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{seo.metaTitle}</title>
-  </head>
+  <Head seo={seo} />
   <body>
     <Navbar />
     <main>
