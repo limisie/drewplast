@@ -1,0 +1,18 @@
+---
+const { featuresList } = Astro.props;
+---
+
+<ul>
+  {
+    featuresList.map((feature) =>
+      typeof feature === "string" ? (
+        <li>//TODO ICON {feature}</li>
+      ) : (
+        <li>
+          <span>{feature.title}</span>
+          <p>{feature.description}</p>
+        </li>
+      )
+    )
+  }
+</ul>

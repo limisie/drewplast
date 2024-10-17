@@ -1,0 +1,14 @@
+---
+const { headingsList } = Astro.props;
+---
+
+<table>
+  <thead>
+    <tr>
+      {headingsList.map((heading) => <th>{heading}</th>)}
+    </tr>
+  </thead>
+  <tbody>
+    <slot />
+  </tbody>
+</table>

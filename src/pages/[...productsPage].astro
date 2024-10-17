@@ -4,6 +4,8 @@ import { locales } from "@i18n/ui";
 import { getPageData } from "@lib/data";
 
 import MainLayout from "@layouts/MainLayout.astro";
+import ProductsList from "@components/ProductsList.astro";
+import SectionHeader from "@components/SectionHeader.astro";
 
 export async function getStaticPaths() {
   const data = await getPageData("produkty");
@@ -22,4 +24,12 @@ export async function getStaticPaths() {
 const { seo, sectionHeader } = Astro.props;
 ---
 
-<MainLayout seo={seo} />
+<MainLayout seo={seo}>
+  <SectionHeader
+    title={sectionHeader.title}
+    description={sectionHeader.description}
+    eyebrow={sectionHeader.eyebrow}
+  >
+    <ProductsList />
+  </SectionHeader>
+</MainLayout>

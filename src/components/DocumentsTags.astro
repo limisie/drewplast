@@ -1,0 +1,27 @@
+---
+import { defaultLocale } from "@i18n/ui";
+import {
+  filterDocumentsByCategory,
+  getFilteredReferences,
+  getLocalizedDataByEntries,
+  getLocalizedDataByEntry,
+} from "@lib/data";
+import TagLogic from "@components/TagLogic.astro";
+import DocumentsTable from "./DocumentsTable.astro";
+
+const { categoriesList } = Astro.props;
+const locale = Astro.currentLocale || defaultLocale;
+
+const activeCategory = categoriesList[0];
+const categoriesData = await getLocalizedDataByEntries(categoriesList, locale);
+const documents = await getFilteredReferences(
+  "documents",
+  filterDocumentsByCategory,
+  activeCategory.id,
+  locale
+);
+---
+
+<TagLogic tagList={categoriesData.map((category) => category.title)}>
+  <DocumentsTable documents={documents} />
+</TagLogic>

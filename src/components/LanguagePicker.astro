@@ -1,0 +1,18 @@
+---
+import { getCurrentUrl, getLocalizedUrlList } from "@i18n/urls";
+import { defaultLocale, languages, locales } from "@i18n/ui";
+
+const locale = Astro.currentLocale || defaultLocale;
+const currentPath = getCurrentUrl(Astro.params);
+const relativeLocalePaths = getLocalizedUrlList(locale, currentPath);
+---
+
+<ul>
+  {
+    locales.map((locale) => (
+      <li>
+        <a href={relativeLocalePaths[locale]}>{languages[locale]}</a>
+      </li>
+    ))
+  }
+</ul>

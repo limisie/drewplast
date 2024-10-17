@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+import { getDynamicImageData } from "@lib/imageImport";
+import { defaultLocale, productsElements } from "@i18n/ui";
+
+import ElementTable from "@components/ElementTable.astro";
+
+const {
+  element: { image, section, category, title, table },
+} = Astro.props;
+const locale = Astro.currentLocale || defaultLocale;
+const imageData = image && (await getDynamicImageData(image, locale));
+const sectionData = section && (await getDynamicImageData(section, locale));
+---
+
+<div>
+  {productsElements.fittings.includes(category) && <h3>{title}</h3>}
+  <div>
+    {
+      imageData && (
+        <figure>
+          <Image src={imageData.import()} alt={imageData.alt} />
+          <figcaption>{imageData.caption}</figcaption>
+        </figure>
+      )
+    }
+    {
+      sectionData && (
+        <figure>
+          <Image src={sectionData.import()} alt={sectionData.alt} />
+          <figcaption>{sectionData.caption}</figcaption>
+        </figure>
+      )
+    }
+  </div>
+  <ElementTable table={table} />
+</div>

@@ -1,0 +1,24 @@
+---
+import { getLocalizedDataByEntry } from "@lib/data";
+import { defaultLocale } from "@i18n/ui";
+
+import SectionGeneric from "@components/SectionGeneric.astro";
+import Element from "@components/Element.astro";
+
+const { pipesList } = Astro.props;
+const locale = Astro.currentLocale || defaultLocale;
+
+const pipesData = await Promise.all(
+  pipesList.map(
+    async (item) => await getLocalizedDataByEntry(item.pipe, locale)
+  )
+);
+---
+
+{
+  pipesData.map((pipe) => (
+    <SectionGeneric title={pipe.title}>
+      <Element element={pipe} />
+    </SectionGeneric>
+  ))
+}

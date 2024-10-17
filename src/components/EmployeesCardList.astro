@@ -1,0 +1,22 @@
+---
+import { getLocalizedDataByEntries } from "@lib/data";
+import { defaultLocale } from "@i18n/ui";
+import Card from "@components/Card.astro";
+
+const { employeesList } = Astro.props;
+
+const locale = Astro.currentLocale || defaultLocale;
+const employeesData = await getLocalizedDataByEntries(employeesList, locale);
+---
+
+<ul>
+  {
+    employeesData.map((employee) => (
+      <Card
+        title={employee.name}
+        description={employee.position}
+        image={employee.image}
+      />
+    ))
+  }
+</ul>

@@ -1,0 +1,28 @@
+---
+import { defaultLocale } from "@i18n/ui";
+import { getLocalizedDataByEntries, getLocalizedDataByEntry } from "@lib/data";
+
+import Table from "@components/Table.astro";
+import DocumentTableRows from "@components/DocumentTableRows.astro";
+
+const { documents } = Astro.props;
+const locale = Astro.currentLocale || defaultLocale;
+
+const documentsData = await getLocalizedDataByEntries(documents, locale);
+const { documentsTableHeadings, documentsError } =
+  await getLocalizedDataByEntry(
+    { id: "ui", collection: "translations" },
+    locale
+  );
+const tableHeadings = documentsTableHeadings.split(",");
+---
+
+<Table headingsList={tableHeadings}>
+  {
+    documentsData.length ? (
+      <DocumentTableRows rows={documentsData} />
+    ) : (
+      <p>{documentsError}</p>
+    )
+  }
+</Table>

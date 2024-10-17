@@ -1,0 +1,21 @@
+---
+import { getLocalizedCollectionData } from "@lib/data";
+import { defaultLocale } from "@i18n/ui";
+
+import Card from "@components/Card.astro";
+
+const locale = Astro.currentLocale || defaultLocale;
+const productsData = await getLocalizedCollectionData("products", locale);
+---
+
+<ul>
+  {
+    productsData.map((product) => (
+      <Card
+        title={product.title}
+        image={product.image}
+        url={product.seo.slug}
+      />
+    ))
+  }
+</ul>

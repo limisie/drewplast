@@ -1,0 +1,13 @@
+---
+import { defaultLocale } from "@i18n/ui";
+import { getLocalizedCollectionData } from "@lib/data";
+import ProductsListItem from "@components/ProductsListItem.astro";
+
+const locale = Astro.currentLocale || defaultLocale;
+
+const products = await getLocalizedCollectionData("products", locale);
+---
+
+<ul>
+  {products.map((product) => <ProductsListItem product={product} />)}
+</ul>

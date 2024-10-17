@@ -1,0 +1,14 @@
+---
+import Tag from "@components/Tag.astro";
+
+const { tagList } = Astro.props;
+---
+
+<div>
+  <div>
+    {tagList.map((tag) => <Tag tag={tag} />)}
+  </div>
+  <div>
+    <slot />
+  </div>
+</div>

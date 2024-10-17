@@ -4,6 +4,12 @@ import { locales } from "@i18n/ui";
 import { getPageData } from "@lib/data";
 
 import MainLayout from "@layouts/MainLayout.astro";
+import EmployeesCardList from "@components/EmployeesCardList.astro";
+import FeaturesList from "@components/FeaturesList.astro";
+import ImageBanner from "@components/ImageBanner.astro";
+import MilestonesTags from "@components/MilestonesTags.astro";
+import SectionGeneric from "@components/SectionGeneric.astro";
+import SectionHeader from "@components/SectionHeader.astro";
 
 export async function getStaticPaths() {
   const data = await getPageData("o-firmie");
@@ -33,4 +39,30 @@ const {
 } = Astro.props;
 ---
 
-<MainLayout seo={seo} />
+<MainLayout seo={seo}>
+  <SectionHeader
+    title={sectionHeader.title}
+    description={sectionHeader.description}
+    eyebrow={sectionHeader.eyebrow}
+  >
+    <ImageBanner image={sectionHeader.image} />
+  </SectionHeader>
+
+  <SectionGeneric
+    title={sectionDescription.title}
+    description={sectionDescription.description}
+  />
+
+  <SectionGeneric title={sectionEmployees.title}>
+    <EmployeesCardList employeesList={sectionEmployees.employeesList} />
+  </SectionGeneric>
+
+  <SectionGeneric title={sectionHistory.title}>
+    <MilestonesTags milestonesList={sectionHistory.milestonesList} />
+  </SectionGeneric>
+
+  <SectionGeneric title={sectionSustainable.title}>
+    <ImageBanner image={sectionSustainable.image} />
+    <FeaturesList featuresList={sectionSustainable.featuresList} />
+  </SectionGeneric>
+</MainLayout>

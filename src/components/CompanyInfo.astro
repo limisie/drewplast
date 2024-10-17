@@ -1,0 +1,49 @@
+---
+import { getEntry } from "astro:content";
+import { getLocalizedDataByEntry } from "@lib/data";
+import { defaultLocale } from "@i18n/ui";
+
+const locale = Astro.currentLocale || defaultLocale;
+
+const { data: drewplastData } = await getEntry("data", "drewplast");
+const region = await getLocalizedDataByEntry(
+  drewplastData.address.region,
+  locale
+);
+
+const { contactHeadings } = await getLocalizedDataByEntry(
+  { id: "ui", collection: "translations" },
+  locale
+);
+---
+
+<div>
+  <div>
+    <span>{contactHeadings.address}</span>
+    <p>{drewplastData.address.street}</p>
+    <p>{drewplastData.address.postalCode} {drewplastData.address.city}</p>
+    <p>{region.title}</p>
+  </div>
+  <div>
+    <div>
+      <span>NIP</span>
+      <p>{drewplastData.nip}</p>
+    </div>
+    <div>
+      <span>KRS</span>
+      <p>{drewplastData.krs}</p>
+    </div>
+    <div>
+      <span>REGON</span>
+      <p>{drewplastData.regon}</p>
+    </div>
+  </div>
+  <div>
+    <span>{contactHeadings.phone}</span>
+    <p>{drewplastData.contact.phone}</p>
+  </div>
+  <div>
+    <span>{contactHeadings.email}</span>
+    <p>{drewplastData.contact.email}</p>
+  </div>
+</div>

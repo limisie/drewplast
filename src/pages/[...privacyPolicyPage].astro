@@ -2,8 +2,10 @@
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { getPageData } from "@lib/data";
 import { locales } from "@i18n/ui";
+import { marked } from "marked";
 
 import MainLayout from "@layouts/MainLayout.astro";
+import SectionHeader from "@components/SectionHeader.astro";
 
 export async function getStaticPaths() {
   const data = await getPageData("polityka-prywatnosci");
@@ -21,6 +23,11 @@ export async function getStaticPaths() {
 }
 
 const { seo, sectionHeader, content } = Astro.props;
+const parsedMarkdown = marked(content);
 ---
 
-<MainLayout seo={seo} />
+<MainLayout seo={seo}>
+  <SectionHeader title={sectionHeader.title} eyebrow={sectionHeader.eyebrow}>
+    <div set:html={parsedMarkdown} />
+  </SectionHeader>
+</MainLayout>

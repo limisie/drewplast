@@ -1,4 +1,10 @@
 ---
+import SectionHero from "@components/SectionHero.astro";
+import SectionGeneric from "@components/SectionGeneric.astro";
+import FeaturesList from "@components/FeaturesList.astro";
+import ImageBanner from "@components/ImageBanner.astro";
+import ProductsCardList from "@components/ProductsCardList.astro";
+
 const {
   data: {
     sectionHero,
@@ -10,3 +16,34 @@ const {
   },
 } = Astro.props;
 ---
+
+<SectionHero data={sectionHero} />
+
+<SectionGeneric
+  title={sectionDescription.title}
+  description={sectionDescription.description}
+>
+  <FeaturesList featuresList={sectionDescription.featuresList} />
+</SectionGeneric>
+
+<SectionGeneric
+  title={sectionProducts.title}
+  description={sectionProducts.description}
+  pageLink={sectionProducts.pageLink}
+>
+  <ProductsCardList />
+</SectionGeneric>
+
+<SectionGeneric
+  title={sectionSustainable.title}
+  description={sectionSustainable.description}
+  image={sectionSustainable.image}
+/>
+
+<SectionGeneric
+  title={sectionDistributors.title}
+  description={sectionDistributors.description}
+  pageLink={sectionDistributors.pageLink}
+/>
+
+<ImageBanner image={image} />

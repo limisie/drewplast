@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { getDynamicImageData } from "@lib/imageImport";
+import { defaultLocale } from "@i18n/ui";
+
+const {
+  product: { sectionHeader, seo, buttonText },
+} = Astro.props;
+const locale = Astro.currentLocale || defaultLocale;
+
+const imageData = await getDynamicImageData(sectionHeader.image, locale);
+---
+
+<li>
+  <a href={getRelativeLocaleUrl(locale, seo.slug)}>
+    <h2>{sectionHeader.title}</h2>
+    <p>{sectionHeader.description}</p>
+    <Image src={imageData.import()} alt={imageData.alt} />
+    <span>{buttonText}</span></a
+  >
+</li>

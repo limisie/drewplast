@@ -4,6 +4,15 @@ import { locales } from "@i18n/ui";
 import { getPagesData } from "@lib/data";
 
 import MainLayout from "@layouts/MainLayout.astro";
+import DocumentsTable from "@components/DocumentsTable.astro";
+import ElementsList from "@components/ElementsList.astro";
+import FeaturesList from "@components/FeaturesList.astro";
+import FittingsTags from "@components/FittingsTags.astro";
+import ImageBanner from "@components/ImageBanner.astro";
+import ImageGallery from "@components/ImageGallery.astro";
+import SectionGeneric from "@components/SectionGeneric.astro";
+import SectionHeader from "@components/SectionHeader.astro";
+import SectionPipes from "@components/SectionPipes.astro";
 
 export async function getStaticPaths() {
   const data = await getPagesData("products");
@@ -36,4 +45,41 @@ const {
 } = Astro.props;
 ---
 
-<MainLayout seo={seo} />
+<MainLayout seo={seo}>
+  <SectionHeader
+    title={sectionHeader.title}
+    eyebrow={sectionHeader.eyebrow}
+    description={sectionHeader.description}
+  >
+    <FeaturesList featuresList={sectionHeader.featuresList} />
+    <ImageBanner image={sectionHeader.image} />
+  </SectionHeader>
+
+  <SectionGeneric
+    title={sectionDescription.title}
+    description={sectionDescription.description}
+  >
+    <FeaturesList featuresList={sectionDescription.advantages.split("\n")} />
+  </SectionGeneric>
+
+  <SectionGeneric title={sectionElements.title}>
+    <ElementsList
+      pipesList={sectionElements.pipesList}
+      fittingsList={sectionElements.fittingsList}
+    />
+  </SectionGeneric>
+
+  <SectionPipes pipesList={sectionElements.pipesList} />
+
+  <SectionGeneric title={sectionElements.fittingsList.title}>
+    <FittingsTags fittingsList={sectionElements.fittingsList} />
+  </SectionGeneric>
+
+  <SectionGeneric title={sectionGallery.title}>
+    <ImageGallery imagesList={sectionGallery.imagesList} />
+  </SectionGeneric>
+
+  <SectionGeneric title={sectionDocuments.title}>
+    <DocumentsTable documents={sectionDocuments.documentsList} />
+  </SectionGeneric>
+</MainLayout>

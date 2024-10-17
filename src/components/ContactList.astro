@@ -1,0 +1,9 @@
+---
+import ContactListItem from "@components/ContactListItem.astro";
+
+const { dataList } = Astro.props;
+---
+
+<ul>
+  {dataList.map((item) => <ContactListItem item={item} />)}
+</ul>

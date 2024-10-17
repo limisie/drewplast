@@ -1,0 +1,42 @@
+---
+import {
+  getFilteredReferences,
+  filterDistributorsByRegion,
+  getLocalizedDataWithId,
+  getLocalizedDataByEntry,
+} from "@lib/data";
+import { defaultLocale } from "@i18n/ui";
+
+import TagLogic from "@components/TagLogic.astro";
+import ContactList from "@components/ContactList.astro";
+
+const locale = Astro.currentLocale || defaultLocale;
+
+const regions = await getLocalizedDataWithId("regions", locale);
+const activeRegion = regions[13];
+
+const distributorsData = (
+  await getFilteredReferences(
+    "distributors",
+    filterDistributorsByRegion,
+    activeRegion.id
+  )
+).map((distributor: { data: {} }) => distributor.data);
+
+const { distributorsError } = await getLocalizedDataByEntry(
+  { id: "ui", collection: "translations" },
+  locale
+);
+---
+
+<div>
+  <TagLogic tagList={regions.map((region) => region.title)}>
+    {
+      distributorsData.length ? (
+        <ContactList dataList={distributorsData} />
+      ) : (
+        <p>{distributorsError}</p>
+      )
+    }
+  </TagLogic>
+</div>

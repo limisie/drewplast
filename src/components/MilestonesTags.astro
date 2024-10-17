@@ -1,0 +1,16 @@
+---
+import { getLocalizedDataByEntries } from "@lib/data";
+import TagLogic from "@components/TagLogic.astro";
+import Milestone from "@components/Milestone.astro";
+
+const { milestonesList } = Astro.props;
+const milestonesData = await getLocalizedDataByEntries(milestonesList, Astro.currentLocale);
+const activeMilestone = milestonesData[0];
+---
+
+<div>
+  <TagLogic tagList={milestonesData.map((milestone) => milestone.year)}>
+    // TODO: client:visible Vue component
+    <Milestone milestone={activeMilestone} />
+  </TagLogic>
+</div>

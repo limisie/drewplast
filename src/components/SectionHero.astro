@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+import { defaultLocale } from "@i18n/ui";
+import { getDynamicImageData } from "@lib/imageImport";
+
+const locale = Astro.currentLocale || defaultLocale;
+const {
+  data: { title, description, phoneButton, emailButton, image, videoButton },
+} = Astro.props;
+
+const imageData = await getDynamicImageData(image, locale);
+---
+
+<section>
+  <h1>{title}</h1>
+  <p>{description}</p>
+  <div>
+    <a href={phoneButton.url}>{phoneButton.text}</a>
+    <a href={emailButton.url}>{emailButton.text}</a>
+  </div>
+  <Image src={imageData.import()} alt={imageData.alt} />
+  <a href={videoButton.url}>{videoButton.text}</a>
+</section>

@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { getDynamicImageData } from "@lib/imageImport";
+import { defaultLocale } from "@i18n/ui";
+
+const { image, title, description, url } = Astro.props;
+const locale = Astro.currentLocale || defaultLocale;
+
+const imageData = await getDynamicImageData(image, locale);
+---
+
+<li>
+  <a
+    href={url ? getRelativeLocaleUrl(locale, url) : "/"}
+    class:list={[{ disabled: !url }]}
+  >
+    <Image src={imageData.import()} alt={imageData.alt} />
+    <h3>{title}</h3>
+    {description && <p>{description}</p>}
+  </a>
+</li>

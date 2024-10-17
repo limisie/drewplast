@@ -4,6 +4,12 @@ import { getPageData } from "@lib/data";
 import { locales } from "@i18n/ui";
 
 import MainLayout from "@layouts/MainLayout.astro";
+import CompanyInfo from "@components/CompanyInfo.astro";
+import DepartamentsList from "@components/DepartamentsList.astro";
+import DistributorsTags from "@components/DistributorsTags.astro";
+import ImageBanner from "@components/ImageBanner.astro";
+import SectionGeneric from "@components/SectionGeneric.astro";
+import SectionHeader from "@components/SectionHeader.astro";
 
 export async function getStaticPaths() {
   const data = await getPageData("kontakt");
@@ -19,9 +25,24 @@ export async function getStaticPaths() {
       sectionDistributors: data[locale].sectionDistributors,
     },
   }));
-}
+};
 
 const { seo, sectionHeader, image, sectionDistributors } = Astro.props;
 ---
 
-<MainLayout seo={seo} />
+<MainLayout seo={seo}>
+  <SectionHeader title={sectionHeader.title} eyebrow={sectionHeader.eyebrow}>
+    <CompanyInfo />
+    //TODO: map
+    <DepartamentsList />
+  </SectionHeader>
+
+  <ImageBanner image={image} />
+
+  <SectionGeneric
+    title={sectionDistributors.title}
+    description={sectionDistributors.description}
+  >
+    <DistributorsTags />
+  </SectionGeneric>
+</MainLayout>

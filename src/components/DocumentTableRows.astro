@@ -1,0 +1,15 @@
+---
+const { rows } = Astro.props;
+---
+
+{
+  rows.map((row) => (
+    <tr>
+      <td>{row.title}</td>
+      <td>{row.date}</td>
+      <td>
+        <a href={row.file}>{row.buttonText}</a>
+      </td>
+    </tr>
+  ))
+}

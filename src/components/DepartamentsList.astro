@@ -1,0 +1,30 @@
+---
+import {
+  getLocalizedCollectionData,
+  getLocalizedDataByEntries,
+} from "@lib/data";
+import { defaultLocale } from "@i18n/ui";
+
+import ContactList from "@components/ContactList.astro";
+
+const locale = Astro.currentLocale || defaultLocale;
+
+const departaments = await getLocalizedCollectionData("departaments", locale);
+const employeesLists = await Promise.all(
+  departaments.map(
+    async (departament) =>
+      await getLocalizedDataByEntries(departament.employeesList, locale)
+  )
+);
+---
+
+<ul>
+  {
+    departaments.map((departament, i) => (
+      <li>
+        <span>{departament.title}</span>
+        <ContactList dataList={employeesLists[i]} />
+      </li>
+    ))
+  }
+</ul>

@@ -1,0 +1,41 @@
+---
+import { getLocalizedDataByEntries, getLocalizedDataByEntry } from "@lib/data";
+import { defaultLocale } from "@i18n/ui";
+
+const { pipesList, fittingsList } = Astro.props;
+
+const locale = Astro.currentLocale || defaultLocale;
+const pipesData = await Promise.all(
+  pipesList.map(async ({ pipe, link }) => ({
+    data: await getLocalizedDataByEntry(pipe, locale),
+    link: link,
+    slug: pipe.id,
+  }))
+);
+const fittingsData =
+  fittingsList.list &&
+  (await getLocalizedDataByEntries(fittingsList.list, locale));
+---
+
+<ul>
+  {
+    pipesData.map(({ data, link, slug }) => (
+      <li>
+        <h3>{data.title}</h3>
+        <p>{data.description}</p>
+        <a href={`#${slug}`}>{link}</a>
+      </li>
+    ))
+  }
+  {
+    fittingsData && (
+      <li>
+        <h3>{fittingsList.title}</h3>
+        {fittingsData.map((fitting) => (
+          <span>{fitting.type}</span>
+        ))}
+        <a href="#fittings">{fittingsList.link}</a>
+      </li>
+    )
+  }
+</ul>

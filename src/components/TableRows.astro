@@ -1,0 +1,13 @@
+---
+const { rows } = Astro.props;
+---
+
+{
+  rows.map((row) => (
+    <tr>
+      {row.map((item) => (
+        <td>{item}</td>
+      ))}
+    </tr>
+  ))
+}

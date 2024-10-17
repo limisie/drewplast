@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+import { getDynamicImageData } from "@lib/imageImport";
+import { defaultLocale } from "@i18n/ui";
+
+const { image, isCaption } = Astro.props;
+const locale = Astro.currentLocale || defaultLocale;
+
+const imageData = await getDynamicImageData(image, locale);
+---
+
+<figure>
+  <Image src={imageData.import()} alt={imageData.alt} />
+  {isCaption && <figcaption>{imageData.caption}</figcaption>}
+</figure>
