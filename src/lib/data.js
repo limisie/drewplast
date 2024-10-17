@@ -1,12 +1,10 @@
 import { getEntries, getEntry, getCollection } from "astro:content";
 import { appendLocalizedUrl } from "@i18n/urls";
 
-export const getPagesData = async (collection, addToPaths = true) => {
+export const getPagesData = async (collection) => {
   const entries = await getCollection(collection);
   const data = entries.map((entry) => {
-    if (addToPaths) {
-      appendLocalizedUrl(entry.id, entry.data);
-    }
+    appendLocalizedUrl(entry.id, entry.data);
     return entry.data;
   });
   return data;

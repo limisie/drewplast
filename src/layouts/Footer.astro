@@ -1,21 +1,24 @@
 ---
 import { getEntry } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import type { DrewplastData, Link, PageLink } from "@lib/types";
 import { getLocalizedDataByEntry, getLocalizedLinks } from "@lib/data";
 import { defaultLocale } from "@i18n/ui";
 
-const { data: drewplastData } = await getEntry("data", "drewplast");
+const { data: drewplastData } = (await getEntry("data", "drewplast")) as {
+  data: DrewplastData;
+};
 const locale = Astro.currentLocale || defaultLocale;
 
-const links = await getLocalizedLinks("footer", locale);
-const privacyPageData = await getLocalizedDataByEntry(
+const links = (await getLocalizedLinks("footer", locale)) as Link[];
+const privacyPageData = (await getLocalizedDataByEntry(
   { collection: "pages", id: "polityka-prywatnosci" },
   locale
-);
-const { aboutCompany } = await getLocalizedDataByEntry(
+)) as PageLink;
+const { aboutCompany } = (await getLocalizedDataByEntry(
   { id: "ui", collection: "translations" },
   locale
-);
+)) as { aboutCompany: string };
 ---
 
 <footer>

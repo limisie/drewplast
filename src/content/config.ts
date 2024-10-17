@@ -1,15 +1,14 @@
 import { z, defineCollection } from "astro:content";
 import { locales } from "@i18n/ui";
-import collectionSchemas from "@lib/schemas";
+import { collectionSchemas } from "@lib/schemas";
 
-const defineLocalizedCollection = (schema) => {
-  return defineCollection({
+const defineLocalizedCollection = (schema) =>
+  defineCollection({
     type: "data",
     schema: z.object(
       locales.reduce((obj, lang) => ({ [lang]: schema, ...obj }), {})
     ),
   });
-};
 
 export const collections = {
   departaments: defineLocalizedCollection(collectionSchemas.departaments),

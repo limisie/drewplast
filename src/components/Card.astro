@@ -3,6 +3,14 @@ import { Image } from "astro:assets";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { getDynamicImageData } from "@lib/imageImport";
 import { defaultLocale } from "@i18n/ui";
+import type { Entry } from "@lib/types";
+
+interface Props {
+  title: string;
+  image: Entry;
+  description?: string;
+  url?: string;
+}
 
 const { image, title, description, url } = Astro.props;
 const locale = Astro.currentLocale || defaultLocale;

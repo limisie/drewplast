@@ -3,7 +3,7 @@ import { getLocalizedDataByEntries } from "@lib/data";
 import { defaultLocale } from "@i18n/ui";
 
 import TagLogic from "@components/TagLogic.astro";
-import Element from "./Element.astro";
+import ElementDetails from "./ElementDetails.astro";
 
 const { fittingsList } = Astro.props;
 const locale = Astro.currentLocale || defaultLocale;
@@ -13,5 +13,5 @@ const activeFitting = fittingsData[0];
 ---
 
 <TagLogic tagList={fittingsData.map((fitting) => fitting.type)}>
-  <Element element={activeFitting} />
+  <ElementDetails element={activeFitting} />
 </TagLogic>

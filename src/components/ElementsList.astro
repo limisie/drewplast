@@ -1,6 +1,7 @@
 ---
 import { getLocalizedDataByEntries, getLocalizedDataByEntry } from "@lib/data";
 import { defaultLocale } from "@i18n/ui";
+import type { Element } from "@lib/types";
 
 const { pipesList, fittingsList } = Astro.props;
 
@@ -31,7 +32,7 @@ const fittingsData =
     fittingsData && (
       <li>
         <h3>{fittingsList.title}</h3>
-        {fittingsData.map((fitting) => (
+        {fittingsData.map((fitting: Element) => (
           <span>{fitting.type}</span>
         ))}
         <a href="#fittings">{fittingsList.link}</a>

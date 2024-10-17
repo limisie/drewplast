@@ -5,7 +5,7 @@ const { headingsList } = Astro.props;
 <table>
   <thead>
     <tr>
-      {headingsList.map((heading) => <th>{heading}</th>)}
+      {headingsList.map((heading: string) => <th>{heading}</th>)}
     </tr>
   </thead>
   <tbody>

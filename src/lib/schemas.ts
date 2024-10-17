@@ -2,12 +2,10 @@ import { reference, z } from "astro:content";
 import { productsElements } from "@i18n/ui";
 
 export const helperSchemas = {
-  featuresList: z.array(
-    z.object({
-      title: z.string(),
-      description: z.string(),
-    })
-  ),
+  feature: z.object({
+    title: z.string(),
+    description: z.string(),
+  }),
   link: z.object({
     text: z.string(),
     url: z.string(),
@@ -43,11 +41,11 @@ const sectionSchemas = {
     image: reference("images").optional(),
     eyebrow: z.string().optional(),
     advantages: z.string().optional(),
-    featuresList: helperSchemas.featuresList.optional(),
+    featuresList: z.array(helperSchemas.feature).optional(),
     link: helperSchemas.link.optional(),
     pageLink: helperSchemas.pageLink.optional(),
   }),
-  generalReferenceList: (collection) =>
+  generalReferenceList: (collection: string) =>
     z.object({
       title: z.string(),
       description: z.string().optional(),
@@ -77,7 +75,7 @@ const sectionSchemas = {
   }),
 };
 
-const collectionSchemas = {
+export const collectionSchemas = {
   departaments: z.object({
     title: z.string(),
     employeesList: z.array(reference("employees")),
@@ -180,5 +178,3 @@ const collectionSchemas = {
     documentsError: z.string(),
   }),
 };
-
-export default collectionSchemas;

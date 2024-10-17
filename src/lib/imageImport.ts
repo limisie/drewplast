@@ -1,7 +1,10 @@
 import { getLocalizedDataByEntry } from "@lib/data";
+import type { Entry } from "@lib/types";
 
-export const getDynamicImageData = async (image, locale) => {
-  const imports = import.meta.glob<{ default: ImageMetadata }>("/src/assets/images/*.{jpeg,jpg,png,gif}");
+export const getDynamicImageData = async (image: Entry, locale: string) => {
+  const imports = import.meta.glob<{ default: ImageMetadata }>(
+    "/src/assets/images/*.{jpeg,jpg,png,gif}"
+  );
   const data = await getLocalizedDataByEntry(image, locale);
   const src = `/${data.url}`;
 

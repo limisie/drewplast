@@ -1,4 +1,8 @@
 ---
+import type { ContactItem } from "@lib/types";
+
+interface Props { item: ContactItem; }
+
 const { item } = Astro.props;
 ---
 
@@ -11,7 +15,7 @@ const { item } = Astro.props;
         <p>{item.address.postalCode} {item.address.city}</p>
     )
   }
-  {item.contact?.phone && <p>ICON {item.contact.phone}</p>}
-  {item.contact?.email && <p>ICON {item.contact.email}</p>}
-  {item.contact?.url && <p>ICON {item.contact.url}</p>}
+  {item.contact.phone && <p>ICON {item.contact.phone}</p>}
+  {item.contact.email && <p>ICON {item.contact.email}</p>}
+  {item.contact.url && <p>ICON {item.contact.url}</p>}
 </li>

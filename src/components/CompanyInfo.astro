@@ -1,20 +1,23 @@
 ---
 import { getEntry } from "astro:content";
+import type { ContactHeadings, DrewplastData, Region } from "@lib/types";
 import { getLocalizedDataByEntry } from "@lib/data";
 import { defaultLocale } from "@i18n/ui";
 
 const locale = Astro.currentLocale || defaultLocale;
 
-const { data: drewplastData } = await getEntry("data", "drewplast");
-const region = await getLocalizedDataByEntry(
+const { data: drewplastData } = (await getEntry("data", "drewplast")) as {
+  data: DrewplastData;
+};
+const region = (await getLocalizedDataByEntry(
   drewplastData.address.region,
   locale
-);
+)) as Region;
 
-const { contactHeadings } = await getLocalizedDataByEntry(
+const { contactHeadings } = (await getLocalizedDataByEntry(
   { id: "ui", collection: "translations" },
   locale
-);
+)) as { contactHeadings: ContactHeadings };
 ---
 
 <div>

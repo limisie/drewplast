@@ -1,10 +1,12 @@
 ---
+import type { Feature } from "@lib/types";
+
 const { featuresList } = Astro.props;
 ---
 
 <ul>
   {
-    featuresList.map((feature) =>
+    featuresList.map((feature: Feature) =>
       typeof feature === "string" ? (
         <li>//TODO ICON {feature}</li>
       ) : (

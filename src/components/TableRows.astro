@@ -3,9 +3,9 @@ const { rows } = Astro.props;
 ---
 
 {
-  rows.map((row) => (
+  rows.map((row: string[]) => (
     <tr>
-      {row.map((item) => (
+      {row.map((item: string) => (
         <td>{item}</td>
       ))}
     </tr>

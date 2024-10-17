@@ -4,8 +4,9 @@ import {
   filterDocumentsByCategory,
   getFilteredReferences,
   getLocalizedDataByEntries,
-  getLocalizedDataByEntry,
 } from "@lib/data";
+import type { Entry } from "@lib/types";
+
 import TagLogic from "@components/TagLogic.astro";
 import DocumentsTable from "./DocumentsTable.astro";
 
@@ -14,12 +15,12 @@ const locale = Astro.currentLocale || defaultLocale;
 
 const activeCategory = categoriesList[0];
 const categoriesData = await getLocalizedDataByEntries(categoriesList, locale);
-const documents = await getFilteredReferences(
+const documents = (await getFilteredReferences(
   "documents",
   filterDocumentsByCategory,
   activeCategory.id,
   locale
-);
+)) as Entry[];
 ---
 
 <TagLogic tagList={categoriesData.map((category) => category.title)}>

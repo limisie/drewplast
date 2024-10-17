@@ -2,12 +2,13 @@
 import { Image } from "astro:assets";
 import { getDynamicImageData } from "@lib/imageImport";
 import { defaultLocale } from "@i18n/ui";
+import type { Entry } from "@lib/types";
 
 const { imagesList } = Astro.props;
 const locale = Astro.currentLocale || defaultLocale;
 
 const imagesData = await Promise.all(
-  imagesList.map(async (image) => await getDynamicImageData(image, locale))
+  imagesList.map(async (image: Entry) => await getDynamicImageData(image, locale))
 );
 ---
 
