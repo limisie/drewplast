@@ -1,8 +1,8 @@
 ---
-import { getRelativeLocaleUrl } from "astro:i18n";
+import { marked } from "marked";
 import { getPageData } from "@lib/data";
 import { locales } from "@i18n/ui";
-import { marked } from "marked";
+import { getLocaleUrl } from "@i18n/urls";
 
 import MainLayout from "@layouts/MainLayout.astro";
 import SectionHeader from "@components/SectionHeader.astro";
@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 
   return locales.map((locale) => ({
     params: {
-      privacyPolicyPage: getRelativeLocaleUrl(locale, data[locale].seo.slug),
+      privacyPolicyPage: getLocaleUrl(locale, data[locale].seo.slug),
     },
     props: {
       seo: data[locale].seo,

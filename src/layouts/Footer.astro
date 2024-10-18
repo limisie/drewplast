@@ -1,10 +1,10 @@
 ---
 import { getEntry } from "astro:content";
-import { getRelativeLocaleUrl } from "astro:i18n";
 import { Icon } from "astro-icon/components";
-import type { DrewplastData, Link, PageLink } from "@lib/types";
 import { getLocalizedDataByEntry, getLocalizedLinks } from "@lib/data";
 import { defaultLocale } from "@i18n/ui";
+import { getLocaleUrl } from "@i18n/urls";
+import type { DrewplastData, Link, PageLink } from "@lib/types";
 
 const { data: drewplastData } = (await getEntry("data", "drewplast")) as {
   data: DrewplastData;
@@ -31,7 +31,7 @@ const { aboutCompany } = (await getLocalizedDataByEntry(
     {
       links.map((link) => (
         <li>
-          <a href={getRelativeLocaleUrl(locale, link.url.trim())}>
+          <a href={getLocaleUrl(locale, link.url)}>
             {link.text}
           </a>
         </li>
@@ -54,7 +54,7 @@ const { aboutCompany } = (await getLocalizedDataByEntry(
 </footer>
 <div>
   <p>© Copyright 2024 Drewplast Sp. z o.o.</p>
-  <a href={getRelativeLocaleUrl(locale, privacyPageData.seo.slug)}
+  <a href={getLocaleUrl(locale, privacyPageData.seo.slug)}
     >{privacyPageData.title}</a
   >
 </div>

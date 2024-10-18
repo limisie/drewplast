@@ -4,8 +4,8 @@ export const localizedUrlList = {};
 
 export const getLocaleUrl = (locale, path) =>
   locale === defaultLocale
-    ? `/${path}`
-    : `/${locale}/${path}`.replace(/\/$/, "");
+    ? `/${path.trim()}`
+    : `/${locale}/${path.trim()}`.replace(/\/$/, "");
 
 export const appendLocalizedUrl = (key, data) => {
   if (!localizedUrlList[key]) {
@@ -15,7 +15,7 @@ export const appendLocalizedUrl = (key, data) => {
     (locale) =>
       (localizedUrlList[key][locale] = getLocaleUrl(
         locale,
-        data[locale].seo.slug.trim()
+        data[locale].seo.slug
       ))
   );
 };
