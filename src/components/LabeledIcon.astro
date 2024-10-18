@@ -1,0 +1,47 @@
+---
+import { Icon } from "astro-icon/components";
+
+const {
+  iconName,
+  text,
+  isLeft = true,
+  isAnimated = false,
+  class: classList,
+  iconSize = "auto",
+} = Astro.props;
+---
+
+<div class:list={[{ animated: isAnimated }, classList]}>
+  {isLeft && <Icon class="icon-left" name={iconName} />}
+  {text}
+  {!isLeft && <Icon class="icon-right" name={iconName} />}
+</div>
+
+<style define:vars={{ iconSize }}>
+  div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  [data-icon] {
+    font-size: var(--iconSize);
+    flex-shrink: 0;
+  }
+
+  .animated {
+    [data-icon] {
+      transition: transform 0.2s ease-in;
+    }
+
+    &:hover {
+      .icon-left {
+        transform: translateX(-5px);
+      }
+
+      .icon-right {
+        transform: translateX(5px);
+      }
+    }
+  }
+</style>

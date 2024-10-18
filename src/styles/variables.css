@@ -1,9 +1,9 @@
 :root {
   --spacer: 1rem;
-  --container-width: 65rem;
-  --section-padding: 0;
-  --nav-height: 3rem;
-  --background-surface-height: 90vw;
+  --spacer-responsive: 1.5rem;
+  --section-padding: 5rem;
+  --content-margin: 1.5rem;
+  --image-banner-ratio: 2/1;
 
   --ff-dm-sans: "DM Sans", sans-serif;
   --ff-poppins: "Poppins", sans-serif;
@@ -15,38 +15,47 @@
   --fs-s: 1rem;
   --fs-xs: 0.875rem;
 
-  --fw-lextra-light: 200;
+  --fw-extra-light: 200;
   --fw-light: 300;
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-bold: 700;
+  --fw-extra-bold: 900;
 
-  --blue: hsl(224, 100, 52);
-  --dark-blue: hsl(213, 68, 16);
-  --orange: hsl(19, 75, 43);
-  --yellow: hsl(45, 89, 49);
-  --white: hsl(0, 0, 99);
-  --light-grey: hsl(210, 7, 95);
-  --grey: hsl(0, 0, 85);
-  --dark-grey: hsl(0, 0, 52);
-  --black: hsl(0, 0, 12);
+  --blue: #0a4bff;
+  --dark-blue: #0d2645;
+  --orange: #c04f1b;
+  --yellow: #ecb50e;
+  --white: #fcfcfc;
+  --light-grey: #f1f2f3;
+  --grey: #d9d9d9;
+  --dark-grey: #858585;
+  --black: #1f1f1f;
 
   color-scheme: light;
   --clr-background: var(--white);
-  --clr-background-light: var(--dark-blue);
-  --clr-background-dark: var(--light-grey);
   --clr-text: var(--black);
   --clr-primary: var(--blue);
   --clr-variation: -5%;
+  --clr-border: var(--light-grey);
 
   --box-shadow: 0 0.1rem 0.25rem hsla(var(--black), 0.05);
 }
 
-@media (min-width: 40rem) {
+@media (min-width: 48rem) {
   :root {
-    --spacer: 2rem;
-    --section-padding: 5rem;
+    background: red;
+    --spacer-responsive: 2.5rem;
+    --content-margin: clamp(1rem, 10vw, 8.75rem);
+    --image-banner-ratio: 3/1;
+  }
+}
 
+@media (min-width: 60rem) {
+  :root {
+    background: yellow;
+    --spacer-responsive: 2.5rem;
     --fs-xxl: 4.5rem;
+    --image-banner-ratio: 4/1;
   }
 }

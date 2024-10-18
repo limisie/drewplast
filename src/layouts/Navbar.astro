@@ -3,7 +3,7 @@ import { Icon } from "astro-icon/components";
 import { getLocalizedDataByEntry, getLocalizedLinks } from "@lib/data";
 import { defaultLocale } from "@i18n/ui";
 import { getLocaleUrl } from "@i18n/urls";
-import type { Link, PageLink } from "@lib/types";
+import type { PageLink } from "@lib/types";
 
 import LanguagePicker from "@components/LanguagePicker.astro";
 
@@ -16,27 +16,90 @@ const homepageData = (await getLocalizedDataByEntry(
 )) as PageLink;
 ---
 
-<div>
-  <a href={getLocaleUrl(locale, homepageData.seo.slug)}>
-    <Icon name="logo-extended" />
-  </a>
-  <ul>
-    {
-      links.map((link: Link) => (
-        <li>
-          <a href={getLocaleUrl(locale, link.url)}>{link.text}</a>
-        </li>
-      ))
-    }
-  </ul>
-  <div>
-    <LanguagePicker />
+<nav class="content-grid">
+  <div class="flex">
+    <a class="logo" href={getLocaleUrl(locale, homepageData.seo.slug)}>
+      <Icon name="logo" />
+      <Icon name="logo-text" />
+    </a>
+
+    <ul id="nav-links">
+      {
+        links.map(({ url, text }) => (
+          <li>
+            <a href={getLocaleUrl(locale, url)} class="navlink">
+              {text}
+            </a>
+          </li>
+        ))
+      }
+      <li>
+        <LanguagePicker />
+      </li>
+    </ul>
   </div>
-</div>
+</nav>
 
 <style>
-  [data-icon="logo-extended"] {
-    font-size: var(--nav-height);
+  nav {
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    right: 0;
+    padding-block: var(--spacer);
+
+    background-color: transparent;
+    color: var(--white);
+
+    transition:
+      background-color 0.5s ease-in,
+      color 0.5s ease-in;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: var(--section-padding);
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: var(--clr-border);
+    }
+
+    &.scrolled {
+      background-color: var(--clr-background);
+      color: var(--clr-text);
+    }
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: var(--spacer-responsive);
+  }
+
+  .logo {
+    display: flex;
+    font-size: calc(var(--section-padding) - 2.5 * var(--spacer));
+    gap: var(--spacer);
+  }
+
+  [data-icon="logo-text"] {
+    margin-top: 0.5rem;
+  }
+
+  [data-icon="logo"] {
     color: var(--blue);
+
+    &:active {
+      color: var(--dark-blue);
+    }
   }
 </style>
+
+<script>
+  const nav = document.querySelector("nav");
+
+  window.addEventListener("scroll", () =>
+    nav?.classList.toggle("scrolled", window.scrollY > 10)
+  );
+</script>

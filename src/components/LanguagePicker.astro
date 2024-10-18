@@ -1,21 +1,27 @@
 ---
-import { Icon } from "astro-icon/components";
 import { getCurrentUrl, getLocalizedUrlList } from "@i18n/urls";
 import { defaultLocale, languages, locales } from "@i18n/ui";
+
+import LabeledIcon from "@components/LabeledIcon.astro";
 
 const locale = Astro.currentLocale || defaultLocale;
 const currentPath = getCurrentUrl(Astro.params);
 const relativeLocalePaths = getLocalizedUrlList(locale, currentPath);
 ---
 
-<div>
-  <Icon name="akar-icons:globe" />
-  <p>{locale}</p>
-  <ul>
+<div class="dropdown">
+  <button type="button" class="dropdown-button navlink" aria-expanded="false">
+    <LabeledIcon iconName="akar-icons:globe" text={locale} />
+  </button>
+  <ul class="dropdown-menu">
     {
       locales.map((locale) => (
         <li>
-          <a href={relativeLocalePaths[locale]} title={languages[locale]}>
+          <a
+            href={relativeLocalePaths[locale]}
+            title={languages[locale]}
+            class="navlink"
+          >
             {locale}
           </a>
         </li>
@@ -23,3 +29,61 @@ const relativeLocalePaths = getLocalizedUrlList(locale, currentPath);
     }
   </ul>
 </div>
+
+<style>
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    inset-inline: -0.25rem;
+
+    background-color: var(--clr-background);
+    color: var(--clr-text);
+    border: 1px solid var(--grey);
+    border-top: none;
+
+    transition:
+      top 0.3s ease,
+      opacity 0.3s ease,
+      visibility 0.3s;
+
+    li {
+      text-align: center;
+      margin-block: 0.5rem;
+    }
+  }
+
+  button[aria-expanded="false"] + .dropdown-menu {
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  button[aria-expanded="true"] + .dropdown-menu {
+    top: 100%;
+    opacity: 1;
+    visibility: visible;
+  }
+</style>
+
+<script>
+  const dropdown = document.querySelector(".dropdown");
+  const dropdownButton = document.querySelector(".dropdown-button");
+
+  const toggleElement = (element, toggleOn) => {
+    toggleOn ??= element.getAttribute("aria-expanded") === "false";
+    element.setAttribute("aria-expanded", toggleOn);
+  };
+
+  [
+    ["click", null],
+    ["mouseenter", true],
+    ["mouseleave", false],
+  ].forEach(([event, toggleOn]: [string, boolean]) =>
+    dropdown?.addEventListener(event, () =>
+      toggleElement(dropdownButton, toggleOn)
+    )
+  );
+</script>
