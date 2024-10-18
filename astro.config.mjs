@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import { defaultLocale, locales } from "./src/i18n/ui.ts";
+import icon from "astro-icon";
 // https://astro.build/config
 
 export default defineConfig({
@@ -10,4 +11,6 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
+
+  integrations: [icon()],
 });

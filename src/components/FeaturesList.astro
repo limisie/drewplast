@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import type { Feature } from "@lib/types";
 
 const { featuresList } = Astro.props;
@@ -8,7 +9,12 @@ const { featuresList } = Astro.props;
   {
     featuresList.map((feature: Feature) =>
       typeof feature === "string" ? (
-        <li>//TODO ICON {feature}</li>
+        <li>
+          <div>
+            <Icon name="akar-icons:check" />
+            <p>{feature}</p>
+          </div>
+        </li>
       ) : (
         <li>
           <span>{feature.title}</span>

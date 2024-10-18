@@ -1,6 +1,7 @@
 ---
 import { getEntry } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import { Icon } from "astro-icon/components";
 import type { DrewplastData, Link, PageLink } from "@lib/types";
 import { getLocalizedDataByEntry, getLocalizedLinks } from "@lib/data";
 import { defaultLocale } from "@i18n/ui";
@@ -23,7 +24,7 @@ const { aboutCompany } = (await getLocalizedDataByEntry(
 
 <footer>
   <div>
-    <p>//TODO LOGO</p>
+    <Icon name="logo-extended"/>
     <p>{aboutCompany}</p>
   </div>
   <ul>
@@ -41,8 +42,14 @@ const { aboutCompany } = (await getLocalizedDataByEntry(
     <p>{drewplastData.name}</p>
     <p>{drewplastData.address.street}</p>
     <p>{drewplastData.address.postalCode} {drewplastData.address.city}</p>
-    <p>//TODO ICON {drewplastData.contact.phone}</p>
-    <p>//TODO ICON {drewplastData.contact.email}</p>
+    <div>
+      <Icon name="akar-icons:phone" />
+      <p>{drewplastData.contact.phone}</p>
+    </div>
+    <div>
+      <Icon name="akar-icons:envelope" />
+      <p>{drewplastData.contact.email}</p>
+    </div>
   </div>
 </footer>
 <div>
