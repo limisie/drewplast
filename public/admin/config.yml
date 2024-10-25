@@ -287,8 +287,7 @@ collections:
               - <<: *DESCRIPTION
                 label: Podtytuł
                 hint: Dodatkowy podtytuł może być naturalnym rozwinięciem głównego nagłówka, wzmacniać przekaz, dawać odbiorcy dodatkowe informacje itd.
-              - <<: *IMAGE
-                hint: Wideo w tle sekcji Hero
+              - <<: *EYEBROW
               - <<: *LINK
                 name: phoneButton
               - <<: *LINK
@@ -320,6 +319,7 @@ collections:
               - *TITLE
               - *DESCRIPTION
               - *IMAGE
+              - *PAGE_LINK
           - <<: *SECTION
             label: Sekcja - Sieć dystrybucji
             name: sectionDistributors

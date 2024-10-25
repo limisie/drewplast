@@ -25,6 +25,7 @@ export interface ContactItem {
 
 export interface DrewplastData {
   name: string;
+  fullName: string;
   address: Address;
   contact: Contact;
   nip: string;

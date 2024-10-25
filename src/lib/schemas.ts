@@ -68,7 +68,7 @@ const sectionSchemas = {
   hero: z.object({
     title: z.string(),
     description: z.string(),
-    image: reference("images").optional(),
+    eyebrow: z.string().optional(),
     phoneButton: helperSchemas.link,
     emailButton: helperSchemas.link,
     videoButton: helperSchemas.link,
