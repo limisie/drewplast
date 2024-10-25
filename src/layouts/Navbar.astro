@@ -2,7 +2,7 @@
 import { Icon } from "astro-icon/components";
 import { getLocalizedDataByEntry, getLocalizedLinks } from "@lib/data";
 import { defaultLocale } from "@i18n/ui";
-import { getLocaleUrl } from "@i18n/urls";
+import { getLocaleUrl, getLocalizedUrlList } from "@i18n/urls";
 import type { PageLink } from "@lib/types";
 
 import LanguagePicker from "@components/LanguagePicker.astro";
@@ -14,9 +14,12 @@ const homepageData = (await getLocalizedDataByEntry(
   { collection: "pages", id: "strona-glowna" },
   locale
 )) as PageLink;
+
+const homePaths = Object.values(getLocalizedUrlList(defaultLocale, "/"));
+const isHomePage = homePaths.includes(Astro.url.pathname);
 ---
 
-<nav class="content-grid">
+<nav class=`content-grid ${isHomePage && "homepage"}`>
   <div class="flex">
     <a class="logo" href={getLocaleUrl(locale, homepageData.seo.slug)}>
       <Icon name="logo" />
@@ -48,11 +51,11 @@ const homepageData = (await getLocalizedDataByEntry(
     right: 0;
     padding-block: var(--spacer);
 
-    background-color: transparent;
-    color: var(--white);
+    background-color: var(--clr-background);
+    color: var(--clr-text);
 
     transition:
-      background-color 0.5s ease-in,
+      background-color 0.2s ease-in,
       color 0.5s ease-in;
 
     &::before {
@@ -65,9 +68,9 @@ const homepageData = (await getLocalizedDataByEntry(
       background-color: var(--clr-border);
     }
 
-    &.scrolled {
-      background-color: var(--clr-background);
-      color: var(--clr-text);
+    &.homepage {
+      background-color: transparent;
+      color: var(--white);
     }
   }
 
@@ -97,9 +100,10 @@ const homepageData = (await getLocalizedDataByEntry(
 </style>
 
 <script>
-  const nav = document.querySelector("nav");
+  const homeNav = document.querySelector(".homepage");
 
-  window.addEventListener("scroll", () =>
-    nav?.classList.toggle("scrolled", window.scrollY > 10)
-  );
+  homeNav &&
+    window.addEventListener("scroll", () => {
+      homeNav.classList.toggle("homepage", window.scrollY < 5);
+    });
 </script>
