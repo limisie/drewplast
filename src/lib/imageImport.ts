@@ -18,5 +18,6 @@ export const getDynamicImageData = async (image: Entry, locale: string) => {
     alt: data.alt,
     caption: data.caption ?? "",
     title: data.title,
+    src: src
   };
 };

@@ -1,23 +1,157 @@
 ---
-import { Image } from "astro:assets";
-import { defaultLocale } from "@i18n/ui";
-import { getDynamicImageData } from "@lib/imageImport";
+import video from "@assets/video.mp4";
 
-const locale = Astro.currentLocale || defaultLocale;
+import LabeledIcon from "@components/LabeledIcon.astro";
+
 const {
-  data: { title, description, phoneButton, emailButton, image, videoButton },
+  class: className,
+  data: { title, description, eyebrow, phoneButton, emailButton, videoButton },
 } = Astro.props;
-
-const imageData = await getDynamicImageData(image, locale);
 ---
 
-<section>
-  <h1>{title}</h1>
-  <p>{description}</p>
-  <div>
-    <a href={phoneButton.url}>{phoneButton.text}</a>
-    <a href={emailButton.url}>{emailButton.text}</a>
+<section class:list={[className]}>
+  <div class="hero">
+    <div id="text">
+      <p class="light-font">{eyebrow}</p>
+      <h1>{title}</h1>
+      <span>{description}</span>
+    </div>
+
+    <div id="cta">
+      <a href={phoneButton.url} class="simple-button">
+        <LabeledIcon iconName="akar-icons:phone" text={phoneButton.text} />
+      </a>
+      <a href={emailButton.url} class="simple-button">
+        <LabeledIcon iconName="akar-icons:envelope" text={emailButton.text} />
+      </a>
+    </div>
+
+    <a href={videoButton.url} id="video-link">
+      <LabeledIcon
+        class="fade"
+        iconName="akar-icons:circle-triangle-right-fill"
+        text={videoButton.text}
+        iconSize="3rem"
+      />
+    </a>
+
+    <div id="video">
+      <video autoplay muted loop playsinline>
+        <source src={video} type="video/mp4" />
+      </video>
+    </div>
   </div>
-  <Image src={imageData.import()} alt={imageData.alt} />
-  <a href={videoButton.url}>{videoButton.text}</a>
 </section>
+
+<style>
+  section {
+    position: relative;
+    min-height: 100dvh;
+    padding-bottom: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: var(--content-margin);
+
+    h1 {
+      padding-bottom: var(--spacer);
+    }
+  }
+
+  #text {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacer-responsive);
+  }
+
+  #video-link {
+    position: absolute;
+    z-index: 1;
+    bottom: var(--content-margin);
+  }
+
+  #video {
+    position: relative;
+    left: calc(-1 * var(--content-margin));
+    width: calc(100% + 2 * var(--content-margin));
+    aspect-ratio: 1.6/1;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgb(from var(--clr-background) r g b / 0.2);
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    section {
+      background-color: rgb(from var(--clr-background) r g b / 0.6);
+      padding-block: var(--section-padding);
+
+      &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: var(--section-padding);
+        bottom: 0;
+        left: 50%;
+        width: 1px;
+        background-color: var(--clr-border);
+        transform: translateX(-50%);
+      }
+    }
+
+    #text {
+      grid-area: text;
+    }
+
+    #cta {
+      grid-area: cta;
+    }
+
+    #video-link {
+      grid-area: link;
+      align-self: end;
+      position: unset;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-areas:
+        ". ."
+        "text ."
+        "cta link";
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 5fr auto;
+      gap: var(--spacer) calc(2 * var(--section-padding));
+    }
+
+    #video {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      width: 100%;
+      aspect-ratio: unset;
+    }
+  }
+</style>

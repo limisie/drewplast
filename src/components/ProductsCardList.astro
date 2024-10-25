@@ -19,3 +19,15 @@ const productsData = await getLocalizedCollectionData("products", locale);
     ))
   }
 </ul>
+
+<style>
+  ul {
+    display: flex;
+    gap: var(--spacer);
+    overflow-x: auto;
+
+    li {
+      flex-shrink: 0;
+    }
+  }
+</style>

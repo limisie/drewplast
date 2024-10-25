@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon/components";
+import LabeledIcon from "@components/LabeledIcon.astro";
 import type { Feature } from "@lib/types";
 
 const { featuresList } = Astro.props;
@@ -7,20 +7,38 @@ const { featuresList } = Astro.props;
 
 <ul>
   {
-    featuresList.map((feature: Feature) =>
-      typeof feature === "string" ? (
-        <li>
-          <div>
-            <Icon name="akar-icons:check" />
-            <p>{feature}</p>
-          </div>
-        </li>
-      ) : (
-        <li>
-          <span>{feature.title}</span>
+    featuresList.map((feature: Feature) => (
+      <li>
+        {typeof feature === "string" ? (
+          <LabeledIcon iconName="akar-icons:check" text={feature} />
+        ) : (
+          <span class="h4">{feature.title}</span>
           <p>{feature.description}</p>
-        </li>
-      )
-    )
+        )}
+      </li>
+    ))
   }
 </ul>
+
+<style>
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: var(--spacer);
+
+    li {
+      flex-basis: calc(50% - 0.5 * var(--spacer));
+    }
+  }
+
+  @media (min-width: 48rem) {
+    ul {
+      flex-wrap: nowrap;
+
+      li {
+        flex-basis: 100%;
+      }
+    }
+  }
+</style>

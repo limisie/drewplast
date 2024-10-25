@@ -15,7 +15,24 @@ const locale = Astro.currentLocale || defaultLocale;
 const imageData = await getDynamicImageData(image, locale);
 ---
 
-<figure>
-  <Image src={imageData.import()} alt={imageData.alt} />
-  {isCaption && <figcaption>{imageData.caption}</figcaption>}
+<figure class="full-width">
+  <div class="img-wrapper">
+    <Image src={imageData.import()} alt={imageData.alt} />
+  </div>
+  {isCaption && <figcaption>{imageData.alt}</figcaption>}
 </figure>
+
+<style>
+  .img-wrapper {
+    grid-column: full-width;
+    aspect-ratio: var(--image-banner-ratio);
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+</style>

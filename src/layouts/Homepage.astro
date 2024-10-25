@@ -17,9 +17,13 @@ const {
 } = Astro.props;
 ---
 
-<SectionHero data={sectionHero} />
+<SectionHero class="full-width dark" data={sectionHero} />
 
 <SectionGeneric
+  class={{
+    section: "full-width light",
+    content: "description-section",
+  }}
   title={sectionDescription.title}
   description={sectionDescription.description}
 >
@@ -27,20 +31,32 @@ const {
 </SectionGeneric>
 
 <SectionGeneric
+  class={{
+    section: "breakout-right",
+    content: "list-section",
+  }}
   title={sectionProducts.title}
   description={sectionProducts.description}
   pageLink={sectionProducts.pageLink}
->
+  >
   <ProductsCardList />
 </SectionGeneric>
 
 <SectionGeneric
+class={{
+  section: "full-width dark",
+  content: "breakout-left background-section",
+}}
   title={sectionSustainable.title}
   description={sectionSustainable.description}
-  image={sectionSustainable.image}
+  backgroundImage={sectionSustainable.image}
+  pageLink={sectionSustainable.pageLink}
 />
 
 <SectionGeneric
+  class={{
+    content: "link-section",
+  }}
   title={sectionDistributors.title}
   description={sectionDistributors.description}
   pageLink={sectionDistributors.pageLink}
