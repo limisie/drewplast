@@ -15,7 +15,7 @@ const locale = Astro.currentLocale || defaultLocale;
 const imageData = await getDynamicImageData(image, locale);
 ---
 
-<figure class="full-width">
+<figure class="full-width-stretch">
   <div class="img-wrapper">
     <Image src={imageData.import()} alt={imageData.alt} />
   </div>
@@ -24,7 +24,6 @@ const imageData = await getDynamicImageData(image, locale);
 
 <style>
   .img-wrapper {
-    grid-column: full-width;
     aspect-ratio: var(--image-banner-ratio);
     overflow: hidden;
 

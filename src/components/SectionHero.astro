@@ -35,7 +35,7 @@ const {
       />
     </a>
 
-    <div id="video">
+    <div id="video" class="full-width-stretch">
       <video autoplay muted loop playsinline>
         <source src={video} type="video/mp4" />
       </video>
@@ -84,9 +84,6 @@ const {
   }
 
   #video {
-    position: relative;
-    left: calc(-1 * var(--content-margin));
-    width: calc(100% + 2 * var(--content-margin));
     aspect-ratio: 1.6/1;
     overflow: hidden;
 

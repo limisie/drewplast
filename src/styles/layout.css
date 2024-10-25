@@ -32,6 +32,12 @@ body {
   grid-column: full-width-start / content-end;
 }
 
+.full-width-stretch {
+  position: relative;
+  left: calc(-1 * var(--content-margin));
+  width: calc(100% + 2 * var(--content-margin));
+}
+
 .flex {
   display: flex;
   justify-content: space-between;
