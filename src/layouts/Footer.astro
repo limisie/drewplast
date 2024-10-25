@@ -5,6 +5,7 @@ import { getLocalizedDataByEntry, getLocalizedLinks } from "@lib/data";
 import { defaultLocale } from "@i18n/ui";
 import { getLocaleUrl } from "@i18n/urls";
 import type { DrewplastData, Link, PageLink } from "@lib/types";
+import LabeledIcon from "@components/LabeledIcon.astro";
 
 const { data: drewplastData } = (await getEntry("data", "drewplast")) as {
   data: DrewplastData;
@@ -22,39 +23,129 @@ const { aboutCompany } = (await getLocalizedDataByEntry(
 )) as { aboutCompany: string };
 ---
 
-<footer>
-  <div>
-    <Icon name="logo-extended"/>
-    <p>{aboutCompany}</p>
-  </div>
-  <ul>
-    {
-      links.map((link) => (
-        <li>
-          <a href={getLocaleUrl(locale, link.url)}>
-            {link.text}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
-  <div>
-    <p>{drewplastData.name}</p>
-    <p>{drewplastData.address.street}</p>
-    <p>{drewplastData.address.postalCode} {drewplastData.address.city}</p>
-    <div>
-      <Icon name="akar-icons:phone" />
-      <p>{drewplastData.contact.phone}</p>
+<footer class="content-grid dark">
+  <div class="content">
+    <div id="about" class="flow-content">
+      <Icon name="logo-extended" />
+      <p>{aboutCompany}</p>
     </div>
-    <div>
-      <Icon name="akar-icons:envelope" />
-      <p>{drewplastData.contact.email}</p>
+
+    <ul id="links" class="flow-content">
+      {
+        links.map((link) => (
+          <li>
+            <a href={getLocaleUrl(locale, link.url)} class="navlink">
+              {link.text}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div id="contact" class="flow-content">
+      <span class="h3">{drewplastData.fullName}</span>
+      <span>{drewplastData.address.street}</span>
+      <span>{drewplastData.address.postalCode} {drewplastData.address.city}</span>
+      <a href=`tel:${drewplastData.contact.phone}`>
+        <LabeledIcon
+          iconName="akar-icons:phone"
+          text={drewplastData.contact.phone}
+          class="navlink"
+        />
+      </a>
+      <a href=`mailto:${drewplastData.contact.email}`>
+        <LabeledIcon
+          iconName="akar-icons:envelope"
+          text={drewplastData.contact.email}
+          class="navlink"
+        />
+      </a>
+    </div>
+
+    <div id="copyright" class="flex">
+      <span>© Copyright 2024 Drewplast Sp. z o.o.</span>
+      <a href={getLocaleUrl(locale, privacyPageData.seo.slug)} class="navlink">
+        {privacyPageData.title}
+      </a>
     </div>
   </div>
 </footer>
-<div>
-  <p>© Copyright 2024 Drewplast Sp. z o.o.</p>
-  <a href={getLocaleUrl(locale, privacyPageData.seo.slug)}
-    >{privacyPageData.title}</a
-  >
-</div>
+
+<style>
+  footer {
+    background: var(--clr-background);
+    width: 100%;
+  }
+
+  .content {
+    display: grid;
+    grid-template-areas:
+      "about"
+      "links"
+      "contact"
+      "copyright";
+    grid-template-columns: 1fr;
+    gap: var(--section-padding);
+
+    --flow-spacer: 0.75rem;
+  }
+
+  #about {
+    grid-area: about;
+    --flow-spacer: var(--spacer);
+
+    [data-icon] {
+      font-size: 2.5rem;
+    }
+  }
+
+  #links {
+    grid-area: links;
+  }
+
+  #contact {
+    grid-area: contact;
+    span, a {
+      display: block;
+    }
+  }
+
+  #copyright {
+    grid-area: copyright;
+    flex-wrap: wrap;
+
+    border-top: 1px solid var(--clr-border);
+    padding-top: var(--section-padding);
+  }
+
+  @media (min-width: 48rem) {
+    .content {
+      grid-template-areas:
+        "about about"
+        "contact links"
+        "copyright copyright";
+    }
+
+    #links {
+      text-align: right;
+    }
+  }
+
+  @media (min-width: 60rem) {
+    .content {
+      grid-template-areas:
+        "about links contact"
+        "copyright copyright copyright";
+      grid-template-columns: minmax(144px, 1fr) 1fr auto;
+    }
+
+    #links {
+      padding-left: clamp(0px, 20%, var(--section-padding));
+      text-align: left;
+    }
+
+    #copyright {
+      padding-top: var(--spacer-responsive);
+    }
+  }
+</style>
