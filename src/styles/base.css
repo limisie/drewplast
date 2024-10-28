@@ -8,7 +8,7 @@ body {
 h1,
 .h1 {
   font-family: var(--ff-dm-sans);
-  font-size: var(--fs-xxl);
+  font-size: clamp(var(--fs-xl), 2rem + 2.3vw, var(--fs-xxl));
   font-weight: var(--fw-bold);
 }
 
@@ -90,6 +90,12 @@ figcaption {
   opacity: 0.7;
 }
 
+.eyebrow {
+  margin-top: var(--spacer);
+  font-size: var(--fs-xs);
+  opacity: 0.7;
+}
+
 .fade {
   transition: opacity 0.2s ease-in;
 
@@ -133,6 +139,17 @@ figcaption {
       transform: translateY(50%);
       background-color: var(--clr-text);
     }
+  }
+}
+
+.img-wrapper {
+  overflow: hidden;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 }
 
