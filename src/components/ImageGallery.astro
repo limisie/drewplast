@@ -8,16 +8,30 @@ const { imagesList } = Astro.props;
 const locale = Astro.currentLocale || defaultLocale;
 
 const imagesData = await Promise.all(
-  imagesList.map(async (image: Entry) => await getDynamicImageData(image, locale))
+  imagesList.map(
+    async (image: Entry) => await getDynamicImageData(image, locale)
+  )
 );
 ---
 
-<div>
+<ul class="full-width-stretch horizontal-scroll">
   {
     imagesData.map((image) => (
-      <div>
-        <Image src={image.import()} alt={image.alt} />
-      </div>
+      <li>
+        <div class="img-wrapper">
+          <Image src={image.import()} alt={image.alt} />
+        </div>
+      </li>
     ))
   }
-</div>
+</ul>
+
+<style>
+  ul {
+    gap: var(--spacer-responsive);
+  }
+
+  .img-wrapper {
+    aspect-ratio: 1.6/1;
+  }
+</style>

@@ -8,7 +8,7 @@ const locale = Astro.currentLocale || defaultLocale;
 const productsData = await getLocalizedCollectionData("products", locale);
 ---
 
-<ul>
+<ul class="horizontal-scroll">
   {
     productsData.map((product) => (
       <Card
@@ -19,15 +19,3 @@ const productsData = await getLocalizedCollectionData("products", locale);
     ))
   }
 </ul>
-
-<style>
-  ul {
-    display: flex;
-    gap: var(--spacer);
-    overflow-x: auto;
-
-    li {
-      flex-shrink: 0;
-    }
-  }
-</style>

@@ -186,6 +186,16 @@ figcaption {
   }
 }
 
+ul.horizontal-scroll {
+  display: flex;
+  gap: var(--spacer);
+  overflow-x: auto;
+
+  li {
+    flex-shrink: 0;
+  }
+}
+
 table {
   width: 100%;
   table-layout: auto;
