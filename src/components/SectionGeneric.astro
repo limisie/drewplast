@@ -28,7 +28,7 @@ const hasSlotContent = !!Astro.slots.default;
   class:list={[classes?.section]}
   style={backgroundImage && `background-image: url('${imageData.src}')`}
 >
-  <div class:list={[classes?.content]}>
+  <div class:list={["content", classes?.content]}>
     <h2 id="title">{title}</h2>
     {
       description && (
@@ -56,7 +56,7 @@ const hasSlotContent = !!Astro.slots.default;
     }
     {
       hasSlotContent && (
-        <div id="content">
+        <div id="slot">
           <slot />
         </div>
       )
@@ -79,39 +79,47 @@ const hasSlotContent = !!Astro.slots.default;
     grid-area: description;
   }
 
-  #content {
-    grid-area: content;
-    overflow: hidden;
+  #slot {
+    grid-area: slot;
   }
 
   #link {
     grid-area: link;
   }
 
-  [class*="-section"] {
+  .content {
     display: grid;
     gap: var(--spacer-responsive);
-    align-items: center;
+    grid-template-columns: minmax(
+      0rem,
+      1fr
+    ); /* fix for overflowing grid item */
   }
 
-  .description-section,
-  .general-section {
+  .basic-content,
+  .description-content {
     grid-template-areas:
       "title"
       "description"
-      "content";
+      "slot";
   }
 
-  .list-section,
-  .link-section {
+  .minimal-content {
+    grid-template-areas:
+      "title"
+      "slot";
+  }
+
+  .list-content,
+  .link-content {
     grid-template-areas:
       "title"
       "description"
-      "content"
+      "slot"
       "link";
   }
 
-  .background-section {
+  .background-content {
     grid-template-areas:
       "title"
       "description"
@@ -124,28 +132,32 @@ const hasSlotContent = !!Astro.slots.default;
   }
 
   @media (min-width: 48rem) {
-    [class*="-section"] {
+    .content {
       gap: var(--spacer) var(--spacer-responsive);
     }
 
-    .description-section {
+    .minimal-content {
+      gap: var(--spacer-responsive);
+    }
+
+    .description-content {
       grid-template-areas:
         "title description"
-        "content content";
+        "slot slot";
       grid-template-columns: 1fr 1fr;
       gap: calc(1.5 * var(--spacer-responsive)) var(--spacer);
     }
 
-    .list-section {
+    .list-content {
       grid-template-areas:
-        "title content"
-        "description content"
-        "link content";
-      grid-template-columns: 1fr 3fr;
+        "title slot"
+        "description slot"
+        "link slot";
+      grid-template-columns: 1fr minmax(0rem, 3fr); /* fix for overflowing grid item */
       grid-template-rows: auto 1fr auto;
     }
 
-    .background-section {
+    .background-content {
       width: 50vw;
 
       &.breakout-right {
@@ -159,7 +171,7 @@ const hasSlotContent = !!Astro.slots.default;
       }
     }
 
-    .link-section {
+    .link-content {
       grid-template-areas:
         "description title"
         "description link";
