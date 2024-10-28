@@ -185,3 +185,29 @@ figcaption {
     transform: scale(1.05);
   }
 }
+
+table {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+
+  tr:has(td) {
+    &:hover {
+      background-color: rgb(from var(--clr-border) r g b / 0.2);
+    }
+  }
+
+  td,
+  th {
+    border-bottom: 1px solid var(--clr-border);
+    padding-block: 0.75rem;
+    padding-inline: var(--cell-inline-padding);
+    text-align: center;
+    width: min-content;
+
+    &:first-child {
+      text-align: left;
+      width: 100%;
+    }
+  }
+}
