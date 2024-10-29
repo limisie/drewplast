@@ -1,7 +1,6 @@
 ---
 import { getLocalizedDataByEntry } from "@lib/data";
 import { defaultLocale } from "@i18n/ui";
-import type { Element } from "@lib/types";
 
 import SectionGeneric from "@components/SectionGeneric.astro";
 import ElementDetails from "@components/ElementDetails.astro";
@@ -10,16 +9,20 @@ const { pipesList } = Astro.props;
 const locale = Astro.currentLocale || defaultLocale;
 
 const pipesData = await Promise.all(
-  pipesList.map(
-    async (item: {pipe: Element}) => await getLocalizedDataByEntry(item.pipe, locale)
-  )
+  pipesList.map(async ({ pipe }) => ({
+    data: await getLocalizedDataByEntry(pipe, locale),
+    slug: pipe.id,
+  }))
 );
 ---
 
 {
   pipesData.map((pipe) => (
-    <SectionGeneric title={pipe.title}>
-      <ElementDetails element={pipe} />
+    <SectionGeneric
+      class={{ content: "minimal-content" }}
+      title={pipe.data.title}
+    >
+      <ElementDetails element={pipe.data} slug={pipe.slug} />
     </SectionGeneric>
   ))
 }

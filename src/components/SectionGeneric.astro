@@ -97,7 +97,8 @@ const hasSlotContent = !!Astro.slots.default;
   }
 
   .basic-content,
-  .description-content {
+  .description-content,
+  .application-content {
     grid-template-areas:
       "title"
       "description"
@@ -182,6 +183,14 @@ const hasSlotContent = !!Astro.slots.default;
         justify-self: end;
         text-align: end;
       }
+    }
+
+    .application-content {
+      grid-template-areas:
+        "title ."
+        "description slot";
+      grid-template-columns: 1fr 1fr;
+      row-gap: var(--spacer-responsive);
     }
   }
 </style>

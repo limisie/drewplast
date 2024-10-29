@@ -3,6 +3,8 @@ import { getLocalizedDataByEntries, getLocalizedDataByEntry } from "@lib/data";
 import { defaultLocale } from "@i18n/ui";
 import type { Element } from "@lib/types";
 
+import LabeledIcon from "@components/LabeledIcon.astro";
+
 const { pipesList, fittingsList } = Astro.props;
 
 const locale = Astro.currentLocale || defaultLocale;
@@ -18,25 +20,83 @@ const fittingsData =
   (await getLocalizedDataByEntries(fittingsList.list, locale));
 ---
 
-<ul>
-  {
-    pipesData.map(({ data, link, slug }) => (
-      <li>
-        <h3>{data.title}</h3>
-        <p>{data.description}</p>
-        <a href={`#${slug}`}>{link}</a>
-      </li>
-    ))
+<div>
+  <ul>
+    {
+      pipesData.map(({ data, link, slug }) => (
+        <li>
+          <h3>{data.title}</h3>
+          <p class="content">{data.description}</p>
+
+          <a href={`#${slug}`}>
+            <LabeledIcon
+              iconName="akar-icons:arrow-right"
+              text={link}
+              isLeft={false}
+              isAnimated={true}
+              class="navlink"
+            />
+          </a>
+        </li>
+      ))
+    }
+    {
+      fittingsData && (
+        <li>
+          <h3>{fittingsList.title}</h3>
+          <div class="content">
+            {fittingsData.map((fitting: Element) => (
+              <span class="badge">{fitting.type}</span> //TODO: clickable badges
+            ))}
+          </div>
+          <a href="#">
+            {/*//TODO: i18n fittings slug */}
+            <LabeledIcon
+              iconName="akar-icons:arrow-right"
+              text={fittingsList.link}
+              isLeft={false}
+              isAnimated={true}
+              class="navlink"
+            />
+          </a>
+        </li>
+      )
+    }
+  </ul>
+</div>
+
+<style>
+  ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacer-responsive);
   }
-  {
-    fittingsData && (
-      <li>
-        <h3>{fittingsList.title}</h3>
-        {fittingsData.map((fitting: Element) => (
-          <span>{fitting.type}</span>
-        ))}
-        <a href="#fittings">{fittingsList.link}</a>
-      </li>
-    )
+
+  li {
+    display: grid;
+    gap: var(--spacer);
+    grid-template-rows: auto 1fr auto;
+
+    .content {
+      display: flex;
+      flex-flow: row wrap;
+      align-content: flex-start;
+      gap: var(--spacer);
+    }
+
+    a {
+      margin-top: var(--spacer);
+      justify-self: end;
+    }
   }
-</ul>
+
+  @media (min-width: 60rem) {
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    li:nth-last-child(1):nth-child(odd) {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

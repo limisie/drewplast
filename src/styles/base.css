@@ -186,6 +186,13 @@ figcaption {
   }
 }
 
+.badge {
+  background-color: var(--white);
+  padding: 0.3rem var(--spacer);
+  border-radius: var(--spacer);
+  font-size: var(--fs-s);
+}
+
 ul.horizontal-scroll {
   display: flex;
   gap: var(--spacer);

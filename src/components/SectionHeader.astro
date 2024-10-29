@@ -3,20 +3,43 @@ const { title, eyebrow, description } = Astro.props;
 ---
 
 <article>
-  <div>
-    <div>
-      <h1>{title}</h1>
-      {eyebrow && <p>{eyebrow}</p>}
-    </div>
-    {
-      description && (
-        <div>
-          <p>{description}</p>
-        </div>
-      )
-    }
+  <div id="title">
+    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+    <h1>{title}</h1>
   </div>
-  <div>
+
+  {
+    description && (
+      <div id="description">
+        <p>{description}</p>
+      </div>
+    )
+  }
+
+  <div id="content" class="flow-content">
     <slot />
   </div>
 </article>
+
+<style>
+  article {
+    padding-top: calc(2 * var(--section-padding));
+    --horizontal-gap: var(--spacer-responsive);
+
+    display: grid;
+    row-gap: var(--horizontal-gap);
+  }
+
+  #content {
+    grid-column: 1 / -1;
+    --flow-spacer: var(--horizontal-gap);
+  }
+
+  @media (min-width: 60rem) {
+    article {
+      grid-template-columns: 1fr 1fr;
+      column-gap: var(--spacer);
+      align-items: end;
+    }
+  }
+</style>

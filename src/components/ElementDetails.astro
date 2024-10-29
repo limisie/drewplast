@@ -8,35 +8,94 @@ import ElementTable from "@components/ElementTable.astro";
 
 interface Props {
   element: Element;
+  slug?: string;
 }
 
 const {
-  element: { image, section, category, title, table },
+  element: { image, section, category, title, description, table },
+  slug,
 } = Astro.props;
 const locale = Astro.currentLocale || defaultLocale;
 const imageData = image && (await getDynamicImageData(image, locale));
 const sectionData = section && (await getDynamicImageData(section, locale));
+
+const isFitting = productsElements.fittings.includes(category as any);
 ---
 
-<div>
-  {productsElements.fittings.includes(category as any) && <h3>{title}</h3>}
-  <div>
-    {
-      imageData && (
-        <figure>
-          <Image src={imageData.import()} alt={imageData.alt} />
-          <figcaption>{imageData.caption}</figcaption>
-        </figure>
-      )
-    }
-    {
-      sectionData && (
-        <figure>
+<div class="grid" id={slug}>
+  {isFitting && title && <h3 id="title">{title}</h3>}
+
+  {description && <p id="description">{description}</p>}
+
+  {
+    sectionData && (
+      <figure id="section">
+        <div class="img-wrapper">
           <Image src={sectionData.import()} alt={sectionData.alt} />
-          <figcaption>{sectionData.caption}</figcaption>
-        </figure>
-      )
-    }
+        </div>
+        <figcaption>{sectionData.caption}</figcaption>{" "}
+      </figure>
+    )
+  }
+
+  {
+    imageData && (
+      <figure id="image">
+        <div class="img-wrapper">
+          <Image src={imageData.import()} alt={imageData.alt} />
+        </div>
+        <figcaption>{imageData.caption}</figcaption>
+      </figure>
+    )
+  }
+
+  <div id="table">
+    <ElementTable table={table} />
   </div>
-  <ElementTable table={table} />
 </div>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacer-responsive);
+
+    scroll-margin-block: calc(2.5 * var(--section-padding));
+  }
+
+  #image,
+  #section {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    .img-wrapper {
+      flex-grow: 1;
+    }
+
+    img {
+      aspect-ratio: 1.6/1;
+    }
+  }
+
+  #title,
+  #table {
+    grid-column: 1 / -1;
+  }
+
+  #table {
+    overflow-x: auto;
+  }
+
+  @media (min-width: 48rem) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+
+      &:has(#image):has(#description) {
+        #section {
+          grid-row: span 2;
+        }
+      }
+    }
+  }
+</style>

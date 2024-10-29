@@ -56,13 +56,25 @@ const {
   </SectionHeader>
 
   <SectionGeneric
+    class={{
+      content: "application-content",
+    }}
     title={sectionDescription.title}
     description={sectionDescription.description}
   >
-    <FeaturesList featuresList={sectionDescription.advantages.split("\n")} />
+    <FeaturesList
+      class="wrap"
+      featuresList={sectionDescription.advantages.split("\n")}
+    />
   </SectionGeneric>
 
-  <SectionGeneric title={sectionElements.title}>
+  <SectionGeneric
+    class={{
+      section: "full-width light",
+      content: "basic-content",
+    }}
+    title={sectionElements.title}
+  >
     <ElementsList
       pipesList={sectionElements.pipesList}
       fittingsList={sectionElements.fittingsList}
@@ -71,15 +83,29 @@ const {
 
   <SectionPipes pipesList={sectionElements.pipesList} />
 
-  <SectionGeneric title={sectionElements.fittingsList.title}>
+  <SectionGeneric
+    class={{ content: "minimal-content" }}
+    title={sectionElements.fittingsList.title}
+  >
     <FittingsTags fittingsList={sectionElements.fittingsList} />
   </SectionGeneric>
 
-  <SectionGeneric title={sectionGallery.title}>
+  <SectionGeneric
+    class={{
+      section: "full-width light",
+      content: "minimal-content",
+    }}
+    title={sectionGallery.title}
+  >
     <ImageGallery imagesList={sectionGallery.imagesList} />
   </SectionGeneric>
 
-  <SectionGeneric title={sectionDocuments.title}>
+  <SectionGeneric
+    class={{
+      content: "minimal-content",
+    }}
+    title={sectionDocuments.title}
+  >
     <DocumentsTable documents={sectionDocuments.documentsList} />
   </SectionGeneric>
 </MainLayout>
