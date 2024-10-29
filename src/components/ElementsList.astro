@@ -26,7 +26,7 @@ const fittingsData =
       pipesData.map(({ data, link, slug }) => (
         <li>
           <h3>{data.title}</h3>
-          <p class="content">{data.description}</p>
+          <p>{data.description}</p>
 
           <a href={`#${slug}`}>
             <LabeledIcon
@@ -44,9 +44,9 @@ const fittingsData =
       fittingsData && (
         <li>
           <h3>{fittingsList.title}</h3>
-          <div class="content">
+          <div class="badges">
             {fittingsData.map((fitting: Element) => (
-              <span class="badge">{fitting.type}</span> //TODO: clickable badges
+              <p>{fitting.type}</p> //TODO: clickable badges
             ))}
           </div>
           <a href="#">
@@ -76,13 +76,6 @@ const fittingsData =
     display: grid;
     gap: var(--spacer);
     grid-template-rows: auto 1fr auto;
-
-    .content {
-      display: flex;
-      flex-flow: row wrap;
-      align-content: flex-start;
-      gap: var(--spacer);
-    }
 
     a {
       margin-top: var(--spacer);

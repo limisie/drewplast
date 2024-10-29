@@ -11,3 +11,11 @@ const products = await getLocalizedCollectionData("products", locale);
 <ul>
   {products.map((product) => <ProductsListItem product={product} />)}
 </ul>
+
+<style>
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer-responsive);
+  }
+</style>

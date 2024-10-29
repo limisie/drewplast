@@ -49,6 +49,15 @@ footer {
   padding-block: var(--section-padding);
 }
 
+article {
+  padding-top: calc(2 * var(--section-padding));
+  padding-bottom: var(--section-padding);
+}
+
+article + section {
+  padding-top: 0;
+}
+
 figcaption {
   text-align: end;
   font-size: var(--fs-xs);
@@ -64,6 +73,7 @@ figcaption {
 
 .light {
   --clr-background: var(--light-grey);
+  --clr-background-secondary: var(--white);
   --clr-text: var(--black);
   background-color: var(--clr-background);
   color: var(--clr-text);
@@ -186,11 +196,24 @@ figcaption {
   }
 }
 
-.badge {
-  background-color: var(--white);
-  padding: 0.3rem var(--spacer);
-  border-radius: var(--spacer);
-  font-size: var(--fs-s);
+.badges {
+  --badge-background: var(--clr-background-secondary);
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacer);
+  align-content: flex-start;
+
+  p {
+    background-color: var(--badge-background);
+    padding: 0.3rem var(--spacer);
+    border-radius: var(--spacer);
+    font-size: var(--fs-s);
+
+    width: fit-content;
+    height: fit-content;
+    text-wrap: nowrap;
+  }
 }
 
 ul.horizontal-scroll {

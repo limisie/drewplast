@@ -35,6 +35,7 @@
 
   color-scheme: light;
   --clr-background: var(--white);
+  --clr-background-secondary: var(--light-grey);
   --clr-text: var(--black);
   --clr-primary: var(--blue);
   --clr-variation: -5%;

@@ -1,22 +1,111 @@
 ---
 import { Image } from "astro:assets";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import { getLocalizedDataByEntry } from "@lib/data";
 import { getDynamicImageData } from "@lib/imageImport";
 import { defaultLocale } from "@i18n/ui";
 
+import LabeledIcon from "./LabeledIcon.astro";
+
 const {
-  product: { sectionHeader, seo, buttonText },
+  product: { sectionHeader, seo, buttonText, sectionElements },
 } = Astro.props;
 const locale = Astro.currentLocale || defaultLocale;
 
 const imageData = await getDynamicImageData(sectionHeader.image, locale);
+const pipesData = await Promise.all(
+  sectionElements.pipesList.map(async ({ pipe }) => ({
+    data: await getLocalizedDataByEntry(pipe, locale),
+    slug: pipe.id,
+  }))
+);
 ---
 
-<li>
-  <a href={getRelativeLocaleUrl(locale, seo.slug)}>
+<li class="card">
+  <a href={getRelativeLocaleUrl(locale, seo.slug)}></a>
+
+  <div class="img-wrapper">
+    <Image src={imageData.import()} alt={imageData.alt} />
+  </div>
+
+  <div class="content">
     <h2>{sectionHeader.title}</h2>
     <p>{sectionHeader.description}</p>
-    <Image src={imageData.import()} alt={imageData.alt} />
-    <span>{buttonText}</span></a
-  >
+    <div class="badges">
+      {pipesData?.map(({ data, slug }) => <p>{data.title}</p>)}
+      {
+        sectionElements.fittingsList && (
+          <p>{sectionElements.fittingsList.title}</p>
+        )
+      }
+    </div>
+    <LabeledIcon
+      iconName="akar-icons:arrow-right"
+      text={buttonText}
+      isLeft={false}
+      isAnimated={true}
+      class="navlink"
+    />
+  </div>
 </li>
+
+<style>
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer);
+
+    .badges {
+      flex-grow: 1;
+      margin-block: 0.4rem;
+    }
+
+    .navlink {
+      align-self: end;
+      margin-right: var(--spacer);
+    }
+  }
+
+  li {
+    padding: var(--spacer);
+    border: 1px solid var(--clr-border);
+
+    display: grid;
+    gap: var(--spacer-responsive);
+
+    .img-wrapper {
+      width: 100%;
+      aspect-ratio: 2/1;
+    }
+
+    &:hover {
+      .navlink {
+        opacity: 0.5;
+      }
+      .icon-right {
+        transform: translateX(5px);
+      }
+    }
+  }
+
+  @media (min-width: 48rem) {
+    li {
+      grid-template-columns: auto auto;
+
+      .img-wrapper {
+        aspect-ratio: auto;
+      }
+    }
+  }
+
+  @media (min-width: 75rem) {
+    li {
+      gap: var(--spacer-responsive);
+
+      .img-wrapper {
+        aspect-ratio: 1/1;
+        max-width: 20rem;
+      }
+    }
+  }
+</style>
