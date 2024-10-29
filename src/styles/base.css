@@ -173,6 +173,10 @@ figcaption {
     transform: none;
   }
 
+  .img-wrapper {
+    aspect-ratio: 1 / 1;
+  }
+
   img {
     transition: transform 0.3s ease-in-out;
   }
@@ -186,6 +190,12 @@ ul.horizontal-scroll {
   display: flex;
   gap: var(--spacer);
   overflow-x: auto;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   li {
     flex-shrink: 0;

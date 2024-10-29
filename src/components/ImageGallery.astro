@@ -29,9 +29,15 @@ const imagesData = await Promise.all(
 <style>
   ul {
     gap: var(--spacer-responsive);
+    scroll-snap-type: x mandatory;
+  }
+
+  li {
+    scroll-snap-align: center;
   }
 
   .img-wrapper {
     aspect-ratio: 1.6/1;
+    width: clamp(15rem, 50vw, 45rem);
   }
 </style>
