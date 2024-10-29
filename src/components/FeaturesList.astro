@@ -2,15 +2,15 @@
 import LabeledIcon from "@components/LabeledIcon.astro";
 import type { Feature } from "@lib/types";
 
-const { featuresList } = Astro.props;
+const { featuresList, class: classList } = Astro.props;
 ---
 
-<ul>
+<ul class:list={[classList]}>
   {
     featuresList.map((feature: Feature) => (
       <li>
         {typeof feature === "string" ? (
-          <LabeledIcon iconName="akar-icons:check" text={feature} />
+          <LabeledIcon iconName="akar-icons:check" text={feature} class="feature"/>
         ) : (
           <span class="h4">{feature.title}</span>
           <p>{feature.description}</p>
@@ -39,6 +39,10 @@ const { featuresList } = Astro.props;
       li {
         flex-basis: 100%;
       }
+    }
+
+    .wrap {
+      flex-wrap: wrap;
     }
   }
 </style>

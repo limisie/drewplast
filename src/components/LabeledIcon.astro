@@ -22,6 +22,16 @@ const {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+
+    &.feature {
+      gap: var(--spacer);
+
+      svg {
+        font-size: var(--fs-m);
+        align-self: start;
+        margin-top: 0.2rem;
+      }
+    }
   }
 
   [data-icon] {
