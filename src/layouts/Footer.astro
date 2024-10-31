@@ -43,9 +43,9 @@ const { aboutCompany } = (await getLocalizedDataByEntry(
     </ul>
 
     <div id="contact" class="flow-content">
-      <span class="h3">{drewplastData.fullName}</span>
-      <span>{drewplastData.address.street}</span>
-      <span>{drewplastData.address.postalCode} {drewplastData.address.city}</span>
+      <p class="h3">{drewplastData.fullName}</p>
+      <p>{drewplastData.address.street}</p>
+      <p>{drewplastData.address.postalCode} {drewplastData.address.city}</p>
       <a href=`tel:${drewplastData.contact.phone}`>
         <LabeledIcon
           iconName="akar-icons:phone"
@@ -63,7 +63,7 @@ const { aboutCompany } = (await getLocalizedDataByEntry(
     </div>
 
     <div id="copyright">
-      <span>© Copyright 2024 Drewplast Sp. z o.o.</span>
+      <p>© Copyright 2024 Drewplast Sp. z o.o.</p>
       <a href={getLocaleUrl(locale, privacyPageData.seo.slug)} class="navlink">
         {privacyPageData.title}
       </a>
@@ -105,7 +105,9 @@ const { aboutCompany } = (await getLocalizedDataByEntry(
 
   #contact {
     grid-area: contact;
-    span, a {
+    font-size: var(--fs-m);
+
+    a {
       display: block;
     }
   }

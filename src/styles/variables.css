@@ -24,7 +24,7 @@
   --fw-bold: 700;
   --fw-extra-bold: 900;
 
-  --blue: #0a4bff;
+  --blue: #0056d2;
   --dark-blue: #0d2645;
   --orange: #c04f1b;
   --yellow: #ecb50e;
@@ -42,7 +42,7 @@
   --clr-variation: -5%;
   --clr-border: var(--light-grey);
 
-  --box-shadow: 0 0.1rem 0.25rem hsla(var(--black), 0.05);
+  --box-shadow: 0 0.35rem 0.7rem rgb(from var(--black) r g b / 0.08);
 }
 
 @media (min-width: 48rem) {

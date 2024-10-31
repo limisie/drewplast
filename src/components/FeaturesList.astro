@@ -12,7 +12,7 @@ const { featuresList, class: classList } = Astro.props;
         {typeof feature === "string" ? (
           <LabeledIcon iconName="akar-icons:check" text={feature} class="feature"/>
         ) : (
-          <span class="h4">{feature.title}</span>
+          <span>{feature.title}</span>
           <p>{feature.description}</p>
         )}
       </li>

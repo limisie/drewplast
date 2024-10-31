@@ -36,8 +36,9 @@ h4,
 }
 
 span {
+  font-family: var(--ff-dm-sans);
   font-size: var(--fs-m);
-  font-weight: var(--fw-light);
+  font-weight: var(--fw-bold);
 }
 
 button {
