@@ -62,7 +62,7 @@ const { aboutCompany } = (await getLocalizedDataByEntry(
       </a>
     </div>
 
-    <div id="copyright" class="flex">
+    <div id="copyright">
       <span>© Copyright 2024 Drewplast Sp. z o.o.</span>
       <a href={getLocaleUrl(locale, privacyPageData.seo.slug)} class="navlink">
         {privacyPageData.title}
@@ -112,6 +112,9 @@ const { aboutCompany } = (await getLocalizedDataByEntry(
 
   #copyright {
     grid-area: copyright;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
 
     border-top: 1px solid var(--clr-border);

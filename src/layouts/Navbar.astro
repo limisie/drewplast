@@ -20,7 +20,7 @@ const isHomePage = homePaths.includes(Astro.url.pathname);
 ---
 
 <nav class=`content-grid ${isHomePage && "homepage"}`>
-  <div class="flex">
+  <div class="nav-wrapper">
     <a class="logo" href={getLocaleUrl(locale, homepageData.seo.slug)}>
       <Icon name="logo" />
       <Icon name="logo-text" />
@@ -50,28 +50,40 @@ const isHomePage = homePaths.includes(Astro.url.pathname);
     left: 0;
     right: 0;
     padding-block: var(--spacer);
-
+    height: var(--section-padding);
+    /* padding-top: var(--spacer); */
+    padding-bottom: var(--spacer);
     background-color: var(--clr-background);
     color: var(--clr-text);
 
-    transition:
-      background-color 0.2s ease-in,
-      color 0.5s ease-in;
+    transition: height 1s;
+    /* background-color 0.2s ease-in,
+      color 0.5s ease-in; */
 
     &::before {
       content: "";
       position: absolute;
-      top: var(--section-padding);
-      left: 0;
-      right: 0;
+      inset-inline: 0;
+      bottom: 0;
       height: 1px;
       background-color: var(--clr-border);
     }
 
     &.homepage {
-      background-color: transparent;
-      color: var(--white);
+      /* background-color: transparent;
+      color: var(--white); */
+      height: calc(2 * var(--section-padding));
+
+      /* [data-icon="logo"] {
+        color: var(--white);
+      } */
     }
+  }
+
+  .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   ul {
@@ -87,7 +99,7 @@ const isHomePage = homePaths.includes(Astro.url.pathname);
   }
 
   [data-icon="logo-text"] {
-    margin-top: 0.5rem;
+    margin-top: 0.3rem;
   }
 
   [data-icon="logo"] {
@@ -104,6 +116,6 @@ const isHomePage = homePaths.includes(Astro.url.pathname);
 
   homeNav &&
     window.addEventListener("scroll", () => {
-      homeNav.classList.toggle("homepage", window.scrollY < 5);
+      homeNav.classList.toggle("homepage", window.scrollY < 15);
     });
 </script>

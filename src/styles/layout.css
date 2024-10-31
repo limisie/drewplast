@@ -38,31 +38,6 @@ body {
   width: calc(100% + 2 * var(--content-margin));
 }
 
-.flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--spacer);
-}
-
-.flex.equal {
-  > * {
-    flex-basis: 100%;
-  }
-}
-
-.flex.vertical-split {
-  --first-split: 20%;
-
-  > *:first-child {
-    flex-basis: var(--first-split);
-  }
-
-  > *:last-child {
-    flex-basis: calc(100% - var(--first-split));
-  }
-}
-
 .flow-content > * + * {
   margin-top: var(--flow-spacer, var(--spacer));
 }
