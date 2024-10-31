@@ -4,7 +4,7 @@ import { locales } from "@i18n/ui";
 import { getLocaleUrl } from "@i18n/urls";
 
 import MainLayout from "@layouts/MainLayout.astro";
-import DocumentsTags from "@components/DocumentsTags.astro";
+import DocumentsTabs from "@components/DocumentsTabs.astro";
 import SectionHeader from "@components/SectionHeader.astro";
 
 export async function getStaticPaths() {
@@ -31,6 +31,6 @@ const { seo, sectionHeader, categoriesList } = Astro.props;
     description={sectionHeader.description}
     eyebrow={sectionHeader.eyebrow}
   >
-    <DocumentsTags categoriesList={categoriesList} />
+    <DocumentsTabs categoriesList={categoriesList} />
   </SectionHeader>
 </MainLayout>

@@ -1,0 +1,26 @@
+---
+import DocumentsTable from "@components/DocumentsTable.astro";
+import ElementDetails from "@components/ElementDetails.astro";
+
+const { content, mode, isActive } = Astro.props;
+---
+
+<div class:list={["tab-content", { active: isActive }]}>
+  {
+    mode === "documents" ? (
+      <DocumentsTable documents={content} />
+    ) : mode === "fittings" ? (
+      <ElementDetails element={content} />
+    ) : null
+  }
+</div>
+
+<style>
+  .tab-content {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+</style>

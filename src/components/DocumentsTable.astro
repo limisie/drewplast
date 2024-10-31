@@ -1,33 +1,29 @@
 ---
 import { defaultLocale } from "@i18n/ui";
 import { getLocalizedDataByEntries, getLocalizedDataByEntry } from "@lib/data";
-import type { Entry } from "@lib/types";
 
 import Table from "@components/Table.astro";
 import DocumentTableRows from "@components/DocumentTableRows.astro";
 
-interface Props {
-  documents: Entry[];
-}
-
 const { documents } = Astro.props;
 const locale = Astro.currentLocale || defaultLocale;
 
-const documentsData = await getLocalizedDataByEntries(documents, locale);
 const { documentsTableHeadings, documentsError } =
   await getLocalizedDataByEntry(
     { id: "ui", collection: "translations" },
     locale
   );
+
+const documentsData = await getLocalizedDataByEntries(documents, locale);
 const tableHeadings = documentsTableHeadings.split(",");
 ---
 
-<Table headingsList={tableHeadings}>
-  {
-    documentsData.length ? (
+{
+  documentsData.length ? (
+    <Table headingsList={tableHeadings}>
       <DocumentTableRows rows={documentsData} />
-    ) : (
-      <p>{documentsError}</p>
-    )
-  }
-</Table>
+    </Table>
+  ) : (
+    <p>{documentsError}</p>
+  )
+}

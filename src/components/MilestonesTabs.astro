@@ -1,0 +1,18 @@
+---
+import { getLocalizedDataByEntries } from "@lib/data";
+import TabLogic from "@components/TabLogic.astro";
+
+const { milestonesList } = Astro.props;
+
+const milestonesData = await getLocalizedDataByEntries(
+  milestonesList,
+  Astro.currentLocale
+);
+---
+
+<TabLogic
+  tabList={milestonesData.map((milestone) => milestone.year)}
+  contentList={milestonesData}
+  mode="milestones"
+  isHorizontal
+/>

@@ -7,7 +7,7 @@ import MainLayout from "@layouts/MainLayout.astro";
 import EmployeesCardList from "@components/EmployeesCardList.astro";
 import FeaturesList from "@components/FeaturesList.astro";
 import ImageBanner from "@components/ImageBanner.astro";
-import MilestonesTags from "@components/MilestonesTags.astro";
+import MilestonesTabs from "@components/MilestonesTabs.astro";
 import SectionGeneric from "@components/SectionGeneric.astro";
 import SectionHeader from "@components/SectionHeader.astro";
 
@@ -58,7 +58,7 @@ const {
   </SectionGeneric>
 
   <SectionGeneric title={sectionHistory.title}>
-    <MilestonesTags milestonesList={sectionHistory.milestonesList} />
+    <MilestonesTabs milestonesList={sectionHistory.milestonesList} />
   </SectionGeneric>
 
   <SectionGeneric title={sectionSustainable.title}>

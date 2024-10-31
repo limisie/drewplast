@@ -1,0 +1,34 @@
+---
+import { defaultLocale } from "@i18n/ui";
+import {
+  filterDocumentsByCategory,
+  getFilteredReferences,
+  getLocalizedDataByEntries,
+} from "@lib/data";
+
+import TabLogic from "@components/TabLogic.astro";
+
+const { categoriesList } = Astro.props;
+const locale = Astro.currentLocale || defaultLocale;
+
+const categories = await getLocalizedDataByEntries(categoriesList, locale);
+
+const documentsByCategory = await Promise.all(
+  categoriesList.map(
+    async (category) =>
+      await getFilteredReferences(
+        "documents",
+        filterDocumentsByCategory,
+        category.id,
+        locale
+      )
+  )
+);
+---
+
+<TabLogic
+  tabList={categories.map((category) => category.title)}
+  contentList={documentsByCategory}
+  mode="documents"
+  isHorizontal
+/>

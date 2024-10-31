@@ -1,0 +1,76 @@
+---
+import TabContent from "@components/TabContent.astro";
+
+const { tabList, contentList, mode, isHorizontal } = Astro.props;
+---
+
+<div class:list={["tab-wrapper", isHorizontal ? "horizontal" : "vertical-split"]}>
+  <ul>
+    {
+      tabList.map((tab) => (
+        <li class="tab underlined-element big">
+          <button>{tab}</button>
+        </li>
+      ))
+    }
+  </ul>
+
+  {
+    contentList.map((content, idx) => <TabContent content={content}, mode={mode} isActive={idx===0}/>)
+  }
+</div>
+
+<script>
+  const tabs = document.querySelectorAll("li.tab");
+  const contents = document.querySelectorAll("div.tab-content");
+
+  tabs.forEach((tab, idx) => {
+    tab.addEventListener("click", () => {
+      contents.forEach((content, i) => {
+        content.classList.toggle("active", i === idx);
+      });
+    });
+  });
+</script>
+
+<style>
+  .tab-wrapper {
+    display: flex;
+    gap: var(--spacer-responsive);
+
+    ul {
+      display: flex;
+    }
+  }
+
+  .vertical-split {
+    flex-direction: row;
+
+    ul {
+      flex-direction: column;
+      min-width: 20vw;
+    }
+
+    li button {
+      text-align: left;
+    }
+  }
+
+  .horizontal {
+    flex-direction: column;
+
+    ul {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: var(--spacer-responsive);
+    }
+
+    li {
+      flex-basis: 100%;
+    }
+
+    li button {
+      width: 100%;
+    }
+  }
+</style>

@@ -13,30 +13,9 @@ const { rows } = Astro.props;
     <tr>
       <td>{row.title}</td>
       <td>{row.date}</td>
-      <td class="button">
+      <td class="underlined-element">
         <a href={row.file}>{row.buttonText}</a>
       </td>
     </tr>
   ))
 }
-
-<style>
-  td.button {
-    position: relative;
-    
-    &::after {
-      position: absolute;
-      content: "";
-      display: none;
-      bottom: -1px;
-      inset-inline: 0;
-      background-color: var(--clr-text);
-      height: 1px;
-    }
-    &:hover {
-      &::after {
-        display: block;
-      }
-    }
-  }
-</style>

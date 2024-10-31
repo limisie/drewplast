@@ -2,16 +2,16 @@
 import { getLocalizedDataByEntries } from "@lib/data";
 import { defaultLocale } from "@i18n/ui";
 
-import TagLogic from "@components/TagLogic.astro";
-import ElementDetails from "./ElementDetails.astro";
+import TabLogic from "@components/TabLogic.astro";
 
 const { fittingsList } = Astro.props;
 const locale = Astro.currentLocale || defaultLocale;
 
 const fittingsData = await getLocalizedDataByEntries(fittingsList.list, locale);
-const activeFitting = fittingsData[0];
 ---
 
-<TagLogic tagList={fittingsData.map((fitting) => fitting.type)}>
-  <ElementDetails element={activeFitting} />
-</TagLogic>
+<TabLogic
+  tabList={fittingsData.map((fitting) => fitting.type)}
+  contentList={fittingsData}
+  mode="fittings"
+/>

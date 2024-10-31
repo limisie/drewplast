@@ -6,7 +6,7 @@ import { getLocaleUrl } from "@i18n/urls";
 import MainLayout from "@layouts/MainLayout.astro";
 import CompanyInfo from "@components/CompanyInfo.astro";
 import DepartamentsList from "@components/DepartamentsList.astro";
-import DistributorsTags from "@components/DistributorsTags.astro";
+import DistributorsTabs from "@components/DistributorsTabs.astro";
 import ImageBanner from "@components/ImageBanner.astro";
 import SectionGeneric from "@components/SectionGeneric.astro";
 import SectionHeader from "@components/SectionHeader.astro";
@@ -43,6 +43,6 @@ const { seo, sectionHeader, image, sectionDistributors } = Astro.props;
     title={sectionDistributors.title}
     description={sectionDistributors.description}
   >
-    <DistributorsTags />
+    <DistributorsTabs />
   </SectionGeneric>
 </MainLayout>

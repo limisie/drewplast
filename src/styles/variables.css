@@ -4,7 +4,8 @@
   --section-padding: 5rem;
   --content-margin: 1.5rem;
   --image-banner-ratio: 2/1;
-  --cell-inline-padding: var(--spacer);
+  --cell-block-padding: 0.75rem;
+  --cell-inline-padding: 1rem;
 
   --ff-dm-sans: "DM Sans", sans-serif;
   --ff-poppins: "Poppins", sans-serif;

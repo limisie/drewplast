@@ -1,0 +1,32 @@
+---
+import {
+  getFilteredReferences,
+  filterDistributorsByRegion,
+  getLocalizedDataWithId,
+} from "@lib/data";
+import { defaultLocale } from "@i18n/ui";
+
+import TabLogic from "@components/TabLogic.astro";
+import { getCollection } from "astro:content";
+
+const locale = Astro.currentLocale || defaultLocale;
+
+const regions = await getLocalizedDataWithId("regions", locale);
+
+const distributorsByRegion = await Promise.all(
+  regions.map(
+    async (region) =>
+      await getFilteredReferences(
+        "distributors",
+        filterDistributorsByRegion,
+        region.id
+      )
+  )
+);
+---
+
+<TabLogic
+  tabList={regions.map((region) => region.title)}
+  contentList={distributorsByRegion}
+  mode="distributors"
+/>
