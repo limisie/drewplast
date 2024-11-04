@@ -28,7 +28,7 @@ const pipesData = await Promise.all(
     <Image src={imageData.import()} alt={imageData.alt} />
   </div>
 
-  <div class="content">
+  <div class="card__content">
     <h2>{sectionHeader.title}</h2>
     <p>{sectionHeader.description}</p>
     <div class="badges">
@@ -50,7 +50,7 @@ const pipesData = await Promise.all(
 </li>
 
 <style>
-  .content {
+  .card__content {
     display: flex;
     flex-direction: column;
     gap: var(--spacer);

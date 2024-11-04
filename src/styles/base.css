@@ -150,7 +150,7 @@ figcaption {
     z-index: 1;
   }
 
-  .content {
+  .card__content {
     display: flex;
     flex-direction: column;
     gap: calc(0.5 * var(--spacer));

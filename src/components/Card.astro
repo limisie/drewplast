@@ -21,7 +21,7 @@ const imageData = await getDynamicImageData(image, locale);
 <li class:list={["card", { disabled: !url }]}>
   {url && <a href={getLocaleUrl(locale, url)} />}
 
-  <div class="content">
+  <div class="card__content">
     <figure class="img-wrapper">
       <Image src={imageData.import()} alt={imageData.alt} />
     </figure>
@@ -36,6 +36,10 @@ const imageData = await getDynamicImageData(image, locale);
 <style>
   .card {
     width: 15rem;
+
+    h3 {
+      padding-block: 0.3rem;
+    }
   }
 
   @media (min-width: 48rem) {

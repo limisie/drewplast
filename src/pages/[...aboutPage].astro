@@ -49,11 +49,20 @@ const {
   </SectionHeader>
 
   <SectionGeneric
+    class={{
+      content: "content--description",
+    }}
     title={sectionDescription.title}
     description={sectionDescription.description}
   />
 
-  <SectionGeneric title={sectionEmployees.title}>
+  <SectionGeneric
+    class={{
+      section: "full-width light",
+      content: "breakout--right",
+    }}
+    title={sectionEmployees.title}
+  >
     <EmployeesCardList employeesList={sectionEmployees.employeesList} />
   </SectionGeneric>
 

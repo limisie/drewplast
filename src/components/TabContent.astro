@@ -2,6 +2,7 @@
 import DocumentsTable from "@components/DocumentsTable.astro";
 import ElementDetails from "@components/ElementDetails.astro";
 import ContactList from "@components/ContactList.astro";
+import Milestone from "@components/Milestone.astro";
 
 const { content, mode, isActive } = Astro.props;
 ---
@@ -14,6 +15,8 @@ const { content, mode, isActive } = Astro.props;
       <ElementDetails element={content} />
     ) : mode === "distributors" ? (
       <ContactList dataList={content} />
+    ) : mode === "milestones" ? (
+      <Milestone milestone={content} />
     ) : null
   }
 </div>

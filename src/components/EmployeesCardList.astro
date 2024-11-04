@@ -9,7 +9,7 @@ const locale = Astro.currentLocale || defaultLocale;
 const employeesData = await getLocalizedDataByEntries(employeesList, locale);
 ---
 
-<ul>
+<ul class="horizontal-scroll">
   {
     employeesData.map((employee) => (
       <Card
@@ -20,3 +20,13 @@ const employeesData = await getLocalizedDataByEntries(employeesList, locale);
     ))
   }
 </ul>
+
+<style>
+  ul {
+    gap: var(--spacer-responsive);
+
+    .card {
+      width: 25rem;
+    }
+  }
+</style>

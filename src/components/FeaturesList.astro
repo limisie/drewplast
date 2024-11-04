@@ -29,6 +29,12 @@ const { featuresList, class: classList } = Astro.props;
 
     li {
       flex-basis: calc(50% - 0.5 * var(--spacer));
+
+      span {
+        display: block;
+        margin-top: var(--spacer);
+        margin-bottom: calc(0.5 * var(--spacer));
+      }
     }
   }
 

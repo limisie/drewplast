@@ -23,15 +23,17 @@ const { title, eyebrow, description } = Astro.props;
 
 <style>
   article {
-    --horizontal-gap: var(--spacer-responsive);
-
     display: grid;
-    row-gap: var(--horizontal-gap);
+    row-gap: var(--spacer-responsive);
   }
 
   #content {
     grid-column: 1 / -1;
-    --flow-spacer: var(--horizontal-gap);
+    --flow-spacer: var(--spacer-responsive);
+
+    figure:first-child {
+      margin-top: var(--spacer-responsive);
+    }
   }
 
   @media (min-width: 60rem) {

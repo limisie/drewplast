@@ -8,7 +8,13 @@ interface Props {
 const { milestone } = Astro.props;
 ---
 
-<div>
+<div class="milestone">
   <h3>{milestone.year} - {milestone.title}</h3>
   <p>{milestone.description}</p>
 </div>
+
+<style>
+  .milestone * {
+    margin-top: var(--spacer);
+  }
+</style>

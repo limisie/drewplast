@@ -56,7 +56,7 @@ const hasSlotContent = !!Astro.slots.default;
     }
     {
       hasSlotContent && (
-        <div class="content__slot">
+        <div class="content__slot flow-content">
           <slot />
         </div>
       )
@@ -78,6 +78,14 @@ const hasSlotContent = !!Astro.slots.default;
       0rem,
       1fr
     ); /* fix for overflowing grid item */
+
+    .content__description {
+      align-self: center;
+    }
+
+    .content__slot {
+      --flow-spacer: var(--spacer-responsive);
+    }
   }
 
   .content--background {
@@ -109,7 +117,7 @@ const hasSlotContent = !!Astro.slots.default;
   @media (min-width: 48rem) {
     .content--description {
       grid-template-columns: 1fr 1fr;
-      gap: calc(1.5 * var(--spacer-responsive)) var(--spacer);
+      column-gap: var(--spacer);
 
       .content__slot {
         grid-column: span 2;
