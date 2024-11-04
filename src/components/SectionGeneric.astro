@@ -29,10 +29,10 @@ const hasSlotContent = !!Astro.slots.default;
   style={backgroundImage && `background-image: url('${imageData.src}')`}
 >
   <div class:list={["content", classes?.content]}>
-    <h2 id="title">{title}</h2>
+    <h2 class="content__title">{title}</h2>
     {
       description && (
-        <div id="description" class="flow-content">
+        <div class="content__description flow-content">
           {description.split("\n").map((paragraph: string) => (
             <p>{paragraph}</p>
           ))}
@@ -41,7 +41,7 @@ const hasSlotContent = !!Astro.slots.default;
     }
     {
       pageLink && (
-        <div id="link">
+        <div class="content__link">
           <a href={getRelativeLocaleUrl(locale, pageLinkData.url)}>
             <LabeledIcon
               iconName="akar-icons:arrow-right"
@@ -56,7 +56,7 @@ const hasSlotContent = !!Astro.slots.default;
     }
     {
       hasSlotContent && (
-        <div id="slot">
+        <div class="content__slot">
           <slot />
         </div>
       )
@@ -71,22 +71,6 @@ const hasSlotContent = !!Astro.slots.default;
     background-position: center;
   }
 
-  #title {
-    grid-area: title;
-  }
-
-  #description {
-    grid-area: description;
-  }
-
-  #slot {
-    grid-area: slot;
-  }
-
-  #link {
-    grid-area: link;
-  }
-
   .content {
     display: grid;
     gap: var(--spacer-responsive);
@@ -96,101 +80,100 @@ const hasSlotContent = !!Astro.slots.default;
     ); /* fix for overflowing grid item */
   }
 
-  .basic-content,
-  .description-content,
-  .application-content {
-    grid-template-areas:
-      "title"
-      "description"
-      "slot";
-  }
-
-  .minimal-content {
-    grid-template-areas:
-      "title"
-      "slot";
-  }
-
-  .list-content,
-  .link-content {
-    grid-template-areas:
-      "title"
-      "description"
-      "slot"
-      "link";
-  }
-
-  .background-content {
-    grid-template-areas:
-      "title"
-      "description"
-      "link";
+  .content--background {
+    gap: var(--spacer);
 
     background-color: var(--clr-background);
-
     padding: var(--section-padding) var(--spacer-responsive);
     margin-left: var(--content-margin);
   }
 
+  .content--list {
+    .content__title {
+      order: 1;
+    }
+
+    .content__description {
+      order: 2;
+    }
+
+    .content__slot {
+      order: 3;
+    }
+
+    .content__link {
+      order: 4;
+    }
+  }
+
   @media (min-width: 48rem) {
-    .content {
-      gap: var(--spacer) var(--spacer-responsive);
-    }
-
-    .minimal-content, .basic-content {
-      gap: var(--spacer-responsive);
-    }
-
-    .description-content {
-      grid-template-areas:
-        "title description"
-        "slot slot";
+    .content--description {
       grid-template-columns: 1fr 1fr;
       gap: calc(1.5 * var(--spacer-responsive)) var(--spacer);
+
+      .content__slot {
+        grid-column: span 2;
+      }
     }
 
-    .list-content {
-      grid-template-areas:
-        "title slot"
-        "description slot"
-        "link slot";
+    .content--list {
       grid-template-columns: 1fr minmax(0rem, 3fr); /* fix for overflowing grid item */
       grid-template-rows: auto 1fr auto;
+
+      .content__slot {
+        grid-row: span 3;
+        grid-column: span 1;
+        order: 2;
+      }
+
+      .content__description {
+        order: 3;
+      }
     }
 
-    .background-content {
+    .content--background {
       width: 50vw;
 
-      &.breakout-right {
+      &.breakout--right {
         padding-inline: var(--section-padding) var(--content-margin);
         margin-left: calc(50vw - var(--content-margin));
       }
 
-      &.breakout-left {
+      &.breakout--left {
         padding-inline: var(--content-margin) var(--section-padding);
         margin-left: 0;
       }
     }
 
-    .link-content {
-      grid-template-areas:
-        "description title"
-        "description link";
+    .content--link {
       grid-template-columns: 1fr 1fr;
 
-      #title,
-      #link {
+      .content__description {
+        grid-row: span 2;
+        order: 1;
+      }
+
+      .content__title {
+        order: 2;
+      }
+
+      .content__link {
+        order: 3;
+      }
+
+      .content__title,
+      .content__link {
         justify-self: end;
         text-align: end;
       }
     }
 
-    .application-content {
-      grid-template-areas:
-        "title ."
-        "description slot";
+    .content--application {
       grid-template-columns: 1fr 1fr;
-      row-gap: var(--spacer-responsive);
+
+      .content__title {
+        grid-column: span 2;
+      }
     }
   }
 </style>

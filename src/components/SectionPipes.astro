@@ -19,7 +19,6 @@ const pipesData = await Promise.all(
 {
   pipesData.map((pipe) => (
     <SectionGeneric
-      class={{ content: "minimal-content" }}
       title={pipe.data.title}
     >
       <ElementDetails element={pipe.data} slug={pipe.slug} />

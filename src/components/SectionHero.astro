@@ -18,10 +18,16 @@ const {
     </div>
 
     <div id="cta">
-      <a href={phoneButton.url} class="underlined-element strong big">
+      <a
+        href={`tel:${phoneButton.url}`}
+        class="underlined-element strong navlink"
+      >
         <LabeledIcon iconName="akar-icons:phone" text={phoneButton.text} />
       </a>
-      <a href={emailButton.url} class="underlined-element strong big">
+      <a
+        href={`mailto:${emailButton.url}`}
+        class="underlined-element strong navlink"
+      >
         <LabeledIcon iconName="akar-icons:envelope" text={emailButton.text} />
       </a>
     </div>
@@ -69,6 +75,8 @@ const {
   }
 
   #text {
+    grid-area: text;
+
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -76,12 +84,16 @@ const {
   }
 
   #cta {
+    grid-area: cta;
+
     display: flex;
     flex-wrap: wrap;
     gap: var(--spacer-responsive);
   }
 
   #video-link {
+    grid-area: link;
+
     position: absolute;
     z-index: 1;
     bottom: var(--content-margin);
@@ -113,27 +125,11 @@ const {
         display: block;
         content: "";
         position: absolute;
-        top: var(--section-padding);
-        bottom: 0;
+        inset-block: 0;
         left: 50%;
         width: 1px;
         background-color: var(--clr-border);
-        transform: translateX(-50%);
       }
-    }
-
-    #text {
-      grid-area: text;
-    }
-
-    #cta {
-      grid-area: cta;
-    }
-
-    #video-link {
-      grid-area: link;
-      align-self: end;
-      position: unset;
     }
 
     .hero {
@@ -145,6 +141,11 @@ const {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 5fr auto;
       gap: var(--spacer) calc(2 * var(--section-padding));
+    }
+
+    #video-link {
+      align-self: end;
+      position: unset;
     }
 
     #video {

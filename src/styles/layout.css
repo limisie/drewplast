@@ -22,13 +22,13 @@ body {
   grid-column: full-width;
 }
 
-.content-grid > .breakout-right,
-.full-width > .breakout-right {
+.content-grid > .breakout--right,
+.full-width > .breakout--right {
   grid-column: content-start / full-width-end;
 }
 
-.content-grid > .breakout-left,
-.full-width > .breakout-left {
+.content-grid > .breakout--left,
+.full-width > .breakout--left {
   grid-column: full-width-start / content-end;
 }
 

@@ -56,9 +56,7 @@ const {
   </SectionHeader>
 
   <SectionGeneric
-    class={{
-      content: "application-content",
-    }}
+    class={{ content: "content--application" }}
     title={sectionDescription.title}
     description={sectionDescription.description}
   >
@@ -69,10 +67,7 @@ const {
   </SectionGeneric>
 
   <SectionGeneric
-    class={{
-      section: "full-width light",
-      content: "basic-content",
-    }}
+    class={{ section: "full-width light" }}
     title={sectionElements.title}
   >
     <ElementsList
@@ -83,29 +78,18 @@ const {
 
   <SectionPipes pipesList={sectionElements.pipesList} />
 
-  <SectionGeneric
-    class={{ content: "minimal-content" }}
-    title={sectionElements.fittingsList.title}
-  >
+  <SectionGeneric title={sectionElements.fittingsList.title}>
     <FittingsTabs fittingsList={sectionElements.fittingsList} />
   </SectionGeneric>
 
   <SectionGeneric
-    class={{
-      section: "full-width light",
-      content: "minimal-content",
-    }}
+    class={{ section: "full-width light" }}
     title={sectionGallery.title}
   >
     <ImageGallery imagesList={sectionGallery.imagesList} />
   </SectionGeneric>
 
-  <SectionGeneric
-    class={{
-      content: "minimal-content",
-    }}
-    title={sectionDocuments.title}
-  >
+  <SectionGeneric title={sectionDocuments.title}>
     <DocumentsTable documents={sectionDocuments.documentsList} />
   </SectionGeneric>
 </MainLayout>
