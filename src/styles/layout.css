@@ -34,7 +34,7 @@ body {
 
 .full-width-stretch {
   position: relative;
-  left: calc(-1 * var(--content-margin));
+  transform: translateX(calc(-1 * var(--content-margin)));
   width: calc(100% + 2 * var(--content-margin));
 }
 

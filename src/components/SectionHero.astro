@@ -4,12 +4,11 @@ import video from "@assets/video.mp4";
 import LabeledIcon from "@components/LabeledIcon.astro";
 
 const {
-  class: className,
   data: { title, description, eyebrow, phoneButton, emailButton, videoButton },
 } = Astro.props;
 ---
 
-<section class:list={[className]}>
+<section class="full-width dark">
   <div class="hero">
     <div id="text">
       <p class="eyebrow">{eyebrow}</p>
@@ -153,7 +152,9 @@ const {
       inset: 0;
       z-index: -1;
       width: 100%;
+
       aspect-ratio: unset;
+      transform: none;
     }
   }
 </style>
