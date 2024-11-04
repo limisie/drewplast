@@ -240,9 +240,9 @@ table {
 
 .underlined-element {
   position: relative;
-
   padding-block: var(--cell-block-padding);
-  padding-inline: var(--cell-inline-padding);
+
+  cursor: pointer;
 
   &::after {
     position: absolute;
@@ -251,16 +251,8 @@ table {
     inset-inline: 0;
     bottom: -1px;
     background-color: var(--clr-border);
-    transition: all 0.2s;
-  }
 
-  &:hover,
-  &:active {
-    &::after {
-      height: 2px;
-      transform: translateY(50%);
-      background-color: var(--clr-text);
-    }
+    transition: all 0.2s ease-in;
   }
 
   &.strong {
@@ -269,7 +261,27 @@ table {
     }
   }
 
-  &.big {
-    font-size: var(--fs-m);
+  &.interactive {
+    button {
+      font-size: var(--fs-m);
+      transition: all 0.2s ease-in;
+    }
+
+    &:hover button {
+      font-size: var(--fs-l);
+    }
+
+    &:hover,
+    &.active {
+      button {
+        font-weight: var(--fw-medium);
+      }
+
+      &::after {
+        height: 2px;
+        transform: translateY(50%);
+        background-color: var(--clr-text);
+      }
+    }
   }
 }

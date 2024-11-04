@@ -40,7 +40,7 @@
   --clr-text: var(--black);
   --clr-primary: var(--blue);
   --clr-variation: -5%;
-  --clr-border: var(--light-grey);
+  --clr-border: var(--grey);
 
   --box-shadow: 0 0.35rem 0.7rem rgb(from var(--black) r g b / 0.08);
 }

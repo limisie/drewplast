@@ -4,11 +4,22 @@ import TabContent from "@components/TabContent.astro";
 const { tabList, contentList, mode, isHorizontal } = Astro.props;
 ---
 
-<div class:list={["tab-wrapper", isHorizontal ? "horizontal" : "vertical-split"]}>
+<div
+  class:list={[
+    "tab-wrapper",
+    isHorizontal && "horizontal",
+    !isHorizontal && "vertical-split",
+  ]}
+>
   <ul>
     {
-      tabList.map((tab) => (
-        <li class="tab underlined-element big">
+      tabList.map((tab, idx) => (
+        <li
+          class:list={[
+            "tab underlined-element interactive",
+            { active: idx === 0 },
+          ]}
+        >
           <button>{tab}</button>
         </li>
       ))
@@ -16,7 +27,9 @@ const { tabList, contentList, mode, isHorizontal } = Astro.props;
   </ul>
 
   {
-    contentList.map((content, idx) => <TabContent content={content}, mode={mode} isActive={idx===0}/>)
+    contentList.map((content, idx) => (
+      <TabContent content={content} mode={mode} isActive={idx === 0} />
+    ))
   }
 </div>
 
@@ -26,8 +39,11 @@ const { tabList, contentList, mode, isHorizontal } = Astro.props;
 
   tabs.forEach((tab, idx) => {
     tab.addEventListener("click", () => {
-      contents.forEach((content, i) => {
-        content.classList.toggle("active", i === idx);
+      contents.forEach((c, i) => {
+        c.classList.toggle("active", i === idx);
+      });
+      tabs.forEach((t, i) => {
+        t.classList.toggle("active", i === idx);
       });
     });
   });
@@ -38,7 +54,7 @@ const { tabList, contentList, mode, isHorizontal } = Astro.props;
     display: flex;
     gap: var(--spacer-responsive);
 
-    ul {
+    > ul {
       display: flex;
     }
   }
@@ -46,31 +62,37 @@ const { tabList, contentList, mode, isHorizontal } = Astro.props;
   .vertical-split {
     flex-direction: row;
 
-    ul {
+    > ul {
       flex-direction: column;
-      min-width: 20vw;
-    }
+      width: 20vw;
 
-    li button {
-      text-align: left;
+      li button {
+        text-align: left;
+      }
     }
   }
 
   .horizontal {
     flex-direction: column;
 
-    ul {
+    > ul {
       flex-direction: row;
       justify-content: space-between;
       gap: var(--spacer-responsive);
-    }
 
-    li {
-      flex-basis: 100%;
-    }
+      li {
+        flex-basis: 100%;
 
-    li button {
-      width: 100%;
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .vertical-split > ul {
+      min-width: 11.75rem;
     }
   }
 </style>
