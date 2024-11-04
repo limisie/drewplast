@@ -1,6 +1,7 @@
 ---
 import DocumentsTable from "@components/DocumentsTable.astro";
 import ElementDetails from "@components/ElementDetails.astro";
+import ContactList from "@components/ContactList.astro";
 
 const { content, mode, isActive } = Astro.props;
 ---
@@ -11,6 +12,8 @@ const { content, mode, isActive } = Astro.props;
       <DocumentsTable documents={content} />
     ) : mode === "fittings" ? (
       <ElementDetails element={content} />
+    ) : mode === "distributors" ? (
+      <ContactList dataList={content} />
     ) : null
   }
 </div>
@@ -20,6 +23,7 @@ const { content, mode, isActive } = Astro.props;
     display: none;
 
     &.active {
+      width: 100%;
       display: block;
     }
   }

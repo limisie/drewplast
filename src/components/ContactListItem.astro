@@ -1,21 +1,69 @@
 ---
 import type { ContactItem } from "@lib/types";
+import LabeledIcon from "@components/LabeledIcon.astro";
 
-interface Props { item: ContactItem; }
+interface Props {
+  item: ContactItem;
+}
 
 const { item } = Astro.props;
 ---
 
-<li>
+<li class="flow-content">
   <span>{item.name}</span>
   {item.position && <p>{item.position}</p>}
   {
     item.address && (
+      <>
         <p>{item.address.street}</p>
-        <p>{item.address.postalCode} {item.address.city}</p>
+        <p>
+          {item.address.postalCode} {item.address.city}
+        </p>
+      </>
     )
   }
-  {item.contact.phone && <p>ICON {item.contact.phone}</p>}
-  {item.contact.email && <p>ICON {item.contact.email}</p>}
-  {item.contact.url && <p>ICON {item.contact.url}</p>}
+  {
+    item.contact.phone && (
+      <a href={`tel:${item.contact.phone}`}>
+        <LabeledIcon
+          iconName="akar-icons:phone"
+          text={item.contact.phone}
+          class="navlink"
+        />
+      </a>
+    )
+  }
+
+  {
+    item.contact.email && (
+      <a href={`mailto:${item.contact.email}`}>
+        <LabeledIcon
+          iconName="akar-icons:envelope"
+          text={item.contact.email}
+          class="navlink"
+        />
+      </a>
+    )
+  }
+
+  {
+    item.contact.url && (
+      <a href={item.contact.url} target="_blank">
+        <LabeledIcon
+          iconName="akar-icons:globe"
+          text={item.contact.url}
+          class="navlink"
+        />
+      </a>
+    )
+  }
 </li>
+
+<style>
+  li {
+    --flow-spacer: 0.5rem;
+  }
+  a {
+    display: block;
+  }
+</style>

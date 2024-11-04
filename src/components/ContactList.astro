@@ -1,10 +1,42 @@
 ---
+import { getLocalizedDataByEntry } from "@lib/data";
 import type { ContactItem } from "@lib/types";
+import { defaultLocale } from "@i18n/ui";
+
 import ContactListItem from "@components/ContactListItem.astro";
 
 const { dataList } = Astro.props;
+
+const locale = Astro.currentLocale || defaultLocale;
+
+const { distributorsError } = await getLocalizedDataByEntry(
+  { id: "ui", collection: "translations" },
+  locale
+);
 ---
 
 <ul>
-  {dataList.map((item: ContactItem) => <ContactListItem item={item} />)}
+  {
+    dataList.length ? (
+      dataList.map((item: ContactItem) => <ContactListItem item={item} />)
+    ) : (
+      <p>{distributorsError}</p>
+    )
+  }
 </ul>
+
+<style>
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--spacer-responsive);
+  }
+
+  @media (min-width: 48rem) {
+    ul {
+      > * {
+        flex-basis: 40%;
+      }
+    }
+  }
+</style>

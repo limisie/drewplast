@@ -20,33 +20,81 @@ const { contactHeadings } = (await getLocalizedDataByEntry(
 )) as { contactHeadings: ContactHeadings };
 ---
 
-<div>
-  <div>
+<div class="wrapper">
+  <div class="column">
     <span>{contactHeadings.address}</span>
     <p>{drewplastData.address.street}</p>
     <p>{drewplastData.address.postalCode} {drewplastData.address.city}</p>
     <p>{region.title}</p>
   </div>
-  <div>
-    <div>
+
+  <div class="column">
+    <div class="row">
       <span>NIP</span>
       <p>{drewplastData.nip}</p>
     </div>
-    <div>
+
+    <div class="row">
       <span>KRS</span>
       <p>{drewplastData.krs}</p>
     </div>
-    <div>
+
+    <div class="row">
       <span>REGON</span>
       <p>{drewplastData.regon}</p>
     </div>
   </div>
+
   <div>
     <span>{contactHeadings.phone}</span>
-    <p>{drewplastData.contact.phone}</p>
+    <a href={`tel:${drewplastData.contact.phone}`} class="navlink">
+      {drewplastData.contact.phone}
+    </a>
   </div>
+
   <div>
     <span>{contactHeadings.email}</span>
-    <p>{drewplastData.contact.email}</p>
+    <a href={`mailto:${drewplastData.contact.email}`} class="navlink">
+      {drewplastData.contact.email}
+    </a>
   </div>
 </div>
+
+<style>
+  a {
+    display: block;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+
+    span {
+      min-width: 6rem;
+    }
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacer);
+  }
+
+  @media (min-width: 48rem) {
+    .wrapper {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, auto);
+
+      > div:first-child,
+      > div:nth-child(2) {
+        grid-row: span 2;
+      }
+    }
+  }
+</style>

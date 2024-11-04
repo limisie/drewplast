@@ -21,10 +21,52 @@ const employeesLists = await Promise.all(
 <ul>
   {
     departaments.map((departament, i) => (
-      <li>
-        <span>{departament.title}</span>
+      <li class="underlined-element">
+        <span class="h3">{departament.title}</span>
         <ContactList dataList={employeesLists[i]} />
       </li>
     ))
   }
 </ul>
+
+<style>
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  li {
+    padding-block: var(--spacer-responsive);
+
+    display: flex;
+    flex-direction: column;
+
+    > ul {
+      flex-basis: 100%;
+    }
+
+    > span {
+      min-width: 20vw;
+      margin-bottom: var(--spacer);
+    }
+  }
+
+  li:last-child {
+    padding-bottom: 0;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    li {
+      flex-direction: row;
+      gap: var(--spacer-responsive);
+
+      > ul {
+        flex-basis: 100%;
+      }
+    }
+  }
+</style>
