@@ -4,10 +4,9 @@ import TabLogic from "@components/TabLogic.astro";
 
 const { milestonesList } = Astro.props;
 
-const milestonesData = await getLocalizedDataByEntries(
-  milestonesList,
-  Astro.currentLocale
-);
+const milestonesData = (
+  await getLocalizedDataByEntries(milestonesList, Astro.currentLocale)
+).sort((a, b) => a.year - b.year);
 ---
 
 <TabLogic
