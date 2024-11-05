@@ -239,9 +239,22 @@ table {
   }
 }
 
+@media (max-width: 48rem) {
+  td:first-child,
+  th:first-child {
+    padding-left: 0;
+  }
+
+  td:last-child,
+  th:last-child {
+    padding-right: 0;
+  }
+}
+
 .underlined-element {
   position: relative;
   padding-block: var(--cell-block-padding);
+  color: var(--clr-text);
 
   cursor: pointer;
 

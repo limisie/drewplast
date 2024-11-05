@@ -26,6 +26,16 @@ const { tabList, contentList, mode, isHorizontal } = Astro.props;
     }
   </ul>
 
+  <select id="tab-selector" class="h3">
+    {
+      tabList.map((tab, idx) => (
+        <option value={idx} selected={idx === 0}>
+          {tab}
+        </option>
+      ))
+    }
+  </select>
+
   {
     contentList.map((content, idx) => (
       <TabContent content={content} mode={mode} isActive={idx === 0} />
@@ -36,63 +46,93 @@ const { tabList, contentList, mode, isHorizontal } = Astro.props;
 <script>
   const tabs = document.querySelectorAll("li.tab");
   const contents = document.querySelectorAll("div.tab-content");
+  const select = document.getElementById("tab-selector") as HTMLSelectElement;
+
+  function activateTab(idx) {
+    contents.forEach((content, i) => {
+      content.classList.toggle("active", i === idx);
+    });
+    tabs.forEach((tab, i) => {
+      tab.classList.toggle("active", i === idx);
+    });
+    select.value = idx;
+  }
 
   tabs.forEach((tab, idx) => {
-    tab.addEventListener("click", () => {
-      contents.forEach((c, i) => {
-        c.classList.toggle("active", i === idx);
-      });
-      tabs.forEach((t, i) => {
-        t.classList.toggle("active", i === idx);
-      });
-    });
+    tab.addEventListener("click", () => activateTab(idx));
+  });
+
+  select.addEventListener("change", (event) => {
+    const target = event.target as HTMLSelectElement;
+    activateTab(parseInt(target.value));
   });
 </script>
 
 <style>
   .tab-wrapper {
     display: flex;
+    flex-direction: column;
     gap: var(--spacer-responsive);
 
-    > ul {
-      display: flex;
+    select {
+      appearance: none;
+
+      border: none;
+      border-radius: 0;
+      border-bottom: 2px solid var(--clr-text);
+
+      padding-block: var(--cell-block-padding);
+      color: var(--clr-text);
+
+      background-color: var(--clr-background);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1rem' height='1rem' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.2' d='m6 10l6 6l6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-size: 2rem;
     }
-  }
-
-  .vertical-split {
-    flex-direction: row;
 
     > ul {
-      flex-direction: column;
-      width: 20vw;
-
-      li button {
-        text-align: left;
-      }
-    }
-  }
-
-  .horizontal {
-    flex-direction: column;
-
-    > ul {
-      flex-direction: row;
-      justify-content: space-between;
-      gap: var(--spacer-responsive);
-
-      li {
-        flex-basis: 100%;
-
-        button {
-          width: 100%;
-        }
-      }
+      display: none;
     }
   }
 
   @media (min-width: 48rem) {
-    .vertical-split > ul {
-      min-width: 11.75rem;
+    .tab-wrapper select {
+      display: none;
+    }
+
+    .vertical-split {
+      flex-direction: row;
+
+      > ul {
+        display: flex;
+        flex-direction: column;
+        width: 20vw;
+        min-width: 11.75rem;
+
+        li button {
+          text-align: left;
+        }
+      }
+    }
+
+    .horizontal {
+      flex-direction: column;
+
+      > ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: var(--spacer-responsive);
+
+        li {
+          flex-basis: 100%;
+
+          button {
+            width: 100%;
+          }
+        }
+      }
     }
   }
 </style>
