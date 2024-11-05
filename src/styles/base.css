@@ -50,6 +50,7 @@ button {
 section,
 footer {
   padding-block: var(--section-padding);
+  scroll-margin-block: var(--spacer-responsive);
 }
 
 article {

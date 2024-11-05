@@ -18,6 +18,11 @@ const pipesData = await Promise.all(
 const fittingsData =
   fittingsList.list &&
   (await getLocalizedDataByEntries(fittingsList.list, locale));
+
+  const { sectionIds: translations } = await getLocalizedDataByEntry(
+  { id: "ui", collection: "translations" },
+  locale
+);
 ---
 
 <div>
@@ -49,8 +54,7 @@ const fittingsData =
               <p>{fitting.type}</p> //TODO: clickable badges
             ))}
           </div>
-          <a href="#">
-            {/*//TODO: i18n fittings slug */}
+          <a href={`#${translations.fittings}`}>
             <LabeledIcon
               iconName="akar-icons:arrow-right"
               text={fittingsList.link}

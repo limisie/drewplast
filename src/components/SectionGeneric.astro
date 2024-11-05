@@ -11,6 +11,8 @@ const {
   description,
   pageLink,
   backgroundImage,
+  sectionLink = "",
+  id = "",
   class: classes,
 } = Astro.props;
 const locale = Astro.currentLocale || defaultLocale;
@@ -27,6 +29,7 @@ const hasSlotContent = !!Astro.slots.default;
 <section
   class:list={[classes?.section]}
   style={backgroundImage && `background-image: url('${imageData.src}')`}
+  id={id}
 >
   <div class:list={["content", classes?.content]}>
     <h2 class="content__title">{title}</h2>
@@ -42,7 +45,9 @@ const hasSlotContent = !!Astro.slots.default;
     {
       pageLink && (
         <div class="content__link">
-          <a href={getRelativeLocaleUrl(locale, pageLinkData.url)}>
+          <a
+            href={`${getRelativeLocaleUrl(locale, pageLinkData.url)}${sectionLink && `#${sectionLink}`}`}
+          >
             <LabeledIcon
               iconName="akar-icons:arrow-right"
               text={pageLink.text}

@@ -1,4 +1,7 @@
 ---
+import { getLocalizedDataByEntry } from "@lib/data";
+import { defaultLocale } from "@i18n/ui";
+
 import SectionHero from "@components/SectionHero.astro";
 import SectionGeneric from "@components/SectionGeneric.astro";
 import FeaturesList from "@components/FeaturesList.astro";
@@ -15,6 +18,12 @@ const {
     image,
   },
 } = Astro.props;
+const locale = Astro.currentLocale || defaultLocale;
+
+const { sectionIds: translations } = await getLocalizedDataByEntry(
+  { id: "ui", collection: "translations" },
+  locale
+);
 ---
 
 <SectionHero data={sectionHero} />
@@ -38,19 +47,20 @@ const {
   title={sectionProducts.title}
   description={sectionProducts.description}
   pageLink={sectionProducts.pageLink}
-  >
+>
   <ProductsCardList />
 </SectionGeneric>
 
 <SectionGeneric
-class={{
-  section: "full-width dark",
-  content: "breakout--left content--background",
-}}
+  class={{
+    section: "full-width dark",
+    content: "breakout--left content--background",
+  }}
   title={sectionSustainable.title}
   description={sectionSustainable.description}
   backgroundImage={sectionSustainable.image}
   pageLink={sectionSustainable.pageLink}
+  sectionLink={translations.sustainable}
 />
 
 <SectionGeneric
@@ -60,6 +70,7 @@ class={{
   title={sectionDistributors.title}
   description={sectionDistributors.description}
   pageLink={sectionDistributors.pageLink}
+  sectionLink={translations.distributors}
 />
 
 <ImageBanner image={image} />

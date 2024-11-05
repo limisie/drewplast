@@ -13,6 +13,7 @@ export const helperSchemas = {
   pageLink: z.object({
     text: z.string(),
     page: reference("pages"),
+    sectionId: z.string().optional(),
   }),
   address: z.object({
     street: z.string(),
@@ -176,5 +177,10 @@ export const collectionSchemas = {
     }),
     distributorsError: z.string(),
     documentsError: z.string(),
+    sectionIds: z.object({
+      fittings: z.string(),
+      distributors: z.string(),
+      sustainable: z.string(),
+    }),
   }),
 };

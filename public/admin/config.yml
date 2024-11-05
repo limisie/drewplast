@@ -1028,3 +1028,37 @@ collections:
             name: documentsError
             widget: string
             i18n: true
+          - label: Id sekcji
+            hint: Identyfikatory sekcji w formie sluga potrzebne do stworzenia odnośników (znajdą się po /# w adresie URL podstrony)
+            name: sectionIds
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - label: Kształtki
+                name: fittings
+                widget: string
+                i18n: true
+                pattern:
+                  [
+                    "^[ ]?[a-z0-9/]*(?:-[a-z0-9]+)*$",
+                    "Musi składać się z małych liter bez znaków diakrytycznych, numerów i myślników (np. produkt-1)",
+                  ]
+              - label: Dystrybutorzy
+                name: distributors
+                widget: string
+                i18n: true
+                pattern:
+                  [
+                    "^[ ]?[a-z0-9/]*(?:-[a-z0-9]+)*$",
+                    "Musi składać się z małych liter bez znaków diakrytycznych, numerów i myślników (np. produkt-1)",
+                  ]
+              - label: Zrównoważony rozwój
+                name: sustainable
+                widget: string
+                i18n: true
+                pattern:
+                  [
+                    "^[ ]?[a-z0-9/]*(?:-[a-z0-9]+)*$",
+                    "Musi składać się z małych liter bez znaków diakrytycznych, numerów i myślników (np. produkt-1)",
+                  ]

@@ -1,6 +1,6 @@
 ---
-import { locales } from "@i18n/ui";
-import { getPageData } from "@lib/data";
+import { getLocalizedDataByEntry, getPageData } from "@lib/data";
+import { defaultLocale, locales } from "@i18n/ui";
 import { getLocaleUrl } from "@i18n/urls";
 
 import MainLayout from "@layouts/MainLayout.astro";
@@ -37,6 +37,12 @@ const {
   sectionHistory,
   sectionSustainable,
 } = Astro.props;
+const locale = Astro.currentLocale || defaultLocale;
+
+const { sectionIds: translations } = await getLocalizedDataByEntry(
+  { id: "ui", collection: "translations" },
+  locale
+);
 ---
 
 <MainLayout seo={seo}>
@@ -70,7 +76,10 @@ const {
     <MilestonesTabs milestonesList={sectionHistory.milestonesList} />
   </SectionGeneric>
 
-  <SectionGeneric title={sectionSustainable.title}>
+  <SectionGeneric
+    title={sectionSustainable.title}
+    id={translations.sustainable}
+  >
     <ImageBanner image={sectionSustainable.image} />
     <FeaturesList featuresList={sectionSustainable.featuresList} />
   </SectionGeneric>

@@ -1,6 +1,6 @@
 ---
-import { getPageData } from "@lib/data";
-import { locales } from "@i18n/ui";
+import { getLocalizedDataByEntry, getPageData } from "@lib/data";
+import { defaultLocale, locales } from "@i18n/ui";
 import { getLocaleUrl } from "@i18n/urls";
 
 import MainLayout from "@layouts/MainLayout.astro";
@@ -29,6 +29,12 @@ export async function getStaticPaths() {
 }
 
 const { seo, sectionHeader, image, sectionDistributors } = Astro.props;
+const locale = Astro.currentLocale || defaultLocale;
+
+const { sectionIds: translations } = await getLocalizedDataByEntry(
+  { id: "ui", collection: "translations" },
+  locale
+);
 ---
 
 <MainLayout seo={seo}>
@@ -47,6 +53,7 @@ const { seo, sectionHeader, image, sectionDistributors } = Astro.props;
   <SectionGeneric
     title={sectionDistributors.title}
     description={sectionDistributors.description}
+    id={translations.distributors}
   >
     <DistributorsTabs />
   </SectionGeneric>
