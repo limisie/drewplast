@@ -102,12 +102,15 @@ const hasSlotContent = !!Astro.slots.default;
   }
 
   .content--list {
+    row-gap: var(--spacer);
+
     .content__title {
       order: 1;
     }
 
     .content__description {
       order: 2;
+      align-self: start;
     }
 
     .content__slot {
@@ -116,6 +119,14 @@ const hasSlotContent = !!Astro.slots.default;
 
     .content__link {
       order: 4;
+    }
+  }
+
+  .content--link,
+  .content--background {
+    .content__link {
+      justify-self: end;
+      text-align: end;
     }
   }
 
