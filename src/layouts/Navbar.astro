@@ -19,14 +19,14 @@ const homePaths = Object.values(getLocalizedUrlList(defaultLocale, "/"));
 const isHomePage = homePaths.includes(Astro.url.pathname);
 ---
 
-<nav class=`content-grid ${isHomePage && "homepage"}`>
-  <div class="nav-wrapper">
+<div class=`nav-wrapper content-grid ${isHomePage && "homepage"}`>
+  <nav>
     <a class="logo" href={getLocaleUrl(locale, homepageData.seo.slug)}>
       <Icon name="logo" />
       <Icon name="logo-text" />
     </a>
 
-    <ul id="nav-links">
+    <ul>
       {
         links.map(({ url, text }) => (
           <li>
@@ -40,73 +40,51 @@ const isHomePage = homePaths.includes(Astro.url.pathname);
         <LanguagePicker />
       </li>
     </ul>
-  </div>
-</nav>
+  </nav>
+</div>
 
 <style>
-  nav {
+  .nav-wrapper {
     position: fixed;
     z-index: 999;
-    left: 0;
-    right: 0;
-    padding-block: var(--spacer);
+    inset-inline: 0;
     height: var(--section-padding);
-    /* padding-top: var(--spacer); */
-    padding-bottom: var(--spacer);
+    padding-block: var(--spacer);
+
     background-color: var(--clr-background);
-    color: var(--clr-text);
+    border-bottom: 1px solid var(--light-grey);
 
-    transition: height 1s;
-    /* background-color 0.2s ease-in,
-      color 0.5s ease-in; */
-
-    &::before {
-      content: "";
-      position: absolute;
-      inset-inline: 0;
-      bottom: 0;
-      height: 1px;
-      background-color: var(--clr-border);
-    }
+    transition: height 0.7s ease-out;
 
     &.homepage {
-      /* background-color: transparent;
-      color: var(--white); */
       height: calc(2 * var(--section-padding));
-
-      /* [data-icon="logo"] {
-        color: var(--white);
-      } */
     }
   }
 
-  .nav-wrapper {
+  nav {
+    align-self: end;
+
     display: flex;
     justify-content: space-between;
-    align-items: center;
-  }
 
-  ul {
-    display: flex;
-    align-items: center;
-    gap: var(--spacer-responsive);
+    ul {
+      display: flex;
+      align-items: center;
+      gap: var(--spacer-responsive);
+    }
   }
 
   .logo {
     display: flex;
     font-size: calc(var(--section-padding) - 2.5 * var(--spacer));
     gap: var(--spacer);
-  }
 
-  [data-icon="logo-text"] {
-    margin-top: 0.3rem;
-  }
+    [data-icon="logo-text"] {
+      margin-top: 0.3rem;
+    }
 
-  [data-icon="logo"] {
-    color: var(--blue);
-
-    &:active {
-      color: var(--dark-blue);
+    [data-icon="logo"] {
+      color: var(--blue);
     }
   }
 </style>
