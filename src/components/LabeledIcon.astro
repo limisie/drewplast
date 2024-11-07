@@ -7,18 +7,17 @@ const {
   isLeft = true,
   isAnimated = false,
   class: classList,
-  iconSize = "auto",
 } = Astro.props;
 ---
 
-<div class:list={[{ animated: isAnimated }, classList]}>
+<div class:list={["wrapper", { animated: isAnimated }, classList]}>
   {isLeft && <Icon class="icon-left" name={iconName} />}
   {text}
   {!isLeft && <Icon class="icon-right" name={iconName} />}
 </div>
 
-<style define:vars={{ iconSize }}>
-  div {
+<style>
+  .wrapper {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -35,8 +34,9 @@ const {
   }
 
   [data-icon] {
-    font-size: var(--iconSize);
+    font-size: var(--icon-size, auto);
     flex-shrink: 0;
+    will-change: transform;
   }
 
   .animated {

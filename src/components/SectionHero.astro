@@ -10,13 +10,13 @@ const {
 
 <section class="full-width dark">
   <div class="hero">
-    <div id="text">
+    <div class="hero__content">
       <p class="eyebrow">{eyebrow}</p>
       <h1>{title}</h1>
       <p>{description}</p>
     </div>
 
-    <div id="cta">
+    <div class="hero__cta">
       <a
         href={`tel:${phoneButton.url}`}
         class="underlined-element strong navlink"
@@ -31,16 +31,15 @@ const {
       </a>
     </div>
 
-    <a href={videoButton.url} id="video-link">
+    <a href={videoButton.url} class="hero__video-link">
       <LabeledIcon
         class="fade"
         iconName="akar-icons:circle-triangle-right-fill"
         text={videoButton.text}
-        iconSize="3rem"
       />
     </a>
 
-    <div id="video" class="full-width-stretch">
+    <div class="hero__video full-width-stretch">
       <video autoplay muted loop playsinline>
         <source src={video} type="video/mp4" />
       </video>
@@ -67,13 +66,9 @@ const {
     h1 {
       padding-bottom: var(--spacer);
     }
-
-    p {
-      font-size: var(--fs-m);
-    }
   }
 
-  #text {
+  .hero__content {
     grid-area: text;
 
     flex-grow: 1;
@@ -82,32 +77,27 @@ const {
     justify-content: center;
   }
 
-  #cta {
+  .hero__cta {
     grid-area: cta;
 
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacer-responsive);
+    gap: var(--spacer) var(--spacer-responsive);
   }
 
-  #video-link {
+  .hero__video-link {
     grid-area: link;
 
     position: absolute;
     z-index: 1;
     bottom: var(--content-margin);
+
+    --icon-size: 3rem;
   }
 
-  #video {
+  .hero__video {
     aspect-ratio: 1.6/1;
     overflow: hidden;
-
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-color: rgb(from var(--clr-background) r g b / 0.2);
-    }
 
     video {
       width: 100%;
@@ -117,8 +107,8 @@ const {
 
   @media (min-width: 48rem) {
     section {
-      background-color: rgb(from var(--clr-background) r g b / 0.6);
       padding-block: var(--section-padding);
+      z-index: 0;
 
       &::before {
         display: block;
@@ -139,15 +129,21 @@ const {
         "cta link";
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 5fr auto;
-      gap: var(--spacer) calc(2 * var(--section-padding));
+      gap: var(--spacer)
+        clamp(var(--spacer), 10%, calc(2 * var(--section-padding)));
+
+      p {
+        font-size: var(--fs-m);
+      }
     }
 
-    #video-link {
+    .hero__video-link {
       align-self: end;
       position: unset;
+      z-index: unset;
     }
 
-    #video {
+    .hero__video {
       position: absolute;
       inset: 0;
       z-index: -1;
@@ -155,6 +151,13 @@ const {
 
       aspect-ratio: unset;
       transform: none;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgb(from var(--clr-background) r g b / 0.6);
+      }
     }
   }
 </style>

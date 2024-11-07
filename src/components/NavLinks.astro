@@ -1,0 +1,62 @@
+---
+import { getLocalizedLinks } from "@lib/data";
+import { defaultLocale } from "@i18n/ui";
+import { getLocaleUrl } from "@i18n/urls";
+
+import LanguagePicker from "@components/LanguagePicker.astro";
+
+const { isNavbar, class: className } = Astro.props;
+const locale = Astro.currentLocale || defaultLocale;
+
+const links = isNavbar
+  ? await getLocalizedLinks("navbar", locale)
+  : await getLocalizedLinks("footer", locale);
+---
+
+<ul class:list={[className]}>
+  {
+    links.map(({ url, text }) => (
+      <li>
+        <a href={getLocaleUrl(locale, url)} class="navlink">
+          {text}
+        </a>
+      </li>
+    ))
+  }
+  {
+    isNavbar && (
+      <li>
+        <LanguagePicker />
+      </li>
+    )
+  }
+</ul>
+
+<style>
+  ul {
+    display: flex;
+    align-items: center;
+    gap: var(--spacer-responsive);
+  }
+
+  .vertical {
+    flex-direction: column;
+    align-items: start;
+    gap: var(--spacer);
+  }
+
+  .mobile {
+    flex-direction: column;
+    align-items: start;
+    gap: 2rem;
+
+    li {
+      width: 100%;
+    }
+    
+    a {
+      display: block;
+      font-size: var(--fs-xl);
+    }
+  }
+</style>

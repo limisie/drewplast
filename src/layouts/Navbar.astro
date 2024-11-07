@@ -1,14 +1,14 @@
 ---
 import { Icon } from "astro-icon/components";
-import { getLocalizedDataByEntry, getLocalizedLinks } from "@lib/data";
+import { getLocalizedDataByEntry } from "@lib/data";
 import { defaultLocale } from "@i18n/ui";
 import { getLocaleUrl, getLocalizedUrlList } from "@i18n/urls";
 import type { PageLink } from "@lib/types";
 
-import LanguagePicker from "@components/LanguagePicker.astro";
+import NavLinks from "@components/NavLinks.astro";
+import Logo from "@components/Logo.astro";
 
 const locale = Astro.currentLocale || defaultLocale;
-const links = await getLocalizedLinks("navbar", locale);
 
 const homepageData = (await getLocalizedDataByEntry(
   { collection: "pages", id: "strona-glowna" },
@@ -19,45 +19,75 @@ const homePaths = Object.values(getLocalizedUrlList(defaultLocale, "/"));
 const isHomePage = homePaths.includes(Astro.url.pathname);
 ---
 
-<div class=`nav-wrapper content-grid ${isHomePage && "homepage"}`>
+<div class=`navbar content-grid ${isHomePage && "homepage"}`>
   <nav>
-    <a class="logo" href={getLocaleUrl(locale, homepageData.seo.slug)}>
-      <Icon name="logo" />
-      <Icon name="logo-text" />
+    <a class="nav__logo" href={getLocaleUrl(locale, homepageData.seo.slug)}>
+      <Logo />
     </a>
 
-    <ul>
-      {
-        links.map(({ url, text }) => (
-          <li>
-            <a href={getLocaleUrl(locale, url)} class="navlink">
-              {text}
-            </a>
-          </li>
-        ))
-      }
-      <li>
-        <LanguagePicker />
-      </li>
-    </ul>
+    <div class="nav__links">
+      <NavLinks isNavbar />
+    </div>
+
+    <button class="nav__burger" aria-expanded="false">
+      <Icon name="clarity:menu-line" />
+      <Icon name="clarity:window-close-line" />
+    </button>
   </nav>
 </div>
 
 <style>
-  .nav-wrapper {
+  .navbar {
     position: fixed;
     z-index: 999;
     inset-inline: 0;
-    height: var(--section-padding);
     padding-block: var(--spacer);
 
-    background-color: var(--clr-background);
+    background: var(--clr-background);
+    color: var(--clr-text);
     border-bottom: 1px solid var(--light-grey);
 
-    transition: height 0.7s ease-out;
+    &.homepage:not(.expanded) {
+      background: transparent;
+      color: var(--white);
+      border-bottom: none;
+      --logo-clr: var(--white);
+    }
 
-    &.homepage {
-      height: calc(2 * var(--section-padding));
+    .nav__burger {
+      [data-icon*="close"] {
+        display: none;
+      }
+
+      [data-icon*="menu"] {
+        display: block;
+      }
+    }
+
+    &.expanded {
+      inset: 0;
+
+      nav {
+        align-self: start;
+      }
+
+      .nav__links {
+        position: absolute;
+        z-index: -1;
+        inset-block: 0;
+        display: flex;
+        align-items: center;
+      }
+
+      .nav__burger {
+        [data-icon*="close"] {
+          display: block;
+        }
+
+        [data-icon*="menu"] {
+          display: none;
+        }
+      }
     }
   }
 
@@ -66,34 +96,66 @@ const isHomePage = homePaths.includes(Astro.url.pathname);
 
     display: flex;
     justify-content: space-between;
-
-    ul {
-      display: flex;
-      align-items: center;
-      gap: var(--spacer-responsive);
-    }
+    align-items: center;
+    height: min-content;
   }
 
-  .logo {
-    display: flex;
-    font-size: calc(var(--section-padding) - 2.5 * var(--spacer));
-    gap: var(--spacer);
+  .nav__burger {
+    font-size: 2rem;
+    stroke-width: 10px;
+  }
 
-    [data-icon="logo-text"] {
-      margin-top: 0.3rem;
+  .nav__links {
+    display: none;
+  }
+
+  @media (min-width: 58rem) {
+    .navbar {
+      --logo-size: 2.5rem;
+      height: var(--section-padding);
+      transition: height 0.7s ease-out;
+
+      &.homepage:not(.expanded) {
+        --logo-clr: unset;
+        background: var(--clr-background);
+        color: var(--clr-text);
+        border-bottom: 1px solid var(--light-grey);
+        height: calc(2 * var(--section-padding));
+      }
     }
 
-    [data-icon="logo"] {
-      color: var(--blue);
+    .nav__burger {
+      display: none;
+    }
+
+    .nav__links {
+      display: block;
+      position: relative;
     }
   }
 </style>
 
 <script>
-  const homeNav = document.querySelector(".homepage");
+  const homepageNavbar = document.querySelector(".homepage");
 
-  homeNav &&
-    window.addEventListener("scroll", () => {
-      homeNav.classList.toggle("homepage", window.scrollY < 15);
-    });
+  window.addEventListener("scroll", () => {
+    if (homepageNavbar) {
+      homepageNavbar.classList.toggle("homepage", window.scrollY < 15);
+    }
+  });
+
+  const burgerButton = document.querySelector(
+    "button.nav__burger"
+  ) as HTMLButtonElement;
+  burgerButton.addEventListener("click", toggleMenu);
+
+  function toggleMenu() {
+    const navbar = document.querySelector(".navbar")!;
+    const navLinks = document.querySelector(".nav__links ul")!;
+    const isExpanded = burgerButton.getAttribute("aria-expanded") === "true";
+
+    burgerButton.setAttribute("aria-expanded", (!isExpanded).toString());
+    navbar.classList.toggle("expanded");
+    navLinks.classList.toggle("mobile");
+  }
 </script>

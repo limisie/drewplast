@@ -1,18 +1,18 @@
 ---
 import { getEntry } from "astro:content";
-import { Icon } from "astro-icon/components";
-import { getLocalizedDataByEntry, getLocalizedLinks } from "@lib/data";
+import { getLocalizedDataByEntry } from "@lib/data";
 import { defaultLocale } from "@i18n/ui";
 import { getLocaleUrl } from "@i18n/urls";
-import type { DrewplastData, Link, PageLink } from "@lib/types";
+import type { DrewplastData, PageLink } from "@lib/types";
 import LabeledIcon from "@components/LabeledIcon.astro";
+import NavLinks from "@components/NavLinks.astro";
+import Logo from "@components/Logo.astro";
 
 const { data: drewplastData } = (await getEntry("data", "drewplast")) as {
   data: DrewplastData;
 };
 const locale = Astro.currentLocale || defaultLocale;
 
-const links = (await getLocalizedLinks("footer", locale)) as Link[];
 const privacyPageData = (await getLocalizedDataByEntry(
   { collection: "pages", id: "polityka-prywatnosci" },
   locale
@@ -24,25 +24,17 @@ const { aboutCompany } = (await getLocalizedDataByEntry(
 ---
 
 <footer class="content-grid dark">
-  <div class="content">
-    <div id="about" class="flow-content">
-      <Icon name="logo-extended" />
+  <div class="footer-wrapper">
+    <div class="footer__about flow-content">
+      <Logo />
       <p>{aboutCompany}</p>
     </div>
 
-    <ul id="links" class="flow-content">
-      {
-        links.map((link) => (
-          <li>
-            <a href={getLocaleUrl(locale, link.url)} class="navlink">
-              {link.text}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+    <nav>
+      <NavLinks class="vertical" />
+    </nav>
 
-    <div id="contact" class="flow-content">
+    <div class="footer__contact flow-content">
       <p class="h3">{drewplastData.fullName}</p>
       <p>{drewplastData.address.street}</p>
       <p>{drewplastData.address.postalCode} {drewplastData.address.city}</p>
@@ -62,7 +54,7 @@ const { aboutCompany } = (await getLocalizedDataByEntry(
       </a>
     </div>
 
-    <div id="copyright">
+    <div class="footer__copyright">
       <p>© Copyright 2024 Drewplast Sp. z o.o.</p>
       <a href={getLocaleUrl(locale, privacyPageData.seo.slug)} class="navlink">
         {privacyPageData.title}
@@ -77,34 +69,21 @@ const { aboutCompany } = (await getLocalizedDataByEntry(
     width: 100%;
   }
 
-  .content {
+  .footer-wrapper {
     display: grid;
-    grid-template-areas:
-      "about"
-      "links"
-      "contact"
-      "copyright";
     grid-template-columns: 1fr;
     gap: var(--section-padding);
 
     --flow-spacer: 0.75rem;
   }
 
-  #about {
-    grid-area: about;
+  .footer__about {
+    --logo-size: 2.5rem;
+    --logo-clr: var(--clr-text);
     --flow-spacer: var(--spacer);
-
-    [data-icon] {
-      font-size: 2.5rem;
-    }
   }
 
-  #links {
-    grid-area: links;
-  }
-
-  #contact {
-    grid-area: contact;
+  .footer__contact {
     font-size: var(--fs-m);
 
     a {
@@ -112,44 +91,47 @@ const { aboutCompany } = (await getLocalizedDataByEntry(
     }
   }
 
-  #copyright {
-    grid-area: copyright;
+  .footer__copyright {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    gap: var(--spacer-responsive);
 
     border-top: 1px solid var(--clr-border);
+    font-size: var(--fs-m);
     padding-top: var(--section-padding);
   }
 
   @media (min-width: 48rem) {
-    .content {
-      grid-template-areas:
-        "about about"
-        "contact links"
-        "copyright copyright";
+    .footer-wrapper {
+      grid-template-columns: 1fr 1fr;
     }
 
-    #links {
-      text-align: right;
+    .footer__about {
+      grid-column: span 2;
+    }
+
+    .footer__copyright {
+      grid-column: span 2;
     }
   }
 
   @media (min-width: 60rem) {
-    .content {
-      grid-template-areas:
-        "about links contact"
-        "copyright copyright copyright";
+    .footer-wrapper {
       grid-template-columns: minmax(144px, 1fr) 1fr auto;
     }
 
-    #links {
+    nav {
       padding-left: clamp(0px, 20%, var(--section-padding));
-      text-align: left;
     }
 
-    #copyright {
+    .footer__about {
+      grid-column: unset;
+    }
+
+    .footer__copyright {
+      grid-column: span 3;
       padding-top: var(--spacer-responsive);
     }
   }

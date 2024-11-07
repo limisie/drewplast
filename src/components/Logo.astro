@@ -1,0 +1,29 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div class="logo">
+  <Icon name="logo" />
+  <Icon name="logo-text" />
+</div>
+
+<style>
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+
+    --default-logo-size: 2rem;
+  }
+
+  [data-icon="logo"] {
+    color: var(--logo-clr, var(--blue));
+    font-size: var(--logo-size, calc(var(--default-logo-size) + 0.5rem));
+  }
+
+  [data-icon="logo-text"] {
+    margin-top: 0.25em;
+    color: var(--logo-clr, inherit);
+    font-size: var(--logo-size, var(--default-logo-size));
+  }
+</style>

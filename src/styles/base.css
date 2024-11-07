@@ -45,6 +45,7 @@ button {
   vertical-align: middle;
   background: none;
   border: none;
+  color: inherit;
 }
 
 section,
