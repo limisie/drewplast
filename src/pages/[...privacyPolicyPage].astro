@@ -28,6 +28,48 @@ const parsedMarkdown = marked(content);
 
 <MainLayout seo={seo}>
   <SectionHeader title={sectionHeader.title} eyebrow={sectionHeader.eyebrow}>
-    <div set:html={parsedMarkdown} />
+    <div set:html={parsedMarkdown} class="markdown" />
   </SectionHeader>
 </MainLayout>
+
+<style>
+  .markdown {
+    p,
+    ol li p,
+    ol ol {
+      margin-block: var(--spacer);
+    }
+
+    ol ol li {
+      padding-left: var(--spacer);
+      margin-bottom: 0.5rem;
+
+      &::marker {
+        padding-right: 3rem;
+      }
+    }
+
+    ol {
+      list-style-type: decimal;
+      list-style-position: inside;
+
+      li::marker,
+      li p:first-child {
+        display: inline;
+        font-family: var(--ff-dm-sans);
+        font-size: var(--fs-l);
+        font-weight: var(--fw-medium);
+      }
+    }
+
+    ol ol {
+      list-style-type: lower-alpha;
+
+      li::marker {
+        font-family: var(--ff-poppins);
+        font-weight: var(--fw-light);
+        font-size: var(--fs-s);
+      }
+    }
+  }
+</style>
