@@ -1,0 +1,28 @@
+---
+const { list } = Astro.props;
+---
+
+<ul>
+  {list.map((badge) => <li>{badge}</li>)}
+</ul>
+
+<style>
+  ul {
+    --badge-background: var(--clr-background-secondary);
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacer);
+    align-content: flex-start;
+  }
+
+  li {
+    background-color: var(--badge-background);
+    padding: 0.3rem var(--spacer);
+    border-radius: var(--spacer);
+    font-size: var(--fs-s);
+
+    width: fit-content;
+    overflow-wrap: break-word;
+  }
+</style>

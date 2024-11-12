@@ -28,12 +28,24 @@ const { featuresList, class: classList } = Astro.props;
     gap: var(--spacer);
 
     li {
-      flex-basis: calc(50% - 0.5 * var(--spacer));
-
+      flex-basis: 100%;
+  
       span {
         display: block;
         margin-top: var(--spacer);
         margin-bottom: calc(0.5 * var(--spacer));
+      }
+    }
+  }
+
+  @media (min-width: 30rem) {
+    ul {
+      li {
+        flex-basis: calc(50% - 0.5 * var(--spacer));
+      }
+
+      li:nth-last-child(1):nth-child(odd) {
+        flex-basis: 100%;
       }
     }
   }

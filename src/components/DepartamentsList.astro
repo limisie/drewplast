@@ -33,17 +33,13 @@ const employeesLists = await Promise.all(
   ul {
     display: flex;
     flex-direction: column;
+    overflow-x: auto;
   }
 
   li {
     padding-block: var(--spacer-responsive);
-
     display: flex;
     flex-direction: column;
-
-    > ul {
-      flex-basis: 100%;
-    }
 
     > span {
       min-width: 20vw;
@@ -63,10 +59,6 @@ const employeesLists = await Promise.all(
     li {
       flex-direction: row;
       gap: var(--spacer-responsive);
-
-      > ul {
-        flex-basis: 100%;
-      }
     }
   }
 </style>

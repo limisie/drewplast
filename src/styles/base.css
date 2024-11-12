@@ -84,22 +84,6 @@ figcaption {
   color: var(--clr-text);
 }
 
-.visible {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.hidden {
-  opacity: 0 !important;
-  visibility: hidden;
-  display: none;
-  pointer-events: none;
-}
-
-.no-scroll {
-  overflow: hidden;
-}
-
 .light-font {
   font-size: var(--fs-xs);
   opacity: 0.7;
@@ -176,26 +160,6 @@ figcaption {
   }
 }
 
-.badges {
-  --badge-background: var(--clr-background-secondary);
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacer);
-  align-content: flex-start;
-
-  p {
-    background-color: var(--badge-background);
-    padding: 0.3rem var(--spacer);
-    border-radius: var(--spacer);
-    font-size: var(--fs-s);
-
-    width: fit-content;
-    height: fit-content;
-    text-wrap: nowrap;
-  }
-}
-
 ul.horizontal-scroll {
   display: flex;
   gap: var(--spacer);
@@ -210,6 +174,11 @@ ul.horizontal-scroll {
   li {
     flex-shrink: 0;
   }
+}
+
+div:has(table) {
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 table {

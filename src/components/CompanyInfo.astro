@@ -68,25 +68,32 @@ const { contactHeadings } = (await getLocalizedDataByEntry(
   .row {
     display: flex;
     align-items: center;
-
-    span {
-      min-width: 6rem;
-    }
+    gap: var(--spacer);
   }
 
   .column {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 0.5rem;
   }
 
   .wrapper {
+    font-size: var(--fs-m);
+    overflow-x: auto;
+
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacer);
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
-  @media (min-width: 48rem) {
+  @media (min-width: 30rem) {
+    .wrapper {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 55rem) {
     .wrapper {
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(2, auto);
@@ -95,6 +102,12 @@ const { contactHeadings } = (await getLocalizedDataByEntry(
       > div:nth-child(2) {
         grid-row: span 2;
       }
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .row span {
+      min-width: 6rem;
     }
   }
 </style>

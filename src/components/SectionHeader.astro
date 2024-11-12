@@ -3,20 +3,14 @@ const { title, eyebrow, description } = Astro.props;
 ---
 
 <article>
-  <div id="title">
+  <header>
     {eyebrow && <p class="eyebrow">{eyebrow}</p>}
     <h1>{title}</h1>
-  </div>
+  </header>
 
-  {
-    description && (
-      <div id="description">
-        <p>{description}</p>
-      </div>
-    )
-  }
+  {description && <p>{description}</p>}
 
-  <div id="content" class="flow-content">
+  <div class="content flow-content">
     <slot />
   </div>
 </article>
@@ -24,10 +18,11 @@ const { title, eyebrow, description } = Astro.props;
 <style>
   article {
     display: grid;
+    grid-template-columns: minmax(0rem, 1fr);
     row-gap: var(--spacer-responsive);
   }
 
-  #content {
+  .content {
     grid-column: 1 / -1;
     --flow-spacer: var(--spacer-responsive);
 
