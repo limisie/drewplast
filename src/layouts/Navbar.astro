@@ -19,7 +19,7 @@ const homePaths = Object.values(getLocalizedUrlList(defaultLocale, "/"));
 const isHomePage = homePaths.includes(Astro.url.pathname);
 ---
 
-<div class=`navbar content-grid ${isHomePage && "homepage"}`>
+<header class=`navbar content-grid ${isHomePage && "homepage"}`>
   <nav>
     <a class="nav__logo" href={getLocaleUrl(locale, homepageData.seo.slug)}>
       <Logo />
@@ -34,7 +34,7 @@ const isHomePage = homePaths.includes(Astro.url.pathname);
       <Icon name="clarity:window-close-line" />
     </button>
   </nav>
-</div>
+</header>
 
 <style>
   .navbar {
@@ -75,6 +75,7 @@ const isHomePage = homePaths.includes(Astro.url.pathname);
         position: absolute;
         z-index: -1;
         inset-block: 0;
+        margin-top: var(--section-padding);
         display: flex;
         align-items: center;
       }

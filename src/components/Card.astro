@@ -35,7 +35,7 @@ const imageData = await getDynamicImageData(image, locale);
 
 <style>
   .card {
-    width: 15rem;
+    width: 15rem;    
 
     h3 {
       padding-block: 0.3rem;
@@ -44,7 +44,7 @@ const imageData = await getDynamicImageData(image, locale);
 
   @media (min-width: 48rem) {
     .card {
-      width: 20rem;
+      width: clamp(15rem, 30vw, 22rem);
     }
   }
 </style>

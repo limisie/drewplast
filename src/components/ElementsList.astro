@@ -1,9 +1,9 @@
 ---
 import { getLocalizedDataByEntries, getLocalizedDataByEntry } from "@lib/data";
 import { defaultLocale } from "@i18n/ui";
-import type { Element } from "@lib/types";
 
 import LabeledIcon from "@components/LabeledIcon.astro";
+import Badges from "@components/Badges.astro";
 
 const { pipesList, fittingsList } = Astro.props;
 
@@ -19,55 +19,46 @@ const fittingsData =
   fittingsList.list &&
   (await getLocalizedDataByEntries(fittingsList.list, locale));
 
-  const { sectionIds: translations } = await getLocalizedDataByEntry(
+const { sectionIds: translations } = await getLocalizedDataByEntry(
   { id: "ui", collection: "translations" },
   locale
 );
 ---
 
-<div>
-  <ul>
-    {
-      pipesData.map(({ data, link, slug }) => (
-        <li>
-          <h3>{data.title}</h3>
-          <p>{data.description}</p>
-
-          <a href={`#${slug}`}>
-            <LabeledIcon
-              iconName="akar-icons:arrow-right"
-              text={link}
-              isLeft={false}
-              isAnimated={true}
-              class="navlink"
-            />
-          </a>
-        </li>
-      ))
-    }
-    {
-      fittingsData && (
-        <li>
-          <h3>{fittingsList.title}</h3>
-          <div class="badges">
-            {fittingsData.map((fitting: Element) => (
-              <p>{fitting.type}</p> //TODO: clickable badges
-            ))}
-          </div>
-          <a href={`#${translations.fittings}`}>
-            <LabeledIcon
-              iconName="akar-icons:arrow-right"
-              text={fittingsList.link}
-              isLeft={false}
-              isAnimated={true}
-              class="navlink"
-            />
-          </a>
-        </li>
-      )
-    }
-  </ul>
-</div>
+<ul>
+  {
+    pipesData.map(({ data, link, slug }) => (
+      <li>
+        <h3>{data.title}</h3>
+        <p>{data.description}</p>
+        <a href={`#${slug}`} class="navlink">
+          <LabeledIcon
+            iconName="akar-icons:arrow-right"
+            text={link}
+            isLeft={false}
+            isAnimated={true}
+          />
+        </a>
+      </li>
+    ))
+  }
+  {
+    fittingsData && (
+      <li>
+        <h3>{fittingsList.title}</h3>
+        <Badges list={fittingsData.map((fitting) => fitting.type)} />
+        <a href={`#${translations.fittings}`} class="navlink">
+          <LabeledIcon
+            iconName="akar-icons:arrow-right"
+            text={fittingsList.link}
+            isLeft={false}
+            isAnimated={true}
+          />
+        </a>
+      </li>
+    )
+  }
+</ul>
 
 <style>
   ul {
@@ -84,6 +75,7 @@ const fittingsData =
     a {
       margin-top: var(--spacer);
       justify-self: end;
+      text-align: right;
     }
   }
 

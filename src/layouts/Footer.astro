@@ -38,18 +38,16 @@ const { aboutCompany } = (await getLocalizedDataByEntry(
       <p class="h3">{drewplastData.fullName}</p>
       <p>{drewplastData.address.street}</p>
       <p>{drewplastData.address.postalCode} {drewplastData.address.city}</p>
-      <a href=`tel:${drewplastData.contact.phone}`>
+      <a href=`tel:${drewplastData.contact.phone}` class="navlink">
         <LabeledIcon
           iconName="akar-icons:phone"
           text={drewplastData.contact.phone}
-          class="navlink"
         />
       </a>
-      <a href=`mailto:${drewplastData.contact.email}`>
+      <a href=`mailto:${drewplastData.contact.email}` class="navlink">
         <LabeledIcon
           iconName="akar-icons:envelope"
           text={drewplastData.contact.email}
-          class="navlink"
         />
       </a>
     </div>
@@ -64,11 +62,6 @@ const { aboutCompany } = (await getLocalizedDataByEntry(
 </footer>
 
 <style>
-  footer {
-    background: var(--clr-background);
-    width: 100%;
-  }
-
   .footer-wrapper {
     display: grid;
     grid-template-columns: 1fr;

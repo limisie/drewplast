@@ -41,13 +41,6 @@ span {
   font-weight: var(--fw-bold);
 }
 
-button {
-  vertical-align: middle;
-  background: none;
-  border: none;
-  color: inherit;
-}
-
 section,
 footer {
   padding-block: var(--section-padding);

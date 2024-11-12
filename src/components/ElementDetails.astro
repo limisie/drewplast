@@ -23,13 +23,13 @@ const isFitting = productsElements.fittings.includes(category as any);
 ---
 
 <div class="grid" id={slug}>
-  {isFitting && title && <h3 id="title">{title}</h3>}
+  {isFitting && title && <h3>{title}</h3>}
 
-  {description && <p id="description">{description}</p>}
+  {description && <p class="description">{description}</p>}
 
   {
     sectionData && (
-      <figure id="section">
+      <figure class="section">
         <div class="img-wrapper">
           <Image src={sectionData.import()} alt={sectionData.alt} />
         </div>
@@ -40,7 +40,7 @@ const isFitting = productsElements.fittings.includes(category as any);
 
   {
     imageData && (
-      <figure id="image">
+      <figure class="image">
         <div class="img-wrapper">
           <Image src={imageData.import()} alt={imageData.alt} />
         </div>
@@ -49,7 +49,7 @@ const isFitting = productsElements.fittings.includes(category as any);
     )
   }
 
-  <div id="table">
+  <div class="table">
     <ElementTable table={table} />
   </div>
 </div>
@@ -63,11 +63,10 @@ const isFitting = productsElements.fittings.includes(category as any);
     scroll-margin-block: calc(2.5 * var(--section-padding));
   }
 
-  #image,
-  #section {
+  figure.image,
+  figure.section {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 
     .img-wrapper {
       flex-grow: 1;
@@ -78,21 +77,17 @@ const isFitting = productsElements.fittings.includes(category as any);
     }
   }
 
-  #title,
-  #table {
+  h3,
+  .table {
     grid-column: 1 / -1;
-  }
-
-  #table {
-    overflow-x: auto;
   }
 
   @media (min-width: 48rem) {
     .grid {
       grid-template-columns: 1fr 1fr;
 
-      &:has(#image):has(#description) {
-        #section {
+      &:has(figure.image):has(.description) {
+        figure.section {
           grid-row: span 2;
         }
       }
