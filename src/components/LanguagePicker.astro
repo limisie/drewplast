@@ -16,12 +16,8 @@ const relativeLocalePaths = getLocalizedUrlList(locale, currentPath);
   <ul class="dropdown-menu">
     {
       locales.map((locale) => (
-        <li>
-          <a
-            href={relativeLocalePaths[locale]}
-            title={languages[locale]}
-            class="navlink"
-          >
+        <li class="navlink">
+          <a href={relativeLocalePaths[locale]} title={languages[locale]}>
             {locale}
           </a>
         </li>
@@ -37,11 +33,10 @@ const relativeLocalePaths = getLocalizedUrlList(locale, currentPath);
 
   .dropdown-menu {
     position: absolute;
-    inset-inline: -0.25rem;
+    inset-inline: calc(-1 * var(--cell-block-padding));
 
     background-color: var(--clr-background);
-    color: var(--clr-text);
-    border: 1px solid var(--grey);
+    border: 1px solid var(--light-grey);
     border-top: none;
 
     transition:
@@ -51,12 +46,12 @@ const relativeLocalePaths = getLocalizedUrlList(locale, currentPath);
 
     li {
       text-align: center;
-      margin-block: 0.5rem;
+      margin-block: var(--spacer);
     }
   }
 
   button[aria-expanded="false"] + .dropdown-menu {
-    top: 0;
+    top: 50%;
     opacity: 0;
     visibility: hidden;
   }
@@ -69,7 +64,6 @@ const relativeLocalePaths = getLocalizedUrlList(locale, currentPath);
 </style>
 
 <script>
-  const dropdown = document.querySelector(".dropdown");
   const dropdownButton = document.querySelector(".dropdown-button");
 
   const toggleElement = (element, toggleOn) => {
@@ -77,13 +71,7 @@ const relativeLocalePaths = getLocalizedUrlList(locale, currentPath);
     element.setAttribute("aria-expanded", toggleOn);
   };
 
-  [
-    ["click", null],
-    ["mouseenter", true],
-    ["mouseleave", false],
-  ].forEach(([event, toggleOn]: [string, boolean]) =>
-    dropdown?.addEventListener(event, () =>
-      toggleElement(dropdownButton, toggleOn)
-    )
+  dropdownButton?.addEventListener("click", () =>
+    toggleElement(dropdownButton, null)
   );
 </script>
