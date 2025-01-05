@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import { getDynamicImageData } from "@lib/imageImport";
 import { defaultLocale } from "@i18n/ui";
 import type { Entry } from "@lib/types";
+import HorizontalScroll from "./HorizontalScroll.astro";
 
 const { imagesList } = Astro.props;
 const locale = Astro.currentLocale || defaultLocale;
@@ -14,28 +15,24 @@ const imagesData = await Promise.all(
 );
 ---
 
-<ul class="full-width-stretch horizontal-scroll">
+<HorizontalScroll class="full-width-stretch" snapCenter responsiveGap>
   {
     imagesData.map((image) => (
-      <li>
+      <li class="gallery-img">
         <div class="img-wrapper">
-          <Image src={image.import()} alt={image.alt} />
+          <Image
+            src={image.import()}
+            alt={image.alt}
+            title={image.caption}
+            class="modal-thumbnail"
+          />
         </div>
       </li>
     ))
   }
-</ul>
+</HorizontalScroll>
 
 <style>
-  ul {
-    gap: var(--spacer-responsive);
-    scroll-snap-type: x mandatory;
-  }
-
-  li {
-    scroll-snap-align: center;
-  }
-
   .img-wrapper {
     aspect-ratio: 1.6/1;
     width: clamp(15rem, 50vw, 45rem);

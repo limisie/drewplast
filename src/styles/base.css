@@ -59,7 +59,6 @@ article + section {
 figcaption {
   text-align: end;
   font-size: var(--fs-xs);
-  opacity: 0.7;
 }
 
 .dark {
@@ -118,6 +117,15 @@ figcaption {
     object-fit: cover;
     object-position: center;
   }
+
+  .modal-thumbnail {
+    cursor: pointer;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
 }
 
 .card {
@@ -150,22 +158,6 @@ figcaption {
 
   &:hover img {
     transform: scale(1.05);
-  }
-}
-
-ul.horizontal-scroll {
-  display: flex;
-  gap: var(--spacer);
-  overflow-x: auto;
-
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  li {
-    flex-shrink: 0;
   }
 }
 

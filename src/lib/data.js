@@ -62,13 +62,20 @@ export const filterDistributorsByRegion = (distributor, regionId) =>
 export const getLocalizedLinks = async (type, locale) => {
   const { data } = await getEntry("data", "links");
   return await Promise.all(
-    data[type].map(async (page) => await getLocalizedLink(page, locale))
+    data[type].map(
+      async (pageEntry) => await getLocalizedLink({ page: pageEntry }, locale)
+    )
   );
 };
 
-export const getLocalizedLink = async (page, locale) => {
-  const pageData = await getLocalizedDataByEntry(page, locale);
-  return { text: pageData.title, url: pageData.seo.slug.trim() };
+export const getLocalizedLink = async (pageLink, locale) => {
+  const pageData = await getLocalizedDataByEntry(pageLink.page, locale);
+  return {
+    text: pageLink.text,
+    pageTitle: pageData.title,
+    url: pageData.seo.slug.trim(),
+    sectionId: pageLink.sectionId,
+  };
 };
 
 export const getTableRow = (entry, columns) => {

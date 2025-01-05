@@ -1,0 +1,156 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { class: className, snapCenter, responsiveGap } = Astro.props;
+---
+
+<div class="wrapper" class:list={[className]}>
+  <button id="scroll_left-button" class="arrow-button left">
+    <Icon name="clarity:arrow-line" />
+  </button>
+
+  <button id="scroll_right-button" class="arrow-button right">
+    <Icon name="clarity:arrow-line" />
+  </button>
+
+  <ul
+    id="horizontal-scroll"
+    class:list={[
+      { "snap-center": snapCenter, "responsive-gap": responsiveGap },
+    ]}
+  >
+    <slot />
+  </ul>
+</div>
+
+<style>
+  ul {
+    display: flex;
+    gap: var(--spacer);
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &.responsive-gap {
+      gap: var(--spacer-responsive);
+    }
+
+    li {
+      flex-shrink: 0;
+      scroll-snap-align: start;
+    }
+
+    &.snap-center li {
+      scroll-snap-align: center;
+    }
+  }
+
+  .wrapper {
+    position: relative;
+  }
+
+  .arrow-button {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    top: 45%;
+
+    background-color: var(--clr-background);
+    opacity: 0.7;
+    font-size: 2.5rem;
+    will-change: transform;
+
+    transition: opacity 0.2s ease-in;
+
+    &.left {
+      left: var(--spacer);
+      transform: rotate(270deg);
+    }
+
+    &.right {
+      right: var(--spacer);
+      transform: rotate(90deg);
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+</style>
+
+<script define:vars={{ snapCenter }}>
+  const scrollableList = document.getElementById("horizontal-scroll");
+  const scrollLeftButton = document.getElementById("scroll_left-button");
+  const scrollRightButton = document.getElementById("scroll_right-button");
+
+  let itemWidth = 0;
+  let gap = 0;
+
+  const initializeDimensions = () => {
+    const firstItem = scrollableList.querySelector("li");
+    if (firstItem) {
+      itemWidth = firstItem.offsetWidth;
+      gap = parseFloat(getComputedStyle(scrollableList).gap || "0");
+    }
+  };
+
+  const scrollToSnapPoint = (direction) => {
+    if (!itemWidth) return;
+    const scrollAmount = itemWidth + gap;
+    const scrollOffset = snapCenter
+      ? (scrollableList.offsetWidth - itemWidth) / 2
+      : 0;
+
+    const index = (scrollableList.scrollLeft + scrollOffset / 2) / scrollAmount;
+    const imageIndex = Math.round(index);
+    const imageShift = index - Math.floor(index);
+    const nextImageIndex =
+      isScrolledToEnd() && imageShift <= 0.5
+        ? imageIndex + direction + 1
+        : imageIndex + direction;
+
+    const newScrollPosition = nextImageIndex * scrollAmount - scrollOffset;
+
+    scrollableList.scrollTo({
+      left: newScrollPosition,
+      behavior: "smooth",
+    });
+  };
+
+  const isScrolledToEnd = (isStart = false) => {
+    const maxScrollLeft =
+      scrollableList.scrollWidth - scrollableList.clientWidth;
+    return isStart
+      ? scrollableList.scrollLeft <= 0
+      : scrollableList.scrollLeft >= maxScrollLeft;
+  };
+
+  const updateArrowVisibility = () => {
+    scrollLeftButton.classList.toggle("hidden", isScrolledToEnd(true));
+    scrollRightButton.classList.toggle("hidden", isScrolledToEnd());
+  };
+
+  let scrollTimeout;
+  scrollableList.addEventListener("scroll", () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(updateArrowVisibility, 100);
+  });
+
+  scrollLeftButton.addEventListener("click", () => scrollToSnapPoint(-1));
+  scrollRightButton.addEventListener("click", () => scrollToSnapPoint(1));
+  window.addEventListener("resize", initializeDimensions);
+
+  updateArrowVisibility();
+  initializeDimensions();
+</script>

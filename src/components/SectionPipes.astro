@@ -9,19 +9,17 @@ const { pipesList } = Astro.props;
 const locale = Astro.currentLocale || defaultLocale;
 
 const pipesData = await Promise.all(
-  pipesList.map(async ({ pipe }) => ({
+  pipesList.map(async ({ pipe, link }) => ({
     data: await getLocalizedDataByEntry(pipe, locale),
-    slug: pipe.id,
+    link: link,
   }))
 );
 ---
 
 {
-  pipesData.map((pipe) => (
-    <SectionGeneric
-      title={pipe.data.title}
-    >
-      <ElementDetails element={pipe.data} slug={pipe.slug} />
+  pipesData.map(({ data, link }) => (
+    <SectionGeneric title={data.title} id={link.url}>
+      <ElementDetails element={data} />
     </SectionGeneric>
   ))
 }

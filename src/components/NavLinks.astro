@@ -13,9 +13,9 @@ const links = isNavbar
 
 <ul class:list={[className]}>
   {
-    links.map(({ url, text }) => (
+    links.map(({ url, pageTitle }) => (
       <li class="navlink">
-        <a href={getLocaleUrl(locale, url)}>{text}</a>
+        <a href={getLocaleUrl(locale, url)}>{pageTitle}</a>
       </li>
     ))
   }

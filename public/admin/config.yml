@@ -23,6 +23,17 @@ default_fields:
     widget: string
     hint: Nagłówek sekcji / strony (np. Dokumenty, Kanalizacja wewnętrzna PP, Produkty, Sieć dystrybucji)
     i18n: true
+  - &ID
+    label: Identyfikator
+    name: sectionId
+    widget: string
+    hint: Identyfikator sekcji
+    i18n: true
+    pattern:
+        [
+          "^[ ]?[a-z0-9/]*(?:-[a-z0-9]+)*$",
+          "Musi składać się z małych liter bez znaków diakrytycznych, numerów i myślników (np. zrownowazony-rozwoj)",
+        ]
   - &EYEBROW
     label: Nagłówek brwiowy
     name: eyebrow
@@ -81,10 +92,12 @@ default_fields:
         widget: string
         hint: Tekst linku
         i18n: true
+        required: false
       - name: url
         widget: string
         i18n: true
         hint: Ścieżka strony
+        required: false
   - &PAGE_LINK
     label: Link do podstrony
     name: pageLink
@@ -98,6 +111,9 @@ default_fields:
         i18n: true
       - <<: *PAGE_RELATION
         i18n: duplicate
+      - <<: *ID
+        hint: Identyfikator sekcji, do której ma zostać przeniesiony użytkownik na podstronie docelowej.
+        required: false
 
 seo: &SEO
   label: SEO
@@ -149,6 +165,7 @@ section: &SECTION
   i18n: true
   fields:
     - *TITLE
+    - *ID
     - *DESCRIPTION
     - *IMAGE
 
@@ -234,7 +251,7 @@ collections:
     fields:
       - label: Nazwa obrazu
         name: title
-        hint: Nazwa obrazu, po której będzie go można wyszukać podczas wprowadzania danych
+        hint: Nazwa obrazu, po której będzie go można wyszukać w panelu administratora
         widget: string
         i18n: duplicate
       - label: Alt
@@ -302,7 +319,9 @@ collections:
               - *TITLE
               - <<: *DESCRIPTION
                 hint: Krótki opis firmy w dwóch blokach tekstu (w sumie ok. 300 znaków)
-              - *FEATURES
+              - <<: *FEATURES
+                hint: Lista najważniejszych wyrozników firmy Drewplast (dlaczego wybrać Drewplast?)
+                max: 4
           - <<: *SECTION
             label: Strona główna - Sekcja - Produkty
             name: sectionProducts
@@ -418,6 +437,7 @@ collections:
             hint: Sekcja strony Kontakt z dystrybutorami
             fields:
               - *TITLE
+              - *ID
               - *DESCRIPTION
 
       - label: O firmie
@@ -453,23 +473,6 @@ collections:
               - <<: *DESCRIPTION
                 hint: (2 akapity, w sumie ok. 250 znaków)
           - <<: *SECTION
-            label: O firmie - Sekcja - Pracownicy
-            name: sectionEmployees
-            hint: Sekcja strony O firmie ze zdjęciami pracowników
-            fields:
-              - *TITLE
-              - label: Lista pracowników
-                name: employeesList
-                widget: relation
-                hint: Lista pracowników, których zdjęcia mają zostać wyświetlone na stronie O firmie
-                collection: employees
-                value_field: "{{slug}}"
-                search_fields: [name, position]
-                display_fields: [name]
-                multiple: true
-                min: 1
-                i18n: duplicate
-          - <<: *SECTION
             label: O firmie - Sekcja - Historia firmy
             name: sectionHistory
             hint: Sekcja strony O firmie z kamieniami milowymi w historii firmy
@@ -493,6 +496,7 @@ collections:
             hint: Sekcja strony O firmie o zrównoważonym rozwoju
             fields:
               - *TITLE
+              - *ID
               - *IMAGE
               - *FEATURES
 
@@ -572,6 +576,7 @@ collections:
             widget: text
             hint: Wypisz zalety w kolejnych linijkach tekstu
             i18n: true
+            required: false
       - <<: *SECTION
         label: Sekcja - Elementy systemu
         name: sectionElements
@@ -597,24 +602,24 @@ collections:
               filters:
                 - field: category
                   values: [Rury, Pipes]
-            - label: Tekst linku do sekcji z kształtkami
-              widget: string
-              name: link
-              hint: Link do tabeli z wymiarami dostępnych elementów
-              default: Zobacz dostępne warianty
+            - <<: *LINK
+              label: Link do sekcji z rurami
+              hint: Link do tabeli z wymiarami dostępnych elementów (np. Zobacz dostępne warianty)
+              required: false
           - label: Lista kształtek
             name: fittingsList
             hint: Lista kształtek danego produtu
             widget: object
             collapsed: true
             i18n: true
+            required: false
             fields:
             - label: Tytuł
               name: title
-              hint: Tytuł sekcji kształtek widoczny na stronie produktu
+              hint: Tytuł sekcji kształtek widoczny na stronie produktu (np. Kształtki)
               widget: string
-              default: Kształtki
               i18n: true
+              required: false
             - label: Lista kształtek
               name: list
               hint: Lista kształtek dla danego systemu
@@ -629,12 +634,10 @@ collections:
               filters:
                 - field: category
                   values: [Kształtki, Fittings]
-            - label: Tekst linku do sekcji z kształtkami
-              widget: string
-              name: link
-              default: Zobacz dostępne warianty
-              hint: Link do tabeli z wymiarami dostępnych elementów
-              i18n: true
+            - <<: *LINK
+              label: Link do sekcji z kształtkami
+              hint: Link do tabeli z wymiarami dostępnych elementów (np. Zobacz dostępne warianty)
+              required: false
       - <<: *SECTION
         label: Sekcja - Galeria
         name: sectionGallery
@@ -695,7 +698,7 @@ collections:
         required: false
       - <<: *IMAGE
         label: Rysunek techniczny
-        name: section
+        name: sectionImage
         required: false
       - label: Tabela wymiarów
         name: table
@@ -1028,37 +1031,3 @@ collections:
             name: documentsError
             widget: string
             i18n: true
-          - label: Id sekcji
-            hint: Identyfikatory sekcji w formie sluga potrzebne do stworzenia odnośników (znajdą się po /# w adresie URL podstrony)
-            name: sectionIds
-            widget: object
-            i18n: true
-            collapsed: true
-            fields:
-              - label: Kształtki
-                name: fittings
-                widget: string
-                i18n: true
-                pattern:
-                  [
-                    "^[ ]?[a-z0-9/]*(?:-[a-z0-9]+)*$",
-                    "Musi składać się z małych liter bez znaków diakrytycznych, numerów i myślników (np. produkt-1)",
-                  ]
-              - label: Dystrybutorzy
-                name: distributors
-                widget: string
-                i18n: true
-                pattern:
-                  [
-                    "^[ ]?[a-z0-9/]*(?:-[a-z0-9]+)*$",
-                    "Musi składać się z małych liter bez znaków diakrytycznych, numerów i myślników (np. produkt-1)",
-                  ]
-              - label: Zrównoważony rozwój
-                name: sustainable
-                widget: string
-                i18n: true
-                pattern:
-                  [
-                    "^[ ]?[a-z0-9/]*(?:-[a-z0-9]+)*$",
-                    "Musi składać się z małych liter bez znaków diakrytycznych, numerów i myślników (np. produkt-1)",
-                  ]

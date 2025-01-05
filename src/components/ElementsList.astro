@@ -12,29 +12,22 @@ const pipesData = await Promise.all(
   pipesList.map(async ({ pipe, link }) => ({
     data: await getLocalizedDataByEntry(pipe, locale),
     link: link,
-    slug: pipe.id,
   }))
 );
 const fittingsData =
-  fittingsList.list &&
-  (await getLocalizedDataByEntries(fittingsList.list, locale));
-
-const { sectionIds: translations } = await getLocalizedDataByEntry(
-  { id: "ui", collection: "translations" },
-  locale
-);
+  fittingsList && (await getLocalizedDataByEntries(fittingsList.list, locale));
 ---
 
 <ul>
   {
-    pipesData.map(({ data, link, slug }) => (
+    pipesData.map(({ data, link }) => (
       <li>
         <h3>{data.title}</h3>
         <p>{data.description}</p>
-        <a href={`#${slug}`} class="navlink">
+        <a href={`#${link.url}`} class="navlink">
           <LabeledIcon
             iconName="akar-icons:arrow-right"
-            text={link}
+            text={link.text}
             isLeft={false}
             isAnimated={true}
           />
@@ -47,10 +40,10 @@ const { sectionIds: translations } = await getLocalizedDataByEntry(
       <li>
         <h3>{fittingsList.title}</h3>
         <Badges list={fittingsData.map((fitting) => fitting.type)} />
-        <a href={`#${translations.fittings}`} class="navlink">
+        <a href={`#${fittingsList.link.url}`} class="navlink">
           <LabeledIcon
             iconName="akar-icons:arrow-right"
-            text={fittingsList.link}
+            text={fittingsList.link.text}
             isLeft={false}
             isAnimated={true}
           />

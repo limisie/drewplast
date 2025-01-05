@@ -2,6 +2,7 @@
 import { getLocalizedDataByEntries } from "@lib/data";
 import { defaultLocale } from "@i18n/ui";
 import Card from "@components/Card.astro";
+import HorizontalScroll from "@components/HorizontalScroll.astro";
 
 const { employeesList } = Astro.props;
 
@@ -9,7 +10,7 @@ const locale = Astro.currentLocale || defaultLocale;
 const employeesData = await getLocalizedDataByEntries(employeesList, locale);
 ---
 
-<ul class="horizontal-scroll">
+<HorizontalScroll>
   {
     employeesData.map((employee) => (
       <Card
@@ -19,10 +20,4 @@ const employeesData = await getLocalizedDataByEntries(employeesList, locale);
       />
     ))
   }
-</ul>
-
-<style>
-  ul {
-    gap: var(--spacer-responsive);
-  }
-</style>
+</HorizontalScroll>

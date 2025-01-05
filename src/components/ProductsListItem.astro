@@ -1,36 +1,40 @@
 ---
 import { Image } from "astro:assets";
-import { getRelativeLocaleUrl } from "astro:i18n";
 import { getLocalizedDataByEntry } from "@lib/data";
+import { isList } from "@lib/utils";
 import { getDynamicImageData } from "@lib/imageImport";
+import { getLocaleUrl } from "@i18n/urls";
 import { defaultLocale } from "@i18n/ui";
 
 import LabeledIcon from "@components/LabeledIcon.astro";
 import Badges from "@components/Badges.astro";
 
 const {
-  product: { sectionHeader, seo, buttonText, sectionElements },
+  product: {
+    sectionHeader,
+    image,
+    seo,
+    buttonText,
+    sectionElements: { pipesList, fittingsList },
+  },
 } = Astro.props;
 const locale = Astro.currentLocale || defaultLocale;
 
-const imageData = await getDynamicImageData(sectionHeader.image, locale);
-const pipesData = await Promise.all(
-  sectionElements.pipesList.map(async ({ pipe }) => ({
-    data: await getLocalizedDataByEntry(pipe, locale),
-    slug: pipe.id,
-  }))
-);
+const imageData = await getDynamicImageData(image, locale);
+const pipesTitles = isList(pipesList)
+  ? await Promise.all(
+      pipesList.map(
+        async ({ pipe }) => (await getLocalizedDataByEntry(pipe, locale)).title
+      )
+    )
+  : [];
+const fittingsTitle = isList(fittingsList?.list) ? [fittingsList.title] : [];
 
-const badges = [
-  ...pipesData.map(({ data }) => data.title),
-  ...(sectionElements?.fittingsList?.title
-    ? [sectionElements.fittingsList.title]
-    : []),
-];
+const badges = [...pipesTitles, ...fittingsTitle];
 ---
 
 <li class="card">
-  <a href={getRelativeLocaleUrl(locale, seo.slug)}></a>
+  <a href={getLocaleUrl(locale, seo.slug)}></a>
 
   <div class="img-wrapper">
     <Image src={imageData.import()} alt={imageData.alt} />
@@ -92,23 +96,21 @@ const badges = [
     }
   }
 
-  @media (min-width: 48rem) {
+  @media (min-width: 55rem) {
     li.card {
-      grid-template-columns: auto auto;
+      grid-template-columns: 20rem 1fr;
+      gap: var(--spacer-responsive);
 
       .img-wrapper {
-        aspect-ratio: auto;
+        height: 100%;
       }
     }
   }
 
-  @media (min-width: 75rem) {
+  @media (min-width: 60rem) {
     li.card {
-      gap: var(--spacer-responsive);
-
       .img-wrapper {
         aspect-ratio: 1/1;
-        max-width: 20rem;
       }
     }
   }

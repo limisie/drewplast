@@ -2,6 +2,7 @@
 import Head from "@layouts/Head.astro";
 import Navbar from "@layouts/Navbar.astro";
 import Footer from "@layouts/Footer.astro";
+import ImageModal from "@components/ImageModal.astro";
 
 const { seo } = Astro.props;
 ---
@@ -12,6 +13,7 @@ const { seo } = Astro.props;
     <Navbar />
     <main class="content-grid">
       <slot />
+      <ImageModal />
     </main>
     <Footer />
   </body>

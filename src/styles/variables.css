@@ -6,6 +6,7 @@
   --image-banner-ratio: 2/1;
   --cell-block-padding: 0.75rem;
   --cell-inline-padding: 1rem;
+  --icon-size: auto;
 
   --ff-dm-sans: "DM Sans", sans-serif;
   --ff-poppins: "Poppins", sans-serif;

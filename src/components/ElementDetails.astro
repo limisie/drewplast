@@ -2,38 +2,38 @@
 import { Image } from "astro:assets";
 import { getDynamicImageData } from "@lib/imageImport";
 import { defaultLocale, productsElements } from "@i18n/ui";
-import type { Element } from "@lib/types";
 
 import ElementTable from "@components/ElementTable.astro";
 
-interface Props {
-  element: Element;
-  slug?: string;
-}
-
 const {
-  element: { image, section, category, title, description, table },
-  slug,
+  element: { image, sectionImage, category, title, description, table },
 } = Astro.props;
 const locale = Astro.currentLocale || defaultLocale;
+
 const imageData = image && (await getDynamicImageData(image, locale));
-const sectionData = section && (await getDynamicImageData(section, locale));
+const sectionImageData =
+  sectionImage && (await getDynamicImageData(sectionImage, locale));
 
 const isFitting = productsElements.fittings.includes(category as any);
 ---
 
-<div class="grid" id={slug}>
+<div class="grid">
   {isFitting && title && <h3>{title}</h3>}
 
   {description && <p class="description">{description}</p>}
 
   {
-    sectionData && (
-      <figure class="section">
+    sectionImageData && (
+      <figure class="section-image">
         <div class="img-wrapper">
-          <Image src={sectionData.import()} alt={sectionData.alt} />
+          <Image
+            src={sectionImageData.import()}
+            alt={sectionImageData.alt}
+            title={sectionImageData.caption}
+            class="modal-thumbnail"
+          />
         </div>
-        <figcaption>{sectionData.caption}</figcaption>{" "}
+        <figcaption class="light-font">{sectionImageData.caption}</figcaption>
       </figure>
     )
   }
@@ -42,9 +42,14 @@ const isFitting = productsElements.fittings.includes(category as any);
     imageData && (
       <figure class="image">
         <div class="img-wrapper">
-          <Image src={imageData.import()} alt={imageData.alt} />
+          <Image
+            src={imageData.import()}
+            alt={imageData.alt}
+            title={imageData.caption}
+            class="modal-thumbnail"
+          />
         </div>
-        <figcaption>{imageData.caption}</figcaption>
+        <figcaption class="light-font">{imageData.caption}</figcaption>
       </figure>
     )
   }
@@ -64,16 +69,17 @@ const isFitting = productsElements.fittings.includes(category as any);
   }
 
   figure.image,
-  figure.section {
+  figure.section-image {
     display: flex;
     flex-direction: column;
+    gap: var(--spacer);
 
     .img-wrapper {
       flex-grow: 1;
     }
 
     img {
-      aspect-ratio: 1.6/1;
+      aspect-ratio: 2/1;
     }
   }
 
@@ -87,7 +93,7 @@ const isFitting = productsElements.fittings.includes(category as any);
       grid-template-columns: 1fr 1fr;
 
       &:has(figure.image):has(.description) {
-        figure.section {
+        figure.section-image {
           grid-row: span 2;
         }
       }

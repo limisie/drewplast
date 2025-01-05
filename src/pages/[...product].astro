@@ -1,6 +1,6 @@
 ---
-import { getLocalizedDataByEntry, getPagesData } from "@lib/data";
-import { defaultLocale, locales } from "@i18n/ui";
+import { getPagesData } from "@lib/data";
+import { locales } from "@i18n/ui";
 import { getLocaleUrl } from "@i18n/urls";
 
 import MainLayout from "@layouts/MainLayout.astro";
@@ -43,13 +43,6 @@ const {
   sectionGallery,
   sectionDocuments,
 } = Astro.props;
-
-const locale = Astro.currentLocale || defaultLocale;
-
-const { sectionIds: translations } = await getLocalizedDataByEntry(
-  { id: "ui", collection: "translations" },
-  locale
-);
 ---
 
 <MainLayout seo={seo}>
@@ -67,10 +60,7 @@ const { sectionIds: translations } = await getLocalizedDataByEntry(
     title={sectionDescription.title}
     description={sectionDescription.description}
   >
-    <FeaturesList
-      class="wrap"
-      featuresList={sectionDescription.advantages.split("\n")}
-    />
+    <FeaturesList isWrapped featuresList={sectionDescription.advantages.split("\n")}/>
   </SectionGeneric>
 
   <SectionGeneric
@@ -87,7 +77,7 @@ const { sectionIds: translations } = await getLocalizedDataByEntry(
 
   <SectionGeneric
     title={sectionElements.fittingsList.title}
-    id={translations.fittings}
+    id={sectionElements.fittingsList.link.url}
   >
     <FittingsTabs fittingsList={sectionElements.fittingsList} />
   </SectionGeneric>

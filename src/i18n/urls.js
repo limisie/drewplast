@@ -2,10 +2,14 @@ import { defaultLocale, locales } from "@i18n/ui";
 
 export const localizedUrlList = {};
 
-export const getLocaleUrl = (locale, path) =>
-  locale === defaultLocale
-    ? `/${path.trim()}`
-    : `/${locale}/${path.trim()}`.replace(/\/$/, "");
+export const getLocaleUrl = (locale, path, section) => {
+  const baseUrl =
+    locale === defaultLocale
+      ? `/${path.trim()}`
+      : `/${locale}/${path.trim()}`.replace(/\/$/, "");
+  const sectionLink = section ? `#${section}` : "";
+  return `${baseUrl}${sectionLink}`;
+};
 
 export const appendLocalizedUrl = (key, data) => {
   if (!localizedUrlList[key]) {

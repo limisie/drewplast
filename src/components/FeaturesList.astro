@@ -2,10 +2,10 @@
 import LabeledIcon from "@components/LabeledIcon.astro";
 import type { Feature } from "@lib/types";
 
-const { featuresList, class: classList } = Astro.props;
+const { featuresList, isWrapped } = Astro.props;
 ---
 
-<ul class:list={[classList]}>
+<ul class:list={[{wrap: isWrapped}]}>
   {
     featuresList.map((feature: Feature) => (
       <li>

@@ -19,7 +19,7 @@ const imageData = await getDynamicImageData(image, locale);
   <div class="img-wrapper">
     <Image src={imageData.import()} alt={imageData.alt} />
   </div>
-  {isCaption && <figcaption>{imageData.alt}</figcaption>}
+  {isCaption && <figcaption class="light-font">{imageData.alt}</figcaption>}
 </figure>
 
 <style>

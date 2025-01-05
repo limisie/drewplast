@@ -1,0 +1,187 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div
+  id="modal"
+  class="modal"
+  role="dialog"
+  aria-labelledby="modal_figcaption"
+  aria-hidden="true"
+>
+  <button id="modal_close-button" aria-expanded="false">
+    <Icon name="clarity:window-close-line" />
+  </button>
+
+  <button id="modal_prev-button" class="arrow-button left">
+    <Icon name="clarity:arrow-line" />
+  </button>
+  <button id="modal_next-button" class="arrow-button right">
+    <Icon name="clarity:arrow-line" />
+  </button>
+
+  <figure>
+    <img id="modal_image" alt="" />
+    <figcaption id="modal_figcaption"></figcaption>
+  </figure>
+</div>
+
+<script>
+  const images = Array.from(document.querySelectorAll(".modal-thumbnail")) as [
+    HTMLImageElement,
+  ];
+  const modal = document.getElementById("modal") as HTMLElement;
+  const modalImage = document.getElementById("modal_image") as HTMLImageElement;
+  const modalImageCaption = document.getElementById(
+    "modal_figcaption"
+  ) as HTMLElement;
+  const modalCloseButton = document.getElementById(
+    "modal_close-button"
+  ) as HTMLButtonElement;
+  const modalPrevButton = document.getElementById(
+    "modal_prev-button"
+  ) as HTMLButtonElement;
+  const modalNextButton = document.getElementById(
+    "modal_next-button"
+  ) as HTMLButtonElement;
+
+  let currentIndex = -1;
+
+  const openModal = (event) => {
+    const target = event.target.closest(".modal-thumbnail");
+    if (!target) return;
+
+    currentIndex = images.indexOf(target);
+    if (currentIndex === -1) return;
+
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+    modalCloseButton.setAttribute("aria-expanded", "true");
+    modalCloseButton.focus();
+    updateModalImage();
+  };
+
+  const updateModalImage = () => {
+    const currentImage = images[currentIndex];
+    if (currentImage) {
+      modalImage.src = currentImage.src;
+      modalImage.alt = currentImage.alt || "";
+      modalImageCaption.textContent = currentImage.title || "";
+    }
+  };
+
+  const updataModalImage = (isNext) => {
+    currentIndex =
+      (currentIndex + (isNext ? 1 : -1) + images.length) % images.length;
+    updateModalImage();
+  };
+
+  const closeModal = () => {
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    modalCloseButton.setAttribute("aria-expanded", "false");
+    images[currentIndex].focus();
+  };
+
+  const handleKeyboard = (event) => {
+    if (!modal.classList.contains("open")) return;
+
+    switch (event.key) {
+      case "ArrowRight":
+        updataModalImage(true);
+        break;
+      case "ArrowLeft":
+        updataModalImage(false);
+        break;
+      case "Escape":
+        closeModal();
+        break;
+    }
+  };
+
+  images.forEach((image) => image.addEventListener("click", openModal));
+  modalCloseButton.addEventListener("click", closeModal);
+  modalNextButton.addEventListener("click", () => updataModalImage(true));
+  modalPrevButton.addEventListener("click", () => updataModalImage(false));
+  window.addEventListener(
+    "click",
+    (event) => event.target === modal && closeModal()
+  );
+  window.addEventListener("keydown", handleKeyboard);
+</script>
+
+<style>
+  .modal {
+    display: none;
+    --icon-size: 2.5rem;
+  }
+
+  .modal.open {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background-color: rgb(from var(--black) r g b / 0.8);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-inline: calc(var(--icon-size) + 2 * var(--spacer));
+
+    figure {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacer);
+      align-items: center;
+      max-width: 80vw;
+      max-height: 80vh;
+      margin: 0;
+    }
+
+    img {
+      display: block;
+      object-fit: contain;
+      max-height: calc(80vh - var(--spacer));
+      max-width: 100%;
+      width: auto;
+    }
+
+    figcaption {
+      color: var(--white);
+    }
+
+    svg {
+      font-size: var(--icon-size);
+      color: var(--white);
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        opacity: 0.7;
+      }
+    }
+
+    #modal_close-button {
+      position: absolute;
+      top: var(--spacer);
+      right: var(--spacer);
+      margin-right: 4px;
+    }
+
+    .arrow-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &.left {
+        left: var(--spacer);
+        transform: rotate(270deg);
+      }
+
+      &.right {
+        right: var(--spacer);
+        transform: rotate(90deg);
+      }
+    }
+  }
+</style>

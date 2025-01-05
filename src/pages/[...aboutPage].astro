@@ -1,10 +1,9 @@
 ---
-import { getLocalizedDataByEntry, getPageData } from "@lib/data";
-import { defaultLocale, locales } from "@i18n/ui";
+import { getPageData } from "@lib/data";
+import { locales } from "@i18n/ui";
 import { getLocaleUrl } from "@i18n/urls";
 
 import MainLayout from "@layouts/MainLayout.astro";
-import EmployeesCardList from "@components/EmployeesCardList.astro";
 import FeaturesList from "@components/FeaturesList.astro";
 import ImageBanner from "@components/ImageBanner.astro";
 import MilestonesTabs from "@components/MilestonesTabs.astro";
@@ -33,16 +32,9 @@ const {
   seo,
   sectionHeader,
   sectionDescription,
-  sectionEmployees,
   sectionHistory,
   sectionSustainable,
 } = Astro.props;
-const locale = Astro.currentLocale || defaultLocale;
-
-const { sectionIds: translations } = await getLocalizedDataByEntry(
-  { id: "ui", collection: "translations" },
-  locale
-);
 ---
 
 <MainLayout seo={seo}>
@@ -65,20 +57,15 @@ const { sectionIds: translations } = await getLocalizedDataByEntry(
   <SectionGeneric
     class={{
       section: "full-width light",
-      content: "breakout--right",
     }}
-    title={sectionEmployees.title}
+    title={sectionHistory.title}
   >
-    <EmployeesCardList employeesList={sectionEmployees.employeesList} />
-  </SectionGeneric>
-
-  <SectionGeneric title={sectionHistory.title}>
     <MilestonesTabs milestonesList={sectionHistory.milestonesList} />
   </SectionGeneric>
 
   <SectionGeneric
     title={sectionSustainable.title}
-    id={translations.sustainable}
+    id={sectionSustainable.sectionId}
   >
     <ImageBanner image={sectionSustainable.image} />
     <FeaturesList featuresList={sectionSustainable.featuresList} />

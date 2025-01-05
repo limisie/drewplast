@@ -37,6 +37,7 @@ const sectionSchemas = {
     preventIndexing: z.boolean(),
   }),
   general: z.object({
+    sectionId: z.string().optional(),
     title: z.string(),
     description: z.string().optional(),
     image: reference("images").optional(),
@@ -54,17 +55,21 @@ const sectionSchemas = {
     }),
   elements: z.object({
     title: z.string(),
-    pipesList: z.array(
-      z.object({
-        pipe: reference("product-elements"),
-        link: z.string(),
+    pipesList: z
+      .array(
+        z.object({
+          pipe: reference("product-elements"),
+          link: helperSchemas.link.optional(),
+        })
+      )
+      .optional(),
+    fittingsList: z
+      .object({
+        title: z.string().optional(),
+        list: z.array(reference("product-elements")).optional(),
+        link: helperSchemas.link.optional(),
       })
-    ),
-    fittingsList: z.object({
-      title: z.string(),
-      list: z.array(reference("product-elements")),
-      link: z.string(),
-    }),
+      .optional(),
   }),
   hero: z.object({
     title: z.string(),
@@ -149,7 +154,7 @@ export const collectionSchemas = {
     description: z.string().optional(),
     type: z.string().optional(),
     image: reference("images").optional(),
-    section: reference("images").optional(),
+    sectionImage: reference("images").optional(),
     table: z.string(),
   }),
   regions: z.object({
@@ -177,10 +182,5 @@ export const collectionSchemas = {
     }),
     distributorsError: z.string(),
     documentsError: z.string(),
-    sectionIds: z.object({
-      fittings: z.string(),
-      distributors: z.string(),
-      sustainable: z.string(),
-    }),
   }),
 };
