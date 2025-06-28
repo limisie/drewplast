@@ -22,12 +22,28 @@ const { contactHeadings } = (await getLocalizedDataByEntry(
 
 <div class="wrapper">
   <div class="column">
+    <div>
+      <span>{contactHeadings.phone}</span>
+      <a href={`tel:${drewplastData.contact.phone}`} class="navlink">
+        {drewplastData.contact.phone}
+      </a>
+    </div>
+
+    <div>
+      <span>{contactHeadings.email}</span>
+      <a href={`mailto:${drewplastData.contact.email}`} class="navlink">
+        {drewplastData.contact.email}
+      </a>
+    </div>
+  </div>
+
+  <div class="column">
     <span>{contactHeadings.address}</span>
     <p>{drewplastData.address.street}</p>
     <p>{drewplastData.address.postalCode} {drewplastData.address.city}</p>
     <p>{region.title}</p>
   </div>
-
+  
   <div class="column">
     <div class="row">
       <span>NIP</span>
@@ -43,20 +59,6 @@ const { contactHeadings } = (await getLocalizedDataByEntry(
       <span>REGON</span>
       <p>{drewplastData.regon}</p>
     </div>
-  </div>
-
-  <div>
-    <span>{contactHeadings.phone}</span>
-    <a href={`tel:${drewplastData.contact.phone}`} class="navlink">
-      {drewplastData.contact.phone}
-    </a>
-  </div>
-
-  <div>
-    <span>{contactHeadings.email}</span>
-    <a href={`mailto:${drewplastData.contact.email}`} class="navlink">
-      {drewplastData.contact.email}
-    </a>
   </div>
 </div>
 
