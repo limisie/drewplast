@@ -27,7 +27,7 @@ const documentsByCategory = await Promise.all(
 ---
 
 <TabLogic
-  tabList={categories.map((category) => category.title)}
+  tabList={categories.map((category) => category.abbreviation || category.title)}
   contentList={documentsByCategory}
   mode="documents"
   isHorizontal

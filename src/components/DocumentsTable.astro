@@ -3,25 +3,35 @@ import { defaultLocale } from "@i18n/ui";
 import { getLocalizedDataByEntries, getLocalizedDataByEntry } from "@lib/data";
 
 import Table from "@components/Table.astro";
-import DocumentTableRows from "@components/DocumentTableRows.astro";
+import DocumentTableRow from "@components/DocumentTableRow.astro";
 
 const { documents } = Astro.props;
 const locale = Astro.currentLocale || defaultLocale;
 
-const { documentsTableHeadings, documentsError } =
-  await getLocalizedDataByEntry(
-    { id: "ui", collection: "translations" },
-    locale
-  );
+const {
+  tableHeadings,
+  documentsError,
+  downloadButtonText,
+  archivedLabel,
+} = await getLocalizedDataByEntry(
+  { id: "documents", collection: "translations" },
+  locale
+);
 
 const documentsData = await getLocalizedDataByEntries(documents, locale);
-const tableHeadings = documentsTableHeadings.split(",");
+const headingsList = tableHeadings.split(",");
 ---
 
 {
   documentsData.length ? (
-    <Table headingsList={tableHeadings}>
-      <DocumentTableRows rows={documentsData} />
+    <Table headingsList={headingsList}>
+      {documentsData.map((documentData) => (
+        <DocumentTableRow
+          data={documentData}
+          buttonText={downloadButtonText}
+          archivedLabel={archivedLabel}
+        />
+      ))}
     </Table>
   ) : (
     <p>{documentsError}</p>

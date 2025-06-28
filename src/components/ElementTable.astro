@@ -3,10 +3,13 @@ import Table from "@components/Table.astro";
 import TableRows from "@components/TableRows.astro";
 
 const { table } = Astro.props;
-const tableData = table.split("\n\n"); //TODO add (mm)
+const tableData = table.split("\n");
 const rows = tableData.slice(2).map((row: string) => row.split(","));
 ---
 
-<Table headingsList={tableData[0].split(",")}>
+<Table
+  headingsList={tableData[0].split(",")}
+  headingUnits={tableData[1].split(",")}
+>
   <TableRows rows={rows} />
 </Table>

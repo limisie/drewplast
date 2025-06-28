@@ -1,0 +1,17 @@
+---
+const { data, buttonText, archivedLabel } = Astro.props;
+---
+
+<tr class:list={[{ archived: data.isArchive }]}>
+  <td>{data.title} {data.isArchive && archivedLabel}</td>
+  <td>{data.language}</td>
+  <td class="underlined-element interactive">
+    <a href={data.url} target="_blank" rel="noopener noreferrer">{data.buttonText || buttonText}</a>
+  </td>
+</tr>
+
+<style>
+  .archived {
+    opacity: 0.5;
+  }
+</style>

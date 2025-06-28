@@ -93,12 +93,15 @@ export const collectionSchemas = {
   }),
   "document-categories": z.object({
     title: z.string(),
+    abbreviation: z.string().optional(),
   }),
   documents: z.object({
     title: z.string(),
-    date: z.string(),
-    file: z.string(),
-    buttonText: z.string(),
+    isArchive: z.boolean().optional(),
+    language: z.string().optional(),
+    date: z.string().optional(),
+    url: z.string(),
+    buttonText: z.string().optional(),
     category: z.array(reference("document-categories")),
   }),
   employees: z.object({
@@ -173,14 +176,16 @@ export const collectionSchemas = {
     footer: z.array(reference("pages")).optional(),
   }),
   translations: z.object({
-    aboutCompany: z.string(),
-    documentsTableHeadings: z.string(),
+    aboutCompany: z.string().optional(),
     contactHeadings: z.object({
       address: z.string(),
       phone: z.string(),
       email: z.string(),
-    }),
-    distributorsError: z.string(),
-    documentsError: z.string(),
+    }).optional(),
+    distributorsError: z.string().optional(),
+    documentsError: z.string().optional(),
+    tableHeadings: z.string().optional(),
+    downloadButtonText: z.string().optional(),
+    archivedLabel: z.string().optional(),
   }),
 };

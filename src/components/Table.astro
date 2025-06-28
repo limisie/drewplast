@@ -1,5 +1,5 @@
 ---
-const { headingsList } = Astro.props;
+const { headingsList, headingUnits = [] } = Astro.props;
 ---
 
 <table>
@@ -7,8 +7,29 @@ const { headingsList } = Astro.props;
     <tr>
       {headingsList.map((heading: string) => <th>{heading}</th>)}
     </tr>
+    <tr>
+      {headingUnits.map((unit: string) => <th class="unit">{unit}</th>)}
+    </tr>
+
   </thead>
   <tbody>
     <slot />
   </tbody>
 </table>
+
+<style>
+  thead > :first-child {
+    border: none;
+  }
+
+  .unit {
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-extra-light);
+    white-space: nowrap;
+    padding-bottom: var(--cell-block-padding)
+  }
+  
+  th {
+    padding-block: 0;
+  }
+</style>

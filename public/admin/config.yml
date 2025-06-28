@@ -719,8 +719,14 @@ collections:
       - label: Nazwa kategorii
         name: title
         widget: string
-        hint: np. Produkty (dokument dotyczący produktów), Cenniki, KDWU, Normy
+        hint: np. Produkty (dokument dotyczący produktów), Krajowe Deklaracje Właściwości Uzytkowych
         i18n: true
+      - label: Nazwa skrócona
+        name: abbreviation
+        widget: string
+        hint: np. KDWU
+        i18n: true
+        required: false
 
   - name: documents
     label: Dokumenty
@@ -744,23 +750,6 @@ collections:
         widget: string
         hint: (np. KDZ 05/2017 Rura PCW SN-2 do kanalizacji bezciśnieniowej z rdzeniem spienionym)
         i18n: true
-      - label: Data wydania
-        name: date
-        widget: datetime
-        hint: Data wydania dokumentu
-        i18n: duplicate
-        date_format: DD.MM.YYYY
-        required: false
-      - label: Plik
-        name: url
-        widget: file
-        media_folder: /src/assets/documents
-        i18n: duplicate
-      - label: Tekst przycisku pobierania dokumentu
-        name: buttonText
-        widget: string
-        i18n: true
-        default: Pobierz
       - label: Kategoria
         name: category
         widget: relation
@@ -769,9 +758,43 @@ collections:
         search_fields: [title]
         display_fields: [title]
         multiple: true
+        default: []
         i18n: duplicate
         required: false
         hint: Lista kategorii, do których przypisany jest dany dokument
+      - label: Plik
+        name: url
+        widget: file
+        allow_multiple: false
+        media_folder: /src/assets/documents
+        i18n: duplicate
+      - label: Język dokumentu
+        name: language
+        widget: select
+        options: ["PL", "EN", "DE", "CZ"]
+        default: "PL"
+        hint: Wybierz język dokumentu
+        i18n: duplicate
+      - label: Czy archiwalny?
+        name: isArchive
+        widget: boolean
+        default: false
+        hint: Zaznaczony dokument zostaje wyszarzony i opatrzony opisem "Dokument archiwalny" na stronie Dokumenty
+        i18n: duplicate
+        required: false
+      - label: Data wydania
+        name: date
+        widget: datetime
+        hint: Data wydania dokumentu
+        i18n: duplicate
+        date_format: DD.MM.YYYY
+        required: false
+      - label: Niestandardowy tekst przycisku pobierania dokumentu
+        name: buttonText
+        widget: string
+        i18n: true
+        required: false
+        hint: Wprowadź tekst TYLKO jeżeli chcesz, żeby był inny od domyślnego (domyślny tekst można zmienić w kolekcji Tłumaczenia/Elementy UI)
 
   - name: distributors
     label: Dystrybutorzy
@@ -997,11 +1020,6 @@ collections:
             name: aboutCompany
             widget: text
             i18n: true
-          - label: Nagłówek tabeli z dokumentami
-            name: documentsTableHeadings
-            widget: string
-            hint: Wprowadź nagłówki kolejnych kolumn rozdzielone przecinkami (np. Nazwa,Opis,Data)
-            i18n: true
           - label: Nagłówki danych kontaktowych
             hint: Nagłówki danych kontaktowych widoczne na stronie "O firmie"
             name: contactHeadings
@@ -1025,6 +1043,28 @@ collections:
             hint: Komunikat, jaki ma zostać wyświetlony jeśli w wybranym regionie nie ma dostępnych dystrybutorów
             name: distributorsError
             widget: string
+            i18n: true
+      - label: Opis dokumentów
+        name: documents
+        file: src/content/translations/documents.json
+        extension: json
+        format: json
+        i18n: true
+        fields:
+          - label: Nagłówek tabeli z dokumentami
+            name: tableHeadings
+            widget: string
+            hint: Wprowadź nagłówki kolejnych kolumn rozdzielone przecinkami (np. Nazwa,Opis,Data)
+            i18n: true
+          - label: Domyślny tekst przycisku pobierania dokumentów
+            name: downloadButtonText
+            widget: string
+            hint: Wprowadź tekst, który wyświetli się na przyciskach w tabelach z dokumentami (tekst moze zostać zmodyfikowany per dokument w edycji danych dokumentu)
+            i18n: true
+          - label: Adnotacja do archiwalnych dokumentów
+            name: archivedLabel
+            widget: string
+            hint: Wprowadź tekst, który wyświetli się przy nazwie dokumentów archiwalnych
             i18n: true
           - label: Komunikat braku dokumentów
             hint: Komunikat, jaki ma zostać wyświetlony jeśli nie ma dostępnych dokumentów z danej kategorii
