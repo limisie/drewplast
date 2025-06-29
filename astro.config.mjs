@@ -6,7 +6,6 @@ import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  base: "/drewplast/",
   i18n: {
     defaultLocale: defaultLocale,
     locales: locales,
