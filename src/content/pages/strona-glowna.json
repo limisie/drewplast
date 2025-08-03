@@ -1,0 +1,158 @@
+{
+  "pl": {
+    "seo": {
+      "slug": " ",
+      "metaTitle": "Drewplast - Producent instalacji kanalizacyjnych i drenarskich",
+      "metaDescription": "Producent instalacji kanalizacyjnych i drenarskich z tworzyw sztucznych.",
+      "preventIndexing": false,
+      "image": "kanalizacja-wewnetrzna-pp-baner"
+    },
+    "sectionHero": {
+      "title": "Nowoczesne systemy instalacyjne",
+      "description": "Od 30 lat tworzymy trwałe rozwiązania z tworzyw sztucznych dla budownictwa i przemysłu.\n\nProdukujemy w Polsce z dbałością o jakość i środowisko.",
+      "image": "kanalizacja-wewnetrzna-pp-baner",
+      "phoneButton": {
+        "text": "+48 (71) 315 76 10",
+        "url": "tel:+48713157610"
+      },
+      "emailButton": {
+        "text": "biuro@drewplast.com.pl",
+        "url": "mailto:biuro@drewplast.com.pl"
+      },
+      "videoButton": {
+        "text": "Zobacz cały film",
+        "url": "/"
+      },
+      "eyebrow": "Jakość i trwałość prosto z Polski od 1993 roku"
+    },
+    "sectionDescription": {
+      "title": "Producent instalacji kanalizacyjnych i drenarskich z tworzyw sztucznych",
+      "description": "Powstały w 1993 roku Drewplast jest liczącym się na rynku polskim producentem wyrobów z tworzyw sztucznych.\nNaszym celem jest produkcja dobrych jakościowo rur kanalizacji wewnętrznej i zewnętrznej, rur drenarskich oraz tulei nawojowych (gilz). Dopełnieniem systemu są kształtki połączeniowe.",
+      "featuresList": [
+        {
+          "title": "Trwałość na Lata",
+          "description": "Nasze rury są odporne na korozję, chemikalia i trudne warunki."
+        },
+        {
+          "description": "Produkty wykonane z materiałów nadających się do recyklingu.",
+          "title": "Przyjazne Środowisku"
+        },
+        {
+          "description": "Zaawansowana produkcja zapewnia jakość każdego komponentu.",
+          "title": "Precyzyjne Wykonanie"
+        },
+        {
+          "description": "Lekka konstrukcja ułatwia instalację, oszczędzając czas i koszty.",
+          "title": "Łatwy Montaż"
+        }
+      ]
+    },
+    "sectionProducts": {
+      "title": "Nasze produkty",
+      "description": "Oferujemy szeroki wybór wyrobów z tworzyw sztucznych – od elementów instalacji kanalizacyjnych i drenarskich po tuleje (gilzy) z PCW i PP. \n\nWszystko w 100% produkowane w Polsce, w naszym zakładzie w Grabownie Wielkim.",
+      "pageLink": {
+        "page": "produkty",
+        "text": "Zobacz wszystkie"
+      }
+    },
+    "sectionSustainable": {
+      "title": "Zielona energia napędza nasz rozwój",
+      "description": "Dbamy o środowisko – inwestujemy w zieloną energię. Nasza własna farma fotowoltaiczna zasila zakład produkcyjny i realnie redukuje emisję CO₂. To konkretne działanie na rzecz mniejszego śladu węglowego naszych produktów.",
+      "image": "farma-fotowoltaiczna",
+      "pageLink": {
+        "text": "Dowiedz się więcej",
+        "page": "o-firmie",
+        "sectionId": "zrownowazony-rozwoj"
+      }
+    },
+    "sectionDistributors": {
+      "title": "Sieć dystrybucji produktów",
+      "description": "Nasze produkty są dostępne tam, gdzie ich potrzebujesz. Współpracujemy z szeroką siecią autoryzowanych dystrybutorów w całej Polsce oraz za granicą – w Czechach, na Litwie, Słowacji, Węgrzech i Ukrainie. Dzięki temu zawsze jesteśmy w zasięgu ręki.",
+      "pageLink": {
+        "text": "Znajdź najbliższego dystrybutora ",
+        "page": "kontakt",
+        "sectionId": "siec-dystrybucji"
+      }
+    },
+    "image": "zaklad-wnetrzne-baner",
+    "title": "Strona główna"
+  },
+  "en": {
+    "seo": {
+      "slug": " ",
+      "metaTitle": "Drewplast - Manufacturer of Sewage and Drainage Installations",
+      "metaDescription": "Manufacturer of plastic sewage and drainage installations.",
+      "preventIndexing": false,
+      "image": "kanalizacja-wewnetrzna-pp-baner"
+    },
+    "sectionHero": {
+      "title": "Modern Installations",
+      "description": "For over 30 years, we’ve been delivering durable plastic solutions for construction and industry. All our products are manufactured in Poland with a commitment to quality and environmental responsibility.",
+      "image": "kanalizacja-wewnetrzna-pp-baner",
+      "phoneButton": {
+        "text": "+48 (71) 315 76 10",
+        "url": "tel:+48713157610"
+      },
+      "emailButton": {
+        "text": "biuro@drewplast.com.pl",
+        "url": "mailto:biuro@drewplast.com.pl"
+      },
+      "videoButton": {
+        "text": "Watch the full movie",
+        "url": "/"
+      },
+      "eyebrow": "Quality and Durability – Made in Poland Since 1993"
+    },
+    "sectionSustainable": {
+      "title": "Green Energy Drives Our Growth",
+      "description": "We care about the environment – that’s why we invest in green energy.\n\nOur own photovoltaic farm powers our production plant and significantly reduces CO₂ emissions. It’s a tangible step toward a lower carbon footprint.",
+      "image": "farma-fotowoltaiczna",
+      "pageLink": {
+        "page": "o-firmie",
+        "text": "Learn more",
+        "sectionId": "sustainable-development"
+      }
+    },
+    "image": "zaklad-wnetrzne-baner",
+    "sectionDescription": {
+      "title": "Manufacturer of plastic sewage and drainage installations.",
+      "description": "Founded in 1993, Drewplast is a recognized manufacturer of plastic components for the Polish market.\n\nOur goal is to produce high-quality internal and external sewer pipes, drainage pipes, and cable protection conduits.",
+      "featuresList": [
+        {
+          "title": "Built to Last",
+          "description": "Our pipes are resistant to corrosion, chemicals, and harsh conditions."
+        },
+        {
+          "description": "Our products are made from recyclable materials.",
+          "title": "Environmentally Friendly"
+        },
+        {
+          "description": "Advanced manufacturing ensures the quality of every component.",
+          "title": "Precision Engineering"
+        },
+        {
+          "description": "Lightweight construction simplifies installation, saving time and cost.",
+          "title": "Easy Installation"
+        }
+      ]
+    },
+    "sectionProducts": {
+      "title": "Our products",
+      "description": "We offer a wide range of plastic products – from sewer and drainage system components to sleeves made of PVC and PP.\n\nAll products are 100% made in Poland, at our facility in Grabowno Wielkie.",
+      "pageLink": {
+        "page": "produkty",
+        "text": "See all "
+      }
+    },
+    "sectionDistributors": {
+      "title": "Product distribution network",
+      "description": "Our products are available wherever you need them.\n\nWe work with a broad network of authorized distributors throughout Poland and abroad – in the Czech Republic, Lithuania, Slovakia, Hungary, and Ukraine.",
+      "pageLink": {
+        "page": "kontakt",
+        "text": "Find your nearest distributor",
+        "sectionId": "distribution-network"
+      }
+    },
+    "title": "Homepage"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "pl": {
+    "category": [
+      "produkty"
+    ],
+    "language": "PL",
+    "isArchive": false,
+    "url": "/documents/Cennik - Rury i zlaczki kanalizacji zewnetrznej.pdf",
+    "title": "Cennik - Rury i złączki kanalizacji zewnętrznej",
+    "date": "25.01.2025"
+  },
+  "en": {
+    "category": [
+      "produkty"
+    ],
+    "language": "PL",
+    "isArchive": false,
+    "url": "/documents/Cennik - Rury i zlaczki kanalizacji zewnetrznej.pdf",
+    "date": "25.01.2025",
+    "title": "Price List - External Sewage Pipes and Fittings"
+  }
+}

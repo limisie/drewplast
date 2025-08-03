@@ -1,0 +1,18 @@
+{
+  "pl": {
+    "contact": {
+      "email": "edyta.pilarczyk@drewplast.com.pl"
+    },
+    "name": "Edyta Pilarczyk",
+    "position": "Zaopatrzeniowiec",
+    "image": "imie-nazwisko"
+  },
+  "en": {
+    "contact": {
+      "email": "edyta.pilarczyk@drewplast.com.pl"
+    },
+    "name": "Edyta Pilarczyk",
+    "position": "Buyer",
+    "image": "imie-nazwisko"
+  }
+}

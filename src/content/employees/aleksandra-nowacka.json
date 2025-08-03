@@ -1,0 +1,18 @@
+{
+  "pl": {
+    "name": "Aleksandra Nowacka",
+    "position": "Księgowa",
+    "contact": {
+      "email": "aleksandra.nowacka@drewplast.com.pl"
+    },
+    "image": "imie-nazwisko"
+  },
+  "en": {
+    "name": "Aleksandra Nowacka",
+    "contact": {
+      "email": "aleksandra.nowacka@drewplast.com.pl"
+    },
+    "position": "Accountant",
+    "image": "imie-nazwisko"
+  }
+}

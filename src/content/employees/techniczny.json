@@ -1,0 +1,18 @@
+{
+  "pl": {
+    "name": "Support",
+    "position": " ",
+    "contact": {
+      "email": "techniczny@drewplast.com.pl"
+    },
+    "image": "imie-nazwisko"
+  },
+  "en": {
+    "name": "Support",
+    "contact": {
+      "email": "techniczny@drewplast.com.pl"
+    },
+    "position": " ",
+    "image": "imie-nazwisko"
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "pl": {
+    "sectionGallery": {
+      "title": "Galeria",
+      "imagesList": [
+        "imie-nazwisko",
+        "imie-nazwisko",
+        "imie-nazwisko",
+        "kanalizacja-wewnetrzna-pp-miniatura"
+      ]
+    },
+    "sectionHeader": {
+      "description": "System rur kanalizacji wewnętrznej Drewplast to trwałe i niezawodne rozwiązanie z wysokiej jakości polipropylenu PP-H. Zapewnia odporność na wysoką temperaturę i uszkodzenia mechaniczne. Sprawdza się w budownictwie mieszkaniowym, przemysłowym i w instalacjach technologicznych.",
+      "title": "Kanalizacja wewnętrzna PP",
+      "eyebrow": "Rury i kształtki kanalizacji wewnętrznej z polipropylenu",
+      "image": "kanalizacja-wewnetrzna-pp-baner",
+      "featuresList": [
+        {
+          "title": "Materiał",
+          "description": "Homopolimer polipropylenu (PP-H)"
+        },
+        {
+          "title": "Zakres średnic",
+          "description": "32-110"
+        },
+        {
+          "title": "Klasa sztywności",
+          "description": "SN2"
+        },
+        {
+          "title": "Kolor",
+          "description": "biały, szary"
+        }
+      ]
+    },
+    "button": "Dowiedz się więcej",
+    "sectionDocuments": {
+      "title": "Dokumenty",
+      "documentsList": [
+        "cennik-rury-i-zlaczki-kanalizacji-wewnetrznej"
+      ]
+    },
+    "sectionDescription": {
+      "advantages": "Odporność chemiczna i temperaturowa — idealny do trudnych warunków pracy, także w przemyśle\nWytrzymałość mechaniczna — odporność na uszkodzenia i odkształcenia\nCicha praca instalacji — ograniczone przenoszenie hałasu\nŁatwy montaż — lekka konstrukcja i bogaty wybór kształtek\nDługowieczność i niezawodność — wysoka jakość materiałów gwarantuje wieloletnie użytkowanie",
+      "title": "Zastosowanie",
+      "description": "System kanalizacji wewnętrznej Drewplast jest przeznaczony do bezpiecznego i trwałego odprowadzania ścieków bytowo-gospodarczych, deszczowych oraz powietrza wentylacyjnego w budynkach mieszkalnych, użyteczności publicznej i zakładach przemysłowych.\n\nWykonany z wysokiej jakości polipropylenu homopolimeru (PP-H), sprawdza się także w instalacjach technologicznych, m.in. w przemyśle chemicznym i farmaceutycznym, dzięki odporności na agresywne substancje oraz wysokie temperatury — do 90°C ciągłej i 95°C krótkotrwałej.\n\nDostępny w średnicach od 32 do 110 mm, system jest odpowiedni zarówno dla małych instalacji domowych, jak i rozbudowanych systemów kanalizacyjnych, zapewniając stabilność i trwałość dzięki klasie sztywności SN2."
+    },
+    "title": "Kanalizacja wewnętrzna PP",
+    "image": "kanalizacja-wewnetrzna-pp-baner",
+    "sectionElements": {
+      "title": "Elementy systemu",
+      "pipesList": [
+        {
+          "link": {
+            "text": "Zobacz dostępne warianty",
+            "url": "rury-kanalizacji-wewnetrznej"
+          },
+          "pipe": "rury-kanalizacji-wewnetrznej-pp"
+        }
+      ],
+      "fittingsList": {
+        "list": [
+          "kw-czwornik-dwuplaszczyznowy"
+        ],
+        "title": "Kształtki",
+        "link": {
+          "text": "Zobacz dostępne warianty",
+          "url": "ksztaltki"
+        }
+      }
+    },
+    "seo": {
+      "preventIndexing": false,
+      "metaDescription": "Kompletny system rur i kształtek kanalizacyjnych nowej generacji, produkowany z tworzywa o udoskonalonej recepturze na bazie polipropylenu.",
+      "metaTitle": "Kanalizacja wewnętrzna PP - Drewplast",
+      "slug": "produkty/kanalizacja-wewnetrzna-pp",
+      "image": "kanalizacja-wewnetrzna-pp-baner"
+    },
+    "buttonText": "Dowiedz się więcej"
+  },
+  "en": {
+    "sectionGallery": {
+      "title": "Gallery",
+      "imagesList": [
+        "imie-nazwisko",
+        "imie-nazwisko",
+        "imie-nazwisko",
+        "kanalizacja-wewnetrzna-pp-miniatura"
+      ]
+    },
+    "sectionHeader": {
+      "description": "A complete system of new generation sewage pipes and fittings, manufactured from a material with an improved formula based on polypropylene. It meets all the conditions of a modern, ecological sewage system.",
+      "title": "Internal sewage system PP",
+      "eyebrow": "Internal sewage pipes and fittings made of polypropylene",
+      "image": "kanalizacja-wewnetrzna-pp-baner",
+      "featuresList": [
+        {
+          "title": "Material",
+          "description": "Polypropylene (PP)"
+        },
+        {
+          "title": "Diameter range",
+          "description": "32-110"
+        },
+        {
+          "title": "Ring stiffness",
+          "description": "SN2"
+        },
+        {
+          "title": "Color",
+          "description": "white, grey"
+        }
+      ]
+    },
+    "sectionDocuments": {
+      "title": "Documents",
+      "documentsList": [
+        "cennik-rury-i-zlaczki-kanalizacji-wewnetrznej"
+      ]
+    },
+    "sectionDescription": {
+      "title": "Application",
+      "description": "Internal sewage pipes are designed for the construction of installations for the discharge of domestic and rainwater sewage inside the building, as well as for the construction of ventilation. The heat-resistant stabilized material from which the system is made is very resistant to various, including aggressive, chemicals and sewage. Thanks to this, it can also be successfully used in the chemical and pharmaceutical industries.\n\nPipes and fittings withstand long-term flow of hot water (up to 90ºC in continuous flow and up to 95ºC in short-term flow), which is why they are used in households and wherever high-temperature sewage is discharged.",
+      "advantages": "Complete system of pipes and fittings in a wide range of diameters: from DN 32 to DN 110\nSpecial fittings (including cleanouts, crosspieces, connectors for connection with cast iron)\nEasy and quick assembly - low weight of products\nSolid cross-section of walls using an improved recipe\n100% recycling of pipes and fittings"
+    },
+    "title": "Indoor Sewage",
+    "image": "kanalizacja-wewnetrzna-pp-baner",
+    "sectionElements": {
+      "pipesList": [
+        {
+          "link": {
+            "text": "See available",
+            "url": "indoor-sewage-pipes"
+          },
+          "pipe": "rury-kanalizacji-wewnetrznej-pp"
+        }
+      ],
+      "fittingsList": {
+        "list": [
+          "kw-czwornik-dwuplaszczyznowy"
+        ],
+        "title": "Fittings",
+        "link": {
+          "text": "See available",
+          "url": "fittings"
+        }
+      },
+      "title": "System elements"
+    },
+    "seo": {
+      "preventIndexing": false,
+      "metaDescription": "A complete system of new generation sewage pipes and fittings, manufactured from a material with an improved formula based on polypropylene.",
+      "metaTitle": "Indoor Sewage - Drewplast",
+      "slug": "products/indoor-sewage",
+      "image": "kanalizacja-wewnetrzna-pp-miniatura"
+    },
+    "buttonText": "Learn more"
+  }
+}

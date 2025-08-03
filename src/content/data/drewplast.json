@@ -1,0 +1,18 @@
+{
+  "name": "Drewplast",
+  "fullName": "Drewplast Sp. z o.o.",
+  "description": "Lorem ipsum dolor sit amet consectetur. Tempus dictum senectus rhoncus id risus tincidunt.",
+  "address": {
+    "street": "Grabowno Wielkie 5E",
+    "city": "Twardogóra",
+    "postalCode": "56-416",
+    "region": "dolnoslaskie"
+  },
+  "contact": {
+    "phone": "+48 (71) 315 76 10",
+    "email": "biuro@drewplast.com.pl"
+  },
+  "nip": "9112041718",
+  "krs": "0000946424",
+  "regon": "521155162"
+}

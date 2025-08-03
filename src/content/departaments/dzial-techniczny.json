@@ -1,0 +1,14 @@
+{
+  "pl": {
+    "title": "Dział Techniczny",
+    "employeesList": [
+      "techniczny"
+    ]
+  },
+  "en": {
+    "employeesList": [
+      "techniczny"
+    ],
+    "title": "Technical Departament"
+  }
+}

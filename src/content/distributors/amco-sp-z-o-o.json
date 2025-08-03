@@ -1,0 +1,14 @@
+{
+  "name": "AMCO Sp. z o.o.",
+  "address": {
+    "street": "ul. Augustowska 7",
+    "city": "Olsztyn",
+    "postalCode": "10-683",
+    "region": "warminsko-mazurskie"
+  },
+  "contact": {
+    "phone": "+48 (89) 534 21 26",
+    "email": "biuro@amco.ik.pl",
+    "url": "https://www.amco.ik.pl"
+  }
+}

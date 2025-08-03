@@ -1,0 +1,15 @@
+{
+    "pl": {
+      "tableHeadings": "Nazwa,Język, ",
+      "distributorsError": "Brak dokumentów",
+      "downloadButtonText": "Pobierz",
+      "archivedLabel": "(Dokument archiwalny)"
+    },
+    "en": {
+      "tableHeadings": "Name,Language,",
+      "distributorsError": "No documents available",
+      "downloadButtonText": "Download",
+      "archivedLabel": "(Archival document)"
+    }
+  }
+  

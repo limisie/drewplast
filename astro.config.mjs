@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config";
 import { defaultLocale, locales } from "./src/i18n/ui.ts";
 import icon from "astro-icon";
-// https://astro.build/config
 
 import { defineConfig } from "astro/config";
 

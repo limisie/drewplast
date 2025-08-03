@@ -1,0 +1,30 @@
+{
+  "pl": {
+    "seo": {
+      "slug": "produkty",
+      "metaTitle": "Produkty - Drewplast",
+      "metaDescription": "Wiodący polski producent rur z tworzyw sztucznych. Odkryj szeroki wybór rur kanalizacyjnych i drenażowych przeznaczonych do zastosowań budowlanych i opakowaniowych.",
+      "image": "kanalizacja-wewnetrzna-pp-miniatura",
+      "preventIndexing": false
+    },
+    "sectionHeader": {
+      "title": "Produkty",
+      "eyebrow": "Instalacje kanalizacyjne i drenarskie"
+    },
+    "title": "Produkty"
+  },
+  "en": {
+    "seo": {
+      "slug": "products",
+      "metaTitle": "Products - Drewplast",
+      "metaDescription": "Leading Polish manufacturer of plastic pipes. Discover a wide selection of sewage and drainage pipes for construction and packaging applications.",
+      "image": "kanalizacja-wewnetrzna-pp-miniatura",
+      "preventIndexing": false
+    },
+    "sectionHeader": {
+      "title": "Products",
+      "eyebrow": "Sewerage and drainage installations"
+    },
+    "title": "Products"
+  }
+}

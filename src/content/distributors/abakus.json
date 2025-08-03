@@ -1,0 +1,14 @@
+{
+  "name": "Abakus",
+  "address": {
+    "street": "ul. Lubelska 41G",
+    "city": "Olsztyn",
+    "postalCode": "11-041",
+    "region": "warminsko-mazurskie"
+  },
+  "contact": {
+    "phone": "+48 (89) 532 50 45",
+    "email": "biuro@abakus-olsztyn.pl",
+    "url": "https://abakus-olsztyn.pl"
+  }
+}

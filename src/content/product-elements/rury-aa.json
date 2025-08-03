@@ -1,0 +1,18 @@
+{
+  "pl": {
+    "category": "Rury",
+    "title": "Rury AA",
+    "description": "Rury kanalizacyjne nowej generacji, produkowane z tworzywa o udoskonalonej recepturze na pazie polipropylenu i składników mineralnych. Spełniają wszystkie warunki nowoczesnego, ekologicznego systemu kanalizacyjnego odprowadzającego ścieki.",
+    "table": "Kod produktu, Kolor, DN, s1, L, Opakowanie, Kod CN, Masa\n,,(mm),(mm),(mm),(szt.), ,(kg)\nRK-032-018-0250, biała, 32, 1.8, 250, 40\nRK-032-018-0315, biała, 32, 1.8, 315, 40\nRK-032-018-0500, biała, 32, 1.8, 500, 40\nRK-032-018-1000, biała, 32, 1.8, 1000, 40\nRK-032-018-2000, biała, 32, 1.8, 2000, 40\nRK-032-018-3000, biała, 32, 1.8, 3000, 40\nRK-032-018-4000, biała, 32, 1.8, 4000, 40\nRK-032-018-6000, biała, 32, 1.8, 6000, 40\nRK-040-018-0250, szara, 32, 1.8, 250, 50\nRK-040-018-0315, szara, 32, 1.8, 315, 50\nRK-040-018-0500, szara, 32, 1.8, 500, 50\nRK-040-018-1000, szara, 32, 1.8, 1000, 10\nRK-040-018-1500, szara, 32, 1.8, 1500, 10\nRK-040-018-2000, szara, 32, 1.8, 2000, 10\nRK-04B-018-0250, biała, 32, 1.8, 250, 50\nRK-04B-018-0315, biała, 32, 1.8, 315, 50\nRK-04B-018-0500, biała, 32, 1.8, 500, 50\nRK-04B-018-1000, biała, 32, 1.8, 1000, 10\nRK-04B-018-2000, biała, 32, 1.8, 2000, 10",
+    "image": "farma-fotowoltaiczna",
+    "section": "kanalizacja-wewnetrzna-element-systemu-przekroj"
+  },
+  "en": {
+    "category": "Pipes",
+    "title": " AA Pipes",
+    "description": "New generation sewage pipes, manufactured from a material with an improved formula based on polypropylene and mineral components. They meet all the requirements of a modern, ecological sewage system.",
+    "table": "Product code, Color, DN, s1, L, Pack\n,,(mm),(mm),(mm),(pcs.)\nRK-032-018-0250, white, 32, 1.8, 250, 40\nRK-032-018-0315, white, 32, 1.8, 315, 40\nRK-032-018-0500, white, 32, 1.8, 500, 40\nRK-032-018-1000, white, 32, 1.8, 1000, 40\nRK-032-018-2000, white, 32, 1.8, 2000, 40\nRK-032-018-3000, white, 32, 1.8, 3000, 40\nRK-032-018-4000, white, 32, 1.8, 4000, 40\nRK-032-018-6000, white, 32, 1.8, 6000, 40\nRK-040-018-0250, gray, 32, 1.8, 250, 50\nRK-040-018-0315, gray, 32, 1.8, 315, 50\nRK-040-018-0500, gray, 32, 1.8, 500, 50\nRK-040-018-1000, gray, 32, 1.8, 1000, 10\nRK-040-018-1500, gray, 32, 1.8, 1500, 10\nRK-040-018-2000, gray, 32, 1.8, 2000, 10\nRK-04B-018-0250, white, 32, 1.8, 250, 50\nRK-04B-018-0315, white, 32, 1.8, 315, 50\nRK-04B-018-0500, white, 32, 1.8, 500, 50\nRK-04B-018-1000, white, 32, 1.8, 1000, 10\nRK-04B-018-2000, white, 32, 1.8, 2000, 10",
+    "image": "farma-fotowoltaiczna",
+    "section": "kanalizacja-wewnetrzna-element-systemu-przekroj"
+  }
+}

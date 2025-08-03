@@ -1,0 +1,14 @@
+{
+  "name": "Armatura Dobrowolski",
+  "address": {
+    "street": "ul. Towarowa 5",
+    "city": "Olsztyn",
+    "postalCode": "10-416",
+    "region": "dolnoslaskie"
+  },
+  "contact": {
+    "phone": "+48 (89) 533 69 67",
+    "email": "dobrowolski@armatura.olsztyn.pl",
+    "url": "https://www.armatura.olsztyn.pl"
+  }
+}

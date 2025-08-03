@@ -1,0 +1,12 @@
+{
+  "pl": {
+    "title": "Kanalizacja zewnętrzna - baner",
+    "alt": "Stos rur PCW kanalizacji zewnętrznej Drewplast, prezentujący wysokiej jakości produkt do niezawodnych rozwiązań kanalizacyjnych.",
+    "url": "src/assets/images/kanalizacja-zewnetrzna-baner.jpg"
+  },
+  "en": {
+    "title": "Kanalizacja zewnętrzna - baner",
+    "url": "src/assets/images/kanalizacja-zewnetrzna-baner.jpg",
+    "alt": "A stack of PVC pipes of the Drewplast external sewage system, presenting a high-quality product for reliable sewage solutions."
+  }
+}

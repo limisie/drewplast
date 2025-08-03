@@ -1,0 +1,14 @@
+{
+  "name": "Scala Plastics Poland Sp. z o. o.",
+  "address": {
+    "street": "ul. Wrzesińska 70",
+    "city": "Kostrzyn Wlkp.",
+    "postalCode": "62-025",
+    "region": "wielkopolskie"
+  },
+  "contact": {
+    "phone": "+48 (61) 436 73 00",
+    "email": "info@scalaplastics.pl",
+    "url": "https://scalaplastics.pl"
+  }
+}

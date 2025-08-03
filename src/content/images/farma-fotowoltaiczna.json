@@ -1,0 +1,14 @@
+{
+  "pl": {
+    "title": "Farma fotowoltaiczna",
+    "url": "src/assets/images/solar-farm.jpg",
+    "alt": "Rzędy paneli słonecznych na farmie słonecznej w zakładzie produkującym rury, na tle jesiennych drzew i czystego, błękitnego nieba",
+    "caption": "Imię i nazwisko"
+  },
+  "en": {
+    "title": "Farma fotowoltaiczna",
+    "url": "src/assets/images/solar-farm.jpg",
+    "alt": "Rows of solar panels at piping manufacturer facility's solar farm, with autumn trees and a clear blue sky in the background",
+    "caption": "Imię i nazwisko"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "pl": {
+    "seo": {
+      "slug": "o-firmie",
+      "metaTitle": "O firmie - Drewplast",
+      "metaDescription": "Drewplast sp. z o.o. to polski producent instalacji kanalizacyjnych i drenarskich działający nieprzerwanie od 1993 roku.",
+      "preventIndexing": false
+    },
+    "sectionHeader": {
+      "title": "O firmie",
+      "eyebrow": "Poznaj nas",
+      "description": "Drewplast sp. z o.o. to polski producent nowoczesnych instalacji kanalizacyjnych i drenarskich działający nieprzerwanie od 1993 roku.",
+      "image": "kanalizacja-wewnetrzna-pp-baner"
+    },
+    "sectionDescription": {
+      "description": "Specjalizujemy się w produkcji rur kanalizacyjnych, drenarskich, tulei nawojowych oraz kształtek, tworzących kompletny system instalacyjny.\n\nOd 2004 roku działamy zgodnie z normą ISO 9001, a jakość naszych produktów zapewnia doświadczony zespół i nowoczesne laboratorium kontrolne.",
+      "title": "Stawiamy na jakość i partnerską współpracę z klientami"
+    },
+    "sectionEmployees": {
+      "title": "Poznaj nasz zespół",
+      "employeesList": [
+        "aleksandra-nowacka",
+        "edyta-pilarczyk",
+        "marzena-grygotowicz",
+        "marzena-grygotowicz",
+        "marzena-grygotowicz"
+      ]
+    },
+    "sectionHistory": {
+      "title": "Historia",
+      "milestonesList": [
+        "aa",
+        "bb",
+        "dd",
+        "cc",
+        "2022-nowa-forma-prawna",
+        "2024-2025-zielona-energia"
+      ]
+    },
+    "sectionSustainable": {
+      "title": "Zrównoważony rozwój",
+      "image": "farma-fotowoltaiczna",
+      "featuresList": [
+        {
+          "description": "Wykorzystujemy tworzywa wtórne, ograniczając zużycie surowców i wpływ na środowisko.",
+          "title": "Materiały z recyklingu"
+        },
+        {
+          "description": "Projektujemy wyroby tak, by łatwo poddawały się ponownemu przetworzeniu.",
+          "title": "Produkty przyjazne przetwarzaniu"
+        },
+        {
+          "title": "Energia ze słońca",
+          "description": "Nasza farma fotowoltaiczna zasila produkcję, redukując emisję CO₂."
+        }
+      ],
+      "sectionId": "zrownowazony-rozwoj"
+    },
+    "title": "O firmie"
+  },
+  "en": {
+    "seo": {
+      "slug": "about",
+      "metaTitle": "About - Drewplast",
+      "metaDescription": "Learn more about Drewplast. Explore our company's history, values, and dedication to providing innovative piping solutions.",
+      "preventIndexing": false
+    },
+    "sectionHeader": {
+      "title": "About company",
+      "eyebrow": "Get to know us",
+      "description": "Drewplast sp. z o.o. is a Polish producer of modern sewer and drainage systems with an uninterrupted presence in the market since 1993.",
+      "image": "kanalizacja-wewnetrzna-pp-baner"
+    },
+    "sectionEmployees": {
+      "title": "Meet our team",
+      "employeesList": [
+        "aleksandra-nowacka",
+        "edyta-pilarczyk",
+        "marzena-grygotowicz",
+        "marzena-grygotowicz",
+        "marzena-grygotowicz"
+      ]
+    },
+    "sectionHistory": {
+      "title": "History",
+      "milestonesList": [
+        "aa",
+        "bb",
+        "dd",
+        "cc",
+        "2022-nowa-forma-prawna",
+        "2024-2025-zielona-energia"
+      ]
+    },
+    "sectionSustainable": {
+      "title": "Sustainable development",
+      "image": "farma-fotowoltaiczna",
+      "featuresList": [
+        {
+          "description": "We use secondary plastics, reducing raw material consumption and environmental impact.",
+          "title": "Recycled Materials"
+        },
+        {
+          "description": "Our products are engineered for ease of reprocessing and recyclability.",
+          "title": "Designed for Recycling"
+        },
+        {
+          "title": "Solar Energy",
+          "description": "Our photovoltaic farm powers production, significantly reducing CO₂ emissions."
+        }
+      ],
+      "sectionId": "sustainable-development"
+    },
+    "sectionDescription": {
+      "description": "We specialize in the production of sewer pipes, drainage pipes, cable protection conduits, and fittings, forming a complete installation system.\n\nSince 2004, we have been operating in accordance with the ISO 9001 standard. Product quality is ensured by an experienced team and a state-of-the-art testing laboratory.",
+      "title": "We focus on quality and strong partnerships with our clients"
+    },
+    "title": "About"
+  }
+}

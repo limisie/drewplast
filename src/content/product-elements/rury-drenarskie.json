@@ -1,0 +1,12 @@
+{
+  "pl": {
+    "category": "Rury",
+    "title": "Rury drenarskie",
+    "table": "Kod,Materiał,Perforacje,Średnica,Długość,Waga 1m\n,,,(mm),(m),(kg)\nRA-050-050-000,PVC-U,,50,50,0.18\nRA-050-050-0B0,PVC-U,Bez otworów,50,50,0.18\nRA-065-050-000,PVC-U,,65,50,0.22\nRA-065-050-0B0,PVC-U,Bez otworów,65,50,0.22\nRA-080-050-000,PVC-U,,80,50,0.28\nRA-080-050-0B0,PVC-U,Bez otworów,80,50,0.28\nRA-100-050-000,PVC-U,,100,50,0.36\nRA-100-050-0B0,PVC-U,Bez otworów,100,50,0.36\nRA-125-050-000,PVC-U,,125,50,0.55\nRA-125-050-0B0,PVC-U,Bez otworów,125,50,0.55\nRA-160-050-000,PVC-U,,160,50,0.82\nRA-160-050-0B0,PVC-U,Bez otworów,160,50,0.82\nRA-200-030-000,PVC-U,,200,30,1.30\nRA-200-030-0BO,PVC-U,Bez otworów,200,30,1.30\nRA-050-020-000,PVC-U,,50,20,3.60\nRA-050-025-000,PVC-U,,50,25,0.18\nRA-050-025-0B0,PVC-U,Bez otworów,50,25,0.18\nRA-080-020-000,PVC-U,,80,20,0.28\nRA-080-025-000,PVC-U,,80,25,0.28\nRA-080-025-0B0,PVC-U,Bez otworów,80,25,0.28\nRA-100-010-0B0,PVC-U,Bez otworów,100,10,0.36\nRA-100-020-000,PVC-U,,100,20,0.36\nRA-100-025-000,PVC-U,,100,25,0.36\nRA-100-025-0B0,PVC-U,Bez otworów,100,25,0.36"
+  },
+  "en": {
+    "category": "Pipes",
+    "table": "Product code,Material,Perforation,Diameter,Length,Weight per 1m\n,,,(mm),(m),(kg)\nRA-050-050-000,PVC-U,,50,50,0.18\nRA-050-050-0B0,PVC-U,w/o holes,50,50,0.18\nRA-065-050-000,PVC-U,,65,50,0.22\nRA-065-050-0B0,PVC-U,w/o holes,65,50,0.22\nRA-080-050-000,PVC-U,,80,50,0.28\nRA-080-050-0B0,PVC-U,w/o holes,80,50,0.28\nRA-100-050-000,PVC-U,,100,50,0.36\nRA-100-050-0B0,PVC-U,w/o holes,100,50,0.36\nRA-125-050-000,PVC-U,,125,50,0.55\nRA-125-050-0B0,PVC-U,w/o holes,125,50,0.55\nRA-160-050-000,PVC-U,,160,50,0.82\nRA-160-050-0B0,PVC-U,w/o holes,160,50,0.82\nRA-200-030-000,PVC-U,,200,30,1.30\nRA-200-030-0BO,PVC-U,w/o holes,200,30,1.30\nRA-050-020-000,PVC-U,,50,20,3.60\nRA-050-025-000,PVC-U,,50,25,0.18\nRA-050-025-0B0,PVC-U,w/o holes,50,25,0.18\nRA-080-020-000,PVC-U,,80,20,0.28\nRA-080-025-000,PVC-U,,80,25,0.28\nRA-080-025-0B0,PVC-U,w/o holes,80,25,0.28\nRA-100-010-0B0,PVC-U,w/o holes,100,10,0.36\nRA-100-020-000,PVC-U,,100,20,0.36\nRA-100-025-000,PVC-U,,100,25,0.36\nRA-100-025-0B0,PVC-U,w/o holes,100,25,0.36",
+    "title": "Drainage pipes"
+  }
+}

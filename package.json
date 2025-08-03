@@ -14,7 +14,7 @@
     "@astrojs/check": "^0.9.3",
     "@iconify-json/akar-icons": "^1.2.1",
     "@iconify-json/clarity": "^1.2.1",
-    "astro": "^4.15.8",
+    "astro": "^5.12.8",
     "astro-icon": "^1.1.1",
     "marked": "^14.1.2",
     "typescript": "^5.6.2"

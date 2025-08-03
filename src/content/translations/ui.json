@@ -1,0 +1,36 @@
+{
+  "pl": {
+    "documentsTableHeadings": "Nazwa,Język, ",
+    "contactHeadings": {
+      "address": "Adres",
+      "phone": "Numer telefonu",
+      "email": "Adres e-mail"
+    },
+    "aboutCompany": "Drewplast sp. z o.o. to polski producent instalacji kanalizacyjnych i drenarskich działający od 1993 roku.",
+    "distributorsError": "Brak dystrybutorów w tym regionie",
+    "documentsError": "Brak dokumentów",
+    "sectionIds": {
+      "fittings": "ksztaltki",
+      "distributors": "dystrybutorzy",
+      "sustainable": "zrownowazony-rozwoj"
+    },
+    "documentsDownloadButtonText": "Pobierz"
+  },
+  "en": {
+    "aboutCompany": "Drewplast sp. z o.o. is a Polish manufacturer of sewer and drainage systems, operating continuously since 1993.",
+    "documentsTableHeadings": "Name,Language,",
+    "contactHeadings": {
+      "address": "Address",
+      "phone": "Phone number",
+      "email": "Email address"
+    },
+    "distributorsError": "No distributors available in this region",
+    "documentsError": "No documents available",
+    "sectionIds": {
+      "fittings": "fittings",
+      "distributors": "distributors",
+      "sustainable": "sustainable-development"
+    },
+    "documentsDownloadButtonText": "Download"
+  }
+}

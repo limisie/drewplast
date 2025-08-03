@@ -1,0 +1,22 @@
+{
+  "pl": {
+    "category": [
+      "produkty"
+    ],
+    "language": "PL",
+    "isArchive": false,
+    "url": "/documents/Odpornosc na substancje warstwy litej z PVC-U.pdf",
+    "title": "Odporność na substancje - Warstwa lita z PVC-U",
+    "date": "25.01.2025"
+  },
+  "en": {
+    "category": [
+      "produkty"
+    ],
+    "language": "PL",
+    "isArchive": false,
+    "url": "/documents/Odpornosc na substancje warstwy litej z PVC-U.pdf",
+    "date": "25.01.2025",
+    "title": "Resistance to Substances - Solid PVC-U Layer"
+  }
+}

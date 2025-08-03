@@ -1,0 +1,13 @@
+{
+  "pl": {
+    "title": "Kanalizacja wewnętrzna - element systemu - przekroj",
+    "alt": "Przekrój produktu szara rura kanalizacji wewnętrznej z polipropylenu (PP).",
+    "url": "src/assets/images/kanalizacja-wewnetrzna-przekroj.png",
+    "caption": "Przekrój produktu szara rura kanalizacji wewnętrznej z polipropylenu (PP)"
+  },
+  "en": {
+    "title": "Kanalizacja wewnętrzna - element systemu - przekroj",
+    "url": "src/assets/images/kanalizacja-wewnetrzna-przekroj.png",
+    "alt": "Cross-section of the product: gray internal sewage pipe made of polypropylene (PP)."
+  }
+}

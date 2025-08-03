@@ -1,0 +1,14 @@
+{
+  "pl": {
+    "alt": "Szare rury kanalizacji wewnętrznej z polipropylenu",
+    "title": "Kanalizacja wewnętrzna PP - baner",
+    "url": "src/assets/images/kanalizacja-wewnetrzna-pp-image.png",
+    "caption": "Baner"
+  },
+  "en": {
+    "title": "Kanalizacja wewnętrzna PP - baner",
+    "url": "src/assets/images/kanalizacja-wewnetrzna-pp-image.png",
+    "alt": "Gray internal sewage pipes made of polypropylene",
+    "caption": "Baner"
+  }
+}

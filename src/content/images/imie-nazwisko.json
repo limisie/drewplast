@@ -1,0 +1,14 @@
+{
+  "pl": {
+    "url": "src/assets/images/imie-nazwisko.png",
+    "title": "Imię nazwisko",
+    "alt": "Zdjęcie portretowe zadowolonej pracowniczki biurowej",
+    "caption": "Imię i nazwisko"
+  },
+  "en": {
+    "url": "src/assets/images/imie-nazwisko.png",
+    "title": "Imię nazwisko",
+    "alt": "Portrait photo of a happy office worker",
+    "caption": "Name surname"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "pl": {
+    "category": [
+      "produkty"
+    ],
+    "language": "PL",
+    "isArchive": false,
+    "url": "/documents/Cennik - Gilzy.pdf",
+    "title": "Cennik - Gilzy",
+    "date": "25.01.2025"
+  },
+  "en": {
+    "category": [
+      "produkty"
+    ],
+    "language": "PL",
+    "isArchive": false,
+    "url": "/documents/Cennik - Gilzy.pdf",
+    "date": "25.01.2025",
+    "title": "Price List - Sleeves"
+  }
+}

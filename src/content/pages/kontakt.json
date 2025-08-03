@@ -1,0 +1,42 @@
+{
+  "pl": {
+    "seo": {
+      "slug": "kontakt",
+      "metaTitle": "Kontakt - Drewplast",
+      "metaDescription": "Skontaktuj się z naszym zespołem sprzedaży, pomocą techniczną lub znajdź najbliższego dystrybutora w celu uzyskania informacji i złożenia zamówienia.",
+      "preventIndexing": false
+    },
+    "sectionHeader": {
+      "title": "Drewplast Sp. z o.o.",
+      "eyebrow": "Zapraszamy do kontaktu",
+      "description": "Skontaktuj z naszym zespołem sprzedaży, pomocą techniczną lub znajdź najbliższego dystrybutora w celu uzyskania informacji i złożenia zamówienia."
+    },
+    "sectionDistributors": {
+      "title": "Sieć dystrybucji",
+      "description": "Sieć dystrybutorów Drewplast zapewnia szeroką dostępność naszych wysokiej jakości rozwiązań rurowych z tworzyw sztucznych w całej Polsce i krajach sąsiednich. \n\nNasi partnerzy zapewniają fachowe doradztwo, niezawodną dostawę i wyjątkową obsługę klienta, aby sprostać potrzebom zarówno klientów indywidualnych, jak i projektów na dużą skalę.",
+      "sectionId": "siec-dystrybucji"
+    },
+    "image": "kanalizacja-wewnetrzna-pp-baner",
+    "title": "Kontakt"
+  },
+  "en": {
+    "seo": {
+      "slug": "contact",
+      "metaTitle": "Contact - Drewplast",
+      "metaDescription": "Contact our sales or technical support team or find your nearest distributor for more information or to place an order.",
+      "preventIndexing": false
+    },
+    "sectionHeader": {
+      "title": "Drewplast Sp. z o.o.",
+      "eyebrow": "Reach us",
+      "description": "Contact our sales or technical support team, or find your nearest distributor for more information or to place an order."
+    },
+    "sectionDistributors": {
+      "title": "Product distribution network",
+      "description": "Drewplast's network of authorized distributors ensures widespread availability of our high-quality plastic piping solutions across Poland and neighboring countries. \n\nOur partners provide expert guidance, reliable delivery, and exceptional customer service to meet the needs of both individual customers and large-scale projects.",
+      "sectionId": "distribution-network"
+    },
+    "image": "kanalizacja-wewnetrzna-pp-baner",
+    "title": "Contact"
+  }
+}

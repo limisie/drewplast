@@ -1,0 +1,144 @@
+{
+  "pl": {
+    "sectionGallery": {
+      "title": "Galeria",
+      "imagesList": ["tuleje-baner", "tuleje-miniatura"]
+    },
+    "sectionHeader": {
+      "title": "Tuleje nawojowe",
+      "eyebrow": "Gilzy",
+      "image": "tuleje-baner",
+      "featuresList": [
+        {
+          "title": "Materiał",
+          "description": "PCW"
+        },
+        {
+          "title": "Średnica",
+          "description": "76mm"
+        },
+        {
+          "title": "Grubość ścianki",
+          "description": "3,6mm"
+        },
+        {
+          "title": "Precyzyjna długość",
+          "description": "215-1200mm"
+        }
+      ]
+    },
+    "sectionDocuments": {
+      "title": "Dokumenty",
+      "documentsList": ["cennik-rury-i-zlaczki-kanalizacji-wewnetrznej"]
+    },
+    "sectionDescription": {
+      "title": "Zastosowanie",
+      "advantages": "Wysoka wytrzymałość mechaniczna\nPrecyzyjne cięcie na dowolny wymiar od 215mm do 1200mm\nProdukcja w odcinkach do 6m\nCałkowita odporność na degradację biologiczną\nCałkowita wodoodporność – Idealne nawet w najbardziej wymagających warunkach\nSzybkie terminy realizacji zamówienia",
+      "description": "Nasze tuleje to gwarancja jakości, na której możesz polegać w każdej sytuacji"
+    },
+    "title": "Tuleje nawojowe",
+    "image": "tuleje-miniatura",
+    "sectionElements": {
+      "title": "Elementy systemu",
+      "pipesList": [
+        {
+          "link": {
+            "text": "Zobacz dostępne warianty",
+            "url": "rury-kanalizacji-wewnetrznej"
+          },
+          "pipe": "rury-kanalizacji-wewnetrznej-pp"
+        }
+      ],
+      "fittingsList": {
+        "list": ["kw-czwornik-dwuplaszczyznowy"],
+        "title": "Kształtki",
+        "link": {
+          "text": "Zobacz dostępne warianty",
+          "url": "ksztaltki"
+        }
+      }
+    },
+    "seo": {
+      "preventIndexing": false,
+      "slug": "produkty/tuleje-nawojowe",
+      "metaTitle": "Tuleje nawojowe",
+      "metaDescription": "Nasze tuleje to gwarancja jakości, na której możesz polegać w każdej sytuacji.",
+      "metaImage": "tuleje-miniatura"
+    },
+    "button": "Dowiedz się więcej",
+    "buttonText": "Dowiedz się więcej"
+  },
+  "en": {
+    "sectionGallery": {
+      "title": "Galeria",
+      "imagesList": ["tuleje-baner", "tuleje-miniatura"]
+    },
+    "sectionHeader": {
+      "description": "A complete system of new generation sewage pipes and fittings, manufactured from a material with an improved formula based on polypropylene. It meets all the conditions of a modern, ecological sewage system.",
+      "title": "Internal sewage system PP",
+      "eyebrow": "Internal sewage pipes and fittings made of polypropylene",
+      "image": "kanalizacja-wewnetrzna-pp-baner",
+      "featuresList": [
+        {
+          "title": "Material",
+          "description": "Polypropylene (PP)"
+        },
+        {
+          "title": "Diameter range",
+          "description": "32-110"
+        },
+        {
+          "title": "Ring stiffness",
+          "description": "SN2"
+        },
+        {
+          "title": "Color",
+          "description": "white, grey"
+        }
+      ]
+    },
+    "sectionDocuments": {
+      "title": "Documents",
+      "documentsList": [
+        "cennik-rury-i-zlaczki-kanalizacji-wewnetrznej"
+      ]
+    },
+    "sectionDescription": {
+      "title": "Application",
+      "advantages": "High mechanical strength\nPrecise cut to any dimension from 215mm to 1200mm\nProduction in lengths up to 6m\nComplete resistance to biological degradation\nTotal water resistance - perfect even in the most demanding conditions\nQuick order processing dates",
+      "description": "Our sleeves are a guarantee of quality that you can rely on in every situation."
+    },
+    "title": "Winding tubes",
+    "image": "tuleje-miniatura",
+    "sectionElements": {
+      "pipesList": [
+        {
+          "link": {
+            "text": "See available",
+            "url": "indoor-sewage-pipes"
+          },
+          "pipe": "rury-kanalizacji-wewnetrznej-pp"
+        }
+      ],
+      "fittingsList": {
+        "list": [
+          "kw-czwornik-dwuplaszczyznowy"
+        ],
+        "title": "Fittings",
+        "link": {
+          "text": "See available",
+          "url": "fittings"
+        }
+      },
+      "title": "System elements"
+    },
+    "seo": {
+      "preventIndexing": false,
+      "slug": "products/winding-tubes",
+      "metaTitle": "Winding tubes",
+      "metaDescription": "Our sleeves are a guarantee of quality that you can rely on in every situation.",
+      "metaImage": "tuleje-miniatura"
+    },
+    "buttonText": "Dowiedz się więcej"
+  }
+}

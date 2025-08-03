@@ -1,0 +1,42 @@
+{
+  "pl": {
+    "seo": {
+      "slug": "dokumenty",
+      "metaTitle": "Dokumenty do pobrania - Drewplast",
+      "metaDescription": "Potrzebujesz specyfikacji technicznych lub informacji o cenach? Znajdź wszystkie niezbędne dokumenty dotyczące rozwiązań rurowych z tworzyw sztucznych Drewplast w jednym miejscu.",
+      "preventIndexing": false
+    },
+    "sectionHeader": {
+      "title": "Dokumenty",
+      "eyebrow": "Do pobrania",
+      "description": "Potrzebujesz specyfikacji technicznych lub informacji o cenach? Znajdź wszystkie niezbędne dokumenty dotyczące rozwiązań rurowych z tworzyw sztucznych Drewplast w jednym miejscu."
+    },
+    "title": "Dokumenty",
+    "categoriesList": [
+      "produkty",
+      "certyfikaty",
+      "normy",
+      "pozostale"
+    ]
+  },
+  "en": {
+    "seo": {
+      "slug": "documents",
+      "metaTitle": "Documents to download - Drewplast",
+      "metaDescription": "Need technical specifications or pricing information? Find all the necessary documents for Drewplast's plastic piping solutions in one place.",
+      "preventIndexing": false
+    },
+    "sectionHeader": {
+      "title": "Documents",
+      "eyebrow": "To download",
+      "description": "Need technical specifications or pricing information? Find all the necessary documents for Drewplast's plastic piping solutions in one place."
+    },
+    "title": "Documents",
+    "categoriesList": [
+      "produkty",
+      "certyfikaty",
+      "normy",
+      "pozostale"
+    ]
+  }
+}

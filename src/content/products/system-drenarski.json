@@ -1,0 +1,142 @@
+{
+  "pl": {
+    "sectionGallery": {
+      "title": "Galeria",
+      "imagesList": []
+    },
+    "sectionHeader": {
+      "description": "Kompletny system rur i kształtek kanalizacyjnych nowej generacji, produkowany z tworzywa o udoskonalonej recepturze na bazie polipropylenu. Spełnia wszystkie warunki nowoczesnego, ekologicznego systemu kanalizacyjnego.",
+      "title": "System drenarski",
+      "eyebrow": "Rury i kształtki kanalizacji wewnętrznej z polipropylenu",
+      "image": "drenaz-baner",
+      "featuresList": [
+        {
+          "title": "Materiał",
+          "description": "Polipropylen (PP)"
+        },
+        {
+          "title": "Zakres średnic",
+          "description": "32-110"
+        },
+        {
+          "title": "Klasa sztywności",
+          "description": "SN2"
+        },
+        {
+          "title": "Kolor",
+          "description": "biały, szary"
+        }
+      ]
+    },
+    "button": "Dowiedz się więcej",
+    "sectionDocuments": {
+      "title": "Dokumenty",
+      "documentsList": []
+    },
+    "sectionDescription": {
+      "advantages": "Kompletny system rur i kształtek w szerokiej gamie średnic: od DN 32 do DN 110\nKształtki specjalne (m.in. wyczystki, czwórniki, złączki do połączenia z żeliwem)\nŁatwy i szybki montaż - niska waga produktów\nLity przekrój ścianek z zastosowaniem udoskonalonej receptury\n100% recykling rur i kształtek",
+      "title": "Zastosowanie",
+      "description": "Rury kanalizacji wewnętrznej przeznaczone są do budowy instalacji odprowadzających ścieki bytowo-gospodarcze i deszczowe wewnątrz budynku, a także do budowy wentylacji. Tworzywo żaroodpornie stabilizowane, z jakiego wykonany jest system, wykazuje bardzo dużą odporność na działanie rozmaitych, w tym agresywnych, środków chemicznych i ścieków. Dzięki temu z powodzeniem może zostać zastosowany także m.in. w przemyśle chemicznym i farmaceutycznym.\n\nRury i kształtki wytrzymują długotrwały przepływ gorącej wody (do 90ºC w przepływie ciągłym i do 95ºC w krótkotrwałym), dlatego znajdują zastosowanie w gospodarstwach domowych oraz wszędzie tam, gdzie odprowadza się ścieki o wysokiej temperaturze."
+    },
+    "title": "System drenarski",
+    "image": "drenaz-miniatura",
+    "sectionElements": {
+      "title": "Elementy systemu",
+      "pipesList": [
+        {
+          "link": {
+            "text": "Zobacz dostępne warianty",
+            "url": "rury-kanalizacji-wewnetrznej"
+          },
+          "pipe": "rury-kanalizacji-wewnetrznej-pp"
+        }
+      ],
+      "fittingsList": {
+        "list": [
+        ],
+        "title": "Kształtki",
+        "link": {
+          "text": "Zobacz dostępne warianty",
+          "url": "ksztaltki"
+        }
+      }
+    },
+    "seo": {
+      "preventIndexing": false,
+      "metaDescription": "Kompletny system rur i kształtek kanalizacyjnych nowej generacji, produkowany z tworzywa o udoskonalonej recepturze na bazie polipropylenu.",
+      "metaTitle": "System drenarski - Drewplast",
+      "slug": "produkty/system-drenarski"
+    },
+    "buttonText": "Dowiedz się więcej"
+  },
+  "en": {
+    "sectionGallery": {
+      "title": "Gallery",
+      "imagesList": []
+    },
+    "sectionHeader": {
+      "description": "A complete system of new generation sewage pipes and fittings, manufactured from a material with an improved formula based on polypropylene. It meets all the conditions of a modern, ecological sewage system.",
+      "title": "Drainage system",
+      "eyebrow": "Internal sewage pipes and fittings made of polypropylene",
+      "image": "drenaz-baner",
+      "featuresList": [
+        {
+          "title": "Material",
+          "description": "Polypropylene (PP)"
+        },
+        {
+          "title": "Diameter range",
+          "description": "32-110"
+        },
+        {
+          "title": "Ring stiffness",
+          "description": "SN2"
+        },
+        {
+          "title": "Color",
+          "description": "white, grey"
+        }
+      ]
+    },
+    "button": "Learn more",
+    "sectionDocuments": {
+      "title": "Documents",
+      "documentsList": []
+    },
+    "sectionDescription": {
+      "title": "Application",
+      "description": "Internal sewage pipes are designed for the construction of installations for the discharge of domestic and rainwater sewage inside the building, as well as for the construction of ventilation. The heat-resistant stabilized material from which the system is made is very resistant to various, including aggressive, chemicals and sewage. Thanks to this, it can also be successfully used in the chemical and pharmaceutical industries.\n\nPipes and fittings withstand long-term flow of hot water (up to 90ºC in continuous flow and up to 95ºC in short-term flow), which is why they are used in households and wherever high-temperature sewage is discharged.",
+      "advantages": "Complete system of pipes and fittings in a wide range of diameters: from DN 32 to DN 110\n\nSpecial fittings (including cleanouts, crosspieces, connectors for connection with cast iron)\n\nEasy and quick assembly - low weight of products\n\nSolid cross-section of walls using an improved recipe\n\n100% recycling of pipes and fittings"
+    },
+    "title": "Drainage system",
+    "image": "drenaz-miniatura",
+    "sectionElements": {
+      "fittingsList": {
+        "list": [
+        ],
+        "title": "Fittings",
+        "link": {
+          "text": "See available",
+          "url": "fittings"
+        }
+      },
+      "pipesList": [
+        {
+          "link": {
+            "text": "See available",
+            "url": "indoor-sewage-pipes"
+          },
+          "pipe": "rury-kanalizacji-wewnetrznej-pp"
+        }
+      ],
+      "title": "System elements"
+    },
+    "seo": {
+      "preventIndexing": false,
+      "metaDescription": "A complete system of new generation sewage pipes and fittings, manufactured from a material with an improved formula based on polypropylene.",
+      "metaTitle": "Drainage system - Drewplast",
+      "slug": "products/drainage-system"
+    },
+    "buttonText": "Learn more"
+  }
+}

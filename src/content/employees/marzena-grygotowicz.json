@@ -1,0 +1,18 @@
+{
+  "pl": {
+    "name": "Marzena Grygotowicz",
+    "position": "Handlowiec",
+    "contact": {
+      "email": "marzena.grygotowicz@drewplast.com.pl"
+    },
+    "image": "imie-nazwisko"
+  },
+  "en": {
+    "name": "Marzena Grygotowicz",
+    "contact": {
+      "email": "marzena.grygotowicz@drewplast.com.pl"
+    },
+    "position": "Tradesman",
+    "image": "imie-nazwisko"
+  }
+}
