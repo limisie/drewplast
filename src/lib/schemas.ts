@@ -46,6 +46,7 @@ const sectionSchemas = {
     featuresList: z.array(helperSchemas.feature).optional(),
     link: helperSchemas.link.optional(),
     pageLink: helperSchemas.pageLink.optional(),
+    productsList: z.array(reference("products")).optional(),
   }),
   generalReferenceList: (collection: string) =>
     z.object({
@@ -139,6 +140,7 @@ export const collectionSchemas = {
     image: reference("images").optional(),
     content: z.string().optional(),
     categoriesList: z.array(reference("document-categories")).optional(),
+    productsList: z.array(reference("products")).optional(),
   }),
   products: z.object({
     title: z.string(),
@@ -177,11 +179,13 @@ export const collectionSchemas = {
   }),
   translations: z.object({
     aboutCompany: z.string().optional(),
-    contactHeadings: z.object({
-      address: z.string(),
-      phone: z.string(),
-      email: z.string(),
-    }).optional(),
+    contactHeadings: z
+      .object({
+        address: z.string(),
+        phone: z.string(),
+        email: z.string(),
+      })
+      .optional(),
     distributorsError: z.string().optional(),
     documentsError: z.string().optional(),
     tableHeadings: z.string().optional(),

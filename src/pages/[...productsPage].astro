@@ -1,5 +1,5 @@
 ---
-import { getPageData } from "@lib/data";
+import { getLocalizedDataByEntries, getPageData } from "@lib/data";
 import { locales } from "@i18n/ui";
 import { getLocaleUrl } from "@i18n/urls";
 
@@ -17,11 +17,12 @@ export async function getStaticPaths() {
     props: {
       seo: data[locale].seo,
       sectionHeader: data[locale].sectionHeader,
+      productsList: data[locale].productsList,
     },
   }));
 }
 
-const { seo, sectionHeader } = Astro.props;
+const { seo, sectionHeader, productsList } = Astro.props;
 ---
 
 <MainLayout seo={seo}>
@@ -30,6 +31,6 @@ const { seo, sectionHeader } = Astro.props;
     description={sectionHeader.description}
     eyebrow={sectionHeader.eyebrow}
   >
-    <ProductsList />
+    <ProductsList productsList={productsList} />
   </SectionHeader>
 </MainLayout>

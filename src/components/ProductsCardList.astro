@@ -1,12 +1,14 @@
 ---
-import { getLocalizedCollectionData } from "@lib/data";
-import { defaultLocale } from "@i18n/ui";
-
 import Card from "@components/Card.astro";
 import HorizontalScroll from "./HorizontalScroll.astro";
+import { getLocalizedDataByEntries } from "@lib/data";
 
-const locale = Astro.currentLocale || defaultLocale;
-const productsData = await getLocalizedCollectionData("products", locale);
+const { productsList } = Astro.props;
+
+const productsData = await getLocalizedDataByEntries(
+  productsList,
+  Astro.currentLocale
+);
 ---
 
 <HorizontalScroll class="snap-start">

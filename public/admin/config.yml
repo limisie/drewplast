@@ -330,6 +330,15 @@ collections:
               - *TITLE
               - *DESCRIPTION
               - *PAGE_LINK
+              - label: Strona główna - Sekcja - Produkty - Lista
+                name: productsList
+                widget: relation
+                collection: products
+                value_field: "{{slug}}"
+                search_fields: [title]
+                display_fields: [title]
+                multiple: true
+                i18n: duplicate
           - <<: *SECTION
             label: Strona główna - Sekcja - Zrównoważony rozwój
             name: sectionSustainable
@@ -373,7 +382,15 @@ collections:
               - *TITLE
               - *EYEBROW
               - *DESCRIPTION
-
+          - label: Produkty - Lista
+            name: productsList
+            widget: relation
+            collection: products
+            value_field: "{{slug}}"
+            search_fields: [title]
+            display_fields: [title]
+            multiple: true
+            i18n: duplicate
       - label: Dokumenty - lista
         name: dokumenty
         file: src/content/pages/dokumenty.json
