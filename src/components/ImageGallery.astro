@@ -25,6 +25,9 @@ const imagesData = await Promise.all(
             alt={image.alt}
             title={image.caption}
             class="modal-thumbnail"
+            decoding="async"
+            loading="lazy"
+            layout="constrained"
           />
         </div>
       </li>

@@ -23,7 +23,13 @@ const imageData = await getDynamicImageData(image, locale);
 
   <div class="card__content">
     <figure class="img-wrapper">
-      <Image src={imageData.import()} alt={imageData.alt} />
+      <Image
+        src={imageData.import()}
+        alt={imageData.alt}
+        decoding="async"
+        loading="lazy"
+        layout="constrained"
+      />
     </figure>
 
     <div>
@@ -35,7 +41,7 @@ const imageData = await getDynamicImageData(image, locale);
 
 <style>
   .card {
-    width: 15rem;    
+    width: 15rem;
 
     h3 {
       padding-block: 0.3rem;

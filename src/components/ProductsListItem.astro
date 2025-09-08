@@ -37,7 +37,13 @@ const badges = [...pipesTitles, ...fittingsTitle];
   <a href={getLocaleUrl(locale, seo.slug)}></a>
 
   <div class="img-wrapper">
-    <Image src={imageData.import()} alt={imageData.alt} />
+    <Image
+      src={imageData.import()}
+      alt={imageData.alt}
+      decoding="async"
+      loading="lazy"
+      layout="constrained"
+    />
   </div>
 
   <div class="card__content">

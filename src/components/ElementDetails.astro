@@ -31,6 +31,9 @@ const isFitting = productsElements.fittings.includes(category as any);
             alt={sectionImageData.alt}
             title={sectionImageData.caption}
             class="modal-thumbnail"
+            decoding="async"
+            loading="lazy"
+            layout="constrained"
           />
         </div>
         <figcaption class="light-font">{sectionImageData.caption}</figcaption>
@@ -47,6 +50,9 @@ const isFitting = productsElements.fittings.includes(category as any);
             alt={imageData.alt}
             title={imageData.caption}
             class="modal-thumbnail"
+            decoding="async"
+            loading="lazy"
+            layout="constrained"
           />
         </div>
         <figcaption class="light-font">{imageData.caption}</figcaption>

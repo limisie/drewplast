@@ -17,7 +17,13 @@ const imageData = await getDynamicImageData(image, locale);
 
 <figure class="full-width-stretch">
   <div class="img-wrapper">
-    <Image src={imageData.import()} alt={imageData.alt} />
+    <Image
+      src={imageData.import()}
+      alt={imageData.alt}
+      decoding="async"
+      loading="lazy"
+      layout="constrained"
+    />
   </div>
   {isCaption && <figcaption class="light-font">{imageData.alt}</figcaption>}
 </figure>
