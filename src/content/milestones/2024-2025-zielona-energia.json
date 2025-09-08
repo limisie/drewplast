@@ -2,11 +2,11 @@
   "pl": {
     "title": "Zielona energia",
     "year": 2025,
-    "description": "Budowa i uruchomienie farmy fotowoltaicznej zasilającej firmę własną energią."
+    "description": "Budowa i uruchomienie farmy fotowoltaicznej, która dostarcza firmie znaczną część energii elektrycznej potrzebnej do działalności."
   },
   "en": {
     "year": 2025,
     "title": "Green Energy",
-    "description": "Construction and commissioning of a photovoltaic farm to power the company with renewable energy."
+    "description": "Construction and launch of a photovoltaic farm providing the company with a significant share of its electricity consumption."
   }
 }

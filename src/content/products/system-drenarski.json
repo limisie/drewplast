@@ -39,7 +39,7 @@
       "description": "Rury kanalizacji wewnętrznej przeznaczone są do budowy instalacji odprowadzających ścieki bytowo-gospodarcze i deszczowe wewnątrz budynku, a także do budowy wentylacji. Tworzywo żaroodpornie stabilizowane, z jakiego wykonany jest system, wykazuje bardzo dużą odporność na działanie rozmaitych, w tym agresywnych, środków chemicznych i ścieków. Dzięki temu z powodzeniem może zostać zastosowany także m.in. w przemyśle chemicznym i farmaceutycznym.\n\nRury i kształtki wytrzymują długotrwały przepływ gorącej wody (do 90ºC w przepływie ciągłym i do 95ºC w krótkotrwałym), dlatego znajdują zastosowanie w gospodarstwach domowych oraz wszędzie tam, gdzie odprowadza się ścieki o wysokiej temperaturze."
     },
     "title": "System drenarski",
-    "image": "drenaz-miniatura",
+    "image": "drenaz-baner",
     "sectionElements": {
       "title": "Elementy systemu",
       "pipesList": [
@@ -52,8 +52,7 @@
         }
       ],
       "fittingsList": {
-        "list": [
-        ],
+        "list": [],
         "title": "Kształtki",
         "link": {
           "text": "Zobacz dostępne warianty",
@@ -109,11 +108,10 @@
       "advantages": "Complete system of pipes and fittings in a wide range of diameters: from DN 32 to DN 110\n\nSpecial fittings (including cleanouts, crosspieces, connectors for connection with cast iron)\n\nEasy and quick assembly - low weight of products\n\nSolid cross-section of walls using an improved recipe\n\n100% recycling of pipes and fittings"
     },
     "title": "Drainage system",
-    "image": "drenaz-miniatura",
+    "image": "drenaz-baner",
     "sectionElements": {
       "fittingsList": {
-        "list": [
-        ],
+        "list": [],
         "title": "Fittings",
         "link": {
           "text": "See available",

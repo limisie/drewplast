@@ -11,7 +11,13 @@
       "title": "Produkty",
       "eyebrow": "Instalacje kanalizacyjne i drenarskie"
     },
-    "title": "Produkty"
+    "title": "Produkty",
+    "productsList": [
+      "kanalizacja-wewnetrzna-pp",
+      "kanalizacja-zewnetrzna",
+      "system-drenarski",
+      "tuleje-nawojowe"
+    ]
   },
   "en": {
     "seo": {
@@ -25,6 +31,12 @@
       "title": "Products",
       "eyebrow": "Sewerage and drainage installations"
     },
-    "title": "Products"
+    "title": "Products",
+    "productsList": [
+      "kanalizacja-wewnetrzna-pp",
+      "kanalizacja-zewnetrzna",
+      "system-drenarski",
+      "tuleje-nawojowe"
+    ]
   }
 }

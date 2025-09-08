@@ -53,7 +53,13 @@
       "pageLink": {
         "page": "produkty",
         "text": "Zobacz wszystkie"
-      }
+      },
+      "productsList": [
+        "kanalizacja-wewnetrzna-pp",
+        "kanalizacja-zewnetrzna",
+        "system-drenarski",
+        "tuleje-nawojowe"
+      ]
     },
     "sectionSustainable": {
       "title": "Zielona energia napędza nasz rozwój",
@@ -142,7 +148,13 @@
       "pageLink": {
         "page": "produkty",
         "text": "See all "
-      }
+      },
+      "productsList": [
+        "kanalizacja-wewnetrzna-pp",
+        "kanalizacja-zewnetrzna",
+        "system-drenarski",
+        "tuleje-nawojowe"
+      ]
     },
     "sectionDistributors": {
       "title": "Product distribution network",
