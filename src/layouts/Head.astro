@@ -52,4 +52,18 @@ const currentUrl = getLocaleUrl(locale, seo.slug);
   <meta property="og:locale" content={locale} />
   <meta property="og:type" content="website" />
   {imageData && <meta property="og:image" content={imageData.import()} />}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Drewplast Sp. z o.o.",
+      "url": "https://www.drewplast.com.pl",
+      "logo": "https://www.drewplast.com.pl/logo.png",
+      "sameAs": [
+        "https://www.instagram.com/drewplastpl_/"
+        "https://www.facebook.com/profile.php?id=61563021118456",
+        "https://www.linkedin.com/company/drewplast/"
+      ]
+    }
+  </script>
 </head>
