@@ -50,7 +50,7 @@
         }
       ],
       "fittingsList": {
-        "list": ["kw-czwornik-dwuplaszczyznowy"],
+        "list": [],
         "title": "Kształtki",
         "link": {
           "text": "Zobacz dostępne warianty",
@@ -99,9 +99,7 @@
     },
     "sectionDocuments": {
       "title": "Documents",
-      "documentsList": [
-        "cennik-rury-i-zlaczki-kanalizacji-wewnetrznej"
-      ]
+      "documentsList": ["cennik-rury-i-zlaczki-kanalizacji-wewnetrznej"]
     },
     "sectionDescription": {
       "title": "Application",
@@ -121,9 +119,7 @@
         }
       ],
       "fittingsList": {
-        "list": [
-          "kw-czwornik-dwuplaszczyznowy"
-        ],
+        "list": [],
         "title": "Fittings",
         "link": {
           "text": "See available",

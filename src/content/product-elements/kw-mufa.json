@@ -1,17 +1,16 @@
 {
-    "pl": {
-      "category": "Kształtki",
-      "type": "Mufa",
-      "title": "Mufa kanalizacji wewnętrznej PP",
-      "table": "Kod produktu, DN1, DN2, α, Opakowanie\n,,(mm),(mm),,(szt.)\nCZ-050-050-W45, 50, 50, 45, 20\nCZ-050-050-W90, 50, 50, 90, 20\nCZ-110-050-W45, 110, 50, 45, 20\nCZ-110-050-W90, 110, 50, 90, 20\nCZ-110-110-W45, 110, 110, 45, 10\nCZ-110-110-W90, 110, 110, 90, 10",
-      "description": "Lorem ipsum dolor sit amet consectetur. Tempus dictum senectus rhoncus id risus tincidunt."
-    },
-    "en": {
-      "category": "Fittings",
-      "type": "Socket",
-      "title": "Socket for Internal Sewage",
-      "table": "Product code, DN1, DN2, α, Pack\n,,(mm),(mm),,(pcs.)\nCZ-050-050-W45, 50, 50, 45, 20\nCZ-050-050-W90, 50, 50, 90, 20\nCZ-110-050-W45, 110, 50, 45, 20\nCZ-110-050-W90, 110, 50, 90, 20\nCZ-110-110-W45, 110, 110, 45, 10\nCZ-110-110-W90, 110, 110, 90, 10",
-      "description": "Lorem ipsum dolor sit amet consectetur. Tempus dictum senectus rhoncus id risus tincidunt."
-    }
+  "pl": {
+    "category": "Kształtki",
+    "type": "Mufa",
+    "title": "Mufa kanalizacji wewnętrznej PP",
+    "table": "Kod produktu,Przesuwna,Średnica,Sztuk,Waga,EAN,Cena\n,,(mm),w opak.,(kg),,PLN\nMF-040-SZA-SUW,✓,40,,0.10,,2.90 zł\nMF-040-SZA-WEW,,40,100,0.10,3000000000731,2.41 zł\nMF-050-SZA-SUW,✓,50,,0.10,,4.16 zł\nMF-050-SZA-WEW,,50,200,0.10,3000000000755,2.00 zł\nMF-075-SZA-WEW,,75,50,0.15,3000000000762,4.46 zł\nMF-110-SZA-SUW,✓,110,,0.26,,5.83 zł\nMF-110-SZA-WEW,,110,30,0.26,3000000000779,6.16 zł",
+    "description": ""
+  },
+  "en": {
+    "category": "Fittings",
+    "type": "Socket",
+    "title": "Socket for Internal Sewage",
+    "table": "Product Code,Telescopic,Diameter,Pieces,Weight,EAN,Price\n,,(mm),per pack.,(kg),,EUR\nMF-040-SZA-SUW,✓,40,,0.10,,€0.68\nMF-040-SZA-WEW,,40,100,0.10,3000000000731,€0.57\nMF-050-SZA-SUW,✓,50,,0.10,,€0.98\nMF-050-SZA-WEW,,50,200,0.10,3000000000755,€0.47\nMF-075-SZA-WEW,,75,50,0.15,3000000000762,€1.05\nMF-110-SZA-SUW,✓,110,,0.26,,€1.37\nMF-110-SZA-WEW,,110,30,0.26,3000000000779,€1.45",
+    "description": ""
   }
-  
+}

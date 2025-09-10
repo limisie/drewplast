@@ -1,0 +1,16 @@
+{
+  "pl": {
+    "category": "Kształtki",
+    "type": "Rewizja",
+    "title": "Rewizja kanalizacji wewnętrznej PP",
+    "table": "Kod produktu,Średnica,Sztuk,Waga,EAN,Cena\n,(mm),w opak.,(kg),,PLN\nRW-050-000-WEW,50,100,0.08,3000000000953,6.06 zł\nRW-075-000-WEW,75,10,0.18,3000000000960,8.70 zł\nRW-110-000-WEW,110,10,0.33,,9.78 zł",
+    "description": ""
+  },
+  "en": {
+    "category": "Fittings",
+    "type": "Revision",
+    "title": "Revision for Internal Sewage",
+    "table": "Product Code,Diameter,Pieces,Weight,EAN,Price\n,(mm),per pack.,(kg),,EUR\nRW-050-000-WEW,50,100,0.08,3000000000953,€1.43\nRW-075-000-WEW,75,10,0.18,3000000000960,€2.05\nRW-110-000-WEW,110,10,0.33,,€2.30",
+    "description": ""
+  }
+}

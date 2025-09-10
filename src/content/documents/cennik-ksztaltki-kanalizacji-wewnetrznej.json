@@ -1,0 +1,22 @@
+{
+  "pl": {
+    "category": [
+      "produkty"
+    ],
+    "language": "PL",
+    "isArchive": false,
+    "url": "/src/assets/documents/ksztaltki-kanalizacji-wewne-trznej-pp.pdf",
+    "title": "Cennik - Kształtki kanalizacji wewnętrznej",
+    "date": "11.09.2025"
+  },
+  "en": {
+    "category": [
+      "produkty"
+    ],
+    "language": "PL",
+    "isArchive": false,
+    "url": "/src/assets/documents/ksztaltki-kanalizacji-wewne-trznej-pp.pdf",
+    "title": "Price List - Internal Sewage Fittings",
+    "date": "11.09.2025"
+  }
+}

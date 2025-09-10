@@ -3,10 +3,13 @@
     "sectionGallery": {
       "title": "Galeria",
       "imagesList": [
-        "imie-nazwisko",
-        "imie-nazwisko",
-        "imie-nazwisko",
-        "kanalizacja-wewnetrzna-pp-miniatura"
+        "kanalizacja-wewnetrzna-galeria-1-1",
+        "kanalizacja-wewnetrzna-galeria-2",
+        "kanalizacja-wewnetrzna-galeria-2-1",
+        "kanalizacja-wewnetrzna-galeria-4",
+        "kanalizacja-wewnetrzna-galeria-5",
+        "kanalizacja-wewnetrzna-galeria-1",
+        "kanalizacja-wewnetrzna-galeria-7"
       ]
     },
     "sectionHeader": {
@@ -17,19 +20,15 @@
       "featuresList": [
         {
           "title": "Materiał",
-          "description": "Homopolimer polipropylenu (PP-H)"
+          "description": "Homopolimer polipropylenu (PP-H),  wypełniacz kredowy,  recyklat PP,  barwnik"
         },
         {
-          "title": "Zakres średnic",
-          "description": "32-110"
-        },
-        {
-          "title": "Klasa sztywności",
-          "description": "SN2"
+          "title": "Średnice",
+          "description": "Ø40,  Ø50,  Ø75,  Ø110"
         },
         {
           "title": "Kolor",
-          "description": "biały, szary"
+          "description": "szary (biały na zamówienie)"
         }
       ]
     },
@@ -37,13 +36,16 @@
     "sectionDocuments": {
       "title": "Dokumenty",
       "documentsList": [
-        "cennik-rury-i-zlaczki-kanalizacji-wewnetrznej"
+        "cennik-rury-i-zlaczki-kanalizacji-wewnetrznej",
+        "cennik-ksztaltki-kanalizacji-wewnetrznej",
+        "kdwu-06-2024-rura-pp-h-kanalizacji-wewnetrznej-pn-en-1451-1",
+        "pn-en-1451-1-rury-i-ksztaltki-kanalizacji-wewnetrznej-pp"
       ]
     },
     "sectionDescription": {
-      "advantages": "Odporność chemiczna i temperaturowa — idealny do trudnych warunków pracy, także w przemyśle\nWytrzymałość mechaniczna — odporność na uszkodzenia i odkształcenia\nCicha praca instalacji — ograniczone przenoszenie hałasu\nŁatwy montaż — lekka konstrukcja i bogaty wybór kształtek\nDługowieczność i niezawodność — wysoka jakość materiałów gwarantuje wieloletnie użytkowanie",
+      "advantages": "Odporność chemiczna i temperaturowa – doskonałe właściwości w trudnych warunkach pracy, także w przemyśle\nWytrzymałość mechaniczna – wysoka odporność na uszkodzenia i odkształcenia.\nŁatwy montaż – lekka konstrukcja oraz szeroki wybór kształtek\nDługowieczność i niezawodność – najlepsze materiały gwarantują wieloletnie, bezproblemowe użytkowanie\nEkologia – zastosowanie wypełniacza mineralnego, materiałów z recyklingu i zielonej energii",
       "title": "Zastosowanie",
-      "description": "System kanalizacji wewnętrznej Drewplast jest przeznaczony do bezpiecznego i trwałego odprowadzania ścieków bytowo-gospodarczych, deszczowych oraz powietrza wentylacyjnego w budynkach mieszkalnych, użyteczności publicznej i zakładach przemysłowych.\n\nWykonany z wysokiej jakości polipropylenu homopolimeru (PP-H), sprawdza się także w instalacjach technologicznych, m.in. w przemyśle chemicznym i farmaceutycznym, dzięki odporności na agresywne substancje oraz wysokie temperatury — do 90°C ciągłej i 95°C krótkotrwałej.\n\nDostępny w średnicach od 32 do 110 mm, system jest odpowiedni zarówno dla małych instalacji domowych, jak i rozbudowanych systemów kanalizacyjnych, zapewniając stabilność i trwałość dzięki klasie sztywności SN2."
+      "description": "System kanalizacji wewnętrznej Drewplast jest przeznaczony do bezpiecznego i trwałego odprowadzania ścieków bytowo-gospodarczych, deszczowych oraz powietrza wentylacyjnego w budynkach mieszkalnych, użyteczności publicznej i zakładach przemysłowych.\n\nWykonany z wysokiej jakości polipropylenu homopolimeru (PP-H), sprawdza się także w instalacjach technologicznych, m.in. w przemyśle chemicznym i farmaceutycznym, dzięki odporności na agresywne substancje oraz wysokie temperatury — do 90°C ciągłej i 95°C krótkotrwałej.\n\nDostępny w średnicach od 40 do 110 mm, system jest odpowiedni zarówno dla małych instalacji domowych, jak i rozbudowanych systemów kanalizacyjnych, zapewniając stabilność i trwałość."
     },
     "title": "Kanalizacja wewnętrzna PP",
     "image": "kanalizacja-wewnetrzna-pp-baner",
@@ -60,7 +62,11 @@
       ],
       "fittingsList": {
         "list": [
-          "kw-czwornik-dwuplaszczyznowy"
+          "kw-kolano",
+          "kw-mufa",
+          "redukcja-kanalizacji-wewnetrznej-pp",
+          "rewizja-kanalizacji-wewnetrznej-pp",
+          "trojnik-kanalizacji-wewnetrznej-pp"
         ],
         "title": "Kształtki",
         "link": {
@@ -82,10 +88,13 @@
     "sectionGallery": {
       "title": "Gallery",
       "imagesList": [
-        "imie-nazwisko",
-        "imie-nazwisko",
-        "imie-nazwisko",
-        "kanalizacja-wewnetrzna-pp-miniatura"
+        "kanalizacja-wewnetrzna-galeria-1-1",
+        "kanalizacja-wewnetrzna-galeria-2",
+        "kanalizacja-wewnetrzna-galeria-2-1",
+        "kanalizacja-wewnetrzna-galeria-4",
+        "kanalizacja-wewnetrzna-galeria-5",
+        "kanalizacja-wewnetrzna-galeria-1",
+        "kanalizacja-wewnetrzna-galeria-7"
       ]
     },
     "sectionHeader": {
@@ -96,32 +105,31 @@
       "featuresList": [
         {
           "title": "Material",
-          "description": "Polypropylene (PP)"
+          "description": "Polypropylene homopolymer (PP-H),  Chalk filler,  PP recyclate,  Pigment"
         },
         {
-          "title": "Diameter range",
-          "description": "32-110"
-        },
-        {
-          "title": "Ring stiffness",
-          "description": "SN2"
+          "title": "Diameters",
+          "description": "Ø40,  Ø50,  Ø75,  Ø110"
         },
         {
           "title": "Color",
-          "description": "white, grey"
+          "description": "grey (white available on request)"
         }
       ]
     },
     "sectionDocuments": {
       "title": "Documents",
       "documentsList": [
-        "cennik-rury-i-zlaczki-kanalizacji-wewnetrznej"
+        "cennik-rury-i-zlaczki-kanalizacji-wewnetrznej",
+        "cennik-ksztaltki-kanalizacji-wewnetrznej",
+        "kdwu-06-2024-rura-pp-h-kanalizacji-wewnetrznej-pn-en-1451-1",
+        "pn-en-1451-1-rury-i-ksztaltki-kanalizacji-wewnetrznej-pp"
       ]
     },
     "sectionDescription": {
       "title": "Application",
       "description": "Internal sewage pipes are designed for the construction of installations for the discharge of domestic and rainwater sewage inside the building, as well as for the construction of ventilation. The heat-resistant stabilized material from which the system is made is very resistant to various, including aggressive, chemicals and sewage. Thanks to this, it can also be successfully used in the chemical and pharmaceutical industries.\n\nPipes and fittings withstand long-term flow of hot water (up to 90ºC in continuous flow and up to 95ºC in short-term flow), which is why they are used in households and wherever high-temperature sewage is discharged.",
-      "advantages": "Complete system of pipes and fittings in a wide range of diameters: from DN 32 to DN 110\nSpecial fittings (including cleanouts, crosspieces, connectors for connection with cast iron)\nEasy and quick assembly - low weight of products\nSolid cross-section of walls using an improved recipe\n100% recycling of pipes and fittings"
+      "advantages": "Chemical and thermal resistance – excellent performance in demanding working conditions, including industrial applications\nMechanical strength – high resistance to damage and deformation\nEasy installation – lightweight design and a wide range of fittings\nDurability and reliability – top-quality materials ensure many years of trouble-free use\nEco-friendly – use of mineral filler, recycled materials, and green energy"
     },
     "title": "Indoor Sewage",
     "image": "kanalizacja-wewnetrzna-pp-baner",
@@ -137,7 +145,11 @@
       ],
       "fittingsList": {
         "list": [
-          "kw-czwornik-dwuplaszczyznowy"
+          "kw-kolano",
+          "kw-mufa",
+          "redukcja-kanalizacji-wewnetrznej-pp",
+          "rewizja-kanalizacji-wewnetrznej-pp",
+          "trojnik-kanalizacji-wewnetrznej-pp"
         ],
         "title": "Fittings",
         "link": {
