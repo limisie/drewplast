@@ -710,6 +710,9 @@ collections:
         hint: Nazwa produktu widoczna w katalogu produktów (np. Kolano kanalizacji wewnętrznej PP, Rury drenarskie w otulinie typu typar (DuPont®))
       - <<: *DESCRIPTION
         hint: Krótki opis produktu
+      - <<: *FEATURES
+        hint: Lista właściwości (tylko dla rur)
+        required: false
       - <<: *IMAGE
         label: Zdjęcie elementu
         required: false

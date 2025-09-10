@@ -157,6 +157,7 @@ export const collectionSchemas = {
     category: z.enum([...productsElements.pipes, ...productsElements.fittings]),
     title: z.string(),
     description: z.string().optional(),
+    featuresList: z.array(helperSchemas.feature).optional(),
     type: z.string().optional(),
     image: reference("images").optional(),
     sectionImage: reference("images").optional(),

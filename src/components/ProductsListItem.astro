@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { getLocalizedDataByEntry } from "@lib/data";
+import { getLocalizedDataByEntries, getLocalizedDataByEntry } from "@lib/data";
 import { isList } from "@lib/utils";
 import { getDynamicImageData } from "@lib/imageImport";
 import { getLocaleUrl } from "@i18n/urls";
@@ -28,9 +28,12 @@ const pipesTitles = isList(pipesList)
       )
     )
   : [];
-const fittingsTitle = isList(fittingsList?.list) ? [fittingsList.title] : [];
 
-const badges = [...pipesTitles, ...fittingsTitle];
+const fittingsData = await getLocalizedDataByEntries(fittingsList.list, locale);
+const fittingsTitles = isList(fittingsData)
+  ? fittingsData.map((fittings) => fittings.type)
+  : [];
+const badges = [...pipesTitles, ...fittingsTitles];
 ---
 
 <li class="card">

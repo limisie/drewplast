@@ -2,18 +2,24 @@
 import LabeledIcon from "@components/LabeledIcon.astro";
 import type { Feature } from "@lib/types";
 
-const { featuresList, isWrapped } = Astro.props;
+const { featuresList, isWrapped, isInline } = Astro.props;
 ---
 
-<ul class:list={[{wrap: isWrapped}]}>
+<ul class:list={[{ wrap: isWrapped, inline: isInline }]}>
   {
     featuresList.map((feature: Feature) => (
       <li>
         {typeof feature === "string" ? (
-          <LabeledIcon iconName="akar-icons:check" text={feature} class="feature"/>
+          <LabeledIcon
+            iconName="akar-icons:check"
+            text={feature}
+            class="feature"
+          />
         ) : (
-          <span>{feature.title}</span>
-          <p>{feature.description}</p>
+          <>
+            <span>{feature.title}</span>
+            <p>{feature.description}</p>
+          </>
         )}
       </li>
     ))
@@ -29,11 +35,36 @@ const { featuresList, isWrapped } = Astro.props;
 
     li {
       flex-basis: 100%;
-  
+
       span {
         display: block;
         margin-top: var(--spacer);
         margin-bottom: calc(0.5 * var(--spacer));
+      }
+    }
+  }
+
+  ul.inline {
+    gap: var(--spacer);
+
+    li {
+      flex-basis: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      span {
+        flex-basis: 50%;
+        font-weight: var(--fw-regular);
+        font-size: var(--fs-s);
+        margin-block: 0;
+      }
+
+      p {
+        flex-basis: 50%;
+        display: block;
+        font-size: var(--fs-xs);
       }
     }
   }
@@ -59,7 +90,18 @@ const { featuresList, isWrapped } = Astro.props;
       }
     }
 
-    .wrap {
+    ul:has(> li:nth-child(3):last-child) {
+      li:first-child {
+        flex-basis: 50%;
+      }
+      li:nth-child(2),
+      li:nth-child(3) {
+        flex-basis: 25%;
+      }
+    }
+
+    .wrap,
+    .inline {
       flex-wrap: wrap;
     }
   }

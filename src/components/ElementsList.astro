@@ -4,6 +4,7 @@ import { defaultLocale } from "@i18n/ui";
 
 import LabeledIcon from "@components/LabeledIcon.astro";
 import Badges from "@components/Badges.astro";
+import FeaturesList from "./FeaturesList.astro";
 
 const { pipesList, fittingsList } = Astro.props;
 
@@ -23,7 +24,11 @@ const fittingsData =
     pipesData.map(({ data, link }) => (
       <li>
         <h3>{data.title}</h3>
-        <p>{data.description}</p>
+
+        {data.featuresList && (
+          <FeaturesList featuresList={data.featuresList} isInline />
+        )}
+        
         <a href={`#${link.url}`} class="navlink">
           <LabeledIcon
             iconName="akar-icons:arrow-right"

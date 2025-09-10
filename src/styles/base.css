@@ -192,6 +192,11 @@ table {
       width: 100%;
     }
   }
+
+  td:last-child {
+    text-align: right;
+    white-space: nowrap;
+  }
 }
 
 @media (max-width: 48rem) {
