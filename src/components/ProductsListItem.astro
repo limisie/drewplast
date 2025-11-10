@@ -21,19 +21,22 @@ const {
 const locale = Astro.currentLocale || defaultLocale;
 
 const imageData = await getDynamicImageData(image, locale);
-const pipesTitles = isList(pipesList)
+const pipesBadges = isList(pipesList)
   ? await Promise.all(
-      pipesList.map(
-        async ({ pipe }) => (await getLocalizedDataByEntry(pipe, locale)).title
-      )
+      pipesList.map(async ({ pipe }) => ({
+        text: (await getLocalizedDataByEntry(pipe, locale)).title,
+        url: pipe.id,
+      }))
     )
   : [];
-
 const fittingsData = await getLocalizedDataByEntries(fittingsList.list, locale);
-const fittingsTitles = isList(fittingsData)
-  ? fittingsData.map((fittings) => fittings.type)
+const fittingsBagdes = isList(fittingsData)
+  ? fittingsData.map((fittings) => ({
+      text: fittings.type,
+      url: fittingsList.link.url,
+    }))
   : [];
-const badges = [...pipesTitles, ...fittingsTitles];
+const badges = [...pipesBadges, ...fittingsBagdes];
 ---
 
 <li class="card">
@@ -52,7 +55,12 @@ const badges = [...pipesTitles, ...fittingsTitles];
   <div class="card__content">
     <h2>{sectionHeader.title}</h2>
     <p>{sectionHeader.description}</p>
-    <Badges list={badges} />
+    <Badges
+      list={badges.map((badge) => ({
+        text: badge.text,
+        url: badge.url,
+      }))}
+    />
     <LabeledIcon
       iconName="akar-icons:arrow-right"
       text={buttonText}

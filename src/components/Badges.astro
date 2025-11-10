@@ -3,7 +3,13 @@ const { list } = Astro.props;
 ---
 
 <ul>
-  {list.map((badge) => <li>{badge}</li>)}
+  {
+    list.map((badge) => (
+      <li>
+        <a href={`#${badge.url}`}>{badge.text}</a>
+      </li>
+    ))
+  }
 </ul>
 
 <style>

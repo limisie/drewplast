@@ -28,7 +28,7 @@ const fittingsData =
         {data.featuresList && (
           <FeaturesList featuresList={data.featuresList} isInline />
         )}
-        
+
         <a href={`#${link.url}`} class="navlink">
           <LabeledIcon
             iconName="akar-icons:arrow-right"
@@ -44,7 +44,12 @@ const fittingsData =
     fittingsData && (
       <li>
         <h3>{fittingsList.title}</h3>
-        <Badges list={fittingsData.map((fitting) => fitting.type)} />
+        <Badges
+          list={fittingsData.map((fitting) => ({
+            text: fitting.type,
+            url: fittingsList.link.url,
+          }))}
+        />
         <a href={`#${fittingsList.link.url}`} class="navlink">
           <LabeledIcon
             iconName="akar-icons:arrow-right"
