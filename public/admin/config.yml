@@ -887,6 +887,7 @@ collections:
         widget: string
         hint: Stanowisko pracownika wyświetlone pod zdjęciem
         i18n: true
+        required: false
       - <<: *IMAGE
         label: Zdjęcie pracownika
         required: false

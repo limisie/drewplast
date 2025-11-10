@@ -107,7 +107,7 @@ export const collectionSchemas = {
   }),
   employees: z.object({
     name: z.string(),
-    position: z.string(),
+    position: z.string().optional(),
     image: reference("images").optional(),
     contact: helperSchemas.contact.optional(),
   }),
