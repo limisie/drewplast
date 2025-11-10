@@ -6,9 +6,7 @@ import { getLocaleUrl } from "@i18n/urls";
 import MainLayout from "@layouts/MainLayout.astro";
 import CompanyInfo from "@components/CompanyInfo.astro";
 import DepartamentsList from "@components/DepartamentsList.astro";
-import DistributorsTabs from "@components/DistributorsTabs.astro";
 import ImageBanner from "@components/ImageBanner.astro";
-import SectionGeneric from "@components/SectionGeneric.astro";
 import SectionHeader from "@components/SectionHeader.astro";
 import MapBanner from "@components/MapBanner.astro";
 
@@ -22,13 +20,12 @@ export async function getStaticPaths() {
     props: {
       seo: data[locale].seo,
       sectionHeader: data[locale].sectionHeader,
-      image: data[locale].image,
-      sectionDistributors: data[locale].sectionDistributors,
+      image: data[locale].image
     },
   }));
 }
 
-const { seo, sectionHeader, image, sectionDistributors } = Astro.props;
+const { seo, sectionHeader, image } = Astro.props;
 ---
 
 <MainLayout seo={seo}>
@@ -43,12 +40,4 @@ const { seo, sectionHeader, image, sectionDistributors } = Astro.props;
   </SectionHeader>
 
   <ImageBanner image={image} />
-
-  <SectionGeneric
-    title={sectionDistributors.title}
-    description={sectionDistributors.description}
-    id={sectionDistributors.sectionId}
-  >
-    <DistributorsTabs />
-  </SectionGeneric>
 </MainLayout>
