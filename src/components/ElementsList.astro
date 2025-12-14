@@ -42,7 +42,7 @@ const fittingsData =
   }
   {
     fittingsData && (
-      <li>
+      <li class="grow">
         <h3>{fittingsList.title}</h3>
         <Badges
           list={fittingsData.map((fitting) => ({
@@ -87,7 +87,7 @@ const fittingsData =
       grid-template-columns: repeat(2, 1fr);
     }
 
-    li:nth-last-child(1):nth-child(odd) {
+    li.grow:nth-last-child(1):nth-child(odd) {
       grid-column: 1 / -1;
     }
   }

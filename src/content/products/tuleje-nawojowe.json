@@ -2,14 +2,11 @@
   "pl": {
     "sectionGallery": {
       "title": "Galeria",
-      "imagesList": [
-        "tuleje-baner",
-        "tuleje-miniatura"
-      ]
+      "imagesList": []
     },
     "sectionHeader": {
-      "title": "Gilzy, tuleje nawojowe (PVC, HDPE) i rury osłonowe (PP)",
-      "eyebrow": "Tuleje nawojowe i rury osłonowe",
+      "title": "Tuleje nawojowe i rury osłonowe",
+      "eyebrow": "Tuleje nawojowe (PVC, HDPE) i rury osłonowe (PP)",
       "image": "tuleje-baner",
       "featuresList": [
         {
@@ -77,43 +74,36 @@
   "en": {
     "sectionGallery": {
       "title": "Galeria",
-      "imagesList": [
-        "tuleje-baner",
-        "tuleje-miniatura"
-      ]
+      "imagesList": []
     },
     "sectionHeader": {
-      "description": "A complete system of new generation sewage pipes and fittings, manufactured from a material with an improved formula based on polypropylene. It meets all the conditions of a modern, ecological sewage system.",
-      "title": "Internal sewage system PP",
-      "eyebrow": "Internal sewage pipes and fittings made of polypropylene",
+      "title": "Winding sleeves and protective pipes",
+      "eyebrow": "Winding sleeves (PVC, HDPE) and protective pipes (PP)",
       "image": "tuleje-baner",
       "featuresList": [
         {
-          "title": "Material",
-          "description": "Polypropylene (PP)"
+          "title": "Materials",
+          "description": "Polyvinyl chloride (PVC), Polypropylene (H-PP), Polyethylene (HDPE)"
         },
         {
-          "title": "Diameter range",
-          "description": "32-110"
-        },
-        {
-          "title": "Ring stiffness",
-          "description": "SN2"
+          "title": "Length",
+          "description": "2 mm–3000 mm, precise cutting to size possible with a tolerance of ±0.5 mm"
         },
         {
           "title": "Color",
-          "description": "white, grey"
+          "description": "neutral, white, brick-orange, black"
         }
-      ]
+      ],
+      "description": "Solutions for the packaging industry, protection of sensitive products\n"
     },
     "sectionDocuments": {
       "title": "Documents",
       "documentsList": []
     },
     "sectionDescription": {
-      "title": "Application",
-      "advantages": "High mechanical strength\nPrecise cut to any dimension from 215mm to 1200mm\nProduction in lengths up to 6m\nComplete resistance to biological degradation\nTotal water resistance - perfect even in the most demanding conditions\nQuick order processing dates",
-      "description": "Our sleeves are a guarantee of quality that you can rely on in every situation."
+      "title": "Applications",
+      "advantages": "Complete water resistance – they do not absorb moisture and are not damaged when in contact with humidity\nDisinfection possible – they can be cleaned and disinfected\nHigh mechanical resistance – they do not deform and maintain stable dimensions even during intensive use\nLightweight and easy to handle – easy to transport and use\nEasy recycling – after use, the cores can be fully recycled",
+      "description": "Plastic cores manufactured by Drewplast are a solution combining lightness, strength, and durability. Made from high-quality materials such as PVC, PP, and HDPE, they perform well wherever precision and reliability are essential.\n\nThanks to their design and properties, they are an ideal alternative to paper cores."
     },
     "title": "Winding tubes",
     "image": "tuleje-miniatura",
