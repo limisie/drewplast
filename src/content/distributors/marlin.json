@@ -1,0 +1,14 @@
+{
+  "name": "MARLIN Sp. z o.o. Sp.K.",
+  "address": {
+    "street": "ul. Zamkowy Folwark 9",
+    "city": "Krotoszyn",
+    "postalCode": "63-700",
+    "region": "wielkopolskie"
+  },
+  "contact": {
+    "phone": "+48 (62) 722 82 00",
+    "email": "marlin@marlin.com.pl",
+    "url": "https://www.marlin.com.pl"
+  }
+}

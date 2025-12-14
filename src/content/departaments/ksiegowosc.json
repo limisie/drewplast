@@ -1,14 +1,16 @@
 {
   "pl": {
-    "title": "Księgowość",
+    "title": "Dział księgowości",
     "employeesList": [
       "aleksandra-nowacka"
-    ]
+    ],
+    "priority": 3
   },
   "en": {
     "employeesList": [
       "aleksandra-nowacka"
     ],
-    "title": "Accounting Departament"
+    "title": "Accounting Departament",
+    "priority": 3
   }
 }

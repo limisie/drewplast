@@ -791,7 +791,7 @@ collections:
       - label: Język dokumentu
         name: language
         widget: select
-        options: ["PL", "EN", "DE", "CZ"]
+        options: ["PL", "EN", "DE", "CZ", "PL/EN"]
         default: "PL"
         hint: Wybierz język dokumentu
         i18n: duplicate
@@ -908,6 +908,10 @@ collections:
         widget: string
         hint: (np. Dział handlowy, Księgowość, Zaopatrzenie)
         i18n: true
+      - label: Priorytet
+        name: priority
+        widget: number
+        i18n: duplicate
       - label: Lista pracowników
         name: employeesList
         widget: relation

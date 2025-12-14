@@ -1,0 +1,14 @@
+{
+  "pl": {
+    "category": "Kształtki",
+    "type": "Mufa",
+    "title": "Mufa kanalizacji zewnętrznej",
+    "table": "Kod produktu,Nasuwka,Średnica,Waga\n,,(mm),(kg)\nMF-110-ZEW-000,,110,0.19\nMF-125-ZEW-000,,125,0.27\nMF-160-ZEW-000,,160,0.50\nMF-200-ZEW-000,,200,\nMF-200-ZEW-NAS,✓,200,"
+  },
+  "en": {
+    "category": "Fittings",
+    "type": "Coupling",
+    "title": "External Sewer Coupling",
+    "table": "Product code,Slip coupling,Diameter,Weight\n,,(mm),(kg)\nMF-110-ZEW-000,,110,0.19\nMF-125-ZEW-000,,125,0.27\nMF-160-ZEW-000,,160,0.50\nMF-200-ZEW-000,,200,\nMF-200-ZEW-NAS,✓,200,"
+  }
+}

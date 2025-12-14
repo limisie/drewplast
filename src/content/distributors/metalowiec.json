@@ -1,0 +1,14 @@
+{
+    "name": "METALOWIEC",
+    "address": {
+      "street": "ul. Wiślana 69",
+      "city": "Szpetal Górny",
+      "postalCode": "87-811 Fabianki",
+      "region": "kujawsko-pomorskie"
+    },
+    "contact": {
+      "phone": "+48 666 101 201",
+      "email": "sklep@emetalowiec.pl",
+      "url": "https://emetalowiec.pl"
+    }
+  }

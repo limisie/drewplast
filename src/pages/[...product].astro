@@ -43,6 +43,8 @@ const {
   sectionGallery,
   sectionDocuments,
 } = Astro.props;
+
+console.log(sectionElements.fittingsList);
 ---
 
 <MainLayout seo={seo}>
@@ -60,7 +62,10 @@ const {
     title={sectionDescription.title}
     description={sectionDescription.description}
   >
-    <FeaturesList isWrapped featuresList={sectionDescription.advantages.split("\n")}/>
+    <FeaturesList
+      isWrapped
+      featuresList={sectionDescription.advantages.split("\n")}
+    />
   </SectionGeneric>
 
   <SectionGeneric
@@ -75,12 +80,16 @@ const {
 
   <SectionPipes pipesList={sectionElements.pipesList} />
 
-  <SectionGeneric
-    title={sectionElements.fittingsList.title}
-    id={sectionElements.fittingsList.link.url}
-  >
-    <FittingsTabs fittingsList={sectionElements.fittingsList} />
-  </SectionGeneric>
+  {
+    sectionElements.fittingsList && (
+      <SectionGeneric
+        title={sectionElements.fittingsList.title}
+        id={sectionElements.fittingsList.link.url}
+      >
+        <FittingsTabs fittingsList={sectionElements.fittingsList} />
+      </SectionGeneric>
+    )
+  }
 
   <SectionGeneric
     class={{ section: "full-width light" }}

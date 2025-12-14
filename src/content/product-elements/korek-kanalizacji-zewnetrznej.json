@@ -1,0 +1,14 @@
+{
+  "pl": {
+    "category": "Kształtki",
+    "type": "Korek",
+    "title": "Korek kanalizacji zewnętrznej",
+    "table": "Kod produktu,Średnica,Waga\n,(mm),(kg)\nKK-110-000-ZEW,110,0.11\nKK-125-000-ZEW,125,0.14\nKK-160-000-ZEW,160,0.26\nKK-200-000-ZEW,200,0.47"
+  },
+  "en": {
+    "category": "Fittings",
+    "type": "End Cap",
+    "title": "External Sewer End Cap",
+    "table": "Product code,Diameter,Weight\n,(mm),(kg)\nKK-110-000-ZEW,110,0.11\nKK-125-000-ZEW,125,0.14\nKK-160-000-ZEW,160,0.26\nKK-200-000-ZEW,200,0.47"
+  }
+}

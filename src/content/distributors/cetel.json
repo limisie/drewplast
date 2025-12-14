@@ -1,0 +1,14 @@
+{
+  "name": "Cetel Serwis Sp. z o. o.",
+  "address": {
+    "street": "ul. Komornicka 16",
+    "city": "Głuchowo",
+    "postalCode": "62-052",
+    "region": "wielkopolskie"
+  },
+  "contact": {
+    "phone": "+48 (61) 868 90 11",
+    "email": "kontakt@cetel.com.pl",
+    "url": "https://www.cetel.com.pl/"
+  }
+}

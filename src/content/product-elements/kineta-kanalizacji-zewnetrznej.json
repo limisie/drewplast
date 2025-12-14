@@ -1,0 +1,14 @@
+{
+  "pl": {
+    "category": "Kształtki",
+    "type": "Kineta",
+    "title": "Kineta kanalizacji zewnętrznej",
+    "table": "Kod produktu,Typ,Średnica kinety,Średnica rury przelotowej\n,,(mm),(mm)\nKINETA PRZELOTOWA315,Przelotowa,315,160\nKINETA-ZBIORCZA 425,Zbiorcza,425,160\nKINETA-ZBIORCZA315/1,Zbiorcza,315,160"
+  },
+  "en": {
+    "category": "Fittings",
+    "type": "Channel Base",
+    "title": "Outdoor Sewer Channel Base",
+    "table": "Product code,Type,Channel base diameter,Through pipe diameter\n,,(mm),(mm)\nKINETA PRZELOTOWA315,Through type,315,160\nKINETA-ZBIORCZA 425,Collecting type,425,160\nKINETA-ZBIORCZA315/1,Collecting type,315,160"
+  }
+}

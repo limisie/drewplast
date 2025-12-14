@@ -2,41 +2,53 @@
   "pl": {
     "sectionGallery": {
       "title": "Galeria",
-      "imagesList": []
+      "imagesList": [
+        "kanalizacja-zewnetrzna-galeria-1",
+        "kanalizacja-zewnetrzna-galeria-3",
+        "kanalizacja-zewnetrzna-galeria-2",
+        "kanalizacja-zewnetrzna-galeria-4",
+        "kanalizacja-zewnetrzna-galeria-5",
+        "kanalizacja-zewnetrzna-galeria-6"
+      ]
     },
     "sectionHeader": {
-      "description": "Kompletny system rur i kształtek kanalizacyjnych nowej generacji, produkowany z tworzywa o udoskonalonej recepturze na bazie polipropylenu. Spełnia wszystkie warunki nowoczesnego, ekologicznego systemu kanalizacyjnego.",
-      "title": "Kanalizacja zewnętrzna PCW i PP",
-      "eyebrow": "Rury i kształtki kanalizacji wewnętrznej z polipropylenu",
+      "description": "Trójwarstwowe rury PVC Drewplast do kanalizacji zewnętrznej cechują się wysoką odpornością na uszkodzenia i chemikalia dzięki warstwom z pierwotnego PVC. Gładka powierzchnia wewnętrzna ogranicza ryzyko zatorów i zapewnia wydajny przepływ ścieków.",
+      "title": "Kanalizacja zewnętrzna PVC / PP",
+      "eyebrow": "Rury i kształtki kanalizacji zewnętrznej z PVC / PP",
       "image": "kanalizacja-zewnetrzna-baner",
       "featuresList": [
         {
-          "title": "Materiał",
-          "description": "Polipropylen (PP)"
+          "title": "Materiał główny",
+          "description": "Polichlorek winylu (PVC)"
         },
         {
           "title": "Zakres średnic",
-          "description": "32-110"
+          "description": "Ø110, Ø125, Ø160, Ø200"
         },
         {
-          "title": "Klasa sztywności",
-          "description": "SN2"
+          "title": "Klasy sztywności",
+          "description": "SN-2, SN-4"
         },
         {
           "title": "Kolor",
-          "description": "biały, szary"
+          "description": "pomarańczowy"
         }
       ]
     },
     "button": "Dowiedz się więcej",
     "sectionDocuments": {
       "title": "Dokumenty",
-      "documentsList": []
+      "documentsList": [
+        "kot-itb-kot-2021-1999-rury-strukturalne-pvc-u-sn-2",
+        "zastosowanie-i-zalecenia-rury-kanalizacji-zewnetrznej-sn-2-i-sn-4",
+        "pn-en-13476-2-rury-strukturalne-kanalizacji-zewnetrznej-pvc-u",
+        "at-15-8754-2016-rura-strukturalna-pvc-u-sn-2"
+      ]
     },
     "sectionDescription": {
-      "advantages": "Kompletny system rur i kształtek w szerokiej gamie średnic: od DN 32 do DN 110\nKształtki specjalne (m.in. wyczystki, czwórniki, złączki do połączenia z żeliwem)\nŁatwy i szybki montaż - niska waga produktów\nLity przekrój ścianek z zastosowaniem udoskonalonej receptury\n100% recykling rur i kształtek",
+      "advantages": "Odporność chemiczna — idealne w trudnych warunkach, także przemysłowych\nWytrzymałość mechaniczna — odporne na uszkodzenia i odkształcenia podczas eksploatacji\nŁatwy montaż — lekka konstrukcja i szeroki wybór kształtek gwarantują krótki czas instalacji\nDługowieczność i niezawodność — wysoka stabilność PVC to bezproblemowe użytkowanie przez wiele lat\nOdpowiednia sztywność obwodowa — klasy SN-2 i SN-4 wytrzymują obciążenia gruntu i ruch kołowy o niskim natężeniu\nPrzyjazny środowisku — środkowa warstwa z recyklatu, zielona energia i surowce mineralne zmniejszają ślad węglowy",
       "title": "Zastosowanie",
-      "description": "Rury kanalizacji wewnętrznej przeznaczone są do budowy instalacji odprowadzających ścieki bytowo-gospodarcze i deszczowe wewnątrz budynku, a także do budowy wentylacji. Tworzywo żaroodpornie stabilizowane, z jakiego wykonany jest system, wykazuje bardzo dużą odporność na działanie rozmaitych, w tym agresywnych, środków chemicznych i ścieków. Dzięki temu z powodzeniem może zostać zastosowany także m.in. w przemyśle chemicznym i farmaceutycznym.\n\nRury i kształtki wytrzymują długotrwały przepływ gorącej wody (do 90ºC w przepływie ciągłym i do 95ºC w krótkotrwałym), dlatego znajdują zastosowanie w gospodarstwach domowych oraz wszędzie tam, gdzie odprowadza się ścieki o wysokiej temperaturze."
+      "description": "System kanalizacji zewnętrznej Drewplast, to nowoczesne rozwiązanie, które łączy trwałość, funkcjonalność i troskę o środowisko. \n\nWarstwy zewnętrzne i wewnętrzne są wykonane z pierwotnego polichlorku winylu (PVC), co gwarantuje wysoką odporność na uszkodzenia mechaniczne i chemikalia. Dzięki innowacyjnej trójwarstwowej konstrukcji rury sprawdzają się w każdych warunkach – od domowych instalacji po duże inwestycje przemysłowe."
     },
     "title": "Kanalizacja zewnętrzna",
     "image": "kanalizacja-zewnetrzna-miniatura",
@@ -44,22 +56,34 @@
       "title": "Elementy systemu",
       "pipesList": [
         {
-          "pipe": "rury-kanalizacji-zewnetrznej-sn-2",
           "link": {
             "text": "Zobacz dostępne warianty",
             "url": "rury-kanalizacji-zewnetrznej-sn-2"
-          }
+          },
+          "pipe": "rury-kanalizacji-zewnetrznej-sn-2"
         },
         {
           "pipe": "rury-kanalizacji-zewnetrznej-sn-4",
           "link": {
-            "text": "Zobacz dostępne warianty",
-            "url": "rury-kanalizacji-zewnetrznej-sn-4"
+            "url": "rury-kanalizacji-zewnetrznej-sn-4",
+            "text": "Zobacz dostępne warianty"
           }
         }
       ],
       "fittingsList": {
-        "list": [],
+        "list": [
+          "kineta-kanalizacji-zewnetrznej",
+          "korek-kanalizacji-zewnetrznej",
+          "kolano-kanalizacji-zewnetrznej",
+          "mufa-kanalizacji-zewnetrznej",
+          "redukcja-kanalizacji-zewnetrznej",
+          "rura-trzonowa-kanalizacji-zewnetrznej",
+          "rewizja-kanalizacji-zewnetrznej",
+          "trojnik-kanalizacji-zewnetrznej",
+          "zasuwa-burzowa-kanalizacji-zewnetrznej",
+          "zaslepka-kanalizacji-zewnetrznej",
+          "polaczenie-żeliwo-pcw-kanalizacji-zewnetrznej"
+        ],
         "title": "Kształtki",
         "link": {
           "text": "Zobacz dostępne warianty",
@@ -79,7 +103,14 @@
   "en": {
     "sectionGallery": {
       "title": "Gallery",
-      "imagesList": []
+      "imagesList": [
+        "kanalizacja-zewnetrzna-galeria-1",
+        "kanalizacja-zewnetrzna-galeria-3",
+        "kanalizacja-zewnetrzna-galeria-2",
+        "kanalizacja-zewnetrzna-galeria-4",
+        "kanalizacja-zewnetrzna-galeria-5",
+        "kanalizacja-zewnetrzna-galeria-6"
+      ]
     },
     "sectionHeader": {
       "description": "A complete system of new generation sewage pipes and fittings, manufactured from a material with an improved formula based on polypropylene. It meets all the conditions of a modern, ecological sewage system.",
@@ -108,7 +139,12 @@
     "button": "Learn more",
     "sectionDocuments": {
       "title": "Documents",
-      "documentsList": []
+      "documentsList": [
+        "kot-itb-kot-2021-1999-rury-strukturalne-pvc-u-sn-2",
+        "zastosowanie-i-zalecenia-rury-kanalizacji-zewnetrznej-sn-2-i-sn-4",
+        "pn-en-13476-2-rury-strukturalne-kanalizacji-zewnetrznej-pvc-u",
+        "at-15-8754-2016-rura-strukturalna-pvc-u-sn-2"
+      ]
     },
     "sectionDescription": {
       "title": "Application",
@@ -119,7 +155,19 @@
     "image": "kanalizacja-zewnetrzna-miniatura",
     "sectionElements": {
       "fittingsList": {
-        "list": [],
+        "list": [
+          "kineta-kanalizacji-zewnetrznej",
+          "korek-kanalizacji-zewnetrznej",
+          "kolano-kanalizacji-zewnetrznej",
+          "mufa-kanalizacji-zewnetrznej",
+          "redukcja-kanalizacji-zewnetrznej",
+          "rura-trzonowa-kanalizacji-zewnetrznej",
+          "rewizja-kanalizacji-zewnetrznej",
+          "trojnik-kanalizacji-zewnetrznej",
+          "zasuwa-burzowa-kanalizacji-zewnetrznej",
+          "zaslepka-kanalizacji-zewnetrznej",
+          "polaczenie-żeliwo-pcw-kanalizacji-zewnetrznej"
+        ],
         "title": "Fittings",
         "link": {
           "text": "See available",
@@ -128,11 +176,18 @@
       },
       "pipesList": [
         {
+          "pipe": "rury-kanalizacji-zewnetrznej-sn-2",
           "link": {
             "text": "See available",
-            "url": "indoor-sewage-pipes"
-          },
-          "pipe": "rury-kanalizacji-wewnetrznej-pp"
+            "url": "rury-kanalizacji-zewnetrznej-sn-2"
+          }
+        },
+        {
+          "pipe": "rury-kanalizacji-zewnetrznej-sn-4",
+          "link": {
+            "text": "See available",
+            "url": "rury-kanalizacji-zewnetrznej-sn-4"
+          }
         }
       ],
       "title": "System elements"

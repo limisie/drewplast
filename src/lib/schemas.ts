@@ -85,6 +85,7 @@ const sectionSchemas = {
 export const collectionSchemas = {
   departaments: z.object({
     title: z.string(),
+    priority: z.number(),
     employeesList: z.array(reference("employees")),
   }),
   distributors: z.object({

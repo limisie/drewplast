@@ -29,7 +29,7 @@ const pipesBadges = isList(pipesList)
       }))
     )
   : [];
-const fittingsData = await getLocalizedDataByEntries(fittingsList.list, locale);
+const fittingsData = fittingsList && await getLocalizedDataByEntries(fittingsList.list, locale);
 const fittingsBagdes = isList(fittingsData)
   ? fittingsData.map((fittings) => ({
       text: fittings.type,

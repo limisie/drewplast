@@ -1,0 +1,14 @@
+{
+  "name": "Żelimet SP. J.",
+  "address": {
+    "street": "ul. Al. Marcinkowskiego 14",
+    "city": "Kępno",
+    "postalCode": "63-600",
+    "region": "wielkopolskie"
+  },
+  "contact": {
+    "phone": "+48 (62) 782 37 12",
+    "email": "kepno@zelimet.com.pl",
+    "url": "https://www.zelimet.com.pl"
+  }
+}

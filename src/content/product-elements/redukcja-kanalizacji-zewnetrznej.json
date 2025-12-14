@@ -1,0 +1,14 @@
+{
+  "pl": {
+    "category": "Kształtki",
+    "type": "Redukcja",
+    "title": "Redukcja kanalizacji zewnętrznej",
+    "table": "Kod produktu,Krótka,Średnica,Średnica,Waga\n,,(mm),(mm),(kg)\nRD-125-110-ZEW,,125,110,0.28\nRD-160-110-KR,✓,160,110,1.00\nRD-160-110-ZEW,,160,110,0.48\nRD-160-125-ZEW,,160,125,0.45\nRD-200-160-ZEW,,200,160,0.79\nRD-250-200-ZEW,,250,200,1.69"
+  },
+  "en": {
+    "category": "Fittings",
+    "type": "Reducer",
+    "title": "External Sewer Reducer",
+    "table": "Product code,Short,Diameter,Diameter,Weight\n,,(mm),(mm),(kg)\nRD-125-110-ZEW,,125,110,0.28\nRD-160-110-KR,✓,160,110,1.00\nRD-160-110-ZEW,,160,110,0.48\nRD-160-125-ZEW,,160,125,0.45\nRD-200-160-ZEW,,200,160,0.79\nRD-250-200-ZEW,,250,200,1.69"
+  }
+}

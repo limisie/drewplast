@@ -1,0 +1,14 @@
+{
+  "pl": {
+    "category": "Kształtki",
+    "type": "Zaślepka",
+    "title": "Zaślepka kanalizacji zewnętrznej",
+    "table": "Kod produktu,Średnica\n,(mm)\nZS-110-ZEW-000,110\nZS-160-ZEW-000,160\nZS-200-ZEW-000,200"
+  },
+  "en": {
+    "category": "Fittings",
+    "type": "End Cap",
+    "title": "External Sewer End Cap",
+    "table": "Product code,Diameter\n,(mm)\nZS-110-ZEW-000,110\nZS-160-ZEW-000,160\nZS-200-ZEW-000,200"
+  }
+}

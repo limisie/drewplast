@@ -1,18 +1,18 @@
 {
   "pl": {
     "contact": {
-      "email": "edyta.pilarczyk@drewplast.com.pl"
+      "email": "edyta.pilarczyk@drewplast.com.pl",
+      "phone": "+48 607 279 774"
     },
     "name": "Edyta Pilarczyk",
-    "position": "Zaopatrzeniowiec",
     "image": "imie-nazwisko"
   },
   "en": {
     "contact": {
-      "email": "edyta.pilarczyk@drewplast.com.pl"
+      "email": "edyta.pilarczyk@drewplast.com.pl",
+      "phone": "+48 607 279 774"
     },
     "name": "Edyta Pilarczyk",
-    "position": "Buyer",
     "image": "imie-nazwisko"
   }
 }

@@ -1,0 +1,14 @@
+{
+  "pl": {
+    "category": "Kształtki",
+    "type": "Rewizja",
+    "title": "Rewizja kanalizacji zewnętrznej",
+    "table": "Kod produktu,Nakrętka,Średnica,Waga\n,,(mm),(kg)\nRW-110-00N-ZEW,✓,110,0.63\nRW-125-00N-ZEW,,125,0.74\nRW-160-00N-ZEW,✓,160,1.10\nRW-200-00N-ZEW,✓,200,4.11"
+  },
+  "en": {
+    "category": "Fittings",
+    "type": "Access Pipe",
+    "title": "External Sewer Access Pipe",
+    "table": "Product code,Nut,Diameter,Weight\n,,(mm),(kg)\nRW-110-00N-ZEW,✓,110,0.63\nRW-125-00N-ZEW,,125,0.74\nRW-160-00N-ZEW,✓,160,1.10\nRW-200-00N-ZEW,✓,200,4.11"
+  }
+}

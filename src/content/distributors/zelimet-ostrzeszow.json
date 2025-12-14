@@ -1,0 +1,14 @@
+{
+  "name": "Żelimet SP. J.",
+  "address": {
+    "street": "ul. Strumykowa 6",
+    "city": "Ostrzeszów",
+    "postalCode": "63-500",
+    "region": "wielkopolskie"
+  },
+  "contact": {
+    "phone": "+48 (62) 586 17 16",
+    "email": "ostrzeszow@zelimet.com.pl",
+    "url": "https://www.zelimet.com.pl"
+  }
+}

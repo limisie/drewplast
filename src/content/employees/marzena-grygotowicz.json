@@ -1,18 +1,18 @@
 {
   "pl": {
     "name": "Marzena Grygotowicz",
-    "position": "Handlowiec",
     "contact": {
-      "email": "marzena.grygotowicz@drewplast.com.pl"
+      "email": "marzena.grygotowicz@drewplast.com.pl",
+      "phone": "+48 695 939 994"
     },
     "image": "imie-nazwisko"
   },
   "en": {
     "name": "Marzena Grygotowicz",
     "contact": {
-      "email": "marzena.grygotowicz@drewplast.com.pl"
+      "email": "marzena.grygotowicz@drewplast.com.pl",
+      "phone": "+48 695 939 994"
     },
-    "position": "Tradesman",
     "image": "imie-nazwisko"
   }
 }

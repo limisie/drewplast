@@ -1,0 +1,14 @@
+{
+    "name": "Lech Spółka Jawna",
+    "address": {
+      "street": "ul. Dąbrowskiego 11",
+      "city": "Biłgoraj",
+      "postalCode": "23-400",
+      "region": "lubelskie"
+    },
+    "contact": {
+      "phone": "+48 (84) 686 46 01",
+      "email": "firma@lechbilgoraj.pl",
+      "url": "https://lechbilgoraj.pl/"
+    }
+  }

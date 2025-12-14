@@ -1,0 +1,14 @@
+{
+  "pl": {
+    "category": "Kształtki",
+    "type": "Połączenie żeliwo-PCW",
+    "title": "Połączenie żeliwo-PCW kanalizacji zewnętrznej",
+    "table": "Kod produktu,Średnica\n,(mm)\nZP-ZEL-PCW-160,160"
+  },
+  "en": {
+    "category": "Fittings",
+    "type": "Cast Iron–PVC Connection",
+    "title": "Cast Iron-PVC Connection for External Sewer",
+    "table": "Product code,Diameter\n,(mm)\nZP-ZEL-PCW-160,160"
+  }
+}

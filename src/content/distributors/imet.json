@@ -1,0 +1,14 @@
+{
+    "name": "IMET Gurczyński",
+    "address": {
+      "street": "Wichowo 18",
+      "city": "Lipno",
+      "postalCode": "87-600",
+      "region": "kujawsko-pomorskie"
+    },
+    "contact": {
+      "phone": "+48 (54) 288 45 78",
+      "email": "bok@imet.pl",
+      "url": "https://phuimet.pl"
+    }
+  }

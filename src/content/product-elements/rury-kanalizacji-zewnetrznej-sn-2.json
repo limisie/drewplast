@@ -3,12 +3,104 @@
     "category": "Rury",
     "title": "Rury kanalizacji zewnętrznej SN-2",
     "description": "",
-    "table": "Kod produktu,Materiał,Klasa sztywności,Średnica,Grubość ścianki,Długość,Sztuk,Waga,EAN,Cena\n,,,(mm),(mm),(mm),w opak.,(kg),,PLN\nRK-160-032-0500,PVC-U,SN-2,160,3.2,500,3,1.1,5907565630008,22.90\nRK-160-032-1000,PVC-U,SN-2,160,3.2,1000,28,1.8,5907565630015,36.07\nRK-160-032-2000,PVC-U,SN-2,160,3.2,2000,28,3.6,5907565630022,63.11\nRK-160-032-3000,PVC-U,SN-2,160,3.2,3000,28,5.4,5907565630039,92.26\nRK-160-032-4000,PVC-U,SN-2,160,3.2,4000,28,7.1,5907565630046,121.00\nRK-160-032-6000,PVC-U,SN-2,160,3.2,6000,28,10.5,5907565630053,177.57\nRK-200-039-0500,PVC-U,SN-2,200,3.9,500,3,1.6,5907565630107,36.33\nRK-200-039-1000,PVC-U,SN-2,200,3.9,1000,20,2.9,5907565630114,55.33\nRK-200-039-2000,PVC-U,SN-2,200,3.9,2000,20,5.6,5907565630121,95.48\nRK-200-039-3000,PVC-U,SN-2,200,3.9,3000,20,8.2,5907565630138,139.53\nRK-200-039-4000,PVC-U,SN-2,200,3.9,4000,20,10.9,5907565630145,182.66\nRK-200-039-6000,PVC-U,SN-2,200,3.9,6000,20,16.2,5907565630152,268.94"
+    "table": "Kod produktu,Materiał,Średnica,Grubość ścianki,Długość,Długość kielicha,Sztuk,Waga,EAN,Cena\n,,(mm),(mm),(mm),(mm),w opak.,(kg),,PLN\nRK-160-032-0500,PVC-U,160,3.2,500,85,3,1.05,5907565630008,21.76 zł\nRK-160-032-1000,PVC-U,160,3.2,1000,85,28,1.90,5907565630015,34.27 zł\nRK-160-032-2000,PVC-U,160,3.2,2000,85,28,3.60,5907565630022,59.95 zł\nRK-160-032-3000,PVC-U,160,3.2,3000,85,28,5.35,5907565630039,87.65 zł\nRK-160-032-4000,PVC-U,160,3.2,4000,85,28,7.05,5907565630046,114.95 zł\nRK-160-032-6000,PVC-U,160,3.2,6000,85,28,10.50,5907565630053,168.69 zł\n,,,,,,,,,\nRK-200-039-0500,PVC-U,200,3.9,500,102,3,2.00,5907565630107,34.51 zł\nRK-200-039-1000,PVC-U,200,3.9,1000,102,20,3.60,5907565630114,52.56 zł\nRK-200-039-2000,PVC-U,200,3.9,2000,102,20,6.90,5907565630121,90.71 zł\nRK-200-039-3000,PVC-U,200,3.9,3000,102,20,10.00,5907565630138,132.55 zł\nRK-200-039-4000,PVC-U,200,3.9,4000,102,20,13.50,5907565630145,173.53 zł\nRK-200-039-6000,PVC-U,200,3.9,6000,102,20,20.00,5907565630152,255.49 zł",
+    "featuresList": [
+      {
+        "title": "Materiał",
+        "description": "Polichlorek winylu (PVC), wypełniacz kredowy, stabilizator organiczny, barwnik, recyklat PVC"
+      },
+      {
+        "title": "Dostępne średnice",
+        "description": "Ø160 i Ø200"
+      },
+      {
+        "title": "Zakres długości",
+        "description": "500 - 6000mm"
+      },
+      {
+        "title": "Sztywność obwodowa",
+        "description": "SN 2"
+      },
+      {
+        "title": "Maksymalna temperatura ścieków",
+        "description": "45°C - stały przepływ, 60°C - przepływ krótkotrwały"
+      },
+      {
+        "title": "Odczyn ścieków",
+        "description": "pH 2 - pH 12"
+      },
+      {
+        "title": "Odporność na uderzenia w w temperaturze 0°C",
+        "description": "TIR ≤ 10%"
+      },
+      {
+        "title": "Skurcz wzdłużny",
+        "description": "≤ 5%, brak pęcherzy, pęknięć i rozwarstwień"
+      },
+      {
+        "title": "Przeznaczenie",
+        "description": "Bezciśnieniowa kanalizacja sanitarna, deszczowa i ogólnospławna (poza konstrukcją budowli, gdzie nie występuje ruch drogowy)"
+      },
+      {
+        "title": "Aprobata Techniczna",
+        "description": "AT-15-8754/2016"
+      },
+      {
+        "title": "Krajowa Ocena Techniczna",
+        "description": "ITB-KOT-2021/1999"
+      }
+    ]
   },
   "en": {
     "category": "Pipes",
     "title": "External sewage pipes SN-2",
     "description": "",
-    "table": "Product Code, Material, Stiffness Class, Diameter, Wall Thickness, Length, Pieces, Weight, EAN, Price\n,,,(mm),(mm),(mm),per pack.,(kg),,PLN\nRK-160-032-0500,PVC-U,SN-2,160,3.2,500,3,1.1,5907565630008,22.90\nRK-160-032-1000,PVC-U,SN-2,160,3.2,1000,28,1.8,5907565630015,36.07\nRK-160-032-2000,PVC-U,SN-2,160,3.2,2000,28,3.6,5907565630022,63.11\nRK-160-032-3000,PVC-U,SN-2,160,3.2,3000,28,5.4,5907565630039,92.26\nRK-160-032-4000,PVC-U,SN-2,160,3.2,4000,28,7.1,5907565630046,121.00\nRK-160-032-6000,PVC-U,SN-2,160,3.2,6000,28,10.5,5907565630053,177.57\nRK-200-039-0500,PVC-U,SN-2,200,3.9,500,3,1.6,5907565630107,36.33\nRK-200-039-1000,PVC-U,SN-2,200,3.9,1000,20,2.9,5907565630114,55.33\nRK-200-039-2000,PVC-U,SN-2,200,3.9,2000,20,5.6,5907565630121,95.48\nRK-200-039-3000,PVC-U,SN-2,200,3.9,3000,20,8.2,5907565630138,139.53\nRK-200-039-4000,PVC-U,SN-2,200,3.9,4000,20,10.9,5907565630145,182.66\nRK-200-039-6000,PVC-U,SN-2,200,3.9,6000,20,16.2,5907565630152,268.94"
+    "table": "Product Code,Material,Diameter,Wall Thickness,Length,Socket length,Pieces,Weight,EAN,Price\n,,(mm),(mm),(mm),(mm),per pack.,(kg),,EUR\nRK-160-032-0500,PVC-U,160,3.2,500,85,3,1.05,5907565630008,€5.12\nRK-160-032-1000,PVC-U,160,3.2,1000,85,28,1.90,5907565630015,€8.06\nRK-160-032-2000,PVC-U,160,3.2,2000,85,28,3.60,5907565630022,€14.11\nRK-160-032-3000,PVC-U,160,3.2,3000,85,28,5.35,5907565630039,€20.62\nRK-160-032-4000,PVC-U,160,3.2,4000,85,28,7.05,5907565630046,€27.05\nRK-160-032-6000,PVC-U,160,3.2,6000,85,28,10.50,5907565630053,€39.69\n,,,,,,,,,\nRK-200-039-0500,PVC-U,200,3.9,500,102,3,2.00,5907565630107,€8.12\nRK-200-039-1000,PVC-U,200,3.9,1000,102,20,3.60,5907565630114,€12.37\nRK-200-039-2000,PVC-U,200,3.9,2000,102,20,6.90,5907565630121,€21.34\nRK-200-039-3000,PVC-U,200,3.9,3000,102,20,10.00,5907565630138,€31.19\nRK-200-039-4000,PVC-U,200,3.9,4000,102,20,13.50,5907565630145,€40.83\nRK-200-039-6000,PVC-U,200,3.9,6000,102,20,20.00,5907565630152,€60.12",
+    "featuresList": [
+      {
+        "title": "Material",
+        "description": "Polyvinyl chloride (PVC), chalk filler, organic stabilizer, pigment, PVC recyclate"
+      },
+      {
+        "title": "Available diameters",
+        "description": "Ø160 and Ø200"
+      },
+      {
+        "title": "Length range",
+        "description": "500 - 6000 mm"
+      },
+      {
+        "title": "Ring stiffness",
+        "description": "SN 2"
+      },
+      {
+        "title": "Maximum wastewater temperature",
+        "description": "45°C - continuous flow, 60°C - short-term flow"
+      },
+      {
+        "title": "Wastewater pH",
+        "description": "pH 2 - pH 12"
+      },
+      {
+        "title": "Impact resistance at 0°C",
+        "description": "TIR ≤ 10%"
+      },
+      {
+        "title": "Longitudinal shrinkage",
+        "description": "≤ 5%, no bubbles, cracks, or delamination"
+      },
+      {
+        "title": "Application",
+        "description": "Non-pressure sanitary, stormwater, and combined sewerage (outside structures not subjected to traffic)"
+      },
+      {
+        "title": "Technical Approval",
+        "description": "AT-15-8754/2016"
+      },
+      {
+        "title": "National Technical Assessment",
+        "description": "ITB-KOT-2021/1999"
+      }
+    ]
   }
 }

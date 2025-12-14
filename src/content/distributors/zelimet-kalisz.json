@@ -1,0 +1,14 @@
+{
+  "name": "Żelimet SP. J.",
+  "address": {
+    "street": "ul. Wrocławska 35",
+    "city": "Kalisz",
+    "postalCode": "62-800",
+    "region": "wielkopolskie"
+  },
+  "contact": {
+    "phone": "+48 (62) 766 10 84",
+    "email": "kalisz@zelimet.com.pl",
+    "url": "https://www.zelimet.com.pl"
+  }
+}

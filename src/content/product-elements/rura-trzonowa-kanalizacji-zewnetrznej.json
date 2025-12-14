@@ -1,0 +1,14 @@
+{
+  "pl": {
+    "category": "Kształtki",
+    "type": "Rura trzonowa",
+    "title": "Rura trzonowa kanalizacji zewnętrznej",
+    "table": "Kod produktu,Karbowana,Średnica,Długość,Waga\n,,(mm),(mm),(kg)\nRURA TRZONOWA 315/60,✓,315,6000,1.00"
+  },
+  "en": {
+    "category": "Fittings",
+    "type": "Corrugated Pipe",
+    "title": "External Sewer Corrugated Pipe",
+    "table": "Product code,Ribbed,Diameter,Length,Weight\n,,(mm),(mm),(kg)\nRURA TRZONOWA 315/60,✓,315,6000,1.00"
+  }
+}

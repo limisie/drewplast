@@ -2,39 +2,40 @@
   "pl": {
     "sectionGallery": {
       "title": "Galeria",
-      "imagesList": ["tuleje-baner", "tuleje-miniatura"]
+      "imagesList": [
+        "tuleje-baner",
+        "tuleje-miniatura"
+      ]
     },
     "sectionHeader": {
-      "title": "Tuleje nawojowe",
-      "eyebrow": "Gilzy",
+      "title": "Gilzy, tuleje nawojowe (PVC, HDPE) i rury osłonowe (PP)",
+      "eyebrow": "Tuleje nawojowe i rury osłonowe",
       "image": "tuleje-baner",
       "featuresList": [
         {
-          "title": "Materiał",
-          "description": "PCW"
+          "title": "Materiały",
+          "description": "Polichlorek winylu (PVC), Polipropylen (H-PP), Polietylen (HDPE)"
         },
         {
-          "title": "Średnica",
-          "description": "76mm"
+          "title": "Długość",
+          "description": "2mm-3000mm, możliwe precyzyjne cięcie na wymiar w tolerancji ± 0,5mm"
         },
         {
-          "title": "Grubość ścianki",
-          "description": "3,6mm"
-        },
-        {
-          "title": "Precyzyjna długość",
-          "description": "215-1200mm"
+          "title": "Kolor",
+          "description": "neutralny, biały, ceglasto-pomarańczowy, czarny"
         }
-      ]
+      ],
+      "description": "Rozwiązania dla przemysłu opakowaniowego, ochrona wrażliwych wyrobów\n"
     },
+    "button": "Dowiedz się więcej",
     "sectionDocuments": {
       "title": "Dokumenty",
       "documentsList": []
     },
     "sectionDescription": {
       "title": "Zastosowanie",
-      "advantages": "Wysoka wytrzymałość mechaniczna\nPrecyzyjne cięcie na dowolny wymiar od 215mm do 1200mm\nProdukcja w odcinkach do 6m\nCałkowita odporność na degradację biologiczną\nCałkowita wodoodporność – Idealne nawet w najbardziej wymagających warunkach\nSzybkie terminy realizacji zamówienia",
-      "description": "Nasze tuleje to gwarancja jakości, na której możesz polegać w każdej sytuacji"
+      "advantages": "Pełna odporność na wodę - nie nasiąkają i nie ulegają zniszczeniu w kontakcie z wilgocią\nMożliwość dezynfekcji - można je czyścić i odkażać\nWysoka odporność mechaniczna - nie deformują się i zachowują stabilne wymiary nawet podczas intensywnej eksploatacji\nLekkość i wygoda użytkowania - łatwe w transporcie i obsłudze\nŁatwy recykling - po zakończeniu użytkowania gilzy można w całości poddać odzyskowi surowca",
+      "description": "Gilzy z tworzyw sztucznych produkowane przez Drewplast to rozwiązanie łączące lekkość, wytrzymałość i odporność. Wykonane z wysokiej jakości tworzyw, takich jak PVC, PP czy HDPE, sprawdzają się wszędzie tam, gdzie liczy się precyzja i niezawodność.\n\nDzięki swojej konstrukcji i właściwościom stanowią idealną alternatywę dla gilz papierowych."
     },
     "title": "Tuleje nawojowe",
     "image": "tuleje-miniatura",
@@ -42,42 +43,50 @@
       "title": "Elementy systemu",
       "pipesList": [
         {
+          "pipe": "gilzy-tuleje-pvc",
           "link": {
             "text": "Zobacz dostępne warianty",
-            "url": "rury-kanalizacji-wewnetrznej"
-          },
-          "pipe": "rury-kanalizacji-wewnetrznej-pp"
+            "url": "gilzy-tuleje-pvc"
+          }
+        },
+        {
+          "pipe": "gilzy-tuleje-pp",
+          "link": {
+            "text": "Zobacz dostępne warianty",
+            "url": "gilzy-tuleje-pp"
+          }
+        },
+        {
+          "pipe": "gilzy-tuleje-hdpe",
+          "link": {
+            "text": "Zobacz dostępne warianty",
+            "url": "gilzy-tuleje-hdpe"
+          }
         }
-      ],
-      "fittingsList": {
-        "list": [],
-        "title": "Kształtki",
-        "link": {
-          "text": "Zobacz dostępne warianty",
-          "url": "ksztaltki"
-        }
-      }
+      ]
     },
     "seo": {
       "preventIndexing": false,
       "slug": "produkty/tuleje-nawojowe",
-      "metaTitle": "Tuleje nawojowe",
-      "metaDescription": "Nasze tuleje to gwarancja jakości, na której możesz polegać w każdej sytuacji.",
+      "metaTitle": "Tuleje nawojowe i rury osłonowe",
+      "metaDescription": "Rozwiązania dla przemysłu opakowaniowego, ochrona wrażliwych wyrobów.",
       "metaImage": "tuleje-miniatura"
     },
-    "button": "Dowiedz się więcej",
     "buttonText": "Dowiedz się więcej"
   },
   "en": {
     "sectionGallery": {
       "title": "Galeria",
-      "imagesList": ["tuleje-baner", "tuleje-miniatura"]
+      "imagesList": [
+        "tuleje-baner",
+        "tuleje-miniatura"
+      ]
     },
     "sectionHeader": {
       "description": "A complete system of new generation sewage pipes and fittings, manufactured from a material with an improved formula based on polypropylene. It meets all the conditions of a modern, ecological sewage system.",
       "title": "Internal sewage system PP",
       "eyebrow": "Internal sewage pipes and fittings made of polypropylene",
-      "image": "kanalizacja-wewnetrzna-pp-baner",
+      "image": "tuleje-baner",
       "featuresList": [
         {
           "title": "Material",
@@ -111,21 +120,27 @@
     "sectionElements": {
       "pipesList": [
         {
+          "pipe": "gilzy-tuleje-pvc",
           "link": {
             "text": "See available",
-            "url": "indoor-sewage-pipes"
-          },
-          "pipe": "rury-kanalizacji-wewnetrznej-pp"
+            "url": "pvc"
+          }
+        },
+        {
+          "pipe": "gilzy-tuleje-pp",
+          "link": {
+            "text": "See available",
+            "url": "pp"
+          }
+        },
+        {
+          "pipe": "gilzy-tuleje-hdpe",
+          "link": {
+            "text": "See available",
+            "url": "hdpe"
+          }
         }
       ],
-      "fittingsList": {
-        "list": [],
-        "title": "Fittings",
-        "link": {
-          "text": "See available",
-          "url": "fittings"
-        }
-      },
       "title": "System elements"
     },
     "seo": {

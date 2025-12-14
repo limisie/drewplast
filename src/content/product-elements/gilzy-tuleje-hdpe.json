@@ -1,0 +1,64 @@
+{
+  "pl": {
+    "category": "Rury",
+    "title": "Gilzy, tuleje HDPE",
+    "featuresList": [
+      {
+        "title": "Średnica wewnętrzna",
+        "description": "38mm"
+      },
+      {
+        "title": "Średnica zewnętrzna",
+        "description": "42mm"
+      },
+      {
+        "title": "Grubość ścianki",
+        "description": "2mm"
+      },
+      {
+        "title": "Waga 1m",
+        "description": "0,28kg"
+      },
+      {
+        "title": "Kolor",
+        "description": "mleczno-biały"
+      },
+      {
+        "title": "Materiał",
+        "description": "HDPE - surowiec pierwotny, barwnik"
+      }
+    ],
+    "table": "Kod produktu,Materiał,Kolor,Średnica,Grubość ścianki,Długość,Sztuk,Waga,Waga\n,,,(mm),(mm),(mm),w opak.,(kg),brutto (kg)\nRP-042-020-0700,HDPE,biały,38/42,2.00,700,500,0.15,92\nRP-042-020-0700 TRANSPAREN,HDPE,transparent,38/42,2.00,700,100,0.15,30\nRP-042-020-1370,HDPE,biały,38/42,2.00,1370,520,0.29,166"
+  },
+  "en": {
+    "table": "Product Code,Material,Color,Diameter,Wall Thickness,Length,Pieces,Weight,Weight\n,,,(mm),(mm),(mm),per pack.,(kg),gross (kg)\nRP-042-020-0700,HDPE,biały,38/42,2.00,700,500,0.15,92\nRP-042-020-0700 TRANSPAREN,HDPE,transparent,38/42,2.00,700,100,0.15,30\nRP-042-020-1370,HDPE,biały,38/42,2.00,1370,520,0.29,166",
+    "featuresList": [
+      {
+        "title": "Internal diameter",
+        "description": "38 mm"
+      },
+      {
+        "title": "External diameter",
+        "description": "42 mm"
+      },
+      {
+        "title": "Wall thickness",
+        "description": "2 mm"
+      },
+      {
+        "title": "Weight per 1 m",
+        "description": "0.28 kg"
+      },
+      {
+        "title": "Color",
+        "description": "milky white"
+      },
+      {
+        "title": "Material",
+        "description": "HDPE – virgin material, colorant"
+      }
+    ],
+    "title": "HDPE tubes and sleeves",
+    "category": "Pipes"
+  }
+}

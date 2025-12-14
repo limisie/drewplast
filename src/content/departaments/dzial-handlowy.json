@@ -3,12 +3,14 @@
     "title": "Dział handlowy",
     "employeesList": [
       "marzena-grygotowicz"
-    ]
+    ],
+    "priority": 1
   },
   "en": {
     "employeesList": [
       "marzena-grygotowicz"
     ],
-    "title": "Sales Departament"
+    "title": "Sales Departament",
+    "priority": 1
   }
 }

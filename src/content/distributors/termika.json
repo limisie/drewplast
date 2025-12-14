@@ -1,0 +1,14 @@
+{
+  "name": "TERMIKA Sp.J.",
+  "address": {
+    "street": "ul. Obozowa 48-52",
+    "city": "Kalisz",
+    "postalCode": "62-800",
+    "region": "wielkopolskie"
+  },
+  "contact": {
+    "phone": "+48 (62) 757 51 10",
+    "email": "termika@termika-kalisz.pl",
+    "url": "https://www.termika-kalisz.pl"
+  }
+}

@@ -1,0 +1,14 @@
+{
+    "name": "Tubi-System Sp. z o.o.",
+    "address": {
+      "street": "ul. Okunin 31",
+      "city": "Nowy Dwór Mazowiecki",
+      "postalCode": "05-100",
+      "region": "mazowieckie"
+    },
+    "contact": {
+      "phone": "+48 (22) 775 60 97",
+      "email": "tubisystem@tubisystem.pl",
+      "url": "https://www.tubisystem.pl"
+    }
+  }

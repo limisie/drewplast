@@ -1,0 +1,56 @@
+{
+  "pl": {
+    "category": "Rury",
+    "title": "Gilzy, tuleje PP",
+    "featuresList": [
+      {
+        "title": "Średnica wewnętrzna",
+        "description": "105mm"
+      },
+      {
+        "title": "Średnica zewnętrzna",
+        "description": "110mm"
+      },
+      {
+        "title": "Grubość ścianki",
+        "description": "2,5mm"
+      },
+      {
+        "title": "Waga 1m",
+        "description": "0,98kg"
+      },
+      {
+        "title": "Materiał",
+        "description": "H-PP surowiec pierwotny MFI <1,5 – 30%; PP regranulat MFI<3,0 – 50%; wypełniacz kredowy – 20% barwnik"
+      }
+    ],
+    "table": "Kod produktu,Materiał,Kolor,Średnica,Grubość ścianki,Długość,Sztuk,Waga,Waga\n,,,(mm),(mm),(mm),w opak.,(kg),brutto (kg)\nRP-110-025-3050,PP,czarny,105/110,2.5,3050,86,3.05,277\nRP-110-025-4050,PP,czarny,105/110,2.5,4050,86,4.05,363\nRP-110-025-5050,PP,czarny,105/110,2.5,5050,86,5.05,449"
+  },
+  "en": {
+    "table": "Product Code,Material,Color,Diameter,Wall Thickness,Length,Pieces,Weight,Weight,Notes\n,,,,(mm),(mm),(mm),w opak.,(kg),gross (kg)\nRP-110-025-3050,PP,czarny,105/110,2.5,3050,86,3.05,277\nRP-110-025-4050,PP,czarny,105/110,2.5,4050,86,4.05,363\nRP-110-025-5050,PP,czarny,105/110,2.5,5050,86,5.05,449",
+    "featuresList": [
+      {
+        "title": "Internal diameter",
+        "description": "105 mm"
+      },
+      {
+        "title": "External diameter",
+        "description": "110 mm"
+      },
+      {
+        "title": "Wall thickness",
+        "description": "2.5 mm"
+      },
+      {
+        "title": "Weight per 1 m",
+        "description": "0.98 kg"
+      },
+      {
+        "title": "Material",
+        "description": "H-PP virgin material MFI <1.5 – 30%; PP regranulate MFI <3.0 – 50%; chalk filler – 20%; colorant"
+      }
+    ],
+    "title": "PP tubes and sleeves",
+    "category": "Pipes"
+  }
+}

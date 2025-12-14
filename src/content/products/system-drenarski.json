@@ -2,53 +2,74 @@
   "pl": {
     "sectionGallery": {
       "title": "Galeria",
-      "imagesList": []
+      "imagesList": [
+        "drenaz-galeria-1",
+        "drenaz-galeria-2",
+        "drenaz-galeria-3",
+        "drenaz-galeria-4",
+        "drenaz-galeria-5",
+        "drenaz-galeria-6"
+      ]
     },
     "sectionHeader": {
-      "description": "Kompletny system rur i kształtek kanalizacyjnych nowej generacji, produkowany z tworzywa o udoskonalonej recepturze na bazie polipropylenu. Spełnia wszystkie warunki nowoczesnego, ekologicznego systemu kanalizacyjnego.",
-      "title": "System drenarski",
-      "eyebrow": "Rury i kształtki kanalizacji wewnętrznej z polipropylenu",
+      "description": "Rury drenarskie karbowane PVC-U Drewplast to synonim jakości i niezawodności w odwodnieniach terenów. Dzięki połączeniu trwałego PVC-U i konstrukcji karbowanej, rury Drewplast gwarantują wysoką wytrzymałość, elastyczność oraz doskonałą odporność na czynniki zewnętrzne – zarówno chemiczne, jak i mechaniczne.",
+      "title": "Rury drenarskie karbowane PVC-U",
+      "eyebrow": "Nowoczesne rozwiązania dla skutecznego odwodnienia",
       "image": "drenaz-baner",
       "featuresList": [
         {
           "title": "Materiał",
-          "description": "Polipropylen (PP)"
+          "description": "Polichlorek winylu (PVC)"
         },
         {
-          "title": "Zakres średnic",
-          "description": "32-110"
+          "title": "Średnice",
+          "description": "Ø50, Ø65, Ø80, Ø100, Ø125, Ø160, Ø200"
         },
         {
           "title": "Klasa sztywności",
-          "description": "SN2"
+          "description": "SN-4, SN-8"
         },
         {
           "title": "Kolor",
-          "description": "biały, szary"
+          "description": "żółty"
         }
       ]
     },
     "button": "Dowiedz się więcej",
     "sectionDocuments": {
       "title": "Dokumenty",
-      "documentsList": []
+      "documentsList": [
+        "cn-i-waga-rura-drenarska",
+        "kot-ibdim-kot-2019-0431-rura-drenarska-pvc-u-i-ksztaltki-pp",
+        "parametry-techniczne-rura-drenarska-nieperforowana",
+        "parametry-techniczne-rura-drenarska-perforowana",
+        "parametry-techniczne-otulina-typar-sf44",
+        "zalecenia-stosowania-rury-w-otulinie-typar-sf44"
+      ]
     },
     "sectionDescription": {
-      "advantages": "Kompletny system rur i kształtek w szerokiej gamie średnic: od DN 32 do DN 110\nKształtki specjalne (m.in. wyczystki, czwórniki, złączki do połączenia z żeliwem)\nŁatwy i szybki montaż - niska waga produktów\nLity przekrój ścianek z zastosowaniem udoskonalonej receptury\n100% recykling rur i kształtek",
+      "advantages": "Odwadnianie pól uprawnych oraz terenów rolniczych o wysokiej przepuszczalności. \nMelioracja sadów i upraw specjalistycznych, gdzie niezbędny jest szybki i niezakłócony odpływ wody. \nDrenaż boisk sportowych, terenów rekreacyjnych oraz ogrodów prywatnych, w których występują grunty piaszczysto-żwirowe. \nSystemy drenażu w inwestycjach komunalnych.\nOdwadnianie terenów podmokłych oraz gleb o niskiej przepuszczalności, narażonych na powstawanie zastoin wodnych. \nMelioracja gruntów rolnych i sadowniczych w obszarach, gdzie tradycyjny drenaż wymaga dodatkowego zabezpieczenia przed zamuleniem. \nDrenaż fundamentów budynków, parkingów oraz innych obiektów inżynieryjnych zlokalizowanych na gruntach spoistych. \nSystemy odwodnień liniowych w infrastrukturze przemysłowej i drogowej, gdzie wysoka wytrzymałość geowłókniny SF-44 zapewnia trwałość instalacji.",
       "title": "Zastosowanie",
-      "description": "Rury kanalizacji wewnętrznej przeznaczone są do budowy instalacji odprowadzających ścieki bytowo-gospodarcze i deszczowe wewnątrz budynku, a także do budowy wentylacji. Tworzywo żaroodpornie stabilizowane, z jakiego wykonany jest system, wykazuje bardzo dużą odporność na działanie rozmaitych, w tym agresywnych, środków chemicznych i ścieków. Dzięki temu z powodzeniem może zostać zastosowany także m.in. w przemyśle chemicznym i farmaceutycznym.\n\nRury i kształtki wytrzymują długotrwały przepływ gorącej wody (do 90ºC w przepływie ciągłym i do 95ºC w krótkotrwałym), dlatego znajdują zastosowanie w gospodarstwach domowych oraz wszędzie tam, gdzie odprowadza się ścieki o wysokiej temperaturze."
+      "description": "Rury drenarskie karbowane PVC-U Drewplast znajdują szerokie zastosowanie w systemach odwadniania, zarówno w budownictwie, jak i rolnictwie. Ich dobór uzależniony jest od rodzaju gruntu oraz specyfiki instalacji. Rury dostępne są w dwóch wersjach konstrukcyjnych perforowane oraz pełne (bez perforacji).\n\nRury w otulinie z geowłókniny Typar® charakteryzują się wysoką odpornością na kolmatację i zapewniają wieloletnią, bezawaryjną pracę systemu drenażowego."
     },
-    "title": "System drenarski",
-    "image": "drenaz-baner",
+    "title": "Rury drenarskie karbowane PVC-U",
+    "image": "drenaz-miniatura",
     "sectionElements": {
       "title": "Elementy systemu",
       "pipesList": [
         {
+          "pipe": "rury-drenarskie-karbowane-jednoscienne-perforowane-i-nieperforowane-pvc-sn-4",
           "link": {
             "text": "Zobacz dostępne warianty",
-            "url": "rury-kanalizacji-wewnetrznej"
-          },
-          "pipe": "rury-kanalizacji-wewnetrznej-pp"
+            "url": "rury-drenarskie-karbowane-jednoscienne-perforowane-i-nieperforowane-pvc-sn-4"
+          }
+        },
+        {
+          "pipe": "rury-drenarskie-karbowane-jednoscienne-perforowane-pvc-sn-4-z-otulina-typar-sf27-sf44",
+          "link": {
+            "text": "Zobacz dostępne warianty",
+            "url": "rury-drenarskie-karbowane-jednoscienne-perforowane-pvc-sn-4-z-otulina-typar-sf27-sf44"
+          }
         }
       ],
       "fittingsList": {
@@ -62,16 +83,24 @@
     },
     "seo": {
       "preventIndexing": false,
-      "metaDescription": "Kompletny system rur i kształtek kanalizacyjnych nowej generacji, produkowany z tworzywa o udoskonalonej recepturze na bazie polipropylenu.",
-      "metaTitle": "System drenarski - Drewplast",
-      "slug": "produkty/system-drenarski"
+      "metaDescription": "Rury drenarskie karbowane PVC-U Drewplast to synonim jakości i niezawodności w odwodnieniach terenów.",
+      "metaTitle": "Rury drenarskie karbowane PVC-U - Drewplast",
+      "slug": "produkty/system-drenarski",
+      "metaImage": "kanalizacja-zewnetrzna-miniatura"
     },
     "buttonText": "Dowiedz się więcej"
   },
   "en": {
     "sectionGallery": {
       "title": "Gallery",
-      "imagesList": []
+      "imagesList": [
+        "drenaz-galeria-1",
+        "drenaz-galeria-2",
+        "drenaz-galeria-3",
+        "drenaz-galeria-4",
+        "drenaz-galeria-5",
+        "drenaz-galeria-6"
+      ]
     },
     "sectionHeader": {
       "description": "A complete system of new generation sewage pipes and fittings, manufactured from a material with an improved formula based on polypropylene. It meets all the conditions of a modern, ecological sewage system.",
@@ -100,7 +129,17 @@
     "button": "Learn more",
     "sectionDocuments": {
       "title": "Documents",
-      "documentsList": []
+      "documentsList": [
+        "cn-i-waga-rura-drenarska",
+        "kdwu-01-2025-rura-drenarska-pvc-u-ibdim-kot-2019-0431",
+        "kdwu-02-2025-ksztaltki-drenarskie-pp-ibdim-kot-2019-0431",
+        "kdwu-03-2024-ksztaltki-drenarskie-pp-ibdim-kot-2019-0431",
+        "kot-ibdim-kot-2019-0431-rura-drenarska-pvc-u-i-ksztaltki-pp",
+        "parametry-techniczne-rura-drenarska-nieperforowana",
+        "parametry-techniczne-rura-drenarska-perforowana",
+        "parametry-techniczne-otulina-typar-sf44",
+        "zalecenia-stosowania-rury-w-otulinie-typar-sf44"
+      ]
     },
     "sectionDescription": {
       "title": "Application",
@@ -108,7 +147,7 @@
       "advantages": "Complete system of pipes and fittings in a wide range of diameters: from DN 32 to DN 110\n\nSpecial fittings (including cleanouts, crosspieces, connectors for connection with cast iron)\n\nEasy and quick assembly - low weight of products\n\nSolid cross-section of walls using an improved recipe\n\n100% recycling of pipes and fittings"
     },
     "title": "Drainage system",
-    "image": "drenaz-baner",
+    "image": "drenaz-miniatura",
     "sectionElements": {
       "fittingsList": {
         "list": [],
@@ -120,11 +159,18 @@
       },
       "pipesList": [
         {
+          "pipe": "rury-drenarskie-karbowane-jednoscienne-perforowane-i-nieperforowane-pvc-sn-4",
           "link": {
             "text": "See available",
-            "url": "indoor-sewage-pipes"
-          },
-          "pipe": "rury-kanalizacji-wewnetrznej-pp"
+            "url": "rury-drenarskie-karbowane-jednoscienne-perforowane-i-nieperforowane-pvc-sn-4"
+          }
+        },
+        {
+          "pipe": "rury-drenarskie-karbowane-jednoscienne-perforowane-pvc-sn-4-z-otulina-typar-sf27-sf44",
+          "link": {
+            "text": "See available",
+            "url": "rury-drenarskie-karbowane-jednoscienne-perforowane-pvc-sn-4-z-otulina-typar-sf27-sf44"
+          }
         }
       ],
       "title": "System elements"
@@ -133,7 +179,8 @@
       "preventIndexing": false,
       "metaDescription": "A complete system of new generation sewage pipes and fittings, manufactured from a material with an improved formula based on polypropylene.",
       "metaTitle": "Drainage system - Drewplast",
-      "slug": "products/drainage-system"
+      "slug": "products/drainage-system",
+      "metaImage": "kanalizacja-zewnetrzna-miniatura"
     },
     "buttonText": "Learn more"
   }

@@ -72,12 +72,12 @@
       }
     },
     "sectionDistributors": {
-      "title": "Sieć dystrybucji produktów",
+      "title": "Poszukujesz dystrybutora?",
       "description": "Nasze produkty są dostępne tam, gdzie ich potrzebujesz. Współpracujemy z szeroką siecią autoryzowanych dystrybutorów w całej Polsce oraz za granicą – w Czechach, na Litwie, Słowacji, Węgrzech i Ukrainie. Dzięki temu zawsze jesteśmy w zasięgu ręki.",
       "pageLink": {
-        "text": "Znajdź najbliższego dystrybutora ",
+        "text": "Skontaktuj się z nami",
         "page": "kontakt",
-        "sectionId": "siec-dystrybucji"
+        "sectionId": ""
       }
     },
     "image": "zaklad-wnetrzne-baner",
@@ -157,12 +157,12 @@
       ]
     },
     "sectionDistributors": {
-      "title": "Product distribution network",
+      "title": "Looking for a distributor?",
       "description": "Our products are available wherever you need them.\n\nWe work with a broad network of authorized distributors throughout Poland and abroad – in the Czech Republic, Lithuania, Slovakia, Hungary, and Ukraine.",
       "pageLink": {
         "page": "kontakt",
-        "text": "Find your nearest distributor",
-        "sectionId": "distribution-network"
+        "text": "Contact us",
+        "sectionId": ""
       }
     },
     "title": "Homepage"

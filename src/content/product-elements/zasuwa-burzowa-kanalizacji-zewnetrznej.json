@@ -1,0 +1,14 @@
+{
+  "pl": {
+    "category": "Kształtki",
+    "type": "Zasuwa burzowa",
+    "title": "Zasuwa burzowa kanalizacji zewnętrznej",
+    "table": "Kod produktu,Średnica\n,(mm)\nZB-110-000-000,110\nZB-160-000-000,160"
+  },
+  "en": {
+    "category": "Fittings",
+    "type": "Storm Gate",
+    "title": "External Sewer Storm Gate",
+    "table": "Product code,Diameter\n,(mm)\nZB-110-000-000,110\nZB-160-000-000,160"
+  }
+}

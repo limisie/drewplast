@@ -11,11 +11,12 @@ const locale = Astro.currentLocale || defaultLocale;
 
 const departaments = await getLocalizedCollectionData("departaments", locale);
 const employeesLists = await Promise.all(
-  departaments.map(
+  departaments.sort((a, b) => a.priority - b.priority).map(
     async (departament) =>
       await getLocalizedDataByEntries(departament.employeesList, locale)
   )
 );
+console.log(departaments)
 ---
 
 <ul>

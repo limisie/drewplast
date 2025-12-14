@@ -1,14 +1,16 @@
 {
   "pl": {
-    "title": "Zaopatrzenie",
+    "title": "Dział zaopatrzenia",
     "employeesList": [
       "edyta-pilarczyk"
-    ]
+    ],
+    "priority": 2
   },
   "en": {
     "employeesList": [
       "edyta-pilarczyk"
     ],
-    "title": "Supply Departament"
+    "title": "Supply Departament",
+    "priority": 2
   }
 }

@@ -1,18 +1,18 @@
 {
   "pl": {
     "name": "Aleksandra Nowacka",
-    "position": "Księgowa",
     "contact": {
-      "email": "aleksandra.nowacka@drewplast.com.pl"
+      "email": "aleksandra.nowacka@drewplast.com.pl",
+      "phone": "+48 607 279 775"
     },
     "image": "imie-nazwisko"
   },
   "en": {
     "name": "Aleksandra Nowacka",
     "contact": {
-      "email": "aleksandra.nowacka@drewplast.com.pl"
+      "email": "aleksandra.nowacka@drewplast.com.pl",
+      "phone": "+48 607 279 775"
     },
-    "position": "Accountant",
     "image": "imie-nazwisko"
   }
 }
