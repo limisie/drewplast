@@ -10,7 +10,7 @@
       "title": "O firmie",
       "eyebrow": "Poznaj nas",
       "description": "Drewplast sp. z o.o. to polski producent nowoczesnych instalacji kanalizacyjnych i drenarskich działający nieprzerwanie od 1993 roku.",
-      "image": "kanalizacja-wewnetrzna-pp-baner"
+      "image": "o-firmie-baner"
     },
     "sectionDescription": {
       "description": "Specjalizujemy się w produkcji rur kanalizacyjnych, drenarskich, tulei nawojowych oraz kształtek, tworzących kompletny system instalacyjny.\n\nOd 2004 roku działamy zgodnie z normą ISO 9001, a jakość naszych produktów zapewnia doświadczony zespół i nowoczesne laboratorium kontrolne.",
@@ -39,7 +39,7 @@
     },
     "sectionSustainable": {
       "title": "Zrównoważony rozwój",
-      "image": "farma-fotowoltaiczna",
+      "image": "zrownowazony-rozwoj",
       "featuresList": [
         {
           "description": "Wykorzystujemy tworzywa wtórne, ograniczając zużycie surowców i wpływ na środowisko.",
@@ -69,7 +69,7 @@
       "title": "About company",
       "eyebrow": "Get to know us",
       "description": "Drewplast sp. z o.o. is a Polish producer of modern sewer and drainage systems with an uninterrupted presence in the market since 1993.",
-      "image": "kanalizacja-wewnetrzna-pp-baner"
+      "image": "o-firmie-baner"
     },
     "sectionEmployees": {
       "title": "Meet our team",
@@ -94,7 +94,7 @@
     },
     "sectionSustainable": {
       "title": "Sustainable development",
-      "image": "farma-fotowoltaiczna",
+      "image": "zrownowazony-rozwoj",
       "featuresList": [
         {
           "description": "We use secondary plastics, reducing raw material consumption and environmental impact.",

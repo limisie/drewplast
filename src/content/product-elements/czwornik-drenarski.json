@@ -1,0 +1,14 @@
+{
+  "pl": {
+    "category": "Kształtki",
+    "type": "Czwórnik",
+    "title": "Czwórnik drenarski",
+    "table": "Kod produktu,Średnica,Sztuk,Waga,EAN\n,(mm),w opak.,(kg/szt.),\nCZD-100-100-100-100,100/100/100/100,10,0.15,5902596602277\nCZD-100-80-100-80,100/80/100/80,10,0.21,5902596602260"
+  },
+  "en": {
+    "category": "Fittings",
+    "type": "Four-port fittings",
+    "title": "Drainage Four-por",
+    "table": "Product code,Diameter,Pieces,Weight,EAN\n,(mm),per pack.,(kg/piece),\nCZD-100-100-100-100,100/100/100/100,10,0.15,5902596602277\nCZD-100-80-100-80,100/80/100/80,10,0.21,5902596602260"
+  }
+}

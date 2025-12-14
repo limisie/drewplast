@@ -1,0 +1,12 @@
+{
+  "pl": {
+    "title": "Strona główna - wnętrze zakładu",
+    "alt": "Wnętrze zakładu produkcyjnego z maszynami wytwarzającymi rury drenarskie.",
+    "url": "src/assets/images/dsc08027.jpg"
+  },
+  "en": {
+    "title": "Strona główna - wnętrze zakładu",
+    "url": "src/assets/images/dsc08027.jpg",
+    "alt": "Interior of a production plant with machines producing drainage pipes."
+  }
+}

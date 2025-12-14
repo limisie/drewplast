@@ -44,7 +44,10 @@
         "parametry-techniczne-rura-drenarska-nieperforowana",
         "parametry-techniczne-rura-drenarska-perforowana",
         "parametry-techniczne-otulina-typar-sf44",
-        "zalecenia-stosowania-rury-w-otulinie-typar-sf44"
+        "zalecenia-stosowania-rury-w-otulinie-typar-sf44",
+        "kdwu-01-2025-rura-drenarska-pvc-u-ibdim-kot-2019-0431",
+        "kdwu-02-2025-ksztaltki-drenarskie-pp-ibdim-kot-2019-0431",
+        "kdwu-03-2024-ksztaltki-drenarskie-pp-ibdim-kot-2019-0431"
       ]
     },
     "sectionDescription": {
@@ -73,7 +76,15 @@
         }
       ],
       "fittingsList": {
-        "list": [],
+        "list": [
+          "czwornik-drenarski",
+          "kolano-drenarskie",
+          "mufa-drenarska",
+          "redukcja-drenarska",
+          "trojnik-drenarski",
+          "trojnik-siodlowy-drenarski",
+          "zaslepka-drenarska"
+        ],
         "title": "Kształtki",
         "link": {
           "text": "Zobacz dostępne warianty",
@@ -131,26 +142,34 @@
       "title": "Documents",
       "documentsList": [
         "cn-i-waga-rura-drenarska",
-        "kdwu-01-2025-rura-drenarska-pvc-u-ibdim-kot-2019-0431",
-        "kdwu-02-2025-ksztaltki-drenarskie-pp-ibdim-kot-2019-0431",
-        "kdwu-03-2024-ksztaltki-drenarskie-pp-ibdim-kot-2019-0431",
         "kot-ibdim-kot-2019-0431-rura-drenarska-pvc-u-i-ksztaltki-pp",
         "parametry-techniczne-rura-drenarska-nieperforowana",
         "parametry-techniczne-rura-drenarska-perforowana",
         "parametry-techniczne-otulina-typar-sf44",
-        "zalecenia-stosowania-rury-w-otulinie-typar-sf44"
+        "zalecenia-stosowania-rury-w-otulinie-typar-sf44",
+        "kdwu-01-2025-rura-drenarska-pvc-u-ibdim-kot-2019-0431",
+        "kdwu-02-2025-ksztaltki-drenarskie-pp-ibdim-kot-2019-0431",
+        "kdwu-03-2024-ksztaltki-drenarskie-pp-ibdim-kot-2019-0431"
       ]
     },
     "sectionDescription": {
       "title": "Application",
       "description": "Internal sewage pipes are designed for the construction of installations for the discharge of domestic and rainwater sewage inside the building, as well as for the construction of ventilation. The heat-resistant stabilized material from which the system is made is very resistant to various, including aggressive, chemicals and sewage. Thanks to this, it can also be successfully used in the chemical and pharmaceutical industries.\n\nPipes and fittings withstand long-term flow of hot water (up to 90ºC in continuous flow and up to 95ºC in short-term flow), which is why they are used in households and wherever high-temperature sewage is discharged.",
-      "advantages": "Complete system of pipes and fittings in a wide range of diameters: from DN 32 to DN 110\n\nSpecial fittings (including cleanouts, crosspieces, connectors for connection with cast iron)\n\nEasy and quick assembly - low weight of products\n\nSolid cross-section of walls using an improved recipe\n\n100% recycling of pipes and fittings"
+      "advantages": "Complete system of pipes and fittings in a wide range of diameters: from DN 32 to DN 110\nSpecial fittings (including cleanouts, crosspieces, connectors for connection with cast iron)\nEasy and quick assembly - low weight of products\nSolid cross-section of walls using an improved recipe\n100% recycling of pipes and fittings"
     },
     "title": "Drainage system",
     "image": "drenaz-miniatura",
     "sectionElements": {
       "fittingsList": {
-        "list": [],
+        "list": [
+          "czwornik-drenarski",
+          "kolano-drenarskie",
+          "mufa-drenarska",
+          "redukcja-drenarska",
+          "trojnik-drenarski",
+          "trojnik-siodlowy-drenarski",
+          "zaslepka-drenarska"
+        ],
         "title": "Fittings",
         "link": {
           "text": "See available",

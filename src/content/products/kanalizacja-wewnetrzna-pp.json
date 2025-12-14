@@ -27,6 +27,10 @@
           "description": "Ø40,  Ø50,  Ø75,  Ø110"
         },
         {
+          "title": "Grubość ścianki",
+          "description": "1,8 - 2,7mm"
+        },
+        {
           "title": "Kolor",
           "description": "szary (biały na zamówienie)"
         }
@@ -110,6 +114,10 @@
         {
           "title": "Diameters",
           "description": "Ø40,  Ø50,  Ø75,  Ø110"
+        },
+        {
+          "title": "Wall thickness",
+          "description": "1,8 - 2,7mm"
         },
         {
           "title": "Color",

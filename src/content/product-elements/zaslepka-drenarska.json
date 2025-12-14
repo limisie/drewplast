@@ -1,0 +1,14 @@
+{
+  "pl": {
+    "category": "Kształtki",
+    "type": "Zaślepka",
+    "title": "Zaślepka drenarska",
+    "table": "Kod produktu,Kratka,Średnica,Sztuk,Waga,EAN\n,,(mm),w opak.,(kg/szt.),\nZD-050-000,,50,50,0.03,5907565633009\nZD-065-000,,65,50,0.03,5907565633016\nZD-080-000,,8,100,0.03,5907565633023\nZD-080-KRATKA,✓,80,10,0.60,\nZD-100-000,,100,50,0.03,5907565633030\nZD-100-KRATKA,✓,100,10,0.80,5907565633061\nZD-125-000,,125,25,0.08,5907565633047\nZD-160-000,,160,20,0.10,5907565633054"
+  },
+  "en": {
+    "category": "Fittings",
+    "type": "Plug",
+    "title": "Drainage Plug",
+    "table": "Product code,Strainer,Diameter,Pieces,Weight,EAN\n,,(mm),per pack.,(kg/piece),\nZD-050-000,,50,50,0.03,5907565633009\nZD-065-000,,65,50,0.03,5907565633016\nZD-080-000,,8,100,0.03,5907565633023\nZD-080-KRATKA,✓,80,10,0.60,\nZD-100-000,,100,50,0.03,5907565633030\nZD-100-KRATKA,✓,100,10,0.80,5907565633061\nZD-125-000,,125,25,0.08,5907565633047\nZD-160-000,,160,20,0.10,5907565633054"
+  }
+}

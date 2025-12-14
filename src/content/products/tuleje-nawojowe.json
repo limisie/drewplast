@@ -2,7 +2,13 @@
   "pl": {
     "sectionGallery": {
       "title": "Galeria",
-      "imagesList": []
+      "imagesList": [
+        "tuleje-galeria-1",
+        "tuleje-galeria-2",
+        "tuleje-galeria-3",
+        "tuleje-galeria-4",
+        "tuleje-galeria-5"
+      ]
     },
     "sectionHeader": {
       "title": "Tuleje nawojowe i rury osłonowe",
@@ -27,7 +33,10 @@
     "button": "Dowiedz się więcej",
     "sectionDocuments": {
       "title": "Dokumenty",
-      "documentsList": []
+      "documentsList": [
+        "parametry-techniczne-tuleje-pp-i-hdpe",
+        "parametry-techniczne-tuleje-pvc"
+      ]
     },
     "sectionDescription": {
       "title": "Zastosowanie",
@@ -74,7 +83,13 @@
   "en": {
     "sectionGallery": {
       "title": "Galeria",
-      "imagesList": []
+      "imagesList": [
+        "tuleje-galeria-1",
+        "tuleje-galeria-2",
+        "tuleje-galeria-3",
+        "tuleje-galeria-4",
+        "tuleje-galeria-5"
+      ]
     },
     "sectionHeader": {
       "title": "Winding sleeves and protective pipes",
@@ -98,7 +113,10 @@
     },
     "sectionDocuments": {
       "title": "Documents",
-      "documentsList": []
+      "documentsList": [
+        "parametry-techniczne-tuleje-pp-i-hdpe",
+        "parametry-techniczne-tuleje-pvc"
+      ]
     },
     "sectionDescription": {
       "title": "Applications",
