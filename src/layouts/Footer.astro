@@ -7,6 +7,7 @@ import type { DrewplastData, PageLink } from "@lib/types";
 import LabeledIcon from "@components/LabeledIcon.astro";
 import NavLinks from "@components/NavLinks.astro";
 import Logo from "@components/Logo.astro";
+import { Icon } from "astro-icon/components";
 
 const { data: drewplastData } = (await getEntry("data", "drewplast")) as {
   data: DrewplastData;
@@ -25,9 +26,41 @@ const { aboutCompany } = (await getLocalizedDataByEntry(
 
 <footer class="content-grid dark">
   <div class="footer-wrapper">
-    <div class="footer__about flow-content">
+    <div class="footer__about">
       <Logo />
       <p>{aboutCompany}</p>
+
+      <div class="footer__social">
+        <a
+          href="https://www.facebook.com/profile.php?id=61563021118456"
+          target="_blank"
+          rel="noopener"
+          aria-label="Facebook"
+          class="navlink"
+        >
+          <Icon name="akar-icons:facebook-fill" />
+        </a>
+
+        <a
+          href="https://www.instagram.com/drewplastpl_/"
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram"
+          class="navlink"
+        >
+          <Icon name="akar-icons:instagram-fill" />
+        </a>
+
+        <a
+          href="https://www.linkedin.com/company/drewplast/"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="navlink"
+        >
+          <Icon name="akar-icons:linkedin-fill" />
+        </a>
+      </div>
     </div>
 
     <nav>
@@ -71,9 +104,23 @@ const { aboutCompany } = (await getLocalizedDataByEntry(
   }
 
   .footer__about {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer);
     --logo-size: 2.5rem;
     --logo-clr: var(--clr-text);
-    --flow-spacer: var(--spacer);
+  }
+
+  .footer__social {
+    margin-top: var(--spacer-responsive);
+    display: flex;
+    gap: var(--spacer);
+
+    [data-icon] {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      will-change: transform;
+    }
   }
 
   .footer__contact {
@@ -126,6 +173,10 @@ const { aboutCompany } = (await getLocalizedDataByEntry(
     .footer__copyright {
       grid-column: span 3;
       padding-top: var(--spacer-responsive);
+    }
+
+    .footer__social {
+      margin-top: auto;
     }
   }
 </style>
