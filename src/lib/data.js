@@ -81,3 +81,32 @@ export const getLocalizedLink = async (pageLink, locale) => {
 export const getTableRow = (entry, columns) => {
   return columns.map((column) => entry[column]);
 };
+
+const parseDate = (date) => {
+  if (!date) return null;
+
+  const [day, month, year] = date.split(".").map(Number);
+
+  return new Date(year, month - 1, day).getTime();
+};
+
+export const sortDocuments = (a, b) => {
+  const aArchived = a.isArchive ?? false;
+  const bArchived = b.isArchive ?? false;
+
+  if (aArchived !== bArchived) {
+    return aArchived ? 1 : -1;
+  }
+
+  const aTime = parseDate(a.date);
+  const bTime = parseDate(b.date);
+
+  if (aTime === null && bTime !== null) return -1;
+  if (aTime !== null && bTime === null) return 1;
+
+  if (aTime !== null && bTime !== null) {
+    return bTime - aTime;
+  }
+
+  return 0;
+};
