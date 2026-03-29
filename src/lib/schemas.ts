@@ -61,7 +61,7 @@ const sectionSchemas = {
         z.object({
           pipe: reference("product-elements"),
           link: helperSchemas.link.optional(),
-        })
+        }),
       )
       .optional(),
     fittingsList: z
@@ -117,6 +117,7 @@ export const collectionSchemas = {
     alt: z.string(),
     caption: z.string().optional(),
     url: z.string(),
+    externalUrl: z.string().optional(),
   }),
   milestones: z.object({
     title: z.string(),

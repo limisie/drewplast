@@ -26,5 +26,6 @@ export const getDynamicImageData = async (image: Entry, locale: string) => {
     caption: data.caption ?? "",
     title: data.title,
     src: imageImport.default.src,
+    externalUrl: data.externalUrl,
   };
 };

@@ -9,7 +9,8 @@
     "sectionHeader": {
       "title": "Drewplast Sp. z o.o.",
       "eyebrow": "Zapraszamy do kontaktu",
-      "description": "Skontaktuj z naszym zespołem sprzedaży, pomocą techniczną lub znajdź najbliższego dystrybutora w celu uzyskania informacji i złożenia zamówienia."
+      "description": "Skontaktuj z naszym zespołem sprzedaży, pomocą techniczną lub znajdź najbliższego dystrybutora w celu uzyskania informacji i złożenia zamówienia.",
+      "image": "map-baner"
     },
     "sectionDistributors": {
       "title": "Sieć dystrybucji",
@@ -29,7 +30,8 @@
     "sectionHeader": {
       "title": "Drewplast Sp. z o.o.",
       "eyebrow": "Reach us",
-      "description": "Contact our sales or technical support team, or find your nearest distributor for more information or to place an order."
+      "description": "Contact our sales or technical support team, or find your nearest distributor for more information or to place an order.",
+      "image": "map-baner"
     },
     "sectionDistributors": {
       "title": "Product distribution network",

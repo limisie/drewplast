@@ -118,7 +118,7 @@ figcaption {
     object-position: center;
   }
 
-  .modal-thumbnail {
+  .modal-thumbnail, .zoom-on-hover {
     cursor: pointer;
     transition: transform 0.2s;
 

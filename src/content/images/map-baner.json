@@ -1,0 +1,14 @@
+{
+  "pl": {
+    "title": "Kontakt - baner",
+    "alt": "Mapa zlokalizowania zakładu Drewplast.",
+    "url": "src/assets/images/map.png",
+    "externalUrl": "https://maps.app.goo.gl/2QPvkxtMdZs7UCeK8"
+  },
+  "en": {
+    "title": "Kontakt - baner",
+    "alt": "Map of Drewplast localization.",
+    "url": "src/assets/images/map.png",
+    "externalUrl": "https://maps.app.goo.gl/2QPvkxtMdZs7UCeK8"
+  }
+}

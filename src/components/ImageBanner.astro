@@ -13,18 +13,35 @@ const { image, isCaption = false } = Astro.props;
 const locale = Astro.currentLocale || defaultLocale;
 
 const imageData = await getDynamicImageData(image, locale);
+const hasUrl = Boolean(imageData.externalUrl);
 ---
 
 <figure class="full-width-stretch">
   <div class="img-wrapper">
-    <Image
-      src={imageData.import()}
-      alt={imageData.alt}
-      decoding="async"
-      loading="lazy"
-      layout="constrained"
-    />
+    {
+      hasUrl ? (
+        <a href={imageData.externalUrl} target="_blank" rel="noopener noreferrer">
+          <Image
+            src={imageData.import()}
+            alt={imageData.alt}
+            decoding="async"
+            loading="lazy"
+            layout="constrained"
+            class="zoom-on-hover"
+          />
+        </a>
+      ) : (
+        <Image
+          src={imageData.import()}
+          alt={imageData.alt}
+          decoding="async"
+          loading="lazy"
+          layout="constrained"
+        />
+      )
+    }
   </div>
+
   {isCaption && <figcaption class="light-font">{imageData.alt}</figcaption>}
 </figure>
 

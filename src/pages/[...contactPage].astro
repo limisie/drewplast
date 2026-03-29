@@ -8,7 +8,6 @@ import CompanyInfo from "@components/CompanyInfo.astro";
 import DepartamentsList from "@components/DepartamentsList.astro";
 import ImageBanner from "@components/ImageBanner.astro";
 import SectionHeader from "@components/SectionHeader.astro";
-import MapBanner from "@components/MapBanner.astro";
 
 export async function getStaticPaths() {
   const data = await getPageData("kontakt");
@@ -35,7 +34,7 @@ const { seo, sectionHeader, image } = Astro.props;
     eyebrow={sectionHeader.eyebrow}
   >
     <CompanyInfo />
-    <MapBanner />
+    <ImageBanner image={sectionHeader.image} />
     <DepartamentsList />
   </SectionHeader>
 
