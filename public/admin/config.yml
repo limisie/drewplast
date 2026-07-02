@@ -4,8 +4,8 @@ backend:
   branch: main
 
 publish_mode: editorial_workflow
-media_folder: src/assets/images
-public_folder: src/assets/images
+media_folder: public
+public_folder: public
 
 i18n:
   structure: single_file
