@@ -1,22 +1,40 @@
 {
   "pl": {
-    "category": [
-      "produkty"
-    ],
-    "language": "PL",
-    "isArchive": false,
+    "pl": {
+      "category": [
+        "produkty"
+      ],
+      "language": "PL",
+      "isArchive": false,
+      "title": "aa",
+      "url": "public/documents/aaa.pdf",
+      "date": "02.07.2026"
+    },
+    "en": {
+      "category": [
+        "produkty"
+      ],
+      "language": "PL",
+      "isArchive": false,
+      "url": "public/documents/aaa.pdf",
+      "date": "02.07.2026",
+      "title": "aaa"
+    },
     "title": "aa",
-    "url": "public/documents/aaa.pdf",
-    "date": "02.07.2026"
-  },
-  "en": {
     "category": [
       "produkty"
     ],
-    "language": "PL",
-    "isArchive": false,
     "url": "public/documents/aaa.pdf",
     "date": "02.07.2026",
-    "title": "aaa"
+    "language": "PL"
+  },
+  "en": {
+    "title": "aaa",
+    "category": [
+      "produkty"
+    ],
+    "url": "public/documents/aaa.pdf",
+    "date": "02.07.2026",
+    "language": "PL"
   }
 }
