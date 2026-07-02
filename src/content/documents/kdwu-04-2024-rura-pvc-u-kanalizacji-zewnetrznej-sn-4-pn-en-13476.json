@@ -1,94 +1,18 @@
 {
   "pl": {
-    "pl": {
-      "pl": {
-        "pl": {
-          "pl": {
-            "title": "KDWU 04/2024 Rura PVC-U kanalizacji zewnętrznej SN-4 ; SN-8 (PN-EN 13476)",
-            "category": [
-              "certyfikaty"
-            ],
-            "language": "PL",
-            "isArchive": false,
-            "url": "/documents/KDWU 04:2024 Rura PVC-U kanalizacji zewnetrznej SN-4 (PN-EN 13476).pdf",
-            "date": "31.10.2025"
-          },
-          "en": {
-            "title": "KDWU 04/2024 PVC-U External Sewage Pipes SN-4 (PN-EN 13476)",
-            "category": [
-              "certyfikaty"
-            ],
-            "language": "PL",
-            "isArchive": false,
-            "url": "/documents/KDWU 04:2024 Rura PVC-U kanalizacji zewnetrznej SN-4 (PN-EN 13476).pdf",
-            "date": "31.10.2025"
-          },
-          "title": "KDWU 04/2024 Rura kanalizacji zewnętrznej PVC-U ",
-          "category": [
-            "certyfikaty"
-          ],
-          "url": "/src/assets/documents/kdwu-nr-04_2024.pdf",
-          "language": "PL",
-          "date": "27.03.2026"
-        },
-        "en": {
-          "category": [
-            "certyfikaty"
-          ],
-          "url": "/src/assets/documents/kdwu-nr-04_2024.pdf",
-          "language": "PL",
-          "date": "27.03.2026",
-          "title": "KDWU 04/2024 PVC-U Underground Sewer Pipe"
-        },
-        "title": "KDWU 04/2024 Rura kanalizacji zewnętrznej PVC-U ",
-        "category": [
-          "certyfikaty"
-        ],
-        "url": "/src/assets/documents/kdwu-nr-04_2024.pdf",
-        "language": "PL",
-        "date": "27.03.2026"
-      },
-      "en": {
-        "title": "KDWU 04/2024 PVC-U Underground Sewer Pipe ",
-        "category": [
-          "certyfikaty"
-        ],
-        "url": "/src/assets/documents/kdwu-nr-04_2024.pdf",
-        "language": "PL",
-        "date": "27.03.2026"
-      },
-      "title": "KDWU 04/2024 Rura kanalizacji zewnętrznej PVC-U",
-      "category": [
-        "certyfikaty"
-      ],
-      "url": "/src/assets/documents/kdwu-nr-04_2024.pdf",
-      "language": "PL",
-      "date": "27.03.2026"
-    },
-    "en": {
-      "title": "KDWU 04/2024 PVC-U Underground Sewer Pipe",
-      "category": [
-        "certyfikaty"
-      ],
-      "url": "/src/assets/documents/kdwu-nr-04_2024.pdf",
-      "language": "PL",
-      "date": "27.03.2026"
-    },
-    "title": "KDWU 04/2024 Rura kanalizacji zewnętrznej PVC-U",
-    "category": [
-      "certyfikaty"
-    ],
-    "date": "27.03.2026",
-    "url": "/src/assets/documents/kdwu-nr-04_2024.pdf",
-    "language": "PL"
+    "title": "KDWU 04/2024 Rura PVC-U kanalizacji zewnętrznej SN-4 ; SN-8 (PN-EN 13476)",
+    "category": ["certyfikaty"],
+    "language": "PL",
+    "isArchive": false,
+    "url": "/documents/Kkdwu-nr-04_2024.pdf",
+    "date": "27.03.2026"
   },
   "en": {
-    "title": "KDWU 04/2024 PVC-U Underground Sewer Pipe",
-    "category": [
-      "certyfikaty"
-    ],
-    "date": "27.03.2026",
-    "url": "/src/assets/documents/kdwu-nr-04_2024.pdf",
-    "language": "PL"
+    "title": "KDWU 04/2024 PVC-U External Sewage Pipes SN-4 (PN-EN 13476)",
+    "category": ["certyfikaty"],
+    "language": "PL",
+    "isArchive": false,
+    "url": "/documents/Kkdwu-nr-04_2024.pdf",
+    "date": "27.03.2026"
   }
 }
