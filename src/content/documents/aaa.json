@@ -1,0 +1,22 @@
+{
+  "pl": {
+    "category": [
+      "produkty"
+    ],
+    "language": "PL",
+    "isArchive": false,
+    "title": "aaa",
+    "url": "/public/documents/aaa.pdf",
+    "date": "02.07.2026"
+  },
+  "en": {
+    "category": [
+      "produkty"
+    ],
+    "language": "PL",
+    "isArchive": false,
+    "url": "/public/documents/aaa.pdf",
+    "title": "aaa",
+    "date": "02.07.2026"
+  }
+}
