@@ -4,8 +4,8 @@ backend:
   branch: main
 
 publish_mode: editorial_workflow
-media_folder: src/documents
-public_folder: src/documents
+media_folder: public/documents
+public_folder: public/documents
 
 i18n:
   structure: single_file
@@ -786,7 +786,7 @@ collections:
         name: url
         widget: file
         allow_multiple: false
-        media_folder: /src/assets/documents
+        media_folder: /public/documents
         i18n: duplicate
       - label: Język dokumentu
         name: language
