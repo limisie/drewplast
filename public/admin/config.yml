@@ -5,7 +5,7 @@ backend:
 
 publish_mode: editorial_workflow
 media_folder: public
-public_folder: public
+public_folder: /
 
 i18n:
   structure: single_file
@@ -787,6 +787,7 @@ collections:
         widget: file
         allow_multiple: false
         media_folder: public/documents
+        public_folder: /documents
         i18n: duplicate
       - label: Język dokumentu
         name: language
