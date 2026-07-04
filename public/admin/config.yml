@@ -270,6 +270,8 @@ collections:
         widget: image
         allow_multiple: false
         choose_url: true
+        media_folder: /src/assets/images
+        public_folder: /src/assets/images
         i18n: duplicate
 
   - name: pages
