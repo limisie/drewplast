@@ -1,0 +1,22 @@
+{
+  "pl": {
+    "category": [
+      "produkty"
+    ],
+    "language": "PL",
+    "isArchive": false,
+    "title": "Installation Instructions for Drewplast Drainage Pipes",
+    "url": "/documents/instrukcja_montazu_rur_drenarskich_drewplast.pdf",
+    "date": "19.03.2025"
+  },
+  "en": {
+    "category": [
+      "produkty"
+    ],
+    "language": "PL",
+    "isArchive": false,
+    "url": "/documents/instrukcja_montazu_rur_drenarskich_drewplast.pdf",
+    "date": "19.03.2025",
+    "title": "Installation Instructions for Drewplast Drainage Pipes"
+  }
+}
